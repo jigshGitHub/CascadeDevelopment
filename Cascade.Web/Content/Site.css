@@ -1,0 +1,41 @@
+﻿
+html
+{
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: #fff;
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+    body table
+    {
+        border: 1px solid #00FFFF;
+        vertical-align: top;
+        width: 100%;
+        /*
+            gor horizontal alignement
+        margin-left: auto;
+        margin-right: auto;
+            */
+    }
+
+        body table td
+        {
+            vertical-align: top;
+        }
+
+.mainWorkspace
+{
+    background-color: #4985d6;
+    color: #fff;
+}
+

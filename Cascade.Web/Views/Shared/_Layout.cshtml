@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/themes/Menu/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <header>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <section id="login">
+                                    @Html.Partial("_LoginPartial")
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Logo...</td>
+                            <td>
+                                <nav>
+                                    @{Html.RenderPartial("_MenuPartial", ViewData["Menu"]);}
+                                </nav>
+                            </td>
+                        </tr>
+                    </table>
+                </header>
+            </td>
+        </tr>
+        <tr>
+            <td class="mainWorkspace">@RenderSection("featured", required: false)
+                <table>
+                    <tr>
+                        <td>
+                            <section>
+                                <div id="workspaceViewContainer">
+                                    @RenderBody()
+                                </div>
+                            </section>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <footer>
+                                @Html.Partial("_FooterPartial")
+                            </footer>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </td>
+        </tr>
+    </table>
+
+    @Scripts.Render("~/bundles/jquery","~/bundles/external")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#menu li a').click(function (event) {
+                event.preventDefault();
+                var url = $(this).attr('href');
+                $('#workspaceViewContainer').load(url);
+            });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

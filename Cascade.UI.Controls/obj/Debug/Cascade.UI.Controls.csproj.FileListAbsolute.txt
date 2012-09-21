@@ -1,0 +1,4 @@
+C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.dll
+C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.pdb
+C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.dll
+C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.pdb

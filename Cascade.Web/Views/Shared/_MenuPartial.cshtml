@@ -1,0 +1,28 @@
+﻿@model Cascade.UI.Controls.CascadeMenuCollection
+<ul id="menu" class="dropdown">
+    @{ 
+        IEnumerable<Cascade.UI.Controls.Menu> topMenus = Model.MenuItems.Where(i => i.ParentId == 0).OrderBy(i => i.SortOrder);//.ThenBy(i => i.Text);
+        Cascade.UI.Controls.CascadeMenu menuItem;
+        foreach (var item in topMenus)
+        {
+            menuItem = ((Cascade.UI.Controls.CascadeMenu)item);
+            if (item.IsActive)
+            {
+        <li>@Html.ActionLink(menuItem.Text, menuItem.Action, menuItem.Controller, new { area = menuItem.Area }, null)
+            @if (Model.MenuItemHasChildren(menuItem.Id))
+            {
+                IEnumerable<Cascade.UI.Controls.CascadeMenu> items = Model.GetChildMenuItems(menuItem.Id);
+                <ul class="sub_menu">
+                    @foreach (var subItem in items)
+                    {
+                        <li>
+                            @Html.ActionLink(subItem.Text, subItem.Action, subItem.Controller, new { area = menuItem.Area }, null)
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+            }
+        }
+    }
+</ul>

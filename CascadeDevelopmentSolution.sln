@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.API", "Cascade.API\Cascade.API.csproj", "{878B056B-62CC-4C1E-B1E5-531DAEB31DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.Web", "Cascade.Web\Cascade.Web.csproj", "{BF879E3D-8F29-4943-AEDB-A812B5AD5A5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.UI.Controls", "Cascade.UI.Controls\Cascade.UI.Controls.csproj", "{63DD875F-FD8E-4ABB-9767-E18CDAEEE264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63DD875F-FD8E-4ABB-9767-E18CDAEEE264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DD875F-FD8E-4ABB-9767-E18CDAEEE264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DD875F-FD8E-4ABB-9767-E18CDAEEE264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DD875F-FD8E-4ABB-9767-E18CDAEEE264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878B056B-62CC-4C1E-B1E5-531DAEB31DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878B056B-62CC-4C1E-B1E5-531DAEB31DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878B056B-62CC-4C1E-B1E5-531DAEB31DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878B056B-62CC-4C1E-B1E5-531DAEB31DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF879E3D-8F29-4943-AEDB-A812B5AD5A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF879E3D-8F29-4943-AEDB-A812B5AD5A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF879E3D-8F29-4943-AEDB-A812B5AD5A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF879E3D-8F29-4943-AEDB-A812B5AD5A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
