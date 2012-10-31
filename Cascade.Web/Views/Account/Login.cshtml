@@ -1,40 +1,65 @@
 ﻿@model Cascade.Web.Models.LoginModel
-
 @{
     ViewBag.Title = "Log in";
 }
+<style>
+    body
+    {
+        background-color: #336699;
+        background-image: url('../Images/Landing_Page.png');
+    }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Use this form to enter your user name and password.</h2>
-</hgroup>
+    #login
+    {
+        position: absolute;
+        left: 800px;
+        top: 60px;
+        color: #FFF;
+    }
+    
+    table
+    {
+        color:#fff;
+    }
+    #login input[type='submit']
+    {
+        background-color: #3366cc;
+        color: #FFFFFF;
+        padding-right: 10px;
+    }
+</style>
+<body>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
 
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
-
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
-}
-
+        <div id="login">
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.UserName)
+                    </td>
+                    <td>:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserName)
+                    </td>
+                    <td>
+                        @Html.LabelFor(m => m.Password)
+                    </td>
+                    <td>:
+                    </td>
+                    <td>
+                        @Html.PasswordFor(m => m.Password)
+                    </td>
+                    <td>
+                        <input type="submit" value="Log in" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</body>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Cascade.Web.Controllers;
 namespace Cascade.Web.Areas.AssetSales.Controllers
 {
+    [Authorize]
     public class HomeController : BaseController
     {
         //

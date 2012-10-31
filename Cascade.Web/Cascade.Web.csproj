@@ -187,6 +187,7 @@
     <Content Include="Images\calendar.gif" />
     <Content Include="Images\excel.jpg" />
     <Content Include="Images\indicator_medium.gif" />
+    <Content Include="Images\Landing_Page.png" />
     <Content Include="Images\MSIPiechart.png" />
     <Content Include="Scripts\consolelog.js" />
     <Content Include="Scripts\consolelog.min.js">
@@ -244,6 +245,7 @@
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\Copy of _Layout.cshtml" />
+    <Content Include="Views\Account\Copy of Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

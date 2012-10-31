@@ -63,4 +63,13 @@ namespace Cascade.Web.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+
+    public class UserModel
+    {
+        System.Security.Principal.IPrincipal LoggedInUser { get; set; }
+        public UserModel(System.Security.Principal.IPrincipal currentUser)
+        {
+            LoggedInUser = currentUser;
+        }
+    }
 }

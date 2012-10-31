@@ -20,7 +20,8 @@ namespace Cascade.Web.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            //return View();
+            return PartialView("login");
         }
 
         //
@@ -51,7 +52,8 @@ namespace Cascade.Web.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            //return View(model);
+            return PartialView("login");
         }
 
         //

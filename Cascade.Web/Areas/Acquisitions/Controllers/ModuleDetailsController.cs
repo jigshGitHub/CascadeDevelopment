@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Cascade.Web.Controllers;
 namespace Cascade.Web.Areas.Acquisitions.Controllers
 {
+    [Authorize]
     public class ModuleDetailsController : BaseController
     {
         //
