@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationIntegration\Helpers.cs" />
     <Compile Include="ApplicationIntegration\Menu.cs" />
     <Compile Include="ApplicationIntegration\MenuFactory.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -134,10 +135,21 @@
     <Compile Include="Areas\Acquisitions\AcquisitionsAreaRegistration.cs" />
     <Compile Include="Areas\Acquisitions\Controllers\HomeController.cs" />
     <Compile Include="Areas\Acquisitions\Controllers\ModuleDetailsController.cs" />
+    <Compile Include="Areas\AnalyticsSimulation\AnalyticsSimulationAreaRegistration.cs" />
+    <Compile Include="Areas\AnalyticsSimulation\Controllers\HomeController.cs" />
     <Compile Include="Areas\AssetSales\AssetSalesAreaRegistration.cs" />
     <Compile Include="Areas\AssetSales\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Collections\CollectionsAreaRegistration.cs" />
+    <Compile Include="Areas\Collections\Controllers\HomeController.cs" />
+    <Compile Include="Areas\CRM\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\CRM\CRMAreaRegistration.cs" />
+    <Compile Include="Areas\InvestorManagement\Controllers\HomeController.cs" />
+    <Compile Include="Areas\InvestorManagement\InvestorManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Recourse\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Recourse\RecourseAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,22 +189,97 @@
     <Content Include="Content\themes\Menu\ie.css" />
     <Content Include="Content\themes\Menu\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="FusionChartLib\Area2D.swf" />
+    <Content Include="FusionChartLib\Bar2D.swf" />
+    <Content Include="FusionChartLib\Bubble.swf" />
+    <Content Include="FusionChartLib\Column2D.swf" />
+    <Content Include="FusionChartLib\Column3D.swf" />
+    <Content Include="FusionChartLib\CostOfSale.xml" />
+    <Content Include="FusionChartLib\Doughnut2D.swf" />
+    <Content Include="FusionChartLib\Doughnut3D.swf" />
+    <Content Include="FusionChartLib\FCExporter.swf" />
+    <Content Include="FusionChartLib\firebug-lite.js" />
+    <Content Include="FusionChartLib\FusionCharts.HC.Charts.js" />
+    <Content Include="FusionChartLib\FusionCharts.HC.js" />
+    <Content Include="FusionChartLib\FusionCharts.jqueryplugin.js" />
+    <Content Include="FusionChartLib\FusionCharts.js" />
+    <Content Include="FusionChartLib\FusionChartsExportComponent.js" />
+    <Content Include="FusionChartLib\GapAnalysis.xml" />
+    <Content Include="FusionChartLib\jquery.min.js" />
+    <Content Include="FusionChartLib\Line.swf" />
+    <Content Include="FusionChartLib\Marimekko.swf" />
+    <Content Include="FusionChartLib\MSArea.swf" />
+    <Content Include="FusionChartLib\MSBar2D.swf" />
+    <Content Include="FusionChartLib\MSBar3D.swf" />
+    <Content Include="FusionChartLib\MSColumn2D.swf" />
+    <Content Include="FusionChartLib\MSColumn3D.swf" />
+    <Content Include="FusionChartLib\MSColumn3DLineDY.swf" />
+    <Content Include="FusionChartLib\MSColumnLine3D.swf" />
+    <Content Include="FusionChartLib\MSCombi2D.swf" />
+    <Content Include="FusionChartLib\MSCombi3D.swf" />
+    <Content Include="FusionChartLib\MSCombiDY2D.swf" />
+    <Content Include="FusionChartLib\MSLine.swf" />
+    <Content Include="FusionChartLib\MSStackedColumn2D.swf" />
+    <Content Include="FusionChartLib\MSStackedColumn2DLineDY.swf" />
+    <Content Include="FusionChartLib\Pareto2D.swf" />
+    <Content Include="FusionChartLib\Pareto3D.swf" />
+    <Content Include="FusionChartLib\Pie2D.swf" />
+    <Content Include="FusionChartLib\Pie3D.swf" />
+    <Content Include="FusionChartLib\Prospecting.xml" />
+    <Content Include="FusionChartLib\RetentionRate.xml" />
+    <Content Include="FusionChartLib\Retention_Rate_Effectiveness.xml" />
+    <Content Include="FusionChartLib\ReturnOnTrainingInvestment.xml" />
+    <Content Include="FusionChartLib\SalesCycleTime.xml" />
+    <Content Include="FusionChartLib\Scatter.swf" />
+    <Content Include="FusionChartLib\ScrollArea2D.swf" />
+    <Content Include="FusionChartLib\ScrollColumn2D.swf" />
+    <Content Include="FusionChartLib\ScrollCombi2D.swf" />
+    <Content Include="FusionChartLib\ScrollCombiDY2D.swf" />
+    <Content Include="FusionChartLib\ScrollLine2D.swf" />
+    <Content Include="FusionChartLib\ScrollStackedColumn2D.swf" />
+    <Content Include="FusionChartLib\SSGrid.swf" />
+    <Content Include="FusionChartLib\StackedArea2D.swf" />
+    <Content Include="FusionChartLib\StackedBar2D.swf" />
+    <Content Include="FusionChartLib\StackedBar3D.swf" />
+    <Content Include="FusionChartLib\StackedColumn2D.swf" />
+    <Content Include="FusionChartLib\StackedColumn2DLine.swf" />
+    <Content Include="FusionChartLib\StackedColumn3D.swf" />
+    <Content Include="FusionChartLib\StackedColumn3DLine.swf" />
+    <Content Include="FusionChartLib\StackedColumn3DLineDY.swf" />
+    <Content Include="FusionChartLib\ZoomLine.swf" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Acquisitions\Views\Web.config" />
     <Content Include="Areas\Acquisitions\Views\Home\Index.cshtml" />
     <Content Include="Areas\AssetSales\Views\Web.config" />
     <Content Include="Areas\AssetSales\Views\Home\Index.cshtml" />
     <Content Include="Areas\Acquisitions\Views\ModuleDetails\Index.cshtml" />
+    <Content Include="Areas\Recourse\Views\Web.config" />
+    <Content Include="Areas\Collections\Views\Web.config" />
+    <Content Include="Areas\InvestorManagement\Views\Web.config" />
+    <Content Include="Areas\AnalyticsSimulation\Views\Web.config" />
+    <Content Include="Areas\AnalyticsSimulation\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Collections\Views\Home\Index.cshtml" />
+    <Content Include="Areas\InvestorManagement\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Recourse\Views\Home\Index.cshtml" />
+    <Content Include="Areas\CRM\Views\Web.config" />
+    <Content Include="Areas\CRM\Views\Company\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
+    <Content Include="Images\CascadeLogin.JPG" />
+    <Content Include="Images\CascadeLogo.JPG" />
+    <Content Include="Images\Close.png" />
     <Content Include="Images\excel.jpg" />
     <Content Include="Images\indicator_medium.gif" />
     <Content Include="Images\Landing_Page.png" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Main.png" />
     <Content Include="Images\MSIPiechart.png" />
     <Content Include="Scripts\consolelog.js" />
     <Content Include="Scripts\consolelog.min.js">
       <DependentUpon>consolelog.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\External.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js">
       <DependentUpon>jquery-1.6.2.js</DependentUpon>
@@ -215,6 +302,33 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\jQueryDataTables\add2home.js" />
+    <Content Include="Scripts\jQueryDataTables\Campaigns_add.js" />
+    <Content Include="Scripts\jQueryDataTables\campaign_edit.js" />
+    <Content Include="Scripts\jQueryDataTables\custom-form-elements.js" />
+    <Content Include="Scripts\jQueryDataTables\dd-roundies.js" />
+    <Content Include="Scripts\jQueryDataTables\global.js" />
+    <Content Include="Scripts\jQueryDataTables\img-scale.js" />
+    <Content Include="Scripts\jQueryDataTables\jqtouch.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery-ui-1.8.7.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery-ui-1.8.9.custom.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery-ui.touchPunch.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.disable.text.select.pack.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.eventLogFix.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.form.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.infieldlabel.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.validate.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jQueryDataTables\jquery.watermark.js" />
+    <Content Include="Scripts\jQueryDataTables\mustache.js" />
+    <Content Include="Scripts\jQueryDataTables\quickpager.jquery.js" />
+    <Content Include="Scripts\jQueryDataTables\SimpleProgress-Fx.js" />
+    <Content Include="Scripts\jQueryDataTables\slimbox.js" />
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
@@ -246,18 +360,37 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\Copy of _Layout.cshtml" />
     <Content Include="Views\Account\Copy of Login.cshtml" />
+    <Content Include="Views\Shared\_LHSMenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Acquisitions\Models\" />
     <Folder Include="Areas\Acquisitions\Views\Shared\" />
+    <Folder Include="Areas\AnalyticsSimulation\Models\" />
+    <Folder Include="Areas\AnalyticsSimulation\Views\Shared\" />
     <Folder Include="Areas\AssetSales\Models\" />
     <Folder Include="Areas\AssetSales\Views\Shared\" />
+    <Folder Include="Areas\Collections\Models\" />
+    <Folder Include="Areas\Collections\Views\Shared\" />
+    <Folder Include="Areas\CRM\Models\" />
+    <Folder Include="Areas\CRM\Views\Shared\" />
+    <Folder Include="Areas\InvestorManagement\Models\" />
+    <Folder Include="Areas\InvestorManagement\Views\Shared\" />
+    <Folder Include="Areas\Recourse\Models\" />
+    <Folder Include="Areas\Recourse\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cascade.Charts\Cascade.Charts.csproj">
+      <Project>{13c56c12-fb83-48ea-8caf-0860cbb85138}</Project>
+      <Name>Cascade.Charts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cascade.Data\Cascade.Data.csproj">
+      <Project>{6e2cc1e1-583d-4647-a6bd-266b25bd3fd2}</Project>
+      <Name>Cascade.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cascade.UI.Controls\Cascade.UI.Controls.csproj">
       <Project>{63dd875f-fd8e-4abb-9767-e18cdaeee264}</Project>
       <Name>Cascade.UI.Controls</Name>
@@ -279,7 +412,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>54720</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:55558/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

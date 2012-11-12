@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CascadeDBModelStoreContainer">
+    <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="TBL_CHART">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfChart" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Caption" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="SWFile" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="ChartID" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="NumberSuffix" Type="char" MaxLength="1" />
+    <Property Name="SNumberSuffix" Type="char" MaxLength="1" />
+    <Property Name="XaxisName" Type="varchar" MaxLength="500" />
+    <Property Name="YaxisName" Type="varchar" MaxLength="500" />
+    <Property Name="CanvasBgColor" Type="char" MaxLength="6" />
+    <Property Name="BgColor" Type="char" MaxLength="6" />
+    <Property Name="CanvasBgAlpha" Type="varchar" MaxLength="10" />
+    <Property Name="BgAlpha" Type="varchar" MaxLength="10" />
+    <Property Name="PieRadius" Type="varchar" MaxLength="10" />
+    <Property Name="EnableRotation" Type="char" MaxLength="1" />
+    <Property Name="ShowLegend" Type="char" MaxLength="1" />
+    <Property Name="ShowLabels" Type="char" MaxLength="1" />
+    <Property Name="PlotGradientColor" Type="char" MaxLength="6" />
+    <Property Name="DrillLevelChartIDs" Type="varchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastCreatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="uniqueidentifier" />
+    <Property Name="LastCreatedBy" Type="uniqueidentifier" />
+  </EntityType>
+</Schema>

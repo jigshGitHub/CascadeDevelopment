@@ -1,0 +1,4 @@
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Release\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Release\Cascade.Charts.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Release\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Release\Cascade.Charts.pdb

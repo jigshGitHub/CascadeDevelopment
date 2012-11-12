@@ -2,3 +2,8 @@ C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Co
 C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.pdb
 C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.dll
 C:\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.UI.Controls\obj\Debug\Cascade.UI.Controls.csprojResolveAssemblyReference.cache

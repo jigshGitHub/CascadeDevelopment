@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CascadeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CascadeDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.TBL_CHART" />
+  </EntityContainer>
+  <EntityType Name="TBL_CHART">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfChart" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Caption" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SWFile" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ChartID" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="NumberSuffix" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SNumberSuffix" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="XaxisName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="YaxisName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CanvasBgColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="BgColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="CanvasBgAlpha" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="BgAlpha" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PieRadius" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EnableRotation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ShowLegend" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ShowLabels" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="PlotGradientColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="DrillLevelChartIDs" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastCreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedBy" Type="Guid" />
+    <Property Name="LastCreatedBy" Type="Guid" />
+  </EntityType>
+</Schema>

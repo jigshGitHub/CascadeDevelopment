@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CascadeDBModelStoreContainer" CdmEntityContainer="CascadeDBEntities">
+    <EntitySetMapping Name="TBL_CHART">
+      <EntityTypeMapping TypeName="CascadeDBModel.TBL_CHART">
+        <MappingFragment StoreEntitySet="TBL_CHART">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeOfChart" ColumnName="TypeOfChart" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="SWFile" ColumnName="SWFile" />
+          <ScalarProperty Name="ChartID" ColumnName="ChartID" />
+          <ScalarProperty Name="NumberSuffix" ColumnName="NumberSuffix" />
+          <ScalarProperty Name="SNumberSuffix" ColumnName="SNumberSuffix" />
+          <ScalarProperty Name="XaxisName" ColumnName="XaxisName" />
+          <ScalarProperty Name="YaxisName" ColumnName="YaxisName" />
+          <ScalarProperty Name="CanvasBgColor" ColumnName="CanvasBgColor" />
+          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+          <ScalarProperty Name="CanvasBgAlpha" ColumnName="CanvasBgAlpha" />
+          <ScalarProperty Name="BgAlpha" ColumnName="BgAlpha" />
+          <ScalarProperty Name="PieRadius" ColumnName="PieRadius" />
+          <ScalarProperty Name="EnableRotation" ColumnName="EnableRotation" />
+          <ScalarProperty Name="ShowLegend" ColumnName="ShowLegend" />
+          <ScalarProperty Name="ShowLabels" ColumnName="ShowLabels" />
+          <ScalarProperty Name="PlotGradientColor" ColumnName="PlotGradientColor" />
+          <ScalarProperty Name="DrillLevelChartIDs" ColumnName="DrillLevelChartIDs" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastCreatedBy" ColumnName="LastCreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

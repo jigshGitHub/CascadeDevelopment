@@ -2,74 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>Cascade</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/themes/Menu/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <table>
-        <tr>
-            <td>
-                <header>
+    <div id="contentContainer">
+        <table>
+            <tr>
+                <td>
+                    <header>
+                        <table>
+                            <tr>
+                                <td><img src="~/Images/logo.png" /></td>
+                                <td style="vertical-align:middle">
+                                    <nav>
+                                        @{Html.RenderPartial("_MenuPartial", ViewData["Menu"]);}
+                                    </nav>
+                                </td>
+
+                                <td style="vertical-align:middle">
+                                    <section id="login">
+                                        @Html.Partial("_LoginPartial")
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
+                    </header>
+                </td>
+            </tr>
+            <tr>
+                <td class="mainWorkspace">@RenderSection("featured", required: false)
                     <table>
                         <tr>
-                            <td colspan="2">
-                                <section id="login">
-                                    @Html.Partial("_LoginPartial")
+                            <td style="width: 20%;">
+                                <section style=" margin-top:5px; padding-left:30px">
+                                    <div id="lhsMenuContainer">
+                                        <nav>
+                                            @{Html.RenderPartial("_LHSMenuPartial", ViewData["Menu"]);}
+                                        </nav>
+                                    </div>
+                                </section>
+                            </td>
+                            <td style="width: 80%">
+                                <section style=" margin-top:5px;; padding-right:30px">
+                                    <div id="workspaceViewContainer">
+                                        @RenderBody()
+                                    </div>
                                 </section>
                             </td>
                         </tr>
                         <tr>
-                            <td>Logo...</td>
-                            <td>
-                                <nav>
-                                    @{Html.RenderPartial("_MenuPartial", ViewData["Menu"]);}
-                                </nav>
-                            </td>
+                            <td colspan="2"></td>
                         </tr>
                     </table>
-                </header>
-            </td>
-        </tr>
-        <tr>
-            <td class="mainWorkspace">@RenderSection("featured", required: false)
-                <table>
-                    <tr>
-                        <td>
-                            <section>
-                                <div id="workspaceViewContainer">
-                                    @RenderBody()
-                                </div>
-                            </section>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <footer>
-                                @Html.Partial("_FooterPartial")
-                            </footer>
-                        </td>
-                    </tr>
-                </table>
 
 
-            </td>
-        </tr>
-    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- push div is a hidden element that "pushes" down the footer so it doesn't overlap anythiing
+            search online css sticky footer Ryan Fait-->
+        <div class="push"></div>
+    </div>
+    <footer>
+        @Html.Partial("_FooterPartial")
+    </footer>
 
-    @Scripts.Render("~/bundles/jquery","~/bundles/external")
+    @Scripts.Render("~/bundles/jquery", "~/bundles/external")
 
     <script type="text/javascript">
+
+        var windlowLocation = window.location.href.split('/');
+        var baseUrl = windlowLocation[0] + '//' + windlowLocation[2] + '//' + windlowLocation[3];
+        
         $(document).ready(function () {
             $('#menu li a').click(function (event) {
+                $('#menu  li a').each(function () {
+                    $(this).removeClass('activeLink');
+                });
                 event.preventDefault();
-                var url = $(this).attr('href');
-                $('#workspaceViewContainer').load(url);
+                $('#workspaceViewContainer').load($(this).attr('href'));
+                $(this).addClass('activeLink');
+            });
+
+            $('.lhsLinks a').click(function (event) {
+                //$('#menu  li a').each(function () {
+                //    $(this).removeClass('activeLink');
+                //});
+                event.preventDefault();
+                $('#workspaceViewContainer').load($(this).attr('href'));
+                //$(this).addClass('activeLink');
+            });
+
+
+            $('#privacyStatementLink').click(function (e) {
+                e.preventDefault();
+                $('#privacyStatementBlock').show(200);                
+            });
+            
+            $('#closePrivacySt').click(function () {
+                $('#privacyStatementBlock').hide();
             });
         });
+
     </script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -6,10 +6,34 @@
             <img src="~/Images/MSIPiechart.png" />
         </td>
         <td align="center" style="width: 25%">
-            <asp:linkbutton id="lnkPrivacy" runat="server" causesvalidation="false" forecolor="White"
-                text="Privacy Statement"></asp:linkbutton>
+            <a href="#" id="privacyStatementLink" style="color: white">Privacy Statement</a>
         </td>
         <td align="right" style="width: 50%">Copyright© 2011-2012 Mined Systems Metrics Intelligence. All rights reserved.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div id="privacyStatementBlock" style="border: 2px solid #1f497d; background-color: #fff; display: none; color: #1f497d; position: absolute; top: 50%; left: 50%;">
+                <table>
+                    <tr>
+                        <td style="text-align: right">
+                            <img src="~/Images/Close.png" id="closePrivacySt" /></td>
+                    </tr>
+                    <tr>
+                        <td>Sandler Systems, Inc. ("SSI") respects and understands the importance of privacy
+                and security for our online customers. Any information collected is used only by
+                SSI or Sandler Training franchisees to contact consumers for marketing and operational
+                purposes. Persons who supply us or Sandler Training franchisees with their telephone
+                numbers or e-mail addresses on-line may receive telephone or e-mail contact from
+                us or Sandler Training Franchisees with information regarding products and services
+                or upcoming events. SSI will not release, sell, rent or trade the personal information
+                of any of our customers to any third party.</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="backgroundDarkener" style="background: #808080; display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1; opacity: 0.8;">
+            </div>
         </td>
     </tr>
 </table>

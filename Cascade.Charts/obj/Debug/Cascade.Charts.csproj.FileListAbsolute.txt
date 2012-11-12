@@ -1,0 +1,5 @@
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Debug\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Debug\Cascade.Charts.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Debug\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Debug\Cascade.Charts.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Debug\Cascade.Charts.csprojResolveAssemblyReference.cache

@@ -1,0 +1,94 @@
+﻿<table style="border-style: none; border-width: thick; border-color: aqua">
+    <tr>
+        <td>
+            <input type="text" id="lhsMenuSerachText" class="searchBox" /></td>
+    </tr>
+    <tr>
+        <td>
+            <div id="searchLnk"><a href="#">Search</a></div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <ul class="lhsLinks">
+                <li>@Html.ActionLink("Reports", "Reports")<ul>
+                    <li><a href="#">Recourse</a></li>
+                    <li>
+                        <a href="#">Collections</a><ul>
+                            <li><a href="#">Analytical Reports</a><ul>
+                                <li><a href="#">Agency Side-by-Side Comparison</a></li>
+                                <li><a href="#">Batch Tracker</a></li>
+                                <li><a href="#">Firm Liquidation Batch Tracker</a></li>
+                                <li><a href="#">Inventory Snapshot</a></li>
+                                <li><a href="#">Media Notification</a></li>
+                                <li><a href="#">Performance Summary</a></li>
+                                <li><a href="#">SIF Tracker</a></li>
+                                <li><a href="#">Suit Percentage by Batch</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">Compliance Reports</a><ul>
+                                <li><a href="#">Closed Activity Report</a></li>
+                                <li><a href="#">Exception Report</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">DPS and Collections</a><ul>
+                                <li><a href="#">Find DPS Check</a></li>
+                                <li><a href="#">DPS Payable</a></li>
+                                <li><a href="#">DPS Payable Summary</a></li>
+                                <li><a href="#">Add In-House Check</a></li>
+                                <li><a href="#">DPS Paid by Our Check</a></li>
+                                <li><a href="#">Add Check</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">Financial Reports</a></li>
+                            <li><a href="#">Portfolio Reports</a><ul>
+                                <li><a href="#">Portfolio Cash Flow</a></li>
+                                <li><a href="#">Portfolio Cash Flow Position</a></li>
+                                <li><a href="#">Portfolio Summary</a></li>
+                                <li><a href="#">Collections Reconciliation</a></li>
+                                <li><a href="#">Portfolio Transactions</a></li>
+                                <li><a href="#">Purchases</a></li>
+                                <li><a href="#">Sales</a></li>
+                            </ul>
+                            </li>
+                            <li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Investor Mgt</a></li>
+                    <li>
+                        <a href="#">Analytics</a></li>
+                    <li>
+                        <a href="#">Asset Sales</a></li>
+                </ul>
+                </li>
+                <li>@Html.ActionLink("My CRM", "Index", "Company", new { area = "CRM" }, null)<ul>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Pipeline</a></li>
+                    <li><a href="#">Documents</a></li>
+                </ul>
+                </li>
+                <li>@Html.ActionLink("My Account", "Account")<ul>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Send Email</a></li>
+                    <li><a href="#">My Calendar</a></li>
+                    <li><a href="#">Manage Email Subscription</a></li>
+                    <li><a href="#">Create Group</a></li>
+                    <li><a href="#">Send Meeting Invite</a></li>
+                </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="messageBoardTitle">My Message Board</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <textarea id="messages" cols="17" rows="10"></textarea></td>
+    </tr>
+</table>

@@ -37,7 +37,15 @@ namespace Cascade.Web
                         "~/Content/themes/base/jquery.ui.theme.css"));
             bundles.Add(new StyleBundle("~/Content/themes/Menu/css").Include(
                        "~/Content/themes/Menu/*.css"));
-            bundles.Add(new ScriptBundle("~/bundles/external").Include("~/Scripts/jquery.dropdownPlain.js"));
+            bundles.Add(new ScriptBundle("~/bundles/external").Include("~/Scripts/jquery.dropdownPlain.js",
+                "~/Scripts/consolelog.js",
+                "~/Scripts/External.js",
+                "~/Scripts/plugins.js",
+                "~/FusionChartLib/FusionCharts.js",
+                "~/FusionChartLib/FusionCharts.HC.js",
+                "~/FusionChartLib/FusionCharts.jqueryplugin"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jQueryDataTables").Include("~/Scripts/jQueryDataTables/*.js"));
         }
     }
 }
