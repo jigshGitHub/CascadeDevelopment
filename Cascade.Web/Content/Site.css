@@ -82,7 +82,7 @@ ul.lhsLinks li.hover, ul.lhsLinks li:hover {
 }
 
 ul.lhsLinks ul {
-    width: 250px;
+    width: 200px;
     visibility: hidden;
     position: absolute;
     top: 0;

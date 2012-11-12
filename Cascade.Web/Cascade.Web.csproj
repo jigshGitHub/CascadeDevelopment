@@ -267,7 +267,9 @@
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
     <Content Include="Images\CascadeLogin.JPG" />
+    <Content Include="Images\CascadeLogin.png" />
     <Content Include="Images\CascadeLogo.JPG" />
+    <Content Include="Images\CascadeLogo.png" />
     <Content Include="Images\Close.png" />
     <Content Include="Images\excel.jpg" />
     <Content Include="Images\indicator_medium.gif" />
