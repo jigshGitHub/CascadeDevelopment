@@ -143,6 +143,8 @@
     <Compile Include="Areas\Collections\Controllers\HomeController.cs" />
     <Compile Include="Areas\CRM\Controllers\CompanyController.cs" />
     <Compile Include="Areas\CRM\CRMAreaRegistration.cs" />
+    <Compile Include="Areas\CRM\Models\JQueryDataTableParamModel.cs" />
+    <Compile Include="Areas\CRM\Models\Repository\DataRepository.cs" />
     <Compile Include="Areas\InvestorManagement\Controllers\HomeController.cs" />
     <Compile Include="Areas\InvestorManagement\InvestorManagementAreaRegistration.cs" />
     <Compile Include="Areas\Recourse\Controllers\HomeController.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UnderConstructionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,7 +161,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Copy of Site.css" />
+    <Content Include="Content\dataTables\demo_table.css" />
+    <Content Include="Content\demo_table.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -281,6 +285,9 @@
     <Content Include="Scripts\consolelog.min.js">
       <DependentUpon>consolelog.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\datatable\index.js" />
+    <Content Include="Scripts\datatable\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\datatable\jquery.dataTables.min.js" />
     <Content Include="Scripts\External.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js">
@@ -363,6 +370,7 @@
     <Content Include="Views\Shared\Copy of _Layout.cshtml" />
     <Content Include="Views\Account\Copy of Login.cshtml" />
     <Content Include="Views\Shared\_LHSMenuPartial.cshtml" />
+    <Content Include="Views\UnderConstruction\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -374,7 +382,6 @@
     <Folder Include="Areas\AssetSales\Views\Shared\" />
     <Folder Include="Areas\Collections\Models\" />
     <Folder Include="Areas\Collections\Views\Shared\" />
-    <Folder Include="Areas\CRM\Models\" />
     <Folder Include="Areas\CRM\Views\Shared\" />
     <Folder Include="Areas\InvestorManagement\Models\" />
     <Folder Include="Areas\InvestorManagement\Views\Shared\" />

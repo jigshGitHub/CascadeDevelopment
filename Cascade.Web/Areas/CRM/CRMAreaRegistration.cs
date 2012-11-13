@@ -18,7 +18,7 @@ namespace Cascade.Web.Areas.CRM
                 "CRM_default",
                 "CRM/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                new string[] { "Cascade.Web.Areas.CRM.Controllers" }
+                new string[] { "Cascade.Web.Areas.CRM.Controllers" } 
             );
         }
     }

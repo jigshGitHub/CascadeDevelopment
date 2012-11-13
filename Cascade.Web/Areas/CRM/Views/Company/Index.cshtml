@@ -1,38 +1,19 @@
-﻿
+﻿@Styles.Render("~/Content/datatable")
 
-@model IList<Cascade.Data.Models.TBL_COMPANIES>
+@Scripts.Render("~/bundles/datatable")
 
-<h2>View Company</h2>
-
-<div id="full_company_list_container">
-    <table class="full_company_list data_table">
-        <thead>
-            <tr> 
-                <th>Compnay Name</th> 
-                <th>POC LastName</th> 
-                <th>POC FirstName</th> 
-                <th>City</th> 
-                <th>Country</th> 
-            </tr> 
-        </thead> 
-        <tbody> 
-            @foreach (var prospect in Model)
-            {
-                <tr>
-                    <td>@prospect.COMPANYNAME</td>
-                    <td>@prospect.POCLastName</td>
-                    <td>@prospect.POCFirstName</td>
-                    <td>@prospect.CITY</td>
-                    <td>@prospect.Country</td>
-                </tr> 
-            }
-        </tbody>
-    </table><!-- closes full company list -->
-    <div class="clear"></div>
-</div><!-- closes full company list container -->
-
-<div id="prospect-card-container"></div>
- <div id="prospect-edit-container"></div>
- <div id="email_modal" class="ui-dialog modal"></div>
-
-@Scripts.Render("~/bundles/jQueryDataTables")
+<h2>View Companies</h2>
+                <table id="myCompanyTable" class="display">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Company Name</th>
+                            <th>POC Last Name</th>
+                            <th>POC First Name</th>
+                            <th>City</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                    </tbody>
+                </table>
