@@ -1,10 +1,189 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CascadeDBModelStoreContainer">
+    <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Store.Port_Acq" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Store.Port_DPS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Store.Port_Media" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Recall" EntityType="CascadeDBModel.Store.Port_Recall" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Trans" EntityType="CascadeDBModel.Store.Port_Trans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_Company" EntityType="CascadeDBModel.Store.Sup_Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_PmtType" EntityType="CascadeDBModel.Store.Sup_PmtType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_Status" EntityType="CascadeDBModel.Store.Sup_Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_TransCode" EntityType="CascadeDBModel.Store.Sup_TransCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_TransSource" EntityType="CascadeDBModel.Store.Sup_TransSource" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_State" EntityType="CascadeDBModel.Store.TBL_State" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
+  <EntityType Name="Port_Acq">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender/FileDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="255" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="Face" Type="money" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm (days)" Type="int" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Port_DPS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="Net Payment" Type="money" />
+    <Property Name="TransCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PmtType" Type="int" />
+    <Property Name="TransSource" Type="int" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateRec" Type="datetime" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="OurCheckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Port_Media">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CompanyRequesting" Type="nvarchar" MaxLength="255" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="OriginalLender/Product" Type="nvarchar" MaxLength="255" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="255" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Application" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Issuer)" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Seller)" Type="bit" Nullable="false" />
+    <Property Name="StmtsFrom" Type="datetime" />
+    <Property Name="StmtsTo" Type="datetime" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="C/ODate" Type="datetime" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="GMC Manager Approval  Y or N" Type="bit" Nullable="false" />
+    <Property Name="CompanySubmittedTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="SellerFee" Type="money" />
+    <Property Name="DateSellerPaid" Type="datetime" />
+    <Property Name="OurFee" Type="money" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="DateForwarded" Type="datetime" />
+    <Property Name="TypeReceived" Type="nvarchar" MaxLength="255" />
+    <Property Name="OurInvtoBuyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="OtherNotes:" Type="nvarchar(max)" />
+    <Property Name="Unavailable" Type="bit" Nullable="false" />
+    <Property Name="Closed" Type="bit" Nullable="false" />
+    <Property Name="UnavailableDate" Type="datetime" />
+    <Property Name="SellerInv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="DatePayRec" Type="datetime" />
+    <Property Name="BuyerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="OurCheck#" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Port_Recall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecallReason" Type="nvarchar" MaxLength="250" />
+    <Property Name="DateNoteSent" Type="datetime" />
+    <Property Name="DateAcctClosed" Type="datetime" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+    <Property Name="Check#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="FaceValueofAcct" Type="money" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="RequestedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Putback" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Port_Trans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="FaceValue" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm(days)" Type="float" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Inv_AgencyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Check#" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransType" Type="nvarchar" MaxLength="50" />
+    <Property Name="$Interest" Type="money" />
+    <Property Name="InterestRate" Type="float" />
+    <Property Name="ProfitShare_before" Type="float" />
+    <Property Name="ProfitShare_after" Type="float" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sup_Company">
+    <Key>
+      <PropertyRef Name="Agency" />
+    </Key>
+    <Property Name="Agency" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Type" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Sup_PmtType">
+    <Key>
+      <PropertyRef Name="Payment Type ID code" />
+    </Key>
+    <Property Name="Payment Type ID code" Type="int" Nullable="false" />
+    <Property Name="Payment Type ID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_Status">
+    <Key>
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="WorkGroup" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_TransCode">
+    <Key>
+      <PropertyRef Name="TransCode" />
+    </Key>
+    <Property Name="TransCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_TransSource">
+    <Key>
+      <PropertyRef Name="TransSource" />
+    </Key>
+    <Property Name="TransSource" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="TBL_CHART">
     <Key>
       <PropertyRef Name="Id" />
@@ -108,5 +287,13 @@
     <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
     <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
     <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
 </Schema>

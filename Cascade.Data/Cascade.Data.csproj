@@ -64,13 +64,48 @@
       <DependentUpon>CascadeEDM.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PortfolioPieRptVM.cs" />
+    <Compile Include="Models\Port_Acq.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Port_DPS.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Port_Media.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Port_Recall.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Port_Trans.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sup_Company.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sup_PmtType.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sup_Status.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sup_TransCode.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sup_TransSource.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TBL_CHART.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_COMPANIES.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TBL_Portfolio.cs" />
+    <Compile Include="Models\TBL_Portfolio.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_State.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\DataFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DataQueries.cs" />

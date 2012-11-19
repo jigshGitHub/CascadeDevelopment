@@ -169,7 +169,7 @@ ul.lhsLinks li a {
 Full Company List
 ------------------------------------------------------------------------ */
 
-.full_company_list {
+/*.full_company_list {
     width:903px;
 }
 .full_company_list th {
@@ -244,4 +244,45 @@ td.pagination {
 {
     width: 200px;
     vertical-align: top;
+}*/
+.ddlwidth
+{
+    width: 153px;
+}
+.originaltable
+{
+    background-color: lightblue;
+    width: 70%;
+    border: solid 1px #000;
+}
+.originaltable td
+{
+    color:black;
+    width: 50%;
+}
+.PIMSDatatable
+{
+    background-color: lightgreen;
+    width: 70%;
+    border: solid 1px #000;
+}
+.PIMSDatatable td
+{
+    color:black;
+    width: 50%;
+}
+.FollowupDatatable
+{
+    background-color: lightgrey;
+    width: 70%;
+    border: solid 1px #000;
+}
+.FollowupDatatable td
+{
+    color:black;
+    width: 50%;
+}
+.dummyitem
+{
+    height: 5px;
 }

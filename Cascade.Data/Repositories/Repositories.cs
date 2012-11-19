@@ -114,4 +114,123 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+    
+    //Used for States - Testing Purpose
+    public class StateRepository : RepositoryBase<TBL_State>
+    {
+        public StateRepository(IDatabaseFactory dbFactory)  : base(dbFactory)
+        {
+        }
+        public StateRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+    #region Sup Tables
+    //Used for SupTransCode
+    public class SupTransCodeRepository : RepositoryBase<Sup_TransCode>
+    {
+        public SupTransCodeRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupTransCodeRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for SupCompany
+    public class SupCompanyRepository : RepositoryBase<Sup_Company>
+    {
+        public SupCompanyRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupCompanyRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for SupPmtType
+    public class SupPmtTypeRepository : RepositoryBase<Sup_PmtType>
+    {
+        public SupPmtTypeRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupPmtTypeRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for SupStatus
+    public class SupStatusRepository : RepositoryBase<Sup_Status>
+    {
+        public SupStatusRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupStatusRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for SupTransSource
+    public class SupTransSourceRepository : RepositoryBase<Sup_TransSource>
+    {
+        public SupTransSourceRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupTransSourceRepository() : base(new DBFactory())
+        {
+        }
+    }
+    #endregion
+
+    #region Port Tables
+    //Used for Port Acq
+    public class PortAcqRepository : RepositoryBase<Port_Acq>
+    {
+        public PortAcqRepository(IDatabaseFactory dbFactory)  : base(dbFactory)
+        {
+        }
+        public PortAcqRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Port DPS
+    public class PortDPSRepository : RepositoryBase<Port_DPS>
+    {
+        public PortDPSRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortDPSRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Port Media
+    public class PortMediaRepository : RepositoryBase<Port_Media>
+    {
+        public PortMediaRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortMediaRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Port Recall
+    public class PortRecallRepository : RepositoryBase<Port_Recall>
+    {
+        public PortRecallRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortRecallRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Port Trans
+    public class PortTransRepository : RepositoryBase<Port_Trans>
+    {
+        public PortTransRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortTransRepository() : base(new DBFactory())
+        {
+        }
+    }
+    #endregion
+
+
 }

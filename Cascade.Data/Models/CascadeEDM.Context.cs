@@ -25,8 +25,19 @@ namespace Cascade.Data.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Port_Acq> Port_Acq { get; set; }
+        public DbSet<Port_DPS> Port_DPS { get; set; }
+        public DbSet<Port_Media> Port_Media { get; set; }
+        public DbSet<Port_Recall> Port_Recall { get; set; }
+        public DbSet<Port_Trans> Port_Trans { get; set; }
+        public DbSet<Sup_Company> Sup_Company { get; set; }
+        public DbSet<Sup_PmtType> Sup_PmtType { get; set; }
+        public DbSet<Sup_Status> Sup_Status { get; set; }
+        public DbSet<Sup_TransCode> Sup_TransCode { get; set; }
+        public DbSet<Sup_TransSource> Sup_TransSource { get; set; }
         public DbSet<TBL_CHART> TBL_CHART { get; set; }
         public DbSet<TBL_COMPANIES> TBL_COMPANIES { get; set; }
         public DbSet<TBL_Portfolio> TBL_Portfolio { get; set; }
+        public DbSet<TBL_State> TBL_State { get; set; }
     }
 }

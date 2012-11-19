@@ -4,10 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fed18bb6305f43ee9e222a9d4c57458c" Name="Diagram1">
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_CHART" Width="1.5" PointX="0.35392003336638217" PointY="25.791810733169228" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_COMPANIES" Width="1.5" PointX="5.76572678134112" PointY="8.86777724738595" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_Portfolio" Width="1.5" PointX="3.6692183817127808" PointY="20.629593069026988" />
+      <Diagram DiagramId="0a898b3c5d3642828c093b23327af6a2" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Acq" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_DPS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Media" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Recall" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Trans" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_Company" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_PmtType" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_Status" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransCode" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransSource" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_CHART" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_COMPANIES" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_Portfolio" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_State" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

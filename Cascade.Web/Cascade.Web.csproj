@@ -140,6 +140,7 @@
     <Compile Include="Areas\AssetSales\AssetSalesAreaRegistration.cs" />
     <Compile Include="Areas\AssetSales\Controllers\HomeController.cs" />
     <Compile Include="Areas\Collections\CollectionsAreaRegistration.cs" />
+    <Compile Include="Areas\Collections\Controllers\DPSController.cs" />
     <Compile Include="Areas\Collections\Controllers\HomeController.cs" />
     <Compile Include="Areas\Collections\Models\JQueryDataTableParamModelColl.cs" />
     <Compile Include="Areas\Collections\Models\Repository\DataRepositoryColl.cs" />
@@ -161,7 +162,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infracture\DateRangeAttribute.cs" />
+    <Compile Include="Infracture\ModelClientValidationRangeDateRule.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Presentation\ViewModels\DPS\AddDPSViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
