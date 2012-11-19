@@ -55,5 +55,7 @@ namespace Cascade.Data.Models
         public string Notes { get; set; }
         public Nullable<bool> IsSameBillingAddress { get; set; }
         public string Country { get; set; }
+        public Nullable<int> IndustryId { get; set; }
+        public Nullable<int> FranchiseeId { get; set; }
     }
 }

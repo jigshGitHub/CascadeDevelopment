@@ -5,3 +5,10 @@ C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Data\bin\Debu
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Data\bin\Debug\EntityFramework.xml
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Data\obj\Debug\Cascade.Data.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Data\obj\Debug\Cascade.Data.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\obj\Debug\Cascade.Data.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\obj\Debug\Cascade.Data.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\bin\Debug\Cascade.Data.dll.config
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\bin\Debug\Cascade.Data.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\bin\Debug\Cascade.Data.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\bin\Debug\EntityFramework.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Data\bin\Debug\EntityFramework.xml

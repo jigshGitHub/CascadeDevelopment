@@ -76,9 +76,12 @@ ul.lhsLinks li a {
     border-color: #FFFFFF #808080 #808080 #FFFFFF;
 }
 ul.lhsLinks li.hover, ul.lhsLinks li:hover {
-    background-color: #FFFFFF;
-    color: #FFFFFF;
+    background-color: #ff800d;
     position: relative;
+}
+ul.lhsLinks li.hover a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 ul.lhsLinks ul {
@@ -109,12 +112,18 @@ ul.lhsLinks ul li a {
 }
 
 ul.lhsLinks ul li.hover, ul.lhsLinks ul li:hover {
-    background-color: #1f497d;
-    color: #1f497d;
+    background-color: #ff800d;
+    color: #fff;
     position: relative;
+}
+
+ul.lhsLinks ul li.hover a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 .activeLink {
     background-color: #ff800d;
+    color: #fff;
 }
     /*
 ul.lhsLinks li a {

@@ -18,18 +18,22 @@ namespace Cascade.Web.ApplicationIntegration
 
             if (IsActiveLink(helper, controller, action, area))
                 anchor.MergeAttribute("class", "activeLink");
-            else if (linktext == "Recourse")
-                anchor.MergeAttribute("class", "activeLink");
+            //else if (linktext == "Recourse")
+            //    anchor.MergeAttribute("class", "activeLink");
 
             return MvcHtmlString.Create(anchor.ToString(TagRenderMode.Normal));
         }
 
         private static bool IsActiveLink(HtmlHelper helper, string controller, string action, string area)
         {
-            if (!IsTokenMatches(helper, area, "area"))
-                return false;
-            if (!IsValueMatches(helper, controller, "controller"))
-                return false;
+            //if (!IsTokenMatches(helper, area, "area"))
+            //    return false;
+            //if (!IsValueMatches(helper, controller, "controller"))
+            //    return false;
+            if (IsTokenMatches(helper, area, "area"))
+                return true;
+            if (IsValueMatches(helper, controller, "controller"))
+                return true;
 
             return IsValueMatches(helper, action, "action");
         }
@@ -42,7 +46,7 @@ namespace Cascade.Web.ApplicationIntegration
                 return true;
             if (dataToken == "controller" && item == "Home" && string.IsNullOrEmpty(routeData))
                 return true;
-            if (routeData == null) return string.IsNullOrEmpty(item);
+            if (routeData == null) return false;
             return routeData == item;
         }
 
@@ -50,7 +54,7 @@ namespace Cascade.Web.ApplicationIntegration
         {
             var routeData = (string)helper.ViewContext.RouteData.DataTokens[dataToken];
 
-            if (routeData == null) return string.IsNullOrEmpty(item);
+            if (routeData == null) return false;
             return routeData == item;
         }
     }

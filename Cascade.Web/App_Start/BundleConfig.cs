@@ -23,7 +23,7 @@ namespace Cascade.Web
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
             
             //For DataTable functionality
-            bundles.Add(new StyleBundle("~/Content/datatable").Include("~/Content/dataTables/demo_table.css"));
+            //bundles.Add(new StyleBundle("~/Content/datatable").Include("~/Content/dataTables/demo_table.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -43,16 +43,20 @@ namespace Cascade.Web
             bundles.Add(new ScriptBundle("~/bundles/external").Include("~/Scripts/jquery.dropdownPlain.js",
                 "~/Scripts/consolelog.js",
                 "~/Scripts/External.js",
-                "~/Scripts/plugins.js",
+                "~/Scripts/plugins.js", 
+                "~/Scripts/datatable/jquery-1.4.4.min.js",
+                "~/Scripts/datatable/jquery.dataTables.min.js",
+                "~/Scripts/datatable/index.js",
                 "~/FusionChartLib/FusionCharts.js",
                 "~/FusionChartLib/FusionCharts.HC.js",
                 "~/FusionChartLib/FusionCharts.jqueryplugin"));
             
             //For DataTable functionality
-            bundles.Add(new ScriptBundle("~/bundles/datatable").Include("~/Scripts/datatable/index.js",
-                "~/Scripts/datatable/jquery-1.4.4.min.js",
-                "~/Scripts/datatable/jquery.dataTables.min.js"
-                ));
+            //bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
+            //    //"~/Scripts/datatable/jquery-1.4.4.min.js",
+            //    "~/Scripts/datatable/jquery.dataTables.min.js",
+            //    "~/Scripts/datatable/index.js"
+            //    ));
         }
     }
 }

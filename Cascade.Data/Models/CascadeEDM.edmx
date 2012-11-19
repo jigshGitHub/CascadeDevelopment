@@ -4,10 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="CascadeDBModelStoreContainer">
           <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="TBL_CHART">
           <Key>
@@ -84,91 +85,149 @@
           <Property Name="IsSameBillingAddress" Type="bit" />
           <Property Name="Country" Type="varchar" MaxLength="80" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="TBL_Portfolio">
+          <Key>
+            <PropertyRef Name="ACCOUNT" />
+          </Key>
+          <Property Name="ACCOUNT" Type="float" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="LAST_PAY_DATE" Type="datetime" />
+          <Property Name="LAST_PAY_AMT" Type="float" />
+          <Property Name="DaysSinceLastPay" Type="float" />
+          <Property Name="Balance" Type="float" />
+          <Property Name="PortfolioID" Type="float" />
+          <Property Name="Portfolio" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccruedInterest" Type="float" />
+          <Property Name="TotalInterest" Type="float" />
+          <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="255" />
+          <Property Name="ZIP_CODE" Type="float" />
+          <Property Name="Statute" Type="float" />
+          <Property Name="DaysRemainingInStat" Type="float" />
+          <Property Name="StatuteDate" Type="datetime" />
+          <Property Name="SoldDate" Type="datetime" />
+          <Property Name="Closed" Type="float" />
+          <Property Name="WorkStatusDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
+          <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
+          <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CascadeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="CascadeDBEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.TBL_CHART" />
           <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.TBL_COMPANIES" />
+          <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.TBL_Portfolio" />
         </EntityContainer>
         <EntityType Name="TBL_CHART">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeOfChart" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Caption" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="SWFile" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="ChartID" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="NumberSuffix" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="SNumberSuffix" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="XaxisName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="YaxisName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="CanvasBgColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
-          <Property Name="BgColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
-          <Property Name="CanvasBgAlpha" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="BgAlpha" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="PieRadius" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="EnableRotation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="ShowLegend" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="ShowLabels" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="PlotGradientColor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
-          <Property Name="DrillLevelChartIDs" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
-          <Property Name="LastCreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdatedBy" Type="Guid" />
-          <Property Name="LastCreatedBy" Type="Guid" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TypeOfChart" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Caption" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SWFile" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChartID" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NumberSuffix" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SNumberSuffix" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="XaxisName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="YaxisName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CanvasBgColor" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="BgColor" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CanvasBgAlpha" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BgAlpha" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PieRadius" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EnableRotation" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ShowLegend" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ShowLabels" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PlotGradientColor" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DrillLevelChartIDs" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="LastUpdatedDate" Precision="3" />
+          <Property Type="DateTime" Name="LastCreatedDate" Precision="3" />
+          <Property Type="Guid" Name="LastUpdatedBy" />
+          <Property Type="Guid" Name="LastCreatedBy" />
         </EntityType>
         <EntityType Name="TBL_COMPANIES">
           <Key>
             <PropertyRef Name="COMPANIESID" />
           </Key>
-          <Property Name="COMPANIESID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="COMPANYNAME" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="CITY" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="STATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="POCLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="POCFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="POCPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IsNewCompany" Type="Boolean" />
-          <Property Name="COMPANYVALUEGOAL" Type="Int32" />
-          <Property Name="RepLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="RepFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="DiscussionTopic" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="ACTIONSTEP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="LASTCONTACT_DATE" Type="DateTime" Precision="3" />
-          <Property Name="NEXTCONTACT_DATE" Type="DateTime" Precision="3" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
-          <Property Name="UpdatedBy" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="Zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="CompanyOwnership" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="CompanyDescription" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="BillingAddress" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="BillingState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="BillingCity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="BillingZip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="BillingCountry" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="POCDepartment" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="POCEmail" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="POCFax" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="AssistantLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AssistantFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AssistantPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Website" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="EmpQuantity" Type="Int32" />
-          <Property Name="Notes" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
-          <Property Name="IsSameBillingAddress" Type="Boolean" />
-          <Property Name="Country" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="COMPANIESID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="COMPANYNAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CITY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATE" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCLastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCFirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsNewCompany" />
+          <Property Type="Int32" Name="COMPANYVALUEGOAL" />
+          <Property Type="String" Name="RepLastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RepFirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DiscussionTopic" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ACTIONSTEP" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LASTCONTACT_DATE" Precision="3" />
+          <Property Type="DateTime" Name="NEXTCONTACT_DATE" Precision="3" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="String" Name="CreatedBy" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+          <Property Type="String" Name="UpdatedBy" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zip" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyOwnership" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyDescription" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillingAddress" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillingState" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillingCity" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillingZip" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillingCountry" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCDepartment" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCEmail" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POCFax" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AssistantLastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AssistantFirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AssistantPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Website" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EmpQuantity" />
+          <Property Type="String" Name="Notes" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsSameBillingAddress" />
+          <Property Type="String" Name="Country" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        <EntityType Name="TBL_Portfolio">
+          <Key>
+            <PropertyRef Name="ACCOUNT" />
+          </Key>
+          <Property Type="Double" Name="ACCOUNT" Nullable="false" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LAST_PAY_DATE" Precision="3" />
+          <Property Type="Double" Name="LAST_PAY_AMT" />
+          <Property Type="Double" Name="DaysSinceLastPay" />
+          <Property Type="Double" Name="Balance" />
+          <Property Type="Double" Name="PortfolioID" />
+          <Property Type="String" Name="Portfolio" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="AccruedInterest" />
+          <Property Type="Double" Name="TotalInterest" />
+          <Property Type="String" Name="ADDRESS1" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ADDRESS2" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CITY" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="STATE" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="ZIP_CODE" />
+          <Property Type="Double" Name="Statute" />
+          <Property Type="Double" Name="DaysRemainingInStat" />
+          <Property Type="DateTime" Name="StatuteDate" Precision="3" />
+          <Property Type="DateTime" Name="SoldDate" Precision="3" />
+          <Property Type="Double" Name="Closed" />
+          <Property Type="String" Name="WorkStatusDescription" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkGroup" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PortfolioOwner" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PortfolioName" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -177,77 +236,107 @@
           <EntitySetMapping Name="TBL_CHART">
             <EntityTypeMapping TypeName="CascadeDBModel.TBL_CHART">
               <MappingFragment StoreEntitySet="TBL_CHART">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TypeOfChart" ColumnName="TypeOfChart" />
-                <ScalarProperty Name="Caption" ColumnName="Caption" />
-                <ScalarProperty Name="SWFile" ColumnName="SWFile" />
-                <ScalarProperty Name="ChartID" ColumnName="ChartID" />
-                <ScalarProperty Name="NumberSuffix" ColumnName="NumberSuffix" />
-                <ScalarProperty Name="SNumberSuffix" ColumnName="SNumberSuffix" />
-                <ScalarProperty Name="XaxisName" ColumnName="XaxisName" />
-                <ScalarProperty Name="YaxisName" ColumnName="YaxisName" />
-                <ScalarProperty Name="CanvasBgColor" ColumnName="CanvasBgColor" />
-                <ScalarProperty Name="BgColor" ColumnName="BgColor" />
-                <ScalarProperty Name="CanvasBgAlpha" ColumnName="CanvasBgAlpha" />
-                <ScalarProperty Name="BgAlpha" ColumnName="BgAlpha" />
-                <ScalarProperty Name="PieRadius" ColumnName="PieRadius" />
-                <ScalarProperty Name="EnableRotation" ColumnName="EnableRotation" />
-                <ScalarProperty Name="ShowLegend" ColumnName="ShowLegend" />
-                <ScalarProperty Name="ShowLabels" ColumnName="ShowLabels" />
-                <ScalarProperty Name="PlotGradientColor" ColumnName="PlotGradientColor" />
-                <ScalarProperty Name="DrillLevelChartIDs" ColumnName="DrillLevelChartIDs" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
                 <ScalarProperty Name="LastCreatedBy" ColumnName="LastCreatedBy" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DrillLevelChartIDs" ColumnName="DrillLevelChartIDs" />
+                <ScalarProperty Name="PlotGradientColor" ColumnName="PlotGradientColor" />
+                <ScalarProperty Name="ShowLabels" ColumnName="ShowLabels" />
+                <ScalarProperty Name="ShowLegend" ColumnName="ShowLegend" />
+                <ScalarProperty Name="EnableRotation" ColumnName="EnableRotation" />
+                <ScalarProperty Name="PieRadius" ColumnName="PieRadius" />
+                <ScalarProperty Name="BgAlpha" ColumnName="BgAlpha" />
+                <ScalarProperty Name="CanvasBgAlpha" ColumnName="CanvasBgAlpha" />
+                <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+                <ScalarProperty Name="CanvasBgColor" ColumnName="CanvasBgColor" />
+                <ScalarProperty Name="YaxisName" ColumnName="YaxisName" />
+                <ScalarProperty Name="XaxisName" ColumnName="XaxisName" />
+                <ScalarProperty Name="SNumberSuffix" ColumnName="SNumberSuffix" />
+                <ScalarProperty Name="NumberSuffix" ColumnName="NumberSuffix" />
+                <ScalarProperty Name="ChartID" ColumnName="ChartID" />
+                <ScalarProperty Name="SWFile" ColumnName="SWFile" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="TypeOfChart" ColumnName="TypeOfChart" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_COMPANIES">
             <EntityTypeMapping TypeName="CascadeDBModel.TBL_COMPANIES">
               <MappingFragment StoreEntitySet="TBL_COMPANIES">
-                <ScalarProperty Name="COMPANIESID" ColumnName="COMPANIESID" />
-                <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
-                <ScalarProperty Name="CITY" ColumnName="CITY" />
-                <ScalarProperty Name="STATE" ColumnName="STATE" />
-                <ScalarProperty Name="POCLastName" ColumnName="POCLastName" />
-                <ScalarProperty Name="POCFirstName" ColumnName="POCFirstName" />
-                <ScalarProperty Name="POCPhone" ColumnName="POCPhone" />
-                <ScalarProperty Name="IsNewCompany" ColumnName="IsNewCompany" />
-                <ScalarProperty Name="COMPANYVALUEGOAL" ColumnName="COMPANYVALUEGOAL" />
-                <ScalarProperty Name="RepLastName" ColumnName="RepLastName" />
-                <ScalarProperty Name="RepFirstName" ColumnName="RepFirstName" />
-                <ScalarProperty Name="DiscussionTopic" ColumnName="DiscussionTopic" />
-                <ScalarProperty Name="ACTIONSTEP" ColumnName="ACTIONSTEP" />
-                <ScalarProperty Name="LASTCONTACT_DATE" ColumnName="LASTCONTACT_DATE" />
-                <ScalarProperty Name="NEXTCONTACT_DATE" ColumnName="NEXTCONTACT_DATE" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Zip" ColumnName="Zip" />
-                <ScalarProperty Name="CompanyOwnership" ColumnName="CompanyOwnership" />
-                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
-                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
-                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
-                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
-                <ScalarProperty Name="BillingZip" ColumnName="BillingZip" />
-                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
-                <ScalarProperty Name="POCDepartment" ColumnName="POCDepartment" />
-                <ScalarProperty Name="POCEmail" ColumnName="POCEmail" />
-                <ScalarProperty Name="POCFax" ColumnName="POCFax" />
-                <ScalarProperty Name="AssistantLastName" ColumnName="AssistantLastName" />
-                <ScalarProperty Name="AssistantFirstName" ColumnName="AssistantFirstName" />
-                <ScalarProperty Name="AssistantPhone" ColumnName="AssistantPhone" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="EmpQuantity" ColumnName="EmpQuantity" />
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="IsSameBillingAddress" ColumnName="IsSameBillingAddress" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="IsSameBillingAddress" ColumnName="IsSameBillingAddress" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EmpQuantity" ColumnName="EmpQuantity" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="AssistantPhone" ColumnName="AssistantPhone" />
+                <ScalarProperty Name="AssistantFirstName" ColumnName="AssistantFirstName" />
+                <ScalarProperty Name="AssistantLastName" ColumnName="AssistantLastName" />
+                <ScalarProperty Name="POCFax" ColumnName="POCFax" />
+                <ScalarProperty Name="POCEmail" ColumnName="POCEmail" />
+                <ScalarProperty Name="POCDepartment" ColumnName="POCDepartment" />
+                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
+                <ScalarProperty Name="BillingZip" ColumnName="BillingZip" />
+                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="CompanyOwnership" ColumnName="CompanyOwnership" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NEXTCONTACT_DATE" ColumnName="NEXTCONTACT_DATE" />
+                <ScalarProperty Name="LASTCONTACT_DATE" ColumnName="LASTCONTACT_DATE" />
+                <ScalarProperty Name="ACTIONSTEP" ColumnName="ACTIONSTEP" />
+                <ScalarProperty Name="DiscussionTopic" ColumnName="DiscussionTopic" />
+                <ScalarProperty Name="RepFirstName" ColumnName="RepFirstName" />
+                <ScalarProperty Name="RepLastName" ColumnName="RepLastName" />
+                <ScalarProperty Name="COMPANYVALUEGOAL" ColumnName="COMPANYVALUEGOAL" />
+                <ScalarProperty Name="IsNewCompany" ColumnName="IsNewCompany" />
+                <ScalarProperty Name="POCPhone" ColumnName="POCPhone" />
+                <ScalarProperty Name="POCFirstName" ColumnName="POCFirstName" />
+                <ScalarProperty Name="POCLastName" ColumnName="POCLastName" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+                <ScalarProperty Name="COMPANIESID" ColumnName="COMPANIESID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Portfolio">
+            <EntityTypeMapping TypeName="CascadeDBModel.TBL_Portfolio">
+              <MappingFragment StoreEntitySet="TBL_Portfolio">
+                <ScalarProperty Name="PortfolioName" ColumnName="PortfolioName" />
+                <ScalarProperty Name="PortfolioOwner" ColumnName="PortfolioOwner" />
+                <ScalarProperty Name="WorkGroup" ColumnName="WorkGroup" />
+                <ScalarProperty Name="WorkStatusDescription" ColumnName="WorkStatusDescription" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+                <ScalarProperty Name="StatuteDate" ColumnName="StatuteDate" />
+                <ScalarProperty Name="DaysRemainingInStat" ColumnName="DaysRemainingInStat" />
+                <ScalarProperty Name="Statute" ColumnName="Statute" />
+                <ScalarProperty Name="ZIP_CODE" ColumnName="ZIP_CODE" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="TotalInterest" ColumnName="TotalInterest" />
+                <ScalarProperty Name="AccruedInterest" ColumnName="AccruedInterest" />
+                <ScalarProperty Name="Portfolio" ColumnName="Portfolio" />
+                <ScalarProperty Name="PortfolioID" ColumnName="PortfolioID" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="DaysSinceLastPay" ColumnName="DaysSinceLastPay" />
+                <ScalarProperty Name="LAST_PAY_AMT" ColumnName="LAST_PAY_AMT" />
+                <ScalarProperty Name="LAST_PAY_DATE" ColumnName="LAST_PAY_DATE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

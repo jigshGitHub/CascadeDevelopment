@@ -15,7 +15,8 @@ namespace Cascade.Web.Areas.Recourse.Controllers
 
         public ActionResult Index()
         {
-            return PartialView("Index");
+            //return PartialView("Index");
+            return View();
         }
 
         ////

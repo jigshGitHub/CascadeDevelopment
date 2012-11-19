@@ -47,7 +47,7 @@
                                 </section>
                             </td>
                             <td style="width: 80%">
-                                <section style=" margin-top:5px;; padding-right:30px">
+                                <section style=" margin-top:5px;padding-right:30px;">
                                     <div id="workspaceViewContainer">
                                         @RenderBody()
                                     </div>
@@ -76,26 +76,27 @@
     <script type="text/javascript">
 
         var windlowLocation = window.location.href.split('/');
-        var baseUrl = windlowLocation[0] + '//' + windlowLocation[2] + '//' + windlowLocation[3];
-        
-        $(document).ready(function () {
-            $('#menu li a').click(function (event) {
-                $('#menu  li a').each(function () {
-                    $(this).removeClass('activeLink');
-                });
-                event.preventDefault();
-                $('#workspaceViewContainer').load($(this).attr('href'));
-                $(this).addClass('activeLink');
-            });
+        var baseUrl = windlowLocation[0] + '//' + windlowLocation[2]// + windlowLocation[3];
 
-            $('.lhsLinks a').click(function (event) {
-                //$('#menu  li a').each(function () {
-                //    $(this).removeClass('activeLink');
-                //});
-                event.preventDefault();
-                $('#workspaceViewContainer').load($(this).attr('href'));
-                //$(this).addClass('activeLink');
-            });
+        log(baseUrl);
+        $(document).ready(function () {
+            //$('#menu li a').click(function (event) {
+            //    $('#menu  li a').each(function () {
+            //        $(this).removeClass('activeLink');
+            //    });
+            //    event.preventDefault();
+            //    $('#workspaceViewContainer').load($(this).attr('href'));
+            //    $(this).addClass('activeLink');
+            //});
+
+            //$('.lhsLinks a').click(function (event) {
+            //    //$('#menu  li a').each(function () {
+            //    //    $(this).removeClass('activeLink');
+            //    //});
+            //    event.preventDefault();
+            //    $('#workspaceViewContainer').load($(this).attr('href'));
+            //    //$(this).addClass('activeLink');
+            //});
 
 
             $('#privacyStatementLink').click(function (e) {
@@ -106,6 +107,14 @@
             $('#closePrivacySt').click(function () {
                 $('#privacyStatementBlock').hide();
             });
+
+            //log($('footer').position().top);
+            //log($('#messages').position().top);
+            //var msgBoxHt = $('footer').position().top - $('#messages').position().top - 12;
+            //$('#messages').height(msgBoxHt);
+
+            //log($('footer').position().top);
+            //log($('#messages').position().top);
         });
 
     </script>

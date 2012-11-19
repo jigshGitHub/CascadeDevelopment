@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace Cascade.Web.Controllers
 {
-    public class UnderConstructionController : Controller
+    public class UnderConstructionController : BaseController
     {
         //
         // GET: /UnderConstruction/
 
         public ActionResult Index()
         {
-            return PartialView("Index");
+            return View("Index");
         }
 
         //

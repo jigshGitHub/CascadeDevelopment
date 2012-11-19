@@ -141,6 +141,8 @@
     <Compile Include="Areas\AssetSales\Controllers\HomeController.cs" />
     <Compile Include="Areas\Collections\CollectionsAreaRegistration.cs" />
     <Compile Include="Areas\Collections\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Collections\Models\JQueryDataTableParamModelColl.cs" />
+    <Compile Include="Areas\Collections\Models\Repository\DataRepositoryColl.cs" />
     <Compile Include="Areas\CRM\Controllers\CompanyController.cs" />
     <Compile Include="Areas\CRM\CRMAreaRegistration.cs" />
     <Compile Include="Areas\CRM\Models\JQueryDataTableParamModel.cs" />
@@ -149,6 +151,8 @@
     <Compile Include="Areas\InvestorManagement\InvestorManagementAreaRegistration.cs" />
     <Compile Include="Areas\Recourse\Controllers\HomeController.cs" />
     <Compile Include="Areas\Recourse\RecourseAreaRegistration.cs" />
+    <Compile Include="Areas\Reports\Controllers\CollectionsController.cs" />
+    <Compile Include="Areas\Reports\ReportsAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
@@ -162,7 +166,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\dataTables\demo_table.css" />
-    <Content Include="Content\demo_table.css" />
+    <Content Include="Content\images\back_disabled.jpg" />
+    <Content Include="Content\images\back_enabled.jpg" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\forward_disabled.jpg" />
+    <Content Include="Content\images\forward_enabled.jpg" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -264,9 +277,21 @@
     <Content Include="Areas\AnalyticsSimulation\Views\Home\Index.cshtml" />
     <Content Include="Areas\Collections\Views\Home\Index.cshtml" />
     <Content Include="Areas\InvestorManagement\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Recourse\Views\Home\Index.cshtml" />
     <Content Include="Areas\CRM\Views\Web.config" />
-    <Content Include="Areas\CRM\Views\Company\Index.cshtml" />
+    <Content Include="Areas\CRM\Views\Shared\Index.cshtml" />
+    <Content Include="Areas\Recourse\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Recourse\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\InvestorManagement\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CRM\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Collections\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AssetSales\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AnalyticsSimulation\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Acquisitions\Views\_ViewStart.cshtml" />
+    <Content Include="Content\images\Sorting icons.psd" />
+    <Content Include="Areas\Reports\Views\Web.config" />
+    <Content Include="Areas\Reports\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Reports\Views\Collections\PortfolioWorkStatusBreakDown.cshtml" />
+    <Content Include="Areas\Reports\Views\Collections\PortfolioOwnerBreakDown.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
@@ -278,8 +303,6 @@
     <Content Include="Images\excel.jpg" />
     <Content Include="Images\indicator_medium.gif" />
     <Content Include="Images\Landing_Page.png" />
-    <Content Include="Images\Logo.png" />
-    <Content Include="Images\Main.png" />
     <Content Include="Images\MSIPiechart.png" />
     <Content Include="Scripts\consolelog.js" />
     <Content Include="Scripts\consolelog.min.js">
@@ -311,33 +334,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jQueryDataTables\add2home.js" />
-    <Content Include="Scripts\jQueryDataTables\Campaigns_add.js" />
-    <Content Include="Scripts\jQueryDataTables\campaign_edit.js" />
-    <Content Include="Scripts\jQueryDataTables\custom-form-elements.js" />
-    <Content Include="Scripts\jQueryDataTables\dd-roundies.js" />
-    <Content Include="Scripts\jQueryDataTables\global.js" />
-    <Content Include="Scripts\jQueryDataTables\img-scale.js" />
-    <Content Include="Scripts\jQueryDataTables\jqtouch.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery-1.4.4.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery-1.5.1.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery-ui-1.8.7.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery-ui-1.8.9.custom.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery-ui.touchPunch.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.dataTables.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.disable.text.select.pack.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.eventLogFix.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.form.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.infieldlabel.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.scrollTo-1.4.2-min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.validate.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jQueryDataTables\jquery.watermark.js" />
-    <Content Include="Scripts\jQueryDataTables\mustache.js" />
-    <Content Include="Scripts\jQueryDataTables\quickpager.jquery.js" />
-    <Content Include="Scripts\jQueryDataTables\SimpleProgress-Fx.js" />
-    <Content Include="Scripts\jQueryDataTables\slimbox.js" />
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
@@ -380,13 +376,14 @@
     <Folder Include="Areas\AnalyticsSimulation\Views\Shared\" />
     <Folder Include="Areas\AssetSales\Models\" />
     <Folder Include="Areas\AssetSales\Views\Shared\" />
-    <Folder Include="Areas\Collections\Models\" />
     <Folder Include="Areas\Collections\Views\Shared\" />
-    <Folder Include="Areas\CRM\Views\Shared\" />
+    <Folder Include="Areas\CRM\Views\Company\" />
     <Folder Include="Areas\InvestorManagement\Models\" />
     <Folder Include="Areas\InvestorManagement\Views\Shared\" />
     <Folder Include="Areas\Recourse\Models\" />
     <Folder Include="Areas\Recourse\Views\Shared\" />
+    <Folder Include="Areas\Reports\Models\" />
+    <Folder Include="Areas\Reports\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

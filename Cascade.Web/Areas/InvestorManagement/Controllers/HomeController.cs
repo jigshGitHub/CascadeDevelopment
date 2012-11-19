@@ -14,7 +14,7 @@ namespace Cascade.Web.Areas.InvestorManagement.Controllers
 
         public ActionResult Index()
         {
-            return PartialView("Index");
+            return View("Index");
         }
 
         ////

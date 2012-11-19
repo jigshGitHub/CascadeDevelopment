@@ -27,5 +27,6 @@ namespace Cascade.Data.Models
     
         public DbSet<TBL_CHART> TBL_CHART { get; set; }
         public DbSet<TBL_COMPANIES> TBL_COMPANIES { get; set; }
+        public DbSet<TBL_Portfolio> TBL_Portfolio { get; set; }
     }
 }

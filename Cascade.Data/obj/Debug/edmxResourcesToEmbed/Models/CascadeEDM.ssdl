@@ -3,6 +3,7 @@
   <EntityContainer Name="CascadeDBModelStoreContainer">
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="TBL_CHART">
     <Key>
@@ -78,5 +79,34 @@
     <Property Name="Notes" Type="varchar" MaxLength="300" />
     <Property Name="IsSameBillingAddress" Type="bit" />
     <Property Name="Country" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="TBL_Portfolio">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="ACCOUNT" Type="float" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="LAST_PAY_AMT" Type="float" />
+    <Property Name="DaysSinceLastPay" Type="float" />
+    <Property Name="Balance" Type="float" />
+    <Property Name="PortfolioID" Type="float" />
+    <Property Name="Portfolio" Type="nvarchar" MaxLength="255" />
+    <Property Name="AccruedInterest" Type="float" />
+    <Property Name="TotalInterest" Type="float" />
+    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="255" />
+    <Property Name="ZIP_CODE" Type="float" />
+    <Property Name="Statute" Type="float" />
+    <Property Name="DaysRemainingInStat" Type="float" />
+    <Property Name="StatuteDate" Type="datetime" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="Closed" Type="float" />
+    <Property Name="WorkStatusDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
+    <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
+    <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
   </EntityType>
 </Schema>

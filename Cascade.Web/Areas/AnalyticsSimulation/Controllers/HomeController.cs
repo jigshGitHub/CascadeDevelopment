@@ -14,7 +14,7 @@ namespace Cascade.Web.Areas.AnalyticsSimulation.Controllers
 
         public ActionResult Index()
         {
-            return PartialView("Index");
+            return View("Index");
         }
 
         ////

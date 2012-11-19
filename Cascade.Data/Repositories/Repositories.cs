@@ -101,4 +101,17 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+
+    //Used for Collections
+    public class PortfolioRepository : RepositoryBase<TBL_Portfolio>
+    {
+        public PortfolioRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public PortfolioRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
 }

@@ -1,4 +1,5 @@
-﻿<table style="border-style: none; border-width: thick; border-color: aqua">
+﻿@using Cascade.Web.ApplicationIntegration
+<table style="border-style:none; border-width: thick; border-color: aqua">
     <tr>
         <td>
             <input type="text" id="lhsMenuSerachText" class="searchBox" /></td>
@@ -12,71 +13,73 @@
     <tr>
         <td>
             <ul class="lhsLinks">
-                <li>@Html.ActionLink("Reports", "Index","UnderConstruction",null,null)<ul>
-                    <li>@Html.ActionLink("Recourse", "Index","UnderConstruction",null,null)</li>
+                <li>@Html.CreateLink("Reports","Index","UnderConstruction","Reports" )<ul>
+                    <li>@Html.CreateLink("Recourse", "Index", "UnderConstruction","")</li>
                     <li>
-                        @Html.ActionLink("Collections", "Index","UnderConstruction",null,null)<ul>
-                            <li>@Html.ActionLink("Analytical Reports", "Index","UnderConstruction",null,null)<ul>
-                                <li>@Html.ActionLink("Agency Side-by-Side Comparison", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Batch Tracker", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Firm Liquidation Batch Tracker", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Inventory Snapshot", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Media Notification", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Performance Summary", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("SIF Tracker", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Suit Percentage by Batch", "Index","UnderConstruction",null,null)</li>
+                        @Html.CreateLink("Collections", "Index", "UnderConstruction","")<ul>
+                            <li>@Html.CreateLink("Analytical Reports", "Index", "UnderConstruction","")<ul>
+                                <li>@Html.CreateLink("Agency Side-by-Side Comparison", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Batch Tracker", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Firm Liquidation Batch Tracker", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Inventory Snapshot", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Media Notification", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Performance Summary", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("SIF Tracker", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Suit Percentage by Batch", "Index", "UnderConstruction","")</li>
                             </ul>
                             </li>
-                            <li>@Html.ActionLink("Compliance Reports", "Index","UnderConstruction",null,null)<ul>
-                                <li>@Html.ActionLink("Closed Activity Report", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Exception Report", "Index","UnderConstruction",null,null)</li>
+                            <li>@Html.CreateLink("Compliance Reports", "Index", "UnderConstruction","")<ul>
+                                <li>@Html.CreateLink("Closed Activity Report", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Exception Report", "Index", "UnderConstruction","")</li>
                             </ul>
                             </li>
-                            <li>@Html.ActionLink("DPS and Collections", "Index","UnderConstruction",null,null)<ul>
-                                <li>@Html.ActionLink("Find DPS Check", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("DPS Payable", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("DPS Payable Summary", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Add In-House Check", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("DPS Paid by Our Check", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Add Check", "Index","UnderConstruction",null,null)</li>
+                            <li>@Html.CreateLink("DPS and Collections", "Index", "UnderConstruction","")<ul>
+                                <li>@Html.CreateLink("Find DPS Check", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("DPS Payable", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("DPS Payable Summary", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Add In-House Check", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("DPS Paid by Our Check", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Add Check", "Index", "UnderConstruction","")</li>
                             </ul>
                             </li>
-                            <li>@Html.ActionLink("Financial Reports", "Index","UnderConstruction",null,null)</li>
-                            <li>@Html.ActionLink("Portfolio Reports", "Index","UnderConstruction",null,null)<ul>
-                                <li>@Html.ActionLink("Portfolio Cash Flow", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Portfolio Cash Flow Position", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Portfolio Summary", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Collections Reconciliation", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Portfolio Transactions", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Purchases", "Index","UnderConstruction",null,null)</li>
-                                <li>@Html.ActionLink("Sales", "Index","UnderConstruction",null,null)</li>
+                            <li>@Html.CreateLink("Financial Reports", "Index", "UnderConstruction","")</li>
+                            <li>@Html.CreateLink("Portfolio Reports", "Index", "UnderConstruction","")<ul>
+                                <li>@Html.CreateLink("Work Status Breakdown", "PortfolioWorkStatusBreakDown", "Collections","Reports")</li>
+                                <li>@Html.CreateLink("Portfolio Owner Breakdown", "PortfolioOwnerBreakDown", "Collections","Reports")</li>
+                                <li>@Html.CreateLink("Portfolio Cash Flow", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Portfolio Cash Flow Position", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Portfolio Summary", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Collections Reconciliation", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Portfolio Transactions", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Purchases", "Index", "UnderConstruction","")</li>
+                                <li>@Html.CreateLink("Sales", "Index", "UnderConstruction","")</li>
                             </ul>
                             </li>
                             <li>
                         </ul>
                     </li>
                     <li>
-                        @Html.ActionLink("Investor Mgt", "Index","UnderConstruction",null,null)</li>
+                        @Html.CreateLink("Investor Mgt", "Index", "UnderConstruction","")</li>
                     <li>
-                        @Html.ActionLink("Analytics", "Index","UnderConstruction",null,null)</li>
+                        @Html.CreateLink("Analytics", "Index", "UnderConstruction","")</li>
                     <li>
-                        @Html.ActionLink("Asset Sales", "Index","UnderConstruction",null,null)</li>
+                        @Html.CreateLink("Asset Sales", "Index", "UnderConstruction","")</li>
                 </ul>
                 </li>
-                <li>@Html.ActionLink("My CRM", "Index", "Company", new { area = "CRM" }, null)<ul>
-                    <li>@Html.ActionLink("Companies", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Contacts", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Pipeline", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Documents", "Index","UnderConstruction",null,null)</li>
+                <li>@Html.CreateLink("My CRM","Index","Company","CRM" )<ul>
+                    <li>@Html.CreateLink("Companies", "Index", "Company","CRM")</li>
+                    <li>@Html.CreateLink("Contacts", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Pipeline", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Documents", "Index", "UnderConstruction","")</li>
                 </ul>
                 </li>
-                <li>@Html.ActionLink("My Account", "Account")<ul>
-                    <li>@Html.ActionLink("Change Password", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Send Email", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("My Calendar", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Manage Email Subscription", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Create Group", "Index","UnderConstruction",null,null)</li>
-                    <li>@Html.ActionLink("Send Meeting Invite", "Index","UnderConstruction",null,null)</li>
+                <li>@Html.CreateLink("My Account", "Account", "UnderConstruction","")<ul>
+                    <li>@Html.CreateLink("Change Password", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Send Email", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("My Calendar", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Manage Email Subscription", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Create Group", "Index", "UnderConstruction","")</li>
+                    <li>@Html.CreateLink("Send Meeting Invite", "Index", "UnderConstruction","")</li>
                 </ul>
                 </li>
             </ul>
@@ -87,8 +90,8 @@
             <div id="messageBoardTitle">My Message Board</div>
         </td>
     </tr>
-    <tr>
+    <tr style="height:575px">
         <td>
-            <textarea id="messages" cols="17" rows="10"></textarea></td>
+            <textarea id="messages" cols="17" style="height:100%"></textarea></td>
     </tr>
 </table>

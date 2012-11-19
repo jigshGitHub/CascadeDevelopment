@@ -2,6 +2,8 @@
 <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CascadeDBModelStoreContainer">
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="TBL_CHART">
     <Key>
@@ -31,5 +33,80 @@
     <Property Name="LastCreatedDate" Type="datetime" />
     <Property Name="LastUpdatedBy" Type="uniqueidentifier" />
     <Property Name="LastCreatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBL_COMPANIES">
+    <Key>
+      <PropertyRef Name="COMPANIESID" />
+    </Key>
+    <Property Name="COMPANIESID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANYNAME" Type="varchar(max)" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="STATE" Type="varchar" MaxLength="50" />
+    <Property Name="POCLastName" Type="varchar" MaxLength="50" />
+    <Property Name="POCFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="POCPhone" Type="varchar" MaxLength="50" />
+    <Property Name="IsNewCompany" Type="bit" />
+    <Property Name="COMPANYVALUEGOAL" Type="int" />
+    <Property Name="RepLastName" Type="varchar" MaxLength="50" />
+    <Property Name="RepFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="DiscussionTopic" Type="varchar" MaxLength="50" />
+    <Property Name="ACTIONSTEP" Type="varchar" MaxLength="50" />
+    <Property Name="LASTCONTACT_DATE" Type="datetime" />
+    <Property Name="NEXTCONTACT_DATE" Type="datetime" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="80" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="80" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="Zip" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyOwnership" Type="varchar" MaxLength="100" />
+    <Property Name="CompanyDescription" Type="varchar" MaxLength="100" />
+    <Property Name="BillingAddress" Type="varchar" MaxLength="150" />
+    <Property Name="BillingState" Type="varchar" MaxLength="50" />
+    <Property Name="BillingCity" Type="varchar" MaxLength="50" />
+    <Property Name="BillingZip" Type="varchar" MaxLength="50" />
+    <Property Name="BillingCountry" Type="varchar" MaxLength="80" />
+    <Property Name="POCDepartment" Type="varchar" MaxLength="100" />
+    <Property Name="POCEmail" Type="varchar" MaxLength="80" />
+    <Property Name="POCFax" Type="varchar" MaxLength="80" />
+    <Property Name="AssistantLastName" Type="varchar" MaxLength="50" />
+    <Property Name="AssistantFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="AssistantPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="100" />
+    <Property Name="EmpQuantity" Type="int" />
+    <Property Name="Notes" Type="varchar" MaxLength="300" />
+    <Property Name="IsSameBillingAddress" Type="bit" />
+    <Property Name="Country" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="TBL_Portfolio">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="ACCOUNT" Type="float" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="LAST_PAY_AMT" Type="float" />
+    <Property Name="DaysSinceLastPay" Type="float" />
+    <Property Name="Balance" Type="float" />
+    <Property Name="PortfolioID" Type="float" />
+    <Property Name="Portfolio" Type="nvarchar" MaxLength="255" />
+    <Property Name="AccruedInterest" Type="float" />
+    <Property Name="TotalInterest" Type="float" />
+    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="255" />
+    <Property Name="ZIP_CODE" Type="float" />
+    <Property Name="Statute" Type="float" />
+    <Property Name="DaysRemainingInStat" Type="float" />
+    <Property Name="StatuteDate" Type="datetime" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="Closed" Type="float" />
+    <Property Name="WorkStatusDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
+    <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
+    <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
   </EntityType>
 </Schema>

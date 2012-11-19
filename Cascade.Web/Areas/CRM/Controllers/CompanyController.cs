@@ -18,7 +18,7 @@ namespace Cascade.Web.Areas.CRM.Controllers
         // GET: /CRM/Company/
         public ActionResult Index()
         {
-            return PartialView();
+            return View();
         }
         
         /// <summary>

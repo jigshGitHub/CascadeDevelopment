@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Cascade.Data.Models;
+using Cascade.Data.Repositories;
+using Cascade.Helpers;
+using System.Configuration;
 namespace Cascade.Charts
 {
     public static class ChartHelper
@@ -25,7 +28,9 @@ namespace Cascade.Charts
         MediaPayble,
         MediaPaidByCheck,
         NotSubmittedNodateSubmit,
-        NotSubmittedNodateConfirm
+        NotSubmittedNodateConfirm,
+        WorkStatusBreakdown,
+        PortfolioOwnerBreakdown
     }
 
     public enum ChartTypes
@@ -436,8 +441,98 @@ namespace Cascade.Charts
 
         public new void LoadChart()
         {
+            DataQueries queries=null;
+            //List<string> colorCodes = ColorCodeHelper.GetColorCodes();
+            int index=0;
+            string [] colors= ConfigurationManager.AppSettings["colorCodes"].Split(new char[] { '#'});
             try
             {
+                queries = new DataQueries();
+                switch (this.Id)
+                {
+                    case ChartID.WorkStatusBreakdown:
+                        //colors = new string[] { 
+                        //    "CC6600", 
+                        //    "9900CC", 
+                        //    "FF3300", 
+                        //    "0099FF", 
+                        //    "00CC66", 
+                        //    "FFFF00", 
+                        //    "CC6600", 
+                        //    "9900CC",
+                        //    "800000",
+                        //    "A52A2A",
+                        //    "DC143c",
+                        //    "FF6347",
+                        //    "CD5C5C",
+                        //    "F08080",
+                        //    "FFA500",
+                        //    "FFD700",
+                        //    "B8860B",
+                        //    "9ACD32",
+                        //    "556B2F",
+                        //    "00FF00",
+                        //    "32CD32",
+                        //    "90EE90",
+                        //    "00FA9A",
+                        //    "2E8B57",
+                        //    "40E0D0",
+                        //    "6495ED",
+                        //    "1E90FF",
+                        //    "191970",
+                        //    "00008B",
+                        //    "8A2BE2",
+                        //    "8B008B",
+                        //    "BA55D3",
+                        //    "FF00FF",
+                        //    "DA70D6",
+                        //    "FF1493",
+                        //    "F5F5DC",
+                        //    "F5DEB3",
+                        //    "8B4513",
+                        //    "D2691E",
+                        //    "D2B48C",
+                        //    "708090",
+                        //    "F5DEB3",
+                        //    "BC8F8F",
+                        //    "696969",
+                        //    "808000",
+                        //    "800080",
+                        //    "008080",
+                        //    "000080",
+                        //    "FF0000",
+                        //    "000000",
+                        //    "FFFFFF"
+                        //};
+                        IEnumerable<PortfolioPieRptVM> portfiloData = queries.GetPortfolioWorkStationDescription();
+                        if (portfiloData != null)
+                        {
+                            int totalCount = portfiloData.Sum(r => int.Parse(r.Count));
+
+                            foreach (var record in portfiloData)
+                            {
+                                this.SetsCollection.Add(new SetValue { Color = colors.GetValue(index).ToString(), Label = record.KeyText, Value = ((double.Parse(record.Count) / totalCount) * 100).ToString("f2") });
+                                index++;
+                            }
+
+                        }
+                        break;
+                    case ChartID.PortfolioOwnerBreakdown:
+                        
+                        portfiloData = queries.GetPortfolioOwner();
+                        if (portfiloData != null)
+                        {
+                            int totalCount = portfiloData.Sum(r => int.Parse(r.Count));
+
+                            foreach (var record in portfiloData)
+                            {
+                                this.SetsCollection.Add(new SetValue { Color = colors.GetValue(index).ToString(), Label = record.KeyText, Value = ((double.Parse(record.Count) / totalCount) * 100).ToString("f2") });
+                                index++;
+                            }
+
+                        }
+                        break;
+                }
 
             }
             catch (Exception ex)
