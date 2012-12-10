@@ -504,7 +504,7 @@ namespace Cascade.Charts
                         //    "000000",
                         //    "FFFFFF"
                         //};
-                        IEnumerable<PortfolioPieRptVM> portfiloData = queries.GetPortfolioWorkStationDescription();
+                        IEnumerable<PortfolioPieRpt> portfiloData = queries.GetPortfolioWorkStationDescription();
                         if (portfiloData != null)
                         {
                             int totalCount = portfiloData.Sum(r => int.Parse(r.Count));

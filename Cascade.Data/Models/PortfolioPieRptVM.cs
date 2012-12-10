@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cascade.Data.Models
 {
-    public class PortfolioPieRptVM
+    public class PortfolioPieRpt
     {
         public string Count;
         public string KeyText;

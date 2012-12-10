@@ -39,6 +39,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cascade.Charts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cascade.Charts\bin\Debug\Cascade.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="Cascade.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cascade.Data\bin\Debug\Cascade.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Cascade.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cascade.Charts\bin\Debug\Cascade.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Cascade.UI.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -127,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationIntegration\Helpers.cs" />
+    <Compile Include="ApplicationIntegration\ImageActionExtenstions.cs" />
     <Compile Include="ApplicationIntegration\Menu.cs" />
     <Compile Include="ApplicationIntegration\MenuFactory.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -142,33 +159,76 @@
     <Compile Include="Areas\Collections\CollectionsAreaRegistration.cs" />
     <Compile Include="Areas\Collections\Controllers\DPSController.cs" />
     <Compile Include="Areas\Collections\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Collections\Models\JQueryDataTableParamModelColl.cs" />
-    <Compile Include="Areas\Collections\Models\Repository\DataRepositoryColl.cs" />
+    <Compile Include="Areas\Collections\Models\Form.cs" />
+    <Compile Include="Areas\Collections\Models\Mappings.cs" />
     <Compile Include="Areas\CRM\Controllers\CompanyController.cs" />
     <Compile Include="Areas\CRM\CRMAreaRegistration.cs" />
     <Compile Include="Areas\CRM\Models\JQueryDataTableParamModel.cs" />
     <Compile Include="Areas\CRM\Models\Repository\DataRepository.cs" />
     <Compile Include="Areas\InvestorManagement\Controllers\HomeController.cs" />
     <Compile Include="Areas\InvestorManagement\InvestorManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Portfolio\Controllers\AddFormController.cs" />
+    <Compile Include="Areas\Portfolio\Models\Portfolio.cs" />
+    <Compile Include="Areas\Portfolio\PortfolioAreaRegistration.cs" />
     <Compile Include="Areas\Recourse\Controllers\HomeController.cs" />
     <Compile Include="Areas\Recourse\RecourseAreaRegistration.cs" />
     <Compile Include="Areas\Reports\Controllers\CollectionsController.cs" />
+    <Compile Include="Areas\Reports\Controllers\HomeController.cs" />
     <Compile Include="Areas\Reports\ReportsAreaRegistration.cs" />
+    <Compile Include="Areas\Search\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Search\SearchAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LookupController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\UnderConstructionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infracture\DateRangeAttribute.cs" />
-    <Compile Include="Infracture\ModelClientValidationRangeDateRule.cs" />
+    <Compile Include="Infrastructure\DateRangeAttribute.cs" />
+    <Compile Include="Infrastructure\ModelClientValidationRangeDateRule.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Presentation\ExtensionMethods\DateTimeExtensions.cs" />
+    <Compile Include="Presentation\ExtensionMethods\DecimalHelpers.cs" />
     <Compile Include="Presentation\ViewModels\DPS\AddDPSViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\Addbutton.png" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\arrow_leftend_off.png" />
+    <Content Include="Content\images\arrow_leftend_ovr.png" />
+    <Content Include="Content\images\arrow_left_off.png" />
+    <Content Include="Content\images\arrow_left_ovr.png" />
+    <Content Include="Content\images\arrow_rightend_off.png" />
+    <Content Include="Content\images\arrow_rightend_ovr.png" />
+    <Content Include="Content\images\arrow_right_off.png" />
+    <Content Include="Content\images\arrow_right_ovr.png" />
+    <Content Include="Content\images\bck_black_10.png" />
+    <Content Include="Content\images\bck_black_5.png" />
+    <Content Include="Content\images\bck_black_70.png" />
+    <Content Include="Content\images\but_active.gif" />
+    <Content Include="Content\images\but_off.gif" />
+    <Content Include="Content\images\Cancelbutton.png" />
+    <Content Include="Content\images\header.gif" />
+    <Content Include="Content\images\ico_delete_16.png" />
+    <Content Include="Content\images\ico_edit_16.png" />
+    <Content Include="Content\images\main.gif" />
+    <Content Include="Content\images\page_active.gif" />
+    <Content Include="Content\images\refresh.png" />
+    <Content Include="Content\images\savebutton.png" />
+    <Content Include="Images\search.jpg" />
+    <Content Include="Scripts\cog.js" />
+    <Content Include="Scripts\cog.utils.js" />
+    <Content Include="Scripts\format.date.js" />
+    <Content Include="Scripts\jquery.formatCurrency-1.4.0.min.js" />
+    <Content Include="Scripts\knockout-bindings.dataTables.js" />
+    <Content Include="Scripts\knockout-mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout-simpleGrid.1.3.js" />
+    <Content Include="Scripts\portfolio.js" />
     <Content Include="Content\dataTables\demo_table.css" />
     <Content Include="Content\images\back_disabled.jpg" />
     <Content Include="Content\images\back_enabled.jpg" />
@@ -282,7 +342,6 @@
     <Content Include="Areas\Collections\Views\Home\Index.cshtml" />
     <Content Include="Areas\InvestorManagement\Views\Home\Index.cshtml" />
     <Content Include="Areas\CRM\Views\Web.config" />
-    <Content Include="Areas\CRM\Views\Shared\Index.cshtml" />
     <Content Include="Areas\Recourse\Views\Home\Index.cshtml" />
     <Content Include="Areas\Recourse\Views\_ViewStart.cshtml" />
     <Content Include="Areas\InvestorManagement\Views\_ViewStart.cshtml" />
@@ -296,6 +355,27 @@
     <Content Include="Areas\Reports\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Reports\Views\Collections\PortfolioWorkStatusBreakDown.cshtml" />
     <Content Include="Areas\Reports\Views\Collections\PortfolioOwnerBreakDown.cshtml" />
+    <Content Include="Areas\Collections\Views\DPS\Index.cshtml" />
+    <Content Include="Areas\Portfolio\Views\Web.config" />
+    <Content Include="Areas\Portfolio\Views\AddForm\Index.cshtml" />
+    <Content Include="Areas\Portfolio\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Collections\Views\DPS\EditorTemplates\Date.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_portfolioCashFlow.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_portfolioCashPosition.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_purchases.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_sales.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_collectionsRecon.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_portfolioSummary.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_portfolioTransactions.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\_portDPSAddCheck.cshtml" />
+    <Content Include="Areas\Reports\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\Collections\Views\Home\_dpsRecords.cshtml" />
+    <Content Include="Areas\Collections\Views\Home\Details.cshtml" />
+    <Content Include="Areas\CRM\Views\Company\Index.cshtml" />
+    <Content Include="Areas\CRM\Views\Company\_companyRecords.cshtml" />
+    <Content Include="Areas\Search\Views\Web.config" />
+    <Content Include="Areas\Search\Views\Home\_BasicPartial.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
@@ -308,6 +388,7 @@
     <Content Include="Images\indicator_medium.gif" />
     <Content Include="Images\Landing_Page.png" />
     <Content Include="Images\MSIPiechart.png" />
+    <Content Include="Scripts\application.js" />
     <Content Include="Scripts\consolelog.js" />
     <Content Include="Scripts\consolelog.min.js">
       <DependentUpon>consolelog.js</DependentUpon>
@@ -381,30 +462,19 @@
     <Folder Include="Areas\AssetSales\Models\" />
     <Folder Include="Areas\AssetSales\Views\Shared\" />
     <Folder Include="Areas\Collections\Views\Shared\" />
-    <Folder Include="Areas\CRM\Views\Company\" />
+    <Folder Include="Areas\CRM\Views\Shared\" />
     <Folder Include="Areas\InvestorManagement\Models\" />
     <Folder Include="Areas\InvestorManagement\Views\Shared\" />
+    <Folder Include="Areas\Portfolio\Views\Shared\" />
     <Folder Include="Areas\Recourse\Models\" />
     <Folder Include="Areas\Recourse\Views\Shared\" />
     <Folder Include="Areas\Reports\Models\" />
     <Folder Include="Areas\Reports\Views\Shared\" />
+    <Folder Include="Areas\Search\Models\" />
+    <Folder Include="Areas\Search\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cascade.Charts\Cascade.Charts.csproj">
-      <Project>{13c56c12-fb83-48ea-8caf-0860cbb85138}</Project>
-      <Name>Cascade.Charts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cascade.Data\Cascade.Data.csproj">
-      <Project>{6e2cc1e1-583d-4647-a6bd-266b25bd3fd2}</Project>
-      <Name>Cascade.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cascade.UI.Controls\Cascade.UI.Controls.csproj">
-      <Project>{63dd875f-fd8e-4abb-9767-e18cdaeee264}</Project>
-      <Name>Cascade.UI.Controls</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

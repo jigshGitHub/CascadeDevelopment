@@ -25,19 +25,123 @@ namespace Cascade.Data.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<AccidentCaus> AccidentCauses { get; set; }
+        public DbSet<AgencyType> AgencyTypes { get; set; }
+        public DbSet<AlertStatu> AlertStatus { get; set; }
+        public DbSet<AlertType> AlertTypes { get; set; }
+        public DbSet<AnnualRateCode> AnnualRateCodes { get; set; }
+        public DbSet<AreaCode> AreaCodes { get; set; }
+        public DbSet<AreaCodesByTimeZone> AreaCodesByTimeZones { get; set; }
+        public DbSet<aspnet_Applications> aspnet_Applications { get; set; }
+        public DbSet<aspnet_Membership> aspnet_Membership { get; set; }
+        public DbSet<aspnet_Paths> aspnet_Paths { get; set; }
+        public DbSet<aspnet_PersonalizationAllUsers> aspnet_PersonalizationAllUsers { get; set; }
+        public DbSet<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser { get; set; }
+        public DbSet<aspnet_Profile> aspnet_Profile { get; set; }
+        public DbSet<aspnet_Roles> aspnet_Roles { get; set; }
+        public DbSet<aspnet_SchemaVersions> aspnet_SchemaVersions { get; set; }
+        public DbSet<aspnet_Users> aspnet_Users { get; set; }
+        public DbSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events { get; set; }
+        public DbSet<BankAccountType> BankAccountTypes { get; set; }
+        public DbSet<BankruptcyDisposition> BankruptcyDispositions { get; set; }
+        public DbSet<BankTransactionType> BankTransactionTypes { get; set; }
+        public DbSet<Batch> Batches { get; set; }
+        public DbSet<BatchTrackReportStatu> BatchTrackReportStatus { get; set; }
+        public DbSet<BatchTrackReportType> BatchTrackReportTypes { get; set; }
+        public DbSet<BatchType> BatchTypes { get; set; }
+        public DbSet<BillingOption> BillingOptions { get; set; }
+        public DbSet<Calendar> Calendars { get; set; }
+        public DbSet<CBRAccountStatu> CBRAccountStatus { get; set; }
+        public DbSet<CBRBankruptStatu> CBRBankruptStatus { get; set; }
+        public DbSet<CBRDisputeStatu> CBRDisputeStatus { get; set; }
+        public DbSet<CBRSpecialStatu> CBRSpecialStatus { get; set; }
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<CourtType> CourtTypes { get; set; }
+        public DbSet<CreditCardType> CreditCardTypes { get; set; }
+        public DbSet<DamageType> DamageTypes { get; set; }
+        public DbSet<DataType> DataTypes { get; set; }
+        public DbSet<DebtType> DebtTypes { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<DocumentLibraryCategory> DocumentLibraryCategories { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<DominantHand> DominantHands { get; set; }
+        public DbSet<EmploymentType> EmploymentTypes { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Industry> Industries { get; set; }
+        public DbSet<InsuranceType> InsuranceTypes { get; set; }
+        public DbSet<InvoiceOption> InvoiceOptions { get; set; }
+        public DbSet<KBCategory> KBCategories { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<NamePrefix> NamePrefixes { get; set; }
+        public DbSet<NameSuffix> NameSuffixes { get; set; }
+        public DbSet<NCOACode> NCOACodes { get; set; }
+        public DbSet<NegoiationType> NegoiationTypes { get; set; }
+        public DbSet<Office> Offices { get; set; }
+        public DbSet<PaperAge> PaperAges { get; set; }
+        public DbSet<PaperType> PaperTypes { get; set; }
+        public DbSet<PassengerType> PassengerTypes { get; set; }
+        public DbSet<PaymentPlanStatus> PaymentPlanStatuses { get; set; }
+        public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<PhoneType> PhoneTypes { get; set; }
+        public DbSet<PolicyType> PolicyTypes { get; set; }
         public DbSet<Port_Acq> Port_Acq { get; set; }
         public DbSet<Port_DPS> Port_DPS { get; set; }
         public DbSet<Port_Media> Port_Media { get; set; }
         public DbSet<Port_Recall> Port_Recall { get; set; }
         public DbSet<Port_Trans> Port_Trans { get; set; }
+        public DbSet<PortfolioStatu> PortfolioStatus { get; set; }
+        public DbSet<PortfolioType> PortfolioTypes { get; set; }
+        public DbSet<PortfolioType1> PortfolioTypes1 { get; set; }
+        public DbSet<ProductCodeSummary> ProductCodeSummaries { get; set; }
+        public DbSet<PromiseType> PromiseTypes { get; set; }
+        public DbSet<Relationship> Relationships { get; set; }
+        public DbSet<ReportOption> ReportOptions { get; set; }
+        public DbSet<ResponsibilityType> ResponsibilityTypes { get; set; }
+        public DbSet<RoadCondition> RoadConditions { get; set; }
+        public DbSet<ScoreType> ScoreTypes { get; set; }
+        public DbSet<SecurityType> SecurityTypes { get; set; }
+        public DbSet<SettingCategory> SettingCategories { get; set; }
+        public DbSet<SettingDataType> SettingDataTypes { get; set; }
+        public DbSet<SettleRequestStatu> SettleRequestStatus { get; set; }
+        public DbSet<SkipDataType> SkipDataTypes { get; set; }
+        public DbSet<SkipStatu> SkipStatus { get; set; }
+        public DbSet<StateConditional> StateConditionals { get; set; }
+        public DbSet<State> States { get; set; }
+        public DbSet<Statute> Statutes { get; set; }
+        public DbSet<StatuteType> StatuteTypes { get; set; }
+        public DbSet<SubIndustry> SubIndustries { get; set; }
+        public DbSet<Sup_BrockettCompanies> Sup_BrockettCompanies { get; set; }
         public DbSet<Sup_Company> Sup_Company { get; set; }
         public DbSet<Sup_PmtType> Sup_PmtType { get; set; }
+        public DbSet<Sup_Reason> Sup_Reason { get; set; }
         public DbSet<Sup_Status> Sup_Status { get; set; }
         public DbSet<Sup_TransCode> Sup_TransCode { get; set; }
         public DbSet<Sup_TransSource> Sup_TransSource { get; set; }
+        public DbSet<Sup_UploadDPS> Sup_UploadDPS { get; set; }
+        public DbSet<Sup_UploadRecalls> Sup_UploadRecalls { get; set; }
+        public DbSet<Surname> Surnames { get; set; }
+        public DbSet<TaskCategory> TaskCategories { get; set; }
         public DbSet<TBL_CHART> TBL_CHART { get; set; }
         public DbSet<TBL_COMPANIES> TBL_COMPANIES { get; set; }
         public DbSet<TBL_Portfolio> TBL_Portfolio { get; set; }
         public DbSet<TBL_State> TBL_State { get; set; }
+        public DbSet<TemplateLibrary> TemplateLibraries { get; set; }
+        public DbSet<TemplateLibraryCategory> TemplateLibraryCategories { get; set; }
+        public DbSet<TimeZonesByAreaCode> TimeZonesByAreaCodes { get; set; }
+        public DbSet<VehicleOwnerType> VehicleOwnerTypes { get; set; }
+        public DbSet<VendorProduct> VendorProducts { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<VendorType> VendorTypes { get; set; }
+        public DbSet<WeatherCondition> WeatherConditions { get; set; }
+        public DbSet<WorkFlow> WorkFlows { get; set; }
+        public DbSet<WorkFlowJob> WorkFlowJobs { get; set; }
+        public DbSet<WorkFlowStatu> WorkFlowStatus { get; set; }
+        public DbSet<WorkFlowType> WorkFlowTypes { get; set; }
+        public DbSet<WorkStatu> WorkStatus { get; set; }
+        public DbSet<YesNo> YesNoes { get; set; }
+        public DbSet<YGCStatu> YGCStatus { get; set; }
+        public DbSet<vw_PortfolioCashFlow> vw_PortfolioCashFlow { get; set; }
     }
 }

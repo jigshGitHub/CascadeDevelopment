@@ -1,0 +1,544 @@
+﻿var portfolioViewModels = namespace("cascade.viewModels.portfolio");
+
+function interestVM(portfolioNumber) {
+    var self = this;
+    self.portfolioNumber = ko.observable(portfolioNumber);
+    self.agencyName = ko.observable('');
+    self.agencies = ko.observableArray([]);
+    self.checkNumber = '';
+    self.closingDt = '';
+    self.salesPrice = '';
+    self.totalInterestPaid = '';
+};
+
+function distributionsTransVM(portfolioNumber) {
+    var self = this;
+    self.portfolioNumber = ko.observable(portfolioNumber);
+    self.investorName = ko.observable('');
+    self.investors = ko.observableArray([]);
+    self.checkNumber = '';
+    self.closingDt = '';
+    self.distributionTransType = ko.observable('');
+    self.distributionTransTypes = [{ Text: 'Sale', Value: 'Sale' }, { Text: 'Collection', Value: 'Collection' }, { Text: 'Distribution', Value: 'Distribution' }, { Text: 'Interest', Value: 'Interest' }, { Text: 'Investment', Value: 'Investment' }];
+    self.totalDistributions = '';
+};
+
+function investmentsTransVM(portfolioNumber) {
+    var self = this;
+    self.portfolioNumber = ko.observable(portfolioNumber);
+    self.investorName = ko.observable('');
+    self.investors = ko.observableArray([]);
+    self.prftShareBfr = '';
+    self.prftShareAftr = '';
+    self.interestRate = '';
+    self.investmentTransType = ko.observable('');
+    self.investmentTransTypes = [{ Text: 'Sale', Value: 'Sale' }, { Text: 'Collection', Value: 'Collection' }, { Text: 'Distribution', Value: 'Distribution' }, { Text: 'Interest', Value: 'Interest' }, { Text: 'Investment', Value: 'Investment' }];
+    self.notes = '';
+    self.totalDistributions = ko.observable('');
+};
+
+function collectionRecord(id, portfolioNumber, agency, closingDt, faceValue, netColls, collectionsTransType) {
+    this.id = id;
+    this.portfolioNumber = ko.observable(portfolioNumber);
+    this.collectionAgencyName = ko.observable(agency);
+    //this.agencies = ko.observableArray([]);
+    this.closingDt = ko.observable(closingDt)
+    this.faceValue = ko.observable(faceValue)
+    this.netColls = ko.observable(netColls)
+    this.collectionsTransType = ko.observable(collectionsTransType);
+}
+
+function collectionsTransVM() {
+    var self = this;
+    self.portfolioNumber = ko.observable();
+    self.editMode = ko.observable(false);
+    self.collectionRecords = ko.computed(function () {
+        var collectionRecords = [];
+        if (self.portfolioNumber() != '') {
+                $.ajax({
+                    url: baseUrl + '/api/PortfolioTransactions/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { portfolioNumber: self.portfolioNumber(), transType: 'Collection' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                collectionRecords.push(new collectionRecord(item.ID,item.Portfolio_,
+                                    item.Inv_AgencyName,
+                                    dateFormat(Date.parse(item.ClosingDate), 'mm/dd/yyyy'),
+                                    (item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue),
+                                    (item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice),
+                                    item.TransType));
+                            });
+                        }
+                        else {
+                            collectionRecords.push(new collectionRecord('','','','','',''));
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+        }
+        return collectionRecords;
+    }, self);
+    self.currentRecordIndex = ko.observable(0);
+    self.selectedRecordIndexChanged = function (item) {
+        self.currentCollectionRecord(item);
+        self.selectedAgency(item.collectionAgencyName());
+    };
+    self.selectedAgency = ko.observable();
+    self.currentCollectionRecord = ko.observable();
+    self.agencies = ko.observableArray([]);
+    self.collectionsTransTypes = [{ Text: 'Sale', Value: 'Sale' }, { Text: 'Collection', Value: 'Collection' }, { Text: 'Distribution', Value: 'Distribution' }, { Text: 'Interest', Value: 'Interest' }, { Text: 'Investment', Value: 'Investment' }];
+    self.totalCollections = ko.computed(function () {
+        var salesTotal = 0;
+        var val;
+        $.each(self.collectionRecords(), function (i, item) {
+            val = item.netColls().replace(/[^0-9.]/ig, '');
+            salesTotal += parseFloat(val) || 0;
+        });
+        return formatCurrency(salesTotal);
+    }, self);
+    $.each(portfolioViewModels.agencies(), function (i, item) {
+        self.agencies.push(item);
+    });
+
+    self.saveRecord = function () {
+        log(self.currentCollectionRecord().faceValue());
+        log(self.currentCollectionRecord().netColls());
+        log(self.currentCollectionRecord().closingDt());
+        log(self.currentCollectionRecord().collectionAgencyName());
+        log(self.currentCollectionRecord().id);
+        var json = JSON.stringify({
+            FaceValue: self.currentCollectionRecord().faceValue(),
+            SalesPrice: self.currentCollectionRecord().netColls(),
+            ClosingDate: self.currentCollectionRecord().closingDt(),
+            Inv_AgencyName:self.selectedAgency(),
+            ID: self.currentCollectionRecord().id,
+            TransType: 'Collection'
+        });
+
+        $.ajax({
+            url: baseUrl + '/api/PortfolioTransactions/',
+            type: "POST",
+            data: json,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                log(response);
+            },
+            error: function (response, errorText) {
+            }
+        });
+    }
+   
+};
+
+function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, putbackTerms, putbackDeadline, salesBasis, salesPrice, faceValue, accounts, salesTransType) {
+    this.Id = id;
+    this.portfolioNumber = ko.observable(portfolioNumber);
+    this.lender = ko.observable(lender);
+    this.buyer = ko.observable(buyer);
+    this.cutoffDt = ko.observable(cutoffDt);
+    this.closingDt = ko.observable(closingDt);
+    this.putbackTerms = ko.observable(putbackTerms);
+    this.putbackDeadline = ko.observable(putbackDeadline);
+    this.salesBasis = ko.observable(salesBasis);
+    this.salesPrice = ko.observable(salesPrice);
+    this.faceValue = ko.observable(faceValue);
+    this.accounts = ko.observable(accounts);
+    this.salesTransType = ko.observable(salesTransType)
+}
+
+function salesTransVM() {
+    var self = this;
+    self.portfolioNumber = ko.observable('');
+    self.salesRecords = ko.computed(function () {
+        var salesRecords = [];
+        if (self.portfolioNumber() != '') {
+            $.ajax({
+                url: baseUrl + '/api/PortfolioTransactions/',
+                type: 'GET',
+                contentType: 'application/json',
+                data: { portfolioNumber: self.portfolioNumber(), transType: 'Sale' },
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    log(data.length);
+                    if (data.length > 0) {                        
+                        self.currentRecordIndex(0);
+                        $.each(data, function (i, item) {
+                            log(item);
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts, item.TransType));
+                        });
+                    }
+                },
+                error: function (xhr, status, somthing) {
+                    log(status);
+                }
+            });
+        }
+        //else {
+        //    salesRecords.push(new salesRecord('', '12345', 'lender', '', '', '', '', '', '', '', '', '100', ''));
+        //}
+        return salesRecords;
+    }, self);
+    
+    self.currentRecordIndex = ko.observable(0);
+    self.currentSalesRecord = ko.computed(function () {
+        if (self.portfolioNumber() != '')
+            return self.salesRecords()[self.currentRecordIndex()];
+        else
+            return new salesRecord('', '', '', '', '', '', '', '', '', '', '', '', '');
+    }, self);
+    self.buyers = ko.observableArray([]);
+    self.totalSold = ko.computed(function () {
+        var soldTotal = 0;
+        $.each(self.salesRecords(), function (i, item) {
+            soldTotal += item.accounts();
+        });
+        return soldTotal;
+    }, self);
+    self.totalSales = ko.computed(function () {
+        var salesTotal = 0;
+        $.each(self.salesRecords(), function (i, item) {
+            salesTotal += item.salesPrice();
+        });
+        return formatCurrency(salesTotal);
+    }, self);
+    self.salesTransTypes = [{ Text: 'Sale', Value: 'Sale' }, { Text: 'Collection', Value: 'Collection' }, { Text: 'Distribution', Value: 'Distribution' }];
+    $.each(portfolioViewModels.buyers(), function (i, item) {
+        self.buyers.push(item);
+    });
+    self.visibleNext = ko.computed(function () {
+        if (self.currentRecordIndex() + 1 != self.salesRecords().length && self.salesRecords().length > 1)
+            return true;
+        else
+            return false;
+    }, self);
+    self.visiblePrevious = ko.computed(function () {
+        if (self.currentRecordIndex() + 1 > 1 && self.salesRecords().length > 1)
+            return true;
+        else
+            return false;
+    }, self);
+
+    self.recordCounts = ko.computed(function () {
+        return 'Records ' + (self.currentRecordIndex() + 1) + ' of ' + self.salesRecords().length;
+    }, self);
+
+    self.nextRecord = function () {
+        self.currentRecordIndex(self.currentRecordIndex() + 1);
+    }
+    self.previousRecord = function () {
+        self.currentRecordIndex(self.currentRecordIndex() - 1);
+    }
+
+    self.saveRecord = function () {
+        log(self.currentSalesRecord().accounts());
+        log(self.currentSalesRecord().lender());
+        log(self.currentSalesRecord().buyer());
+        log(self.currentSalesRecord().cutoffDt());
+        log(self.currentSalesRecord().closingDt());
+        log(self.currentSalesRecord().salesBasis());
+        log(self.currentSalesRecord().faceValue());
+        log(self.currentSalesRecord().putbackTerms());
+        log(self.currentSalesRecord().putbackDeadline());
+        log(self.currentSalesRecord().salesPrice());
+        var json = JSON.stringify({
+            PutbackDeadline: self.currentSalesRecord().putbackDeadline(),
+            PutbackTerm_days_: self.currentSalesRecord().putbackTerms(),
+            C_ofAccts: self.currentSalesRecord().accounts(),
+            FaceValue: self.currentSalesRecord().faceValue(),
+            SalesBasis: self.currentSalesRecord().salesBasis(),
+            SalesPrice: self.currentSalesRecord().salesPrice(),
+            Buyer: self.currentSalesRecord().buyer(),
+            Lender: self.currentSalesRecord().lender(),
+            ClosingDate: self.currentSalesRecord().closingDt(),
+            Cut_OffDate: self.currentSalesRecord().cutoffDt(),
+            ID: self.currentSalesRecord().Id,
+            TransType: 'Sale'
+        });
+
+        $.ajax({
+            url: baseUrl + '/api/PortfolioTransactions/',
+            type: "POST",
+            data: json,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                log(response);
+            },
+            error: function (response, errorText) {
+            }
+        });
+    }
+};
+
+function portfolioAcqVM() {
+    var self = this;
+    self.portfolioNumber = ko.observable('');
+    self.company = ko.observable('');
+    self.companies = ko.observableArray([]);
+    self.seller = ko.observable('');
+    self.lender = ko.observable('');
+    //self.sellers = ko.observableArray([]);
+    self.cutOffDt = ko.observable('');
+    self.closingDt = ko.observable('');
+    self.costBasis = ko.observable('');
+    self.putbackTerms = ko.observable('');
+    self.putbackDeadline = ko.observable('');
+    self.face = ko.observable('');
+    self.accounts = ko.observable('');
+    self.purchasePrice = ko.observable('');
+    self.transType = ko.observable('');
+    self.transTypes = ko.observableArray([]);
+    self.sellers = ko.observableArray([]);
+    $.each(portfolioViewModels.supBrockettCompanies(), function (i, item) {
+        self.companies.push(item);
+    });
+    $.each(portfolioViewModels.sellers(), function (i, item) {
+        self.sellers.push(item);
+    });
+    
+    self.saveMainRecord = function () {
+        var json = JSON.stringify({
+            Company: self.company(),
+            PutbackDeadline: self.putbackDeadline(),
+            PutbackTerm__days_: self.putbackTerms(),
+            C_ofAccts: self.accounts(),
+            Face: self.face(),
+            PurchasePrice: self.purchasePrice(),
+            Seller: self.seller(),
+            Lender_FileDescription: self.lender(),
+            ClosingDate: self.closingDt(),
+            Cut_OffDate: self.cutOffDt(),
+            CostBasis: self.costBasis(),
+            Portfolio_: self.portfolioNumber()
+        });
+
+        $.ajax({
+            url: baseUrl + '/api/Portfolio/',
+            type: "POST",
+            data: json,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                log(response);
+            },
+            error: function (response, errorText) {
+            }
+        });
+    }
+};
+
+function portfolioVM() {
+    var self = this;
+    self.portfolios = ko.observableArray([]);
+    
+    $.each(portfolioViewModels.portfolios(), function (i, item) {
+        self.portfolios.push(item);
+    });
+    self.portfolioNumber = ko.observable();
+    self.portfolioNumber.subscribe(function (number) {
+        if (number != '') {
+            self.portfolioNumber(number);
+            //load acqusitions portfolio data
+
+            $.ajax({
+                url: baseUrl + '/api/Portfolio/',
+                type: 'GET',
+                contentType: 'application/json',
+                data: { portfolioNumber: self.portfolioNumber() },
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    //log(data);
+                    self.acqSecionVM.portfolioNumber(data.Portfolio_);
+                    self.acqSecionVM.company(data.Company);
+                    self.acqSecionVM.seller(data.Seller);
+                    self.acqSecionVM.lender(data.Lender_FileDescription);
+                    self.acqSecionVM.cutOffDt($.datepicker.formatDate('mm/dd/yy', new Date(data.Cut_OffDate)));
+                    self.acqSecionVM.closingDt($.datepicker.formatDate('mm/dd/yy', new Date(data.ClosingDate)));
+                    self.acqSecionVM.costBasis(data.CostBasis);
+                    self.acqSecionVM.putbackTerms(data.PutbackTerm__days_);
+                    self.acqSecionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', new Date(data.PutbackDeadline)));
+                    self.acqSecionVM.face(data.Face);
+                    //self.costBasisputbackTermsputbackDeadlineface(data.Face);
+                    self.acqSecionVM.accounts(data.C_ofAccts);
+                    self.acqSecionVM.purchasePrice(data.PurchasePrice);//.formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                },
+                error: function (xhr, status, somthing) {
+                    log(status);
+                }
+            });
+            self.salesTabVM.portfolioNumber(self.portfolioNumber());
+            self.collectionsTabVM.portfolioNumber(self.portfolioNumber());
+        }
+        
+    }.bind(self));
+
+    self.acqSecionVM = new portfolioAcqVM();
+    self.salesTabVM = new salesTransVM();
+    self.collectionsTabVM = new collectionsTransVM();
+
+}
+portfolioViewModels.setActiveTabViewModel = function (viewModel) {
+    $(document).data("portfolioViewModels.activeTabViewmodel", viewModel);
+}
+
+portfolioViewModels.getActiveTabViewModel = function () {
+    return $(document).data("portfolioViewModels.activeTabViewmodel");
+}
+
+portfolioViewModels.interestVM = function () { return $(document).data('interestVM') };
+portfolioViewModels.distributionsTransVM = function () { return $(document).data('distributionsTransVM') };
+portfolioViewModels.investmentsTransVM = function () { return $(document).data('investmentsTransVM') };
+portfolioViewModels.collectionsTransVM = function () { return $(document).data('collectionsTransVM') };
+portfolioViewModels.salesTransVM = function () { return $(document).data('salesTransVM') };
+portfolioViewModels.portfolioAcqVM = function () { return $(document).data('portfolioAcqVM') };
+
+portfolioViewModels.supBrockettCompanies = function () {
+    if ($(document).data('supBrockettCompanies') == undefined) {
+        function setCompanies(data) {
+            $(document).data('supBrockettCompanies', data);
+        };
+
+        $.ajax({
+            url: baseUrl + '/api/Lookup/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: 'SupBrockettCompanies' },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                setCompanies(data);
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
+    }
+    return $(document).data('supBrockettCompanies');
+}
+
+portfolioViewModels.sellers = function () {
+    if ($(document).data('sellers') == undefined) {
+
+        function setSellers(data) {
+            $(document).data('sellers', data);
+        };
+
+        $.ajax({
+            url: baseUrl + '/api/Lookup/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: 'Seller' },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                setSellers(data);
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
+    }
+    return $(document).data('sellers');
+}
+
+
+portfolioViewModels.portfolios = function () {
+    if ($(document).data('portfolios') == undefined) {
+        function setPortfolios(data) {
+            $(document).data('portfolios', data);
+        };
+        $.ajax({
+            url: baseUrl + '/api/Lookup/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: 'Portfolio' },
+            async: false,
+            success: function (data) {
+                setPortfolios(data);
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
+    }
+    //log($(document).data('portfolios'));
+    return $(document).data('portfolios');
+}
+
+portfolioViewModels.buyers = function () {
+    if ($(document).data('buyers') == undefined) {
+        log('Firsttime getting buyers');
+        function setBuyers(data) {
+            $(document).data('buyers', data);
+        };
+
+        $.ajax({
+            url: baseUrl + '/api/Lookup/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: 'Buyer' },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                setBuyers(data);
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
+    }
+    return $(document).data('buyers');
+}
+
+portfolioViewModels.agencies = function () {
+    if ($(document).data('agencies') == undefined) {
+        log('Firsttime getting agencies');
+        function setAgencies(data) {
+            $(document).data('agencies', data);
+        };
+
+        $.ajax({
+            url: baseUrl + '/api/Lookup/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: 'Seller' },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                setAgencies(data);
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
+    }
+    return $(document).data('agencies');
+}
+
+portfolioViewModels.inittializeVMS = function (portfolioNumber) {
+    //log('inittializeVMS');
+    $(document).data('interestVM', new interestVM(portfolioNumber));
+    $(document).data('distributionsTransVM', new distributionsTransVM(portfolioNumber));
+    $(document).data('investmentsTransVM', new investmentsTransVM(portfolioNumber));
+    $(document).data('collectionsTransVM', new collectionsTransVM(portfolioNumber));
+    $(document).data('salesTransVM', new salesTransVM(portfolioNumber));
+    $(document).data('portfolioAcqVM', new portfolioAcqVM(portfolioNumber));
+}
+
+portfolioViewModels.resetVMS = function () {
+    $(document).data('portfolioAcqVM', '');
+    $(document).data('interestVM', '');
+    $(document).data('distributionsTransVM', '');
+    $(document).data('investmentsTransVM', '');
+    $(document).data('collectionsTransVM', '');
+    $(document).data('salesTransVM', '');
+}

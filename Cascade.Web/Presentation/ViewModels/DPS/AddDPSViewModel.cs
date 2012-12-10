@@ -17,7 +17,7 @@ namespace Cascade.Web.Presentation.ViewModels.DPS
         #region Original Request Data
         [Required]
         [Display(Name = "DateRec:")]
-        [DataType(DataType.Date)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime DateRec { get; set; }
 
         [Required]
@@ -41,7 +41,7 @@ namespace Cascade.Web.Presentation.ViewModels.DPS
         public IList<Sup_TransCode> TransCodes { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Tran Date:")]
         public DateTime TranDate { get; set; }
 

@@ -1,28 +1,28 @@
 ﻿
- <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
-                <h2>View Collections</h2>
-                <table id="myCollectionsTable" class="display">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Account</th>
-                            <th>Portfolio</th>
-                            <th>Portfolio Owner</th>
-                            <th>Name</th>
-                            <th>Pay Date</th>
-                            <th>Pay Amount</th>
-                            <th>Days since Last Pay</th>
-                            <th>Balance</th>
-                            <th>Accrued Interest</th>
-                            <th>Total Interest</th>
-                            <th>Address1</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Zip Code</th>
-                            <th>Work Status</th>
-                            <th>Work Group</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                    </tbody>
-                </table>
+@{
+    ViewBag.Title = "View DPS Records";
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+<div id="divDPSRecords"></div>
+
+@Scripts.Render("~/bundles/knockout")
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //Client side View Model
+        function dpsRecordsVM(){
+            //Get the data and Load in the div
+            $("#divDPSRecords").load(baseUrl + '/Collections/Home/GetAllDPSRecords');
+        };
+              
+        $(document).ready(function () {
+            //Knockout Bindings
+            ko.applyBindings(new dpsRecordsVM(), $('#divDPSRecords')[0]);
+        });
+        
+    </script>
+}

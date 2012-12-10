@@ -1,6 +1,574 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CascadeDBModelStoreContainer" CdmEntityContainer="CascadeDBEntities">
+    <EntitySetMapping Name="AccidentCauses">
+      <EntityTypeMapping TypeName="CascadeDBModel.AccidentCaus">
+        <MappingFragment StoreEntitySet="AccidentCauses">
+          <ScalarProperty Name="AccidentCasueID" ColumnName="AccidentCasueID" />
+          <ScalarProperty Name="AccidentCause" ColumnName="AccidentCause" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgencyTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.AgencyType">
+        <MappingFragment StoreEntitySet="AgencyType">
+          <ScalarProperty Name="Agency_Type" ColumnName="Agency_Type" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.AlertStatu">
+        <MappingFragment StoreEntitySet="AlertStatus">
+          <ScalarProperty Name="StatusAlertID" ColumnName="StatusAlertID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.AlertType">
+        <MappingFragment StoreEntitySet="AlertTypes">
+          <ScalarProperty Name="AlertTypeID" ColumnName="AlertTypeID" />
+          <ScalarProperty Name="AlertType1" ColumnName="AlertType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnualRateCodes">
+      <EntityTypeMapping TypeName="CascadeDBModel.AnnualRateCode">
+        <MappingFragment StoreEntitySet="AnnualRateCodes">
+          <ScalarProperty Name="AnnualRateCodeID" ColumnName="AnnualRateCodeID" />
+          <ScalarProperty Name="AnnualRateCode1" ColumnName="AnnualRateCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AreaCodes">
+      <EntityTypeMapping TypeName="CascadeDBModel.AreaCode">
+        <MappingFragment StoreEntitySet="AreaCodes">
+          <ScalarProperty Name="AreaCode1" ColumnName="AreaCode" />
+          <ScalarProperty Name="AreaCodeName" ColumnName="AreaCodeName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AreaCodesByTimeZones">
+      <EntityTypeMapping TypeName="CascadeDBModel.AreaCodesByTimeZone">
+        <MappingFragment StoreEntitySet="AreaCodesByTimeZones">
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="AreaCodeName" ColumnName="AreaCodeName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Applications">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Applications">
+        <MappingFragment StoreEntitySet="aspnet_Applications">
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Membership">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Membership">
+        <MappingFragment StoreEntitySet="aspnet_Membership">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Paths">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Paths">
+        <MappingFragment StoreEntitySet="aspnet_Paths">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_PersonalizationAllUsers">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_PersonalizationPerUser">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Profile">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Profile">
+        <MappingFragment StoreEntitySet="aspnet_Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+          <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_SchemaVersions">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_SchemaVersions">
+        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_WebEvent_Events">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_WebEvent_Events">
+        <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+          <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+          <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+          <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+          <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankAccountTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.BankAccountType">
+        <MappingFragment StoreEntitySet="BankAccountTypes">
+          <ScalarProperty Name="BankAccountTypeID" ColumnName="BankAccountTypeID" />
+          <ScalarProperty Name="BankAccountType1" ColumnName="BankAccountType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankruptcyDispositions">
+      <EntityTypeMapping TypeName="CascadeDBModel.BankruptcyDisposition">
+        <MappingFragment StoreEntitySet="BankruptcyDispositions">
+          <ScalarProperty Name="DispositionID" ColumnName="DispositionID" />
+          <ScalarProperty Name="Disposition" ColumnName="Disposition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankTransactionTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.BankTransactionType">
+        <MappingFragment StoreEntitySet="BankTransactionTypes">
+          <ScalarProperty Name="BankTransactionTypeID" ColumnName="BankTransactionTypeID" />
+          <ScalarProperty Name="BankTransactionType1" ColumnName="BankTransactionType" />
+          <ScalarProperty Name="BankTransactionTypeCode" ColumnName="BankTransactionTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batches">
+      <EntityTypeMapping TypeName="CascadeDBModel.Batch">
+        <MappingFragment StoreEntitySet="Batch">
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="BatchTypeID" ColumnName="BatchTypeID" />
+          <ScalarProperty Name="Batch_Type" ColumnName="Batch_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BatchTrackReportStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.BatchTrackReportStatu">
+        <MappingFragment StoreEntitySet="BatchTrackReportStatus">
+          <ScalarProperty Name="BatchTrackReportStatusID" ColumnName="BatchTrackReportStatusID" />
+          <ScalarProperty Name="BatchTrackReportStatus" ColumnName="BatchTrackReportStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BatchTrackReportTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.BatchTrackReportType">
+        <MappingFragment StoreEntitySet="BatchTrackReportTypes">
+          <ScalarProperty Name="BatchTrackReportTypeID" ColumnName="BatchTrackReportTypeID" />
+          <ScalarProperty Name="BatchTrackReportType1" ColumnName="BatchTrackReportType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BatchTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.BatchType">
+        <MappingFragment StoreEntitySet="BatchTypes">
+          <ScalarProperty Name="BatchTypeID" ColumnName="BatchTypeID" />
+          <ScalarProperty Name="Batch_Type" ColumnName="Batch_Type" />
+          <ScalarProperty Name="Begin_seq" ColumnName="Begin_seq" />
+          <ScalarProperty Name="End_seq" ColumnName="End_seq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingOptions">
+      <EntityTypeMapping TypeName="CascadeDBModel.BillingOption">
+        <MappingFragment StoreEntitySet="BillingOptions">
+          <ScalarProperty Name="BillingOptionID" ColumnName="BillingOptionID" />
+          <ScalarProperty Name="BillingOption1" ColumnName="BillingOption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calendars">
+      <EntityTypeMapping TypeName="CascadeDBModel.Calendar">
+        <MappingFragment StoreEntitySet="Calendar">
+          <ScalarProperty Name="CalendarID" ColumnName="CalendarID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBRAccountStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.CBRAccountStatu">
+        <MappingFragment StoreEntitySet="CBRAccountStatus">
+          <ScalarProperty Name="CBRAccountStatusID" ColumnName="CBRAccountStatusID" />
+          <ScalarProperty Name="CBRAccountStatus" ColumnName="CBRAccountStatus" />
+          <ScalarProperty Name="CBRAccountStatusDesc" ColumnName="CBRAccountStatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBRBankruptStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.CBRBankruptStatu">
+        <MappingFragment StoreEntitySet="CBRBankruptStatus">
+          <ScalarProperty Name="CBRBankruptID" ColumnName="CBRBankruptID" />
+          <ScalarProperty Name="CBRBankruptStatus" ColumnName="CBRBankruptStatus" />
+          <ScalarProperty Name="CBRBankruptStatusDesc" ColumnName="CBRBankruptStatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBRDisputeStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.CBRDisputeStatu">
+        <MappingFragment StoreEntitySet="CBRDisputeStatus">
+          <ScalarProperty Name="CBRDisputeID" ColumnName="CBRDisputeID" />
+          <ScalarProperty Name="CBRDisputeStatus" ColumnName="CBRDisputeStatus" />
+          <ScalarProperty Name="CBRDisputeStatusDesc" ColumnName="CBRDisputeStatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBRSpecialStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.CBRSpecialStatu">
+        <MappingFragment StoreEntitySet="CBRSpecialStatus">
+          <ScalarProperty Name="CBRSpecialStatusID" ColumnName="CBRSpecialStatusID" />
+          <ScalarProperty Name="CBRSpecialStatus" ColumnName="CBRSpecialStatus" />
+          <ScalarProperty Name="CBRSpecialStatusDesc" ColumnName="CBRSpecialStatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="CascadeDBModel.Color">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="Color1" ColumnName="Color" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="CascadeDBModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourtTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.CourtType">
+        <MappingFragment StoreEntitySet="CourtTypes">
+          <ScalarProperty Name="CourtTypeID" ColumnName="CourtTypeID" />
+          <ScalarProperty Name="CourtType1" ColumnName="CourtType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditCardTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.CreditCardType">
+        <MappingFragment StoreEntitySet="CreditCardTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CreditCardType1" ColumnName="CreditCardType" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DamageTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.DamageType">
+        <MappingFragment StoreEntitySet="DamageTypes">
+          <ScalarProperty Name="DamgeTypeID" ColumnName="DamgeTypeID" />
+          <ScalarProperty Name="DamageType1" ColumnName="DamageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.DataType">
+        <MappingFragment StoreEntitySet="DataTypes">
+          <ScalarProperty Name="DataTypeID" ColumnName="DataTypeID" />
+          <ScalarProperty Name="DataType1" ColumnName="DataType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebtTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.DebtType">
+        <MappingFragment StoreEntitySet="DebtTypes">
+          <ScalarProperty Name="DebtTypeID" ColumnName="DebtTypeID" />
+          <ScalarProperty Name="DebtType1" ColumnName="DebtType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="CascadeDBModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Department1" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentLibraryCategories">
+      <EntityTypeMapping TypeName="CascadeDBModel.DocumentLibraryCategory">
+        <MappingFragment StoreEntitySet="DocumentLibraryCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="Media" ColumnName="Media" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentTypes">
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentType1" ColumnName="DocumentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DominantHands">
+      <EntityTypeMapping TypeName="CascadeDBModel.DominantHand">
+        <MappingFragment StoreEntitySet="DominantHand">
+          <ScalarProperty Name="DominantHandID" ColumnName="DominantHandID" />
+          <ScalarProperty Name="DominantHand1" ColumnName="DominantHand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmploymentTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.EmploymentType">
+        <MappingFragment StoreEntitySet="EmploymentTypes">
+          <ScalarProperty Name="EmploymentTypeID" ColumnName="EmploymentTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="CascadeDBModel.Gender">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Gender1" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="CascadeDBModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Industries">
+      <EntityTypeMapping TypeName="CascadeDBModel.Industry">
+        <MappingFragment StoreEntitySet="Industries">
+          <ScalarProperty Name="lngIndustryID" ColumnName="lngIndustryID" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.InsuranceType">
+        <MappingFragment StoreEntitySet="InsuranceTypes">
+          <ScalarProperty Name="InsuranceTypeID" ColumnName="InsuranceTypeID" />
+          <ScalarProperty Name="InsuranceType1" ColumnName="InsuranceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceOptions">
+      <EntityTypeMapping TypeName="CascadeDBModel.InvoiceOption">
+        <MappingFragment StoreEntitySet="InvoiceOptions">
+          <ScalarProperty Name="InvoiceOptionID" ColumnName="InvoiceOptionID" />
+          <ScalarProperty Name="InvoiceOption1" ColumnName="InvoiceOption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KBCategories">
+      <EntityTypeMapping TypeName="CascadeDBModel.KBCategory">
+        <MappingFragment StoreEntitySet="KBCategories">
+          <ScalarProperty Name="KBCategoryID" ColumnName="KBCategoryID" />
+          <ScalarProperty Name="KBCategory1" ColumnName="KBCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="CascadeDBModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NamePrefixes">
+      <EntityTypeMapping TypeName="CascadeDBModel.NamePrefix">
+        <MappingFragment StoreEntitySet="NamePrefix">
+          <ScalarProperty Name="PrefixID" ColumnName="PrefixID" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NameSuffixes">
+      <EntityTypeMapping TypeName="CascadeDBModel.NameSuffix">
+        <MappingFragment StoreEntitySet="NameSuffix">
+          <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NCOACodes">
+      <EntityTypeMapping TypeName="CascadeDBModel.NCOACode">
+        <MappingFragment StoreEntitySet="NCOACodes">
+          <ScalarProperty Name="NCOAID" ColumnName="NCOAID" />
+          <ScalarProperty Name="NCOACode1" ColumnName="NCOACode" />
+          <ScalarProperty Name="NCOADescription" ColumnName="NCOADescription" />
+          <ScalarProperty Name="UpdateAccount" ColumnName="UpdateAccount" />
+          <ScalarProperty Name="NewStatus" ColumnName="NewStatus" />
+          <ScalarProperty Name="BadAddressFlag" ColumnName="BadAddressFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NegoiationTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.NegoiationType">
+        <MappingFragment StoreEntitySet="NegoiationTypes">
+          <ScalarProperty Name="NegoiationTypeID" ColumnName="NegoiationTypeID" />
+          <ScalarProperty Name="NegoiationType1" ColumnName="NegoiationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offices">
+      <EntityTypeMapping TypeName="CascadeDBModel.Office">
+        <MappingFragment StoreEntitySet="Office">
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="OfficeName" ColumnName="OfficeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaperAges">
+      <EntityTypeMapping TypeName="CascadeDBModel.PaperAge">
+        <MappingFragment StoreEntitySet="PaperAges">
+          <ScalarProperty Name="PaperAgeID" ColumnName="PaperAgeID" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaperTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PaperType">
+        <MappingFragment StoreEntitySet="PaperTypes">
+          <ScalarProperty Name="PaperTypeID" ColumnName="PaperTypeID" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassengerTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PassengerType">
+        <MappingFragment StoreEntitySet="PassengerTypes">
+          <ScalarProperty Name="PassengerTypeID" ColumnName="PassengerTypeID" />
+          <ScalarProperty Name="PassengerType1" ColumnName="PassengerType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentPlanStatuses">
+      <EntityTypeMapping TypeName="CascadeDBModel.PaymentPlanStatus">
+        <MappingFragment StoreEntitySet="PaymentPlanStatuses">
+          <ScalarProperty Name="PaymentPlanStatusID" ColumnName="PaymentPlanStatusID" />
+          <ScalarProperty Name="PaymentPlanStatus1" ColumnName="PaymentPlanStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentTypes">
+          <ScalarProperty Name="PaymentTypeID" ColumnName="PaymentTypeID" />
+          <ScalarProperty Name="PaymentType1" ColumnName="PaymentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PhoneType">
+        <MappingFragment StoreEntitySet="PhoneTypes">
+          <ScalarProperty Name="PhoneTypeID" ColumnName="PhoneTypeID" />
+          <ScalarProperty Name="PhoneType1" ColumnName="PhoneType" />
+          <ScalarProperty Name="Skip" ColumnName="Skip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PolicyType">
+        <MappingFragment StoreEntitySet="PolicyTypes">
+          <ScalarProperty Name="PolicyTypeID" ColumnName="PolicyTypeID" />
+          <ScalarProperty Name="PolicyType1" ColumnName="PolicyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Port_Acq">
       <EntityTypeMapping TypeName="CascadeDBModel.Port_Acq">
         <MappingFragment StoreEntitySet="Port_Acq">
@@ -137,6 +705,199 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PortfolioStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.PortfolioStatu">
+        <MappingFragment StoreEntitySet="PortfolioStatus">
+          <ScalarProperty Name="PortfolioStatusID" ColumnName="PortfolioStatusID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PortfoliotypeID" ColumnName="PortfoliotypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortfolioTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PortfolioType">
+        <MappingFragment StoreEntitySet="PortfolioType">
+          <ScalarProperty Name="PortfolioType1" ColumnName="PortfolioType" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortfolioTypes1">
+      <EntityTypeMapping TypeName="CascadeDBModel.PortfolioType1">
+        <MappingFragment StoreEntitySet="PortfolioTypes">
+          <ScalarProperty Name="PortfolioTypeID" ColumnName="PortfolioTypeID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCodeSummaries">
+      <EntityTypeMapping TypeName="CascadeDBModel.ProductCodeSummary">
+        <MappingFragment StoreEntitySet="ProductCodeSummary">
+          <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+          <ScalarProperty Name="PlaceDate" ColumnName="PlaceDate" />
+          <ScalarProperty Name="Records" ColumnName="Records" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromiseTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.PromiseType">
+        <MappingFragment StoreEntitySet="PromiseTypes">
+          <ScalarProperty Name="PMT_TYPEID" ColumnName="PMT_TYPEID" />
+          <ScalarProperty Name="PMT_TYPE" ColumnName="PMT_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relationships">
+      <EntityTypeMapping TypeName="CascadeDBModel.Relationship">
+        <MappingFragment StoreEntitySet="Relationships">
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="Relationship1" ColumnName="Relationship" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportOptions">
+      <EntityTypeMapping TypeName="CascadeDBModel.ReportOption">
+        <MappingFragment StoreEntitySet="ReportOptions">
+          <ScalarProperty Name="ReportOptionID" ColumnName="ReportOptionID" />
+          <ScalarProperty Name="ReportOption1" ColumnName="ReportOption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResponsibilityTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.ResponsibilityType">
+        <MappingFragment StoreEntitySet="ResponsibilityTypes">
+          <ScalarProperty Name="ResponsibilityTypeID" ColumnName="ResponsibilityTypeID" />
+          <ScalarProperty Name="ResponsibilityType1" ColumnName="ResponsibilityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoadConditions">
+      <EntityTypeMapping TypeName="CascadeDBModel.RoadCondition">
+        <MappingFragment StoreEntitySet="RoadConditions">
+          <ScalarProperty Name="RoadConditionID" ColumnName="RoadConditionID" />
+          <ScalarProperty Name="RoadCondition1" ColumnName="RoadCondition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoreTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.ScoreType">
+        <MappingFragment StoreEntitySet="ScoreTypes">
+          <ScalarProperty Name="ScoreTypeID" ColumnName="ScoreTypeID" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.SecurityType">
+        <MappingFragment StoreEntitySet="SecurityTypes">
+          <ScalarProperty Name="SecurityTypeID" ColumnName="SecurityTypeID" />
+          <ScalarProperty Name="SecurityType1" ColumnName="SecurityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingCategories">
+      <EntityTypeMapping TypeName="CascadeDBModel.SettingCategory">
+        <MappingFragment StoreEntitySet="SettingCategories">
+          <ScalarProperty Name="SettingCategoryID" ColumnName="SettingCategoryID" />
+          <ScalarProperty Name="SettingCategory1" ColumnName="SettingCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingDataTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.SettingDataType">
+        <MappingFragment StoreEntitySet="SettingDataTypes">
+          <ScalarProperty Name="SettingDataTypeID" ColumnName="SettingDataTypeID" />
+          <ScalarProperty Name="SettingDataType1" ColumnName="SettingDataType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettleRequestStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.SettleRequestStatu">
+        <MappingFragment StoreEntitySet="SettleRequestStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SkipDataTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.SkipDataType">
+        <MappingFragment StoreEntitySet="SkipDataType">
+          <ScalarProperty Name="SkipDataTypeID" ColumnName="SkipDataTypeID" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SkipStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.SkipStatu">
+        <MappingFragment StoreEntitySet="SkipStatus">
+          <ScalarProperty Name="SkipStatusID" ColumnName="SkipStatusID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateConditionals">
+      <EntityTypeMapping TypeName="CascadeDBModel.StateConditional">
+        <MappingFragment StoreEntitySet="StateConditionals">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Office" ColumnName="Office" />
+          <ScalarProperty Name="Conditional" ColumnName="Conditional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="CascadeDBModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="State1" ColumnName="State" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statutes">
+      <EntityTypeMapping TypeName="CascadeDBModel.Statute">
+        <MappingFragment StoreEntitySet="Statute">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Statute1" ColumnName="Statute" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StatuteID" ColumnName="StatuteID" />
+          <ScalarProperty Name="StatuteTypeID" ColumnName="StatuteTypeID" />
+          <ScalarProperty Name="Prefer" ColumnName="Prefer" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ExpectedLiquidation" ColumnName="ExpectedLiquidation" />
+          <ScalarProperty Name="StateConditional" ColumnName="StateConditional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatuteTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.StatuteType">
+        <MappingFragment StoreEntitySet="StatuteTypes">
+          <ScalarProperty Name="StatuteTypeID" ColumnName="StatuteTypeID" />
+          <ScalarProperty Name="StatuteType1" ColumnName="StatuteType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubIndustries">
+      <EntityTypeMapping TypeName="CascadeDBModel.SubIndustry">
+        <MappingFragment StoreEntitySet="SubIndustries">
+          <ScalarProperty Name="lngSubIndustryID" ColumnName="lngSubIndustryID" />
+          <ScalarProperty Name="lngIndustryID" ColumnName="lngIndustryID" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SOLType" ColumnName="SOLType" />
+          <ScalarProperty Name="memLongDescription" ColumnName="memLongDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sup_BrockettCompanies">
+      <EntityTypeMapping TypeName="CascadeDBModel.Sup_BrockettCompanies">
+        <MappingFragment StoreEntitySet="Sup_BrockettCompanies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Sup_Company">
       <EntityTypeMapping TypeName="CascadeDBModel.Sup_Company">
         <MappingFragment StoreEntitySet="Sup_Company">
@@ -152,6 +913,13 @@
         <MappingFragment StoreEntitySet="Sup_PmtType">
           <ScalarProperty Name="Payment_Type_ID_code" ColumnName="Payment Type ID code" />
           <ScalarProperty Name="Payment_Type_ID" ColumnName="Payment Type ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sup_Reason">
+      <EntityTypeMapping TypeName="CascadeDBModel.Sup_Reason">
+        <MappingFragment StoreEntitySet="Sup_Reason">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -176,6 +944,45 @@
         <MappingFragment StoreEntitySet="Sup_TransSource">
           <ScalarProperty Name="TransSource" ColumnName="TransSource" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sup_UploadDPS">
+      <EntityTypeMapping TypeName="CascadeDBModel.Sup_UploadDPS">
+        <MappingFragment StoreEntitySet="Sup_UploadDPS">
+          <ScalarProperty Name="PIMS_Account_Number" ColumnName="PIMS Account Number" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Tran_Code" ColumnName="Tran Code" />
+          <ScalarProperty Name="Tran_Date" ColumnName="Tran Date" />
+          <ScalarProperty Name="Check_Number" ColumnName="Check Number" />
+          <ScalarProperty Name="Payment_Type_ID" ColumnName="Payment Type ID" />
+          <ScalarProperty Name="Tran_Source" ColumnName="Tran Source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sup_UploadRecalls">
+      <EntityTypeMapping TypeName="CascadeDBModel.Sup_UploadRecalls">
+        <MappingFragment StoreEntitySet="Sup_UploadRecalls">
+          <ScalarProperty Name="PIMSAcct_" ColumnName="PIMSAcct#" />
+          <ScalarProperty Name="NewStatus" ColumnName="NewStatus" />
+          <ScalarProperty Name="NewResp" ColumnName="NewResp" />
+          <ScalarProperty Name="Uploaded__y_n_" ColumnName="Uploaded (y/n)" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surnames">
+      <EntityTypeMapping TypeName="CascadeDBModel.Surname">
+        <MappingFragment StoreEntitySet="Surnames">
+          <ScalarProperty Name="SurName1" ColumnName="SurName" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskCategories">
+      <EntityTypeMapping TypeName="CascadeDBModel.TaskCategory">
+        <MappingFragment StoreEntitySet="TaskCategories">
+          <ScalarProperty Name="TaskCategoryID" ColumnName="TaskCategoryID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -253,6 +1060,8 @@
           <ScalarProperty Name="Notes" ColumnName="Notes" />
           <ScalarProperty Name="IsSameBillingAddress" ColumnName="IsSameBillingAddress" />
           <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="FranchiseeId" ColumnName="FranchiseeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -295,5 +1104,191 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TemplateLibraries">
+      <EntityTypeMapping TypeName="CascadeDBModel.TemplateLibrary">
+        <MappingFragment StoreEntitySet="TemplateLibrary">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDesc" ColumnName="ItemDesc" />
+          <ScalarProperty Name="ItemLink" ColumnName="ItemLink" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateLibraryCategories">
+      <EntityTypeMapping TypeName="CascadeDBModel.TemplateLibraryCategory">
+        <MappingFragment StoreEntitySet="TemplateLibraryCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeZonesByAreaCodes">
+      <EntityTypeMapping TypeName="CascadeDBModel.TimeZonesByAreaCode">
+        <MappingFragment StoreEntitySet="TimeZonesByAreaCode">
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="AreaCodeName" ColumnName="AreaCodeName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleOwnerTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.VehicleOwnerType">
+        <MappingFragment StoreEntitySet="VehicleOwnerTypes">
+          <ScalarProperty Name="VehicleOwnerTypeID" ColumnName="VehicleOwnerTypeID" />
+          <ScalarProperty Name="OwnerType" ColumnName="OwnerType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorProducts">
+      <EntityTypeMapping TypeName="CascadeDBModel.VendorProduct">
+        <MappingFragment StoreEntitySet="VendorProducts">
+          <ScalarProperty Name="VendorProductID" ColumnName="VendorProductID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="VendorProduct1" ColumnName="VendorProduct" />
+          <ScalarProperty Name="PerHitCost" ColumnName="PerHitCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="CascadeDBModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendors">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Vendor1" ColumnName="Vendor" />
+          <ScalarProperty Name="VendorTypeID" ColumnName="VendorTypeID" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip_Code" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="HTTPURL" ColumnName="HTTPURL" />
+          <ScalarProperty Name="FTPURL" ColumnName="FTPURL" />
+          <ScalarProperty Name="FTPUser" ColumnName="FTPUser" />
+          <ScalarProperty Name="FTPPassword" ColumnName="FTPPassword" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="dtsJob" ColumnName="dtsJob" />
+          <ScalarProperty Name="importJob" ColumnName="importJob" />
+          <ScalarProperty Name="exportJob" ColumnName="exportJob" />
+          <ScalarProperty Name="import" ColumnName="import" />
+          <ScalarProperty Name="ExportToFTP" ColumnName="ExportToFTP" />
+          <ScalarProperty Name="FTPFolder" ColumnName="FTPFolder" />
+          <ScalarProperty Name="Secured" ColumnName="Secured" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.VendorType">
+        <MappingFragment StoreEntitySet="VendorTypes">
+          <ScalarProperty Name="VendorTypeID" ColumnName="VendorTypeID" />
+          <ScalarProperty Name="VendorType1" ColumnName="VendorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeatherConditions">
+      <EntityTypeMapping TypeName="CascadeDBModel.WeatherCondition">
+        <MappingFragment StoreEntitySet="WeatherConditions">
+          <ScalarProperty Name="WeatherCondtionID" ColumnName="WeatherCondtionID" />
+          <ScalarProperty Name="WeatherCondition1" ColumnName="WeatherCondition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlows">
+      <EntityTypeMapping TypeName="CascadeDBModel.WorkFlow">
+        <MappingFragment StoreEntitySet="WorkFlow">
+          <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+          <ScalarProperty Name="WorkFlow1" ColumnName="WorkFlow" />
+          <ScalarProperty Name="WorkFlowSQL" ColumnName="WorkFlowSQL" />
+          <ScalarProperty Name="WorkFlowType" ColumnName="WorkFlowType" />
+          <ScalarProperty Name="WorkFlowTypeValue" ColumnName="WorkFlowTypeValue" />
+          <ScalarProperty Name="WhereClause" ColumnName="WhereClause" />
+          <ScalarProperty Name="FieldList" ColumnName="FieldList" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="AutoRun" ColumnName="AutoRun" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="LastDateProcessed" ColumnName="LastDateProcessed" />
+          <ScalarProperty Name="NextWorkFlowID" ColumnName="NextWorkFlowID" />
+          <ScalarProperty Name="SQLStatement" ColumnName="SQLStatement" />
+          <ScalarProperty Name="FromClause" ColumnName="FromClause" />
+          <ScalarProperty Name="SelectClause" ColumnName="SelectClause" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlowJobs">
+      <EntityTypeMapping TypeName="CascadeDBModel.WorkFlowJob">
+        <MappingFragment StoreEntitySet="WorkFlowJobs">
+          <ScalarProperty Name="WorkFlowJobID" ColumnName="WorkFlowJobID" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlowStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.WorkFlowStatu">
+        <MappingFragment StoreEntitySet="WorkFlowStatus">
+          <ScalarProperty Name="WorkFlowStatusID" ColumnName="WorkFlowStatusID" />
+          <ScalarProperty Name="WorkFlowStatus" ColumnName="WorkFlowStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlowTypes">
+      <EntityTypeMapping TypeName="CascadeDBModel.WorkFlowType">
+        <MappingFragment StoreEntitySet="WorkFlowTypes">
+          <ScalarProperty Name="WorkFlowTypeID" ColumnName="WorkFlowTypeID" />
+          <ScalarProperty Name="WorkFlowType1" ColumnName="WorkFlowType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.WorkStatu">
+        <MappingFragment StoreEntitySet="WorkStatus">
+          <ScalarProperty Name="WorkStatusID" ColumnName="WorkStatusID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YesNoes">
+      <EntityTypeMapping TypeName="CascadeDBModel.YesNo">
+        <MappingFragment StoreEntitySet="YesNo">
+          <ScalarProperty Name="YesNoID" ColumnName="YesNoID" />
+          <ScalarProperty Name="YesNo1" ColumnName="YesNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YGCStatus">
+      <EntityTypeMapping TypeName="CascadeDBModel.YGCStatu">
+        <MappingFragment StoreEntitySet="YGCStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PortfolioCashFlow">
+      <EntityTypeMapping TypeName="CascadeDBModel.vw_PortfolioCashFlow">
+        <MappingFragment StoreEntitySet="vw_PortfolioCashFlow">
+          <ScalarProperty Name="Portfolio_" ColumnName="Portfolio#" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="TransType" ColumnName="TransType" />
+          <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="CascadeDBModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+      <EndProperty Name="aspnet_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="aspnet_Users">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

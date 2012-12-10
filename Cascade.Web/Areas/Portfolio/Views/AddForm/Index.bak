@@ -1,0 +1,456 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+
+<link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
+
+<style>
+    #collectionsGrid thead th {
+        padding: 3px 18px 3px 10px;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+        cursor: pointer;
+        * cursor: hand;
+        background-color: #1f497d;
+        color: #fff;
+    }
+
+    #collectionsGrid tfoot th {
+        padding: 3px 18px 3px 10px;
+        border-top: 1px solid black;
+        font-weight: bold;
+    }
+
+    #collectionsGrid tr.heading2 td {
+        border-bottom: 1px solid #aaa;
+    }
+
+    #collectionsGrid td {
+        padding: 3px 10px;
+        color: black;
+    }
+
+        #collectionsGrid td.center {
+            text-align: center;
+        }
+
+    #collectionsGrid tr:nth-child(even) {
+        background: #fff;
+    }
+
+    #collectionsGrid tr:nth-child(odd) {
+        background: #E2E4FF;
+    }
+</style>
+<h2>Portfolio Form</h2>
+<div id="loading" style="display: none;">
+    &nbsp;&nbsp;&nbsp;<img src="~/Content/images/ajax-loader.gif" />
+    <br />
+    Working ...
+</div>
+<table>
+    <tr>
+        <td>Go to portfolio:
+            <select id="portfolioList" data-bind="options:portfolios,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: portfolioNumber"></select></td>
+    </tr>
+</table>
+<div id="portfolioAcqSection" data-bind="with:acqSecionVM">
+    <table class="tblCommon">
+        <tr>
+            <td style="text-align: right; width: 20%">Portfolio Number</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 20%">
+                <input type="text" id="portfolioNumber" data-bind="value:portfolioNumber" /></td>
+            <td style="text-align: right; width: 20%">Cutoff Date</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 36%">
+                <input type="text" id="cutoffDt" data-bind="value:cutOffDt" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">Company</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 20%">
+                <select id="companyList" data-bind="options:companies,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value:company"></select></td>
+            <td style="text-align: right; width: 20%">Closing Date</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 36%">
+                <input type="text" id="closingDt" data-bind="value:closingDt" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">Lender/FileDes</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left;" colspan="4">
+                <input type="text" id="lenderFileDes" data-bind="value:lender" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">Seller</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left;" colspan="4">
+                <select data-bind="options:sellers,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: seller">
+                </select></td>
+
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">CostBasis</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 20%">
+                <input type="text" id="costbasis" data-bind="value:costBasis" /></td>
+            <td style="text-align: right; width: 20%">PutbackTerm(days)</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 36%">
+                <input type="text" id="putbackTerm" data-bind="value:putbackTerms" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">Face</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 20%">
+                <input type="text" id="face" data-bind="value:face" /></td>
+            <td style="text-align: right; width: 20%">PutbackDeadline</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 36%">
+                <input type="text" id="putbackDeadline" data-bind="value:putbackDeadline" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width: 20%">#OfAccts</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 20%">
+                <input type="text" id="accts" data-bind="value:accounts" /></td>
+            <td style="text-align: right; width: 20%">Purchase Price</td>
+            <td style="width: 2%">:</td>
+            <td style="text-align: left; width: 36%">
+                <input type="text" id="purchasePrice" data-bind="value:purchasePrice" /></td>
+
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center">
+                <img src="~/Content/images/savebutton.png" data-bind="click:saveMainRecord" />
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<div id="tabsSection">
+    <table class="tblCommon">
+        <tr>
+            <td>
+                <div id="portfolioTabs">
+                    <ul>
+                        <li><a href="#salesTab">Sales</a></li>
+                        <li><a href="#collectionsTab">Collections</a></li>
+                        <li><a href="#investmentsTab">Investments</a></li>
+                        <li><a href="#distributionsTab">Distributions</a></li>
+                        <li><a href="#interestTab">Interest</a></li>
+                        <li><a href="#notesTab">Notes</a></li>
+                    </ul>
+                    <div id="salesTab" data-bind="with: salesTabVM">
+                        <table>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Portfolio Number</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 78%" colspan="4">
+                                    <input type="text" id="portfolioNumber-sales" data-bind="enable:false,value:currentSalesRecord().portfolioNumber" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Lender</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 78%" colspan="4">
+                                    <input type="text" id="lender" data-bind="value:currentSalesRecord().lender" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Buyer</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 78%" colspan="4">
+                                    <select data-bind="options:buyers,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: currentSalesRecord().buyer">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Cutoff Date</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="cutOffDate" data-bind="value:currentSalesRecord().cutoffDt" /></td>
+                                <td style="text-align: right; width: 20%">PutbackTerm(Days)</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="putbackTerms" data-bind="value:currentSalesRecord().putbackTerms" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Closing Date</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="closingDate-sales" data-bind="value:currentSalesRecord().closingDt" /></td>
+                                <td style="text-align: right; width: 20%">PutbackDeadline</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="putbackDeadline-sales" data-bind="value:currentSalesRecord().putbackDeadline" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">SalesBasis</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="salesBasis" data-bind="value:currentSalesRecord().salesBasis" /></td>
+                                <td style="text-align: right; width: 20%">SalesPrice</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="salesPrice-sales" data-bind="value:currentSalesRecord().salesPrice" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">FaceValue</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="faceValue-sales" data-bind="value:currentSalesRecord().faceValue" /></td>
+                                <td style="text-align: right; width: 20%">TransType</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <select disabled="disabled" data-bind="options:salesTransTypes,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: currentSalesRecord().salesTransType">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Number Of Accounts</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%" colspan="4">
+                                    <input type="text" id="accounts" data-bind="value:currentSalesRecord().accounts" /></td>
+                            </tr>
+
+
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/back_enabled.jpg" data-bind="click:previousRecord,visible:visiblePrevious" />&nbsp;<span data-bind="text:recordCounts"></span> &nbsp;
+                                    <img src="~/Content/images/forward_enabled.jpg" data-bind="click:nextRecord,visible:visibleNext" /></td>
+                            </tr>
+                            <tr style="background-color: #1f497d">
+                                <td colspan="6">
+                                    <table style="width: 100%; border-color: white; border-style: solid; border-width: 2px">
+                                        <tr>
+                                            <td style="text-align: right; width: 40%; color: #fff">Total # Sold</td>
+                                            <td style="text-align: right; width: 1%; color: #fff">:</td>
+                                            <td style="text-align: left; width: 9%; color: #fff" data-bind="text:totalSold"></td>
+                                            <td style="text-align: right; width: 40%; color: #fff">Total Sales</td>
+                                            <td style="text-align: right; width: 1%; color: #fff">:</td>
+                                            <td style="text-align: right; width: 9%; color: #fff" data-bind="text:totalSales"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/savebutton.png" data-bind="click:saveRecord" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="collectionsTab" data-bind="with: collectionsTabVM">
+
+                        <div style="width: 100%; height: 300px; overflow: auto;">
+                            <table id="collectionsGrid">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%">Portfolio Number</th>
+                                        <th style="width: 20%">Closing Date</th>
+                                        <th style="width: 20%">Agency</th>
+                                        <th style="width: 20%">Face Value</th>
+                                        <th style="width: 20%">Net Colls</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach:collectionRecords()">
+                                    <tr data-bind="click:$parent.selectedRecordIndexChanged">
+                                        <td style="text-align: center" data-bind="text:portfolioNumber"></td>
+                                        <td style="text-align: center" data-bind="text:closingDt"></td>
+                                        <td style="text-align: center" data-bind="text:collectionAgencyName"></td>
+                                        <td style="text-align: center" data-bind="text:faceValue"></td>
+                                        <td style="text-align: center" data-bind="text:netColls"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                        <p style="background-color: #1f497d; color: #fff; text-align: right">Total collections:<span data-bind="text:totalCollections"></span></p>
+
+                        <div id="editView" data-bind="with: currentCollectionRecord">
+                            <table>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Closing Date</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 36%">
+                                        <input type="text" id="closingDate-coln" data-bind="value:closingDt" /></td>
+                                    <td style="text-align: right; width: 20%">Portfolio Number</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 20%">
+                                        <input type="text" id="portfolioNumber-coln" data-bind="enable:false,value:portfolioNumber" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Agency Name</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left" colspan="4">
+                                        <select data-bind="options:$parent.agencies,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: $parent.selectedAgency">
+                                        </select></td>
+
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Face Value</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 36%">
+                                        <input type="text" id="faceValue" data-bind="value:faceValue" /></td>
+                                    <td style="text-align: right; width: 20%">Net Colls</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 20%">
+                                        <input type="text" id="netColls" data-bind="value:netColls" /></td>
+
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">TransType</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left" colspan="4">
+                                        <select disabled="disabled" data-bind="options:$parent.collectionsTransTypes,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: collectionsTransType">
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="text-align: center">
+                                        <img src="~/Content/images/savebutton.png" data-bind="click:$parent.saveRecord" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+@Scripts.Render("~/bundles/knockout")
+@section scripts{
+
+
+    <script src="~/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+    <script src="~/Scripts/datatable/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/portfolio.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //$.ajax({
+            //    url: baseUrl + '/api/Lookup/',
+            //    type: 'GET',
+            //    contentType: 'application/json',
+            //    data: { id: 'Portfolio' },
+            //    success: function (data) {
+            //        $('#portfolioList').append(new Option('', ''));
+            //        $.each(data, function (i, item) {
+            //            $('#portfolioList').append(new Option(item.Text, item.Value));
+            //        });
+            //    },
+            //    error: function (xhr, status, somthing) {
+            //        log(status);
+            //    }
+            //});
+
+            $('#companyList').append(new Option('', ''));
+            //$.each(portfolioViewModels.supBrockettCompanies(), function (i, item) {
+            //    $('#companyList').append(new Option(item.Text, item.Text));
+            //});
+
+            $('#sellerList').append(new Option('', ''));
+            //$.each(portfolioViewModels.sellers(), function (i, item) {
+            //    $('#sellerList').append(new Option(item.Text, item.Text));
+            //});
+
+            $('#agencyList').append(new Option('', ''));
+            //$.each(portfolioViewModels.agencies(), function (i, item) {
+            //    $('#agencyList').append(new Option(item.Text, item.Text));
+            //});
+
+            //portfolioViewModels.inittializeVMS('');
+            //ko.applyBindings(portfolioViewModels.portfolioAcqVM(), $('#portfolioAcqSection')[0]);
+            ko.applyBindings(new portfolioVM());
+            //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
+            //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#salesTab')[0]);
+            $("#portfolioTabs").tabs();
+            $("#portfolioTabs").bind('tabsselect', portfolioTabsChangedHandler);
+
+            $('#closingDt').datepicker();
+            $('#cutoffDt').datepicker();
+            $('#closingDate-int').datepicker();
+
+            $('#portfolioList').live('change', function () {
+                //if ($('#portfolioList').val() != '') {
+                //    portfolioViewModels.resetVMS();
+                //    $('#companyList').val('');
+                //    $('#sellerList').val('');
+
+                //    portfolioViewModels.inittializeVMS($('#portfolioList').val());
+                //    ko.applyBindings(portfolioViewModels.portfolioAcqVM(), $('#portfolioAcqSection')[0]);
+
+                //    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
+                //    ko.applyBindings(portfolioViewModels.salesTransVM(), $('#salesTab')[0]);
+
+                //    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.collectionsTransVM());
+                //    ko.applyBindings(portfolioViewModels.collectionsTransVM(), $('#collectionsTab')[0]);
+
+                //    //$("#portfolioTabs").tabs('load', $("#portfolioTabs").tabs('option', 'selected'));
+                //    $("#portfolioTabs").tabs('select', 0);
+                //    $('#purchasePrice').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                //    $('#salesPrice-sales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                //    $('#faceValue-sales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                //    $('#totalSales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+
+
+                //}
+            });
+
+
+            //$("#collectionsGrid tbody").click(function (event) {
+            //    var agency = $(event.target.parentNode)[0].cells[1].innerText || $(event.target.parentNode)[0].cells[1].textContent;
+            //    log(agency);
+            //});
+        });
+
+        function deleteRows(id, toDeleteHeader) {
+            var obj = document.getElementById(id);
+            if (!obj && !obj.rows)
+                return;
+            if (typeof toDeleteHeader == 'undefined')
+                toDeleteHeader = false;
+            var limit = !!toDeleteHeader ? 0 : 1;
+            var rows = obj.rows;
+            if (limit > rows.length)
+                return;
+            for (; rows.length > limit;) {
+                obj.deleteRow(limit);
+            }
+        }
+        function portfolioTabsChangedHandler(event, tab) {
+
+            switch (tab.index) {
+                case 0:
+                    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
+                    //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#salesTab')[0]);
+                    break;
+                case 1:
+
+                    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.collectionsTransVM());
+                    //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#collectionsTab')[0]);
+                    break;
+                case 2:
+                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.investmentsTransVM());
+                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#investmentsTab')[0]);
+                    break;
+                case 3:
+                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.distributionsTransVM());
+                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#distributionsTab')[0]);
+                    break;
+                case 4:
+                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.interestVM());
+                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#interestTab')[0]);
+                    break;
+                case 5:
+                    break;
+
+                default:
+                    break;
+            }
+        };
+    </script>
+}

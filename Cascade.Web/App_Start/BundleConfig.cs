@@ -24,6 +24,8 @@ namespace Cascade.Web
             
             //For DataTable functionality
             //bundles.Add(new StyleBundle("~/Content/datatable").Include("~/Content/dataTables/demo_table.css"));
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                        "~/Scripts/knockout*"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -43,10 +45,16 @@ namespace Cascade.Web
             bundles.Add(new ScriptBundle("~/bundles/external").Include("~/Scripts/jquery.dropdownPlain.js",
                 "~/Scripts/consolelog.js",
                 "~/Scripts/External.js",
+                "~/Scripts/application.js",
+                "~/Scripts/jquery.formatCurrency-1.4.0.min.js",
                 "~/Scripts/plugins.js", 
                 "~/Scripts/datatable/jquery-1.4.4.min.js",
                 "~/Scripts/datatable/jquery.dataTables.min.js",
                 "~/Scripts/datatable/index.js",
+                "~/Scripts/cog.js",
+                "~/Scripts/cog.utils.js",
+                "~/Scripts/format.date.js",
+                "~/Scripts/jquery.formatCurrency-1.4.0.min.js",
                 "~/FusionChartLib/FusionCharts.js",
                 "~/FusionChartLib/FusionCharts.HC.js",
                 "~/FusionChartLib/FusionCharts.jqueryplugin"));

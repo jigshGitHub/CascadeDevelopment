@@ -9,19 +9,19 @@ namespace Cascade.Data.Repositories
 {
     public class DataQueries
     {
-        public IEnumerable<PortfolioPieRptVM> GetPortfolioWorkStationDescription()
+        public IEnumerable<PortfolioPieRpt> GetPortfolioWorkStationDescription()
         {
             DBFactory db;
             SqlDataReader rdr;
-            List<PortfolioPieRptVM> data = null;
+            List<PortfolioPieRpt> data = null;
             try
             {
                 db = new DBFactory();
                 rdr = db.ExecuteReader("sp_PortfolioWorkStationDescriptionReport");
-                data = new List<PortfolioPieRptVM>();
+                data = new List<PortfolioPieRpt>();
                 while(rdr.Read())
                 {
-                    data.Add(new PortfolioPieRptVM { Count = rdr["Count"].ToString(), KeyText = rdr["WorkStatusDescription"].ToString() });
+                    data.Add(new PortfolioPieRpt { Count = rdr["Count"].ToString(), KeyText = rdr["WorkStatusDescription"].ToString() });
                 }
 
             }
@@ -29,22 +29,22 @@ namespace Cascade.Data.Repositories
             {
                 throw new Exception("Exception in DataQueries.GetPortfolioWorkStationDescription:" + ex.Message);
             }
-            return data.AsEnumerable<PortfolioPieRptVM>();
+            return data.AsEnumerable<PortfolioPieRpt>();
         }
 
-        public IEnumerable<PortfolioPieRptVM> GetPortfolioOwner()
+        public IEnumerable<PortfolioPieRpt> GetPortfolioOwner()
         {
             DBFactory db;
             SqlDataReader rdr;
-            List<PortfolioPieRptVM> data = null;
+            List<PortfolioPieRpt> data = null;
             try
             {
                 db = new DBFactory();
                 rdr = db.ExecuteReader("sp_PortfolioOwnerReport");
-                data = new List<PortfolioPieRptVM>();
+                data = new List<PortfolioPieRpt>();
                 while (rdr.Read())
                 {
-                    data.Add(new PortfolioPieRptVM { Count = rdr["Count"].ToString(), KeyText = rdr["PortfolioOwner"].ToString() });
+                    data.Add(new PortfolioPieRpt { Count = rdr["Count"].ToString(), KeyText = rdr["PortfolioOwner"].ToString() });
                 }
 
             }
@@ -52,7 +52,7 @@ namespace Cascade.Data.Repositories
             {
                 throw new Exception("Exception in DataQueries.GetPortfolioOwner:" + ex.Message);
             }
-            return data.AsEnumerable<PortfolioPieRptVM>();
+            return data.AsEnumerable<PortfolioPieRpt>();
         }
     }
 }

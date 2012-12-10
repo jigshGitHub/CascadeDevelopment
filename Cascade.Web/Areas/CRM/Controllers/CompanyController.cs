@@ -20,7 +20,20 @@ namespace Cascade.Web.Areas.CRM.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult GetAllCompanies()
+        {
+            //Get the View Repository
+            CompanyRepository companyRepo = new CompanyRepository();
+            //Get the Report Data
+            var _companyData = from company in companyRepo.GetAll().Distinct()
+                               select company;
+            //return the data
+            return PartialView("_companyRecords", _companyData.ToList());
+
+        }
+
+
         /// <summary>
         /// Returns data by the criterion
         /// </summary>
@@ -38,68 +51,68 @@ namespace Cascade.Web.Areas.CRM.Controllers
         /// Number of columns must match the number of columns in table and number of rows is equal to the number of records that should be displayed in the table</item>
         /// </list>
         /// </returns>
-        public ActionResult AjaxHandler(JQueryDataTableParamModel param)
-        {
-            var allCompanies = DataRepository.GetCompanies();
-            IEnumerable<TBL_COMPANIES> filteredCompanies;
-            //Check whether the companies should be filtered by keyword
-            if (!string.IsNullOrEmpty(param.sSearch))
-            {
-                //Used if particulare columns are filtered 
-                var nameFilter = Convert.ToString(Request["sSearch_1"]);
-                var cityFilter = Convert.ToString(Request["sSearch_2"]);
-                var countryFilter = Convert.ToString(Request["sSearch_3"]);
+        //public ActionResult AjaxHandler(JQueryDataTableParamModel param)
+        //{
+        //    var allCompanies = DataRepository.GetCompanies();
+        //    IEnumerable<TBL_COMPANIES> filteredCompanies;
+        //    //Check whether the companies should be filtered by keyword
+        //    if (!string.IsNullOrEmpty(param.sSearch))
+        //    {
+        //        //Used if particulare columns are filtered 
+        //        var nameFilter = Convert.ToString(Request["sSearch_1"]);
+        //        var cityFilter = Convert.ToString(Request["sSearch_2"]);
+        //        var countryFilter = Convert.ToString(Request["sSearch_3"]);
 
-                //Optionally check whether the columns are searchable at all 
-                var isNameSearchable = Convert.ToBoolean(Request["bSearchable_1"]);
-                //var isCitySearchable = Convert.ToBoolean(Request["bSearchable_2"]);
-                //var isCountrySearchable = Convert.ToBoolean(Request["bSearchable_3"]);
+        //        //Optionally check whether the columns are searchable at all 
+        //        var isNameSearchable = Convert.ToBoolean(Request["bSearchable_1"]);
+        //        //var isCitySearchable = Convert.ToBoolean(Request["bSearchable_2"]);
+        //        //var isCountrySearchable = Convert.ToBoolean(Request["bSearchable_3"]);
 
-                filteredCompanies = DataRepository.GetCompanies()
-                   .Where(c => isNameSearchable && c.COMPANYNAME.ToLower().Contains(param.sSearch.ToLower())
-                               //||
-                               //isCitySearchable && c.CITY.ToLower().Contains(param.sSearch.ToLower())
-                               //||
-                               //isCountrySearchable && c.Country.ToLower().Contains(param.sSearch.ToLower())
-                               );
-            }
-            else
-            {
-                filteredCompanies = allCompanies;
-            }
+        //        filteredCompanies = DataRepository.GetCompanies()
+        //           .Where(c => isNameSearchable && c.COMPANYNAME.ToLower().Contains(param.sSearch.ToLower())
+        //                       //||
+        //                       //isCitySearchable && c.CITY.ToLower().Contains(param.sSearch.ToLower())
+        //                       //||
+        //                       //isCountrySearchable && c.Country.ToLower().Contains(param.sSearch.ToLower())
+        //                       );
+        //    }
+        //    else
+        //    {
+        //        filteredCompanies = allCompanies;
+        //    }
 
-            var isNameSortable = Convert.ToBoolean(Request["bSortable_1"]);
-            var isPOCLastNameSortable = Convert.ToBoolean(Request["bSortable_2"]);
-            var isPOCFirstNameSortable = Convert.ToBoolean(Request["bSortable_3"]);
-            var isCitySortable = Convert.ToBoolean(Request["bSortable_4"]);
-            var isCountrySortable = Convert.ToBoolean(Request["bSortable_5"]);
+        //    var isNameSortable = Convert.ToBoolean(Request["bSortable_1"]);
+        //    var isPOCLastNameSortable = Convert.ToBoolean(Request["bSortable_2"]);
+        //    var isPOCFirstNameSortable = Convert.ToBoolean(Request["bSortable_3"]);
+        //    var isCitySortable = Convert.ToBoolean(Request["bSortable_4"]);
+        //    var isCountrySortable = Convert.ToBoolean(Request["bSortable_5"]);
 
-            var sortColumnIndex = Convert.ToInt32(Request["iSortCol_0"]);
-            Func<TBL_COMPANIES, string> orderingFunction = (c => sortColumnIndex == 1 && isNameSortable ? c.COMPANYNAME :
-                                                           sortColumnIndex == 2 && isPOCLastNameSortable ? c.POCLastName :
-                                                           sortColumnIndex == 3 && isPOCFirstNameSortable ? c.POCFirstName :
-                                                           sortColumnIndex == 4 && isCitySortable ? c.CITY :
-                                                           sortColumnIndex == 5 && isCountrySortable ? c.Country :
-                                                           "");
+        //    var sortColumnIndex = Convert.ToInt32(Request["iSortCol_0"]);
+        //    Func<TBL_COMPANIES, string> orderingFunction = (c => sortColumnIndex == 1 && isNameSortable ? c.COMPANYNAME :
+        //                                                   sortColumnIndex == 2 && isPOCLastNameSortable ? c.POCLastName :
+        //                                                   sortColumnIndex == 3 && isPOCFirstNameSortable ? c.POCFirstName :
+        //                                                   sortColumnIndex == 4 && isCitySortable ? c.CITY :
+        //                                                   sortColumnIndex == 5 && isCountrySortable ? c.Country :
+        //                                                   "");
 
-            var sortDirection = Request["sSortDir_0"]; // asc or desc
-            if (sortDirection == "asc")
-                filteredCompanies = filteredCompanies.OrderBy(orderingFunction);
-            else
-                filteredCompanies = filteredCompanies.OrderByDescending(orderingFunction);
+        //    var sortDirection = Request["sSortDir_0"]; // asc or desc
+        //    if (sortDirection == "asc")
+        //        filteredCompanies = filteredCompanies.OrderBy(orderingFunction);
+        //    else
+        //        filteredCompanies = filteredCompanies.OrderByDescending(orderingFunction);
 
-            var displayedCompanies = filteredCompanies.Skip(param.iDisplayStart).Take(param.iDisplayLength);
-            //var result = from c in displayedCompanies select new[] { Convert.ToString(c.ID), c.Name, c.Address, c.Town };
-            var result = from c in displayedCompanies select new[] { Convert.ToString(c.COMPANIESID), c.COMPANYNAME, c.POCLastName, c.POCFirstName, c.CITY, c.Country };
-            return Json(new
-                            {
-                                sEcho = param.sEcho,
-                                iTotalRecords = allCompanies.Count(),
-                                iTotalDisplayRecords = filteredCompanies.Count(),
-                                aaData = result
-                            },
-                        JsonRequestBehavior.AllowGet);
-        }
+        //    var displayedCompanies = filteredCompanies.Skip(param.iDisplayStart).Take(param.iDisplayLength);
+        //    //var result = from c in displayedCompanies select new[] { Convert.ToString(c.ID), c.Name, c.Address, c.Town };
+        //    var result = from c in displayedCompanies select new[] { Convert.ToString(c.COMPANIESID), c.COMPANYNAME, c.POCLastName, c.POCFirstName, c.CITY, c.Country };
+        //    return Json(new
+        //                    {
+        //                        sEcho = param.sEcho,
+        //                        iTotalRecords = allCompanies.Count(),
+        //                        iTotalDisplayRecords = filteredCompanies.Count(),
+        //                        aaData = result
+        //                    },
+        //                JsonRequestBehavior.AllowGet);
+        //}
 
     }
 }

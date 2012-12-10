@@ -165,11 +165,18 @@ ul.lhsLinks li a {
     padding-top:5px;
     padding-bottom:5px;
 }
+.tblCommon {
+    background-color: #fff;
+    color: #1f497d;
+    -moz-border-radius-topleft: 4px /*{cornerRadius}*/;
+    -webkit-border-radius: 4px /*{cornerRadius}*/;
+    border-radius: 4px /*{cornerRadius}*/;
+}
 /* ---------------------------------------------------------------------
 Full Company List
 ------------------------------------------------------------------------ */
 
-.full_company_list {
+/*.full_company_list {
     width:903px;
 }
 .full_company_list th {
@@ -244,4 +251,119 @@ td.pagination {
 {
     width: 200px;
     vertical-align: top;
+}*/
+.ddlwidth
+{
+    width: 153px;
 }
+.originaltable
+{
+    background-color: lightblue;
+    width: 70%;
+    border: solid 1px #000;
+}
+.originaltable td
+{
+    color:black;
+    width: 50%;
+}
+.PIMSDatatable
+{
+    background-color: lightgreen;
+    width: 70%;
+    border: solid 1px #000;
+}
+.PIMSDatatable td
+{
+    color:black;
+    width: 50%;
+}
+.FollowupDatatable
+{
+    background-color: lightgrey;
+    width: 70%;
+    border: solid 1px #000;
+}
+.FollowupDatatable td
+{
+    color:black;
+    width: 50%;
+}
+.dummyitem
+{
+    height: 5px;
+}
+
+.confirmBtnContainer
+    {
+        padding-top: 10px;
+        padding-right: 10px;
+        text-align: right;
+    }
+
+#addRecord{   background-image: url('../Content/images/add.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+#editRecord{   background-image: url('../Content/images/ico_edit_16.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+#deleteRecord{   background-image: url('../Content/images/ico_delete_16.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+ #refreshBtn
+ {
+     background-image: url('../Content/images/refresh.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                padding-left: 24px;
+ }
+ 
+ #saveNewBtn {
+    background-image: url('../Content/images/Addbutton.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 80px;
+}
+ 
+#saveEditBtn
+ {
+     background-image: url('../Content/images/savebutton.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                width: 80px;
+ }
+ 
+ #cancelNewBtn, #cancelEditBtn
+ {
+     background-image: url('../Content/images/Cancelbutton.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                width: 80px;
+ }

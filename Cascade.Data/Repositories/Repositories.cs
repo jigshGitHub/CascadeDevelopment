@@ -231,6 +231,27 @@ namespace Cascade.Data.Repositories
         }
     }
     #endregion
-
+    public class BockettCompanyRepository : RepositoryBase<Sup_BrockettCompanies>
+    {
+        public BockettCompanyRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public BockettCompanyRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+    public class PortCashFlowRepository : RepositoryBase<vw_PortfolioCashFlow>
+    {
+        public PortCashFlowRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public PortCashFlowRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
 
 }

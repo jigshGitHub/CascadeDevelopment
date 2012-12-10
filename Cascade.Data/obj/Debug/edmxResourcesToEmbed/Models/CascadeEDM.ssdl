@@ -1,21 +1,741 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CascadeDBModelStoreContainer">
+    <EntitySet Name="AccidentCauses" EntityType="CascadeDBModel.Store.AccidentCauses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AgencyType" EntityType="CascadeDBModel.Store.AgencyType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlertStatus" EntityType="CascadeDBModel.Store.AlertStatus" store:Type="Tables" store:Schema="dbo" store:Name="AlertStatus">
+      <DefiningQuery>SELECT 
+      [AlertStatus].[StatusAlertID] AS [StatusAlertID], 
+      [AlertStatus].[Status] AS [Status], 
+      [AlertStatus].[Alert] AS [Alert]
+      FROM [dbo].[AlertStatus] AS [AlertStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AlertTypes" EntityType="CascadeDBModel.Store.AlertTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AnnualRateCodes" EntityType="CascadeDBModel.Store.AnnualRateCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AreaCodes" EntityType="CascadeDBModel.Store.AreaCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AreaCodesByTimeZones" EntityType="CascadeDBModel.Store.AreaCodesByTimeZones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Applications" EntityType="CascadeDBModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Membership" EntityType="CascadeDBModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Paths" EntityType="CascadeDBModel.Store.aspnet_Paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="CascadeDBModel.Store.aspnet_PersonalizationAllUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="CascadeDBModel.Store.aspnet_PersonalizationPerUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Profile" EntityType="CascadeDBModel.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Roles" EntityType="CascadeDBModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="CascadeDBModel.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Users" EntityType="CascadeDBModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="CascadeDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="CascadeDBModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BankAccountTypes" EntityType="CascadeDBModel.Store.BankAccountTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BankruptcyDispositions" EntityType="CascadeDBModel.Store.BankruptcyDispositions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BankTransactionTypes" EntityType="CascadeDBModel.Store.BankTransactionTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Batch" EntityType="CascadeDBModel.Store.Batch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BatchTrackReportStatus" EntityType="CascadeDBModel.Store.BatchTrackReportStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BatchTrackReportTypes" EntityType="CascadeDBModel.Store.BatchTrackReportTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BatchTypes" EntityType="CascadeDBModel.Store.BatchTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BillingOptions" EntityType="CascadeDBModel.Store.BillingOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Calendar" EntityType="CascadeDBModel.Store.Calendar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CBRAccountStatus" EntityType="CascadeDBModel.Store.CBRAccountStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CBRBankruptStatus" EntityType="CascadeDBModel.Store.CBRBankruptStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CBRDisputeStatus" EntityType="CascadeDBModel.Store.CBRDisputeStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CBRSpecialStatus" EntityType="CascadeDBModel.Store.CBRSpecialStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colors" EntityType="CascadeDBModel.Store.Colors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="CascadeDBModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourtTypes" EntityType="CascadeDBModel.Store.CourtTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CreditCardTypes" EntityType="CascadeDBModel.Store.CreditCardTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DamageTypes" EntityType="CascadeDBModel.Store.DamageTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataTypes" EntityType="CascadeDBModel.Store.DataTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DebtTypes" EntityType="CascadeDBModel.Store.DebtTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Departments" EntityType="CascadeDBModel.Store.Departments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentLibraryCategory" EntityType="CascadeDBModel.Store.DocumentLibraryCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentTypes" EntityType="CascadeDBModel.Store.DocumentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DominantHand" EntityType="CascadeDBModel.Store.DominantHand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmploymentTypes" EntityType="CascadeDBModel.Store.EmploymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Genders" EntityType="CascadeDBModel.Store.Genders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Groups" EntityType="CascadeDBModel.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Industries" EntityType="CascadeDBModel.Store.Industries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InsuranceTypes" EntityType="CascadeDBModel.Store.InsuranceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceOptions" EntityType="CascadeDBModel.Store.InvoiceOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KBCategories" EntityType="CascadeDBModel.Store.KBCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Languages" EntityType="CascadeDBModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NamePrefix" EntityType="CascadeDBModel.Store.NamePrefix" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NameSuffix" EntityType="CascadeDBModel.Store.NameSuffix" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NCOACodes" EntityType="CascadeDBModel.Store.NCOACodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NegoiationTypes" EntityType="CascadeDBModel.Store.NegoiationTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Office" EntityType="CascadeDBModel.Store.Office" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaperAges" EntityType="CascadeDBModel.Store.PaperAges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaperTypes" EntityType="CascadeDBModel.Store.PaperTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PassengerTypes" EntityType="CascadeDBModel.Store.PassengerTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentPlanStatuses" EntityType="CascadeDBModel.Store.PaymentPlanStatuses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentTypes" EntityType="CascadeDBModel.Store.PaymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhoneTypes" EntityType="CascadeDBModel.Store.PhoneTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyTypes" EntityType="CascadeDBModel.Store.PolicyTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Store.Port_Acq" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Store.Port_DPS" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Store.Port_Media" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Recall" EntityType="CascadeDBModel.Store.Port_Recall" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Trans" EntityType="CascadeDBModel.Store.Port_Trans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioStatus" EntityType="CascadeDBModel.Store.PortfolioStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioType" EntityType="CascadeDBModel.Store.PortfolioType" store:Type="Tables" store:Schema="dbo" store:Name="PortfolioType">
+      <DefiningQuery>SELECT 
+      [PortfolioType].[PortfolioType] AS [PortfolioType], 
+      [PortfolioType].[Descr] AS [Descr]
+      FROM [dbo].[PortfolioType] AS [PortfolioType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PortfolioTypes" EntityType="CascadeDBModel.Store.PortfolioTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCodeSummary" EntityType="CascadeDBModel.Store.ProductCodeSummary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromiseTypes" EntityType="CascadeDBModel.Store.PromiseTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Relationships" EntityType="CascadeDBModel.Store.Relationships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportOptions" EntityType="CascadeDBModel.Store.ReportOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ResponsibilityTypes" EntityType="CascadeDBModel.Store.ResponsibilityTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoadConditions" EntityType="CascadeDBModel.Store.RoadConditions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ScoreTypes" EntityType="CascadeDBModel.Store.ScoreTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SecurityTypes" EntityType="CascadeDBModel.Store.SecurityTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SettingCategories" EntityType="CascadeDBModel.Store.SettingCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SettingDataTypes" EntityType="CascadeDBModel.Store.SettingDataTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SettleRequestStatus" EntityType="CascadeDBModel.Store.SettleRequestStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkipDataType" EntityType="CascadeDBModel.Store.SkipDataType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkipStatus" EntityType="CascadeDBModel.Store.SkipStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StateConditionals" EntityType="CascadeDBModel.Store.StateConditionals" store:Type="Tables" store:Schema="dbo" store:Name="StateConditionals">
+      <DefiningQuery>SELECT 
+      [StateConditionals].[State] AS [State], 
+      [StateConditionals].[Description] AS [Description], 
+      [StateConditionals].[Office] AS [Office], 
+      [StateConditionals].[Conditional] AS [Conditional]
+      FROM [dbo].[StateConditionals] AS [StateConditionals]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="States" EntityType="CascadeDBModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statute" EntityType="CascadeDBModel.Store.Statute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatuteTypes" EntityType="CascadeDBModel.Store.StatuteTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubIndustries" EntityType="CascadeDBModel.Store.SubIndustries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_BrockettCompanies" EntityType="CascadeDBModel.Store.Sup_BrockettCompanies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_Company" EntityType="CascadeDBModel.Store.Sup_Company" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_PmtType" EntityType="CascadeDBModel.Store.Sup_PmtType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_Reason" EntityType="CascadeDBModel.Store.Sup_Reason" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_Status" EntityType="CascadeDBModel.Store.Sup_Status" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_TransCode" EntityType="CascadeDBModel.Store.Sup_TransCode" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_TransSource" EntityType="CascadeDBModel.Store.Sup_TransSource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_UploadDPS" EntityType="CascadeDBModel.Store.Sup_UploadDPS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_UploadRecalls" EntityType="CascadeDBModel.Store.Sup_UploadRecalls" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Surnames" EntityType="CascadeDBModel.Store.Surnames" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaskCategories" EntityType="CascadeDBModel.Store.TaskCategories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_State" EntityType="CascadeDBModel.Store.TBL_State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TemplateLibrary" EntityType="CascadeDBModel.Store.TemplateLibrary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TemplateLibraryCategory" EntityType="CascadeDBModel.Store.TemplateLibraryCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeZonesByAreaCode" EntityType="CascadeDBModel.Store.TimeZonesByAreaCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehicleOwnerTypes" EntityType="CascadeDBModel.Store.VehicleOwnerTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VendorProducts" EntityType="CascadeDBModel.Store.VendorProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendors" EntityType="CascadeDBModel.Store.Vendors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VendorTypes" EntityType="CascadeDBModel.Store.VendorTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WeatherConditions" EntityType="CascadeDBModel.Store.WeatherConditions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkFlow" EntityType="CascadeDBModel.Store.WorkFlow" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkFlowJobs" EntityType="CascadeDBModel.Store.WorkFlowJobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkFlowStatus" EntityType="CascadeDBModel.Store.WorkFlowStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkFlowTypes" EntityType="CascadeDBModel.Store.WorkFlowTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkStatus" EntityType="CascadeDBModel.Store.WorkStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YesNo" EntityType="CascadeDBModel.Store.YesNo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YGCStatus" EntityType="CascadeDBModel.Store.YGCStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_PortfolioCashFlow" EntityType="CascadeDBModel.Store.vw_PortfolioCashFlow" store:Type="Views" store:Schema="dbo" store:Name="vw_PortfolioCashFlow">
+      <DefiningQuery>SELECT 
+      [vw_PortfolioCashFlow].[Portfolio#] AS [Portfolio#], 
+      [vw_PortfolioCashFlow].[ClosingDate] AS [ClosingDate], 
+      [vw_PortfolioCashFlow].[TransType] AS [TransType], 
+      [vw_PortfolioCashFlow].[SalesPrice] AS [SalesPrice], 
+      [vw_PortfolioCashFlow].[Company] AS [Company]
+      FROM [dbo].[vw_PortfolioCashFlow] AS [vw_PortfolioCashFlow]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="CascadeDBModel.Store.FK__aspnet_Me__Appli__21B6055D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="CascadeDBModel.Store.FK__aspnet_Me__UserI__22AA2996">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="CascadeDBModel.Store.FK__aspnet_Pa__Appli__5AEE82B9">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="CascadeDBModel.Store.FK__aspnet_Pe__PathI__628FA481">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__68487DD7" Association="CascadeDBModel.Store.FK__aspnet_Pe__PathI__68487DD7">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__693CA210" Association="CascadeDBModel.Store.FK__aspnet_Pe__UserI__693CA210">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="CascadeDBModel.Store.FK__aspnet_Pr__UserI__38996AB5">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__440B1D61" Association="CascadeDBModel.Store.FK__aspnet_Ro__Appli__440B1D61">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__0DAF0CB0" Association="CascadeDBModel.Store.FK__aspnet_Us__Appli__0DAF0CB0">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="CascadeDBModel.Store.FK__aspnet_Us__RoleI__4AB81AF0">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="CascadeDBModel.Store.FK__aspnet_Us__UserI__49C3F6B7">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batch_BatchTypes" Association="CascadeDBModel.Store.FK_Batch_BatchTypes">
+      <End Role="BatchTypes" EntitySet="BatchTypes" />
+      <End Role="Batch" EntitySet="Batch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statute_StatuteTypes" Association="CascadeDBModel.Store.FK_Statute_StatuteTypes">
+      <End Role="StatuteTypes" EntitySet="StatuteTypes" />
+      <End Role="Statute" EntitySet="Statute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateLibrary_DocumentLibraryCategory" Association="CascadeDBModel.Store.FK_TemplateLibrary_DocumentLibraryCategory">
+      <End Role="DocumentLibraryCategory" EntitySet="DocumentLibraryCategory" />
+      <End Role="TemplateLibrary" EntitySet="TemplateLibrary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VendorProducts_Vendors" Association="CascadeDBModel.Store.FK_VendorProducts_Vendors">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="VendorProducts" EntitySet="VendorProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_VendorTypes" Association="CascadeDBModel.Store.FK_Vendors_VendorTypes">
+      <End Role="VendorTypes" EntitySet="VendorTypes" />
+      <End Role="Vendors" EntitySet="Vendors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkFlow_WorkFlowTypes" Association="CascadeDBModel.Store.FK_WorkFlow_WorkFlowTypes">
+      <End Role="WorkFlowTypes" EntitySet="WorkFlowTypes" />
+      <End Role="WorkFlow" EntitySet="WorkFlow" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="AccidentCauses">
+    <Key>
+      <PropertyRef Name="AccidentCasueID" />
+    </Key>
+    <Property Name="AccidentCasueID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccidentCause" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AgencyType">
+    <Key>
+      <PropertyRef Name="Agency_Type" />
+    </Key>
+    <Property Name="Agency_Type" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Descr" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.AlertStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="AlertStatus">
+    <Key>
+      <PropertyRef Name="StatusAlertID" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="Alert" />
+    </Key>
+    <Property Name="StatusAlertID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Alert" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="AlertTypes">
+    <Key>
+      <PropertyRef Name="AlertTypeID" />
+    </Key>
+    <Property Name="AlertTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AlertType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnnualRateCodes">
+    <Key>
+      <PropertyRef Name="AnnualRateCodeID" />
+    </Key>
+    <Property Name="AnnualRateCodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AnnualRateCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AreaCodes">
+    <Key>
+      <PropertyRef Name="AreaCode" />
+    </Key>
+    <Property Name="AreaCode" Type="int" Nullable="false" />
+    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="TimeZoneID" Type="int" />
+  </EntityType>
+  <EntityType Name="AreaCodesByTimeZones">
+    <Key>
+      <PropertyRef Name="AreaCode" />
+    </Key>
+    <Property Name="AreaCode" Type="int" Nullable="false" />
+    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" Nullable="false" MaxLength="32" />
+    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="EventTime" Type="datetime" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="EventSequence" Type="decimal" Nullable="false" Precision="19" />
+    <Property Name="EventOccurrence" Type="decimal" Nullable="false" Precision="19" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="EventDetailCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Details" Type="ntext" />
+  </EntityType>
+  <EntityType Name="BankAccountTypes">
+    <Key>
+      <PropertyRef Name="BankAccountTypeID" />
+    </Key>
+    <Property Name="BankAccountTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BankAccountType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BankruptcyDispositions">
+    <Key>
+      <PropertyRef Name="DispositionID" />
+    </Key>
+    <Property Name="DispositionID" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="Disposition" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BankTransactionTypes">
+    <Key>
+      <PropertyRef Name="BankTransactionTypeID" />
+    </Key>
+    <Property Name="BankTransactionTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BankTransactionType" Type="varchar" MaxLength="20" />
+    <Property Name="BankTransactionTypeCode" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Batch">
+    <Key>
+      <PropertyRef Name="BatchID" />
+    </Key>
+    <Property Name="BatchID" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="BatchTypeID" Type="int" Nullable="false" />
+    <Property Name="Batch_Type" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="BatchTrackReportStatus">
+    <Key>
+      <PropertyRef Name="BatchTrackReportStatusID" />
+    </Key>
+    <Property Name="BatchTrackReportStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BatchTrackReportStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BatchTrackReportTypes">
+    <Key>
+      <PropertyRef Name="BatchTrackReportTypeID" />
+    </Key>
+    <Property Name="BatchTrackReportTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BatchTrackReportType" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BatchTypes">
+    <Key>
+      <PropertyRef Name="BatchTypeID" />
+    </Key>
+    <Property Name="BatchTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Batch_Type" Type="varchar" MaxLength="25" />
+    <Property Name="Begin_seq" Type="char" MaxLength="3" />
+    <Property Name="End_seq" Type="char" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="BillingOptions">
+    <Key>
+      <PropertyRef Name="BillingOptionID" />
+    </Key>
+    <Property Name="BillingOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BillingOption" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Calendar">
+    <Key>
+      <PropertyRef Name="CalendarID" />
+    </Key>
+    <Property Name="CalendarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="WorkDays" Type="int" />
+    <Property Name="Period" Type="varchar" MaxLength="6" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="CBRAccountStatus">
+    <Key>
+      <PropertyRef Name="CBRAccountStatusID" />
+    </Key>
+    <Property Name="CBRAccountStatusID" Type="int" Nullable="false" />
+    <Property Name="CBRAccountStatus" Type="varchar" MaxLength="6" />
+    <Property Name="CBRAccountStatusDesc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CBRBankruptStatus">
+    <Key>
+      <PropertyRef Name="CBRBankruptID" />
+    </Key>
+    <Property Name="CBRBankruptID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CBRBankruptStatus" Type="varchar" MaxLength="6" />
+    <Property Name="CBRBankruptStatusDesc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CBRDisputeStatus">
+    <Key>
+      <PropertyRef Name="CBRDisputeID" />
+    </Key>
+    <Property Name="CBRDisputeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CBRDisputeStatus" Type="varchar" MaxLength="6" />
+    <Property Name="CBRDisputeStatusDesc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CBRSpecialStatus">
+    <Key>
+      <PropertyRef Name="CBRSpecialStatusID" />
+    </Key>
+    <Property Name="CBRSpecialStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CBRSpecialStatus" Type="varchar" MaxLength="6" />
+    <Property Name="CBRSpecialStatusDesc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Color" Type="varchar" MaxLength="10" />
+    <Property Name="ColorCode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CourtTypes">
+    <Key>
+      <PropertyRef Name="CourtTypeID" />
+    </Key>
+    <Property Name="CourtTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CourtType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CreditCardTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreditCardType" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Image" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DamageTypes">
+    <Key>
+      <PropertyRef Name="DamgeTypeID" />
+    </Key>
+    <Property Name="DamgeTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DamageType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DataTypes">
+    <Key>
+      <PropertyRef Name="DataTypeID" />
+    </Key>
+    <Property Name="DataTypeID" Type="int" Nullable="false" />
+    <Property Name="DataType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DebtTypes">
+    <Key>
+      <PropertyRef Name="DebtTypeID" />
+    </Key>
+    <Property Name="DebtTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DebtType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentLibraryCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryDesc" Type="ntext" />
+    <Property Name="Media" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentTypes">
+    <Key>
+      <PropertyRef Name="DocumentTypeID" />
+    </Key>
+    <Property Name="DocumentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DominantHand">
+    <Key>
+      <PropertyRef Name="DominantHandID" />
+    </Key>
+    <Property Name="DominantHandID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DominantHand" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmploymentTypes">
+    <Key>
+      <PropertyRef Name="EmploymentTypeID" />
+    </Key>
+    <Property Name="EmploymentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Genders">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Industries">
+    <Key>
+      <PropertyRef Name="lngIndustryID" />
+    </Key>
+    <Property Name="lngIndustryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="30" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="InsuranceTypes">
+    <Key>
+      <PropertyRef Name="InsuranceTypeID" />
+    </Key>
+    <Property Name="InsuranceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InsuranceType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InvoiceOptions">
+    <Key>
+      <PropertyRef Name="InvoiceOptionID" />
+    </Key>
+    <Property Name="InvoiceOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceOption" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KBCategories">
+    <Key>
+      <PropertyRef Name="KBCategoryID" />
+    </Key>
+    <Property Name="KBCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KBCategory" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="LangID" />
+    </Key>
+    <Property Name="LangID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Lang" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NamePrefix">
+    <Key>
+      <PropertyRef Name="PrefixID" />
+    </Key>
+    <Property Name="PrefixID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Prefix" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="NameSuffix">
+    <Key>
+      <PropertyRef Name="SuffixID" />
+    </Key>
+    <Property Name="SuffixID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Suffix" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="NCOACodes">
+    <Key>
+      <PropertyRef Name="NCOAID" />
+    </Key>
+    <Property Name="NCOAID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NCOACode" Type="varchar" MaxLength="10" />
+    <Property Name="NCOADescription" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateAccount" Type="bit" />
+    <Property Name="NewStatus" Type="varchar" MaxLength="6" />
+    <Property Name="BadAddressFlag" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="NegoiationTypes">
+    <Key>
+      <PropertyRef Name="NegoiationTypeID" />
+    </Key>
+    <Property Name="NegoiationTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NegoiationType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="OfficeID" />
+    </Key>
+    <Property Name="OfficeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OfficeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PaperAges">
+    <Key>
+      <PropertyRef Name="PaperAgeID" />
+    </Key>
+    <Property Name="PaperAgeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="PaperTypes">
+    <Key>
+      <PropertyRef Name="PaperTypeID" />
+    </Key>
+    <Property Name="PaperTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="20" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PassengerTypes">
+    <Key>
+      <PropertyRef Name="PassengerTypeID" />
+    </Key>
+    <Property Name="PassengerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PassengerType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PaymentPlanStatuses">
+    <Key>
+      <PropertyRef Name="PaymentPlanStatusID" />
+    </Key>
+    <Property Name="PaymentPlanStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentPlanStatus" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PaymentTypes">
+    <Key>
+      <PropertyRef Name="PaymentTypeID" />
+    </Key>
+    <Property Name="PaymentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PhoneTypes">
+    <Key>
+      <PropertyRef Name="PhoneTypeID" />
+    </Key>
+    <Property Name="PhoneTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PhoneType" Type="varchar" MaxLength="50" />
+    <Property Name="Skip" Type="bit" />
+  </EntityType>
+  <EntityType Name="PolicyTypes">
+    <Key>
+      <PropertyRef Name="PolicyTypeID" />
+    </Key>
+    <Property Name="PolicyTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PolicyType" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Port_Acq">
     <Key>
       <PropertyRef Name="Portfolio#" />
@@ -38,7 +758,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="255" />
     <Property Name="Amount" Type="money" />
     <Property Name="Net Payment" Type="money" />
@@ -59,7 +779,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="OrderDate" Type="datetime" />
     <Property Name="CompanyRequesting" Type="nvarchar" MaxLength="255" />
     <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
@@ -99,7 +819,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Date" Type="datetime" />
     <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
     <Property Name="AcctName" Type="nvarchar" MaxLength="50" />
@@ -126,7 +846,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
     <Property Name="Cut-OffDate" Type="datetime" />
     <Property Name="ClosingDate" Type="datetime" />
@@ -147,6 +867,185 @@
     <Property Name="ProfitShare_after" Type="float" />
     <Property Name="Notes" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="PortfolioStatus">
+    <Key>
+      <PropertyRef Name="PortfolioStatusID" />
+    </Key>
+    <Property Name="PortfolioStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="PortfoliotypeID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.PortfolioType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PortfolioType">
+    <Key>
+      <PropertyRef Name="PortfolioType" />
+    </Key>
+    <Property Name="PortfolioType" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PortfolioTypes">
+    <Key>
+      <PropertyRef Name="PortfolioTypeID" />
+    </Key>
+    <Property Name="PortfolioTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="ProductCodeSummary">
+    <Key>
+      <PropertyRef Name="Product_Code" />
+      <PropertyRef Name="PlaceDate" />
+    </Key>
+    <Property Name="Product_Code" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="PlaceDate" Type="datetime" Nullable="false" />
+    <Property Name="Records" Type="int" />
+    <Property Name="Balance" Type="money" />
+  </EntityType>
+  <EntityType Name="PromiseTypes">
+    <Key>
+      <PropertyRef Name="PMT_TYPEID" />
+    </Key>
+    <Property Name="PMT_TYPEID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PMT_TYPE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Relationships">
+    <Key>
+      <PropertyRef Name="RelationshipID" />
+    </Key>
+    <Property Name="RelationshipID" Type="int" Nullable="false" />
+    <Property Name="Relationship" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReportOptions">
+    <Key>
+      <PropertyRef Name="ReportOptionID" />
+    </Key>
+    <Property Name="ReportOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportOption" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResponsibilityTypes">
+    <Key>
+      <PropertyRef Name="ResponsibilityTypeID" />
+    </Key>
+    <Property Name="ResponsibilityTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ResponsibilityType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RoadConditions">
+    <Key>
+      <PropertyRef Name="RoadConditionID" />
+    </Key>
+    <Property Name="RoadConditionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoadCondition" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ScoreTypes">
+    <Key>
+      <PropertyRef Name="ScoreTypeID" />
+    </Key>
+    <Property Name="ScoreTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SecurityTypes">
+    <Key>
+      <PropertyRef Name="SecurityTypeID" />
+    </Key>
+    <Property Name="SecurityTypeID" Type="int" Nullable="false" />
+    <Property Name="SecurityType" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="SettingCategories">
+    <Key>
+      <PropertyRef Name="SettingCategoryID" />
+    </Key>
+    <Property Name="SettingCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SettingCategory" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SettingDataTypes">
+    <Key>
+      <PropertyRef Name="SettingDataTypeID" />
+    </Key>
+    <Property Name="SettingDataTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SettingDataType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SettleRequestStatus">
+    <Key>
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Status" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SkipDataType">
+    <Key>
+      <PropertyRef Name="SkipDataTypeID" />
+    </Key>
+    <Property Name="SkipDataTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DataType" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="SkipStatus">
+    <Key>
+      <PropertyRef Name="SkipStatusID" />
+    </Key>
+    <Property Name="SkipStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.StateConditionals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="StateConditionals">
+    <Key>
+      <PropertyRef Name="State" />
+      <PropertyRef Name="Office" />
+    </Key>
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Office" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Conditional" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="State" />
+    </Key>
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Statute">
+    <Key>
+      <PropertyRef Name="StatuteID" />
+    </Key>
+    <Property Name="State" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="Statute" Type="int" />
+    <Property Name="StateName" Type="varchar" MaxLength="25" />
+    <Property Name="StatuteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatuteTypeID" Type="int" Nullable="false" />
+    <Property Name="Prefer" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="money" />
+    <Property Name="ExpectedLiquidation" Type="money" />
+    <Property Name="StateConditional" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="StatuteTypes">
+    <Key>
+      <PropertyRef Name="StatuteTypeID" />
+    </Key>
+    <Property Name="StatuteTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatuteType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubIndustries">
+    <Key>
+      <PropertyRef Name="lngSubIndustryID" />
+    </Key>
+    <Property Name="lngSubIndustryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="lngIndustryID" Type="int" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="30" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="SOLType" Type="nvarchar" MaxLength="100" />
+    <Property Name="memLongDescription" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Sup_BrockettCompanies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="Sup_Company">
     <Key>
       <PropertyRef Name="Agency" />
@@ -162,6 +1061,12 @@
     </Key>
     <Property Name="Payment Type ID code" Type="int" Nullable="false" />
     <Property Name="Payment Type ID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_Reason">
+    <Key>
+      <PropertyRef Name="Reason" />
+    </Key>
+    <Property Name="Reason" Type="nvarchar" Nullable="false" MaxLength="250" />
   </EntityType>
   <EntityType Name="Sup_Status">
     <Key>
@@ -183,6 +1088,41 @@
     </Key>
     <Property Name="TransSource" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_UploadDPS">
+    <Key>
+      <PropertyRef Name="PIMS Account Number" />
+    </Key>
+    <Property Name="PIMS Account Number" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="Tran Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tran Date" Type="datetime" />
+    <Property Name="Check Number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Payment Type ID" Type="int" />
+    <Property Name="Tran Source" Type="int" />
+  </EntityType>
+  <EntityType Name="Sup_UploadRecalls">
+    <Key>
+      <PropertyRef Name="PIMSAcct#" />
+    </Key>
+    <Property Name="PIMSAcct#" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NewStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Surnames">
+    <Key>
+      <PropertyRef Name="SurName" />
+    </Key>
+    <Property Name="SurName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TaskCategories">
+    <Key>
+      <PropertyRef Name="TaskCategoryID" />
+    </Key>
+    <Property Name="TaskCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="TBL_CHART">
     <Key>
@@ -258,6 +1198,8 @@
     <Property Name="Notes" Type="varchar" MaxLength="300" />
     <Property Name="IsSameBillingAddress" Type="bit" />
     <Property Name="Country" Type="varchar" MaxLength="80" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="FranchiseeId" Type="int" />
   </EntityType>
   <EntityType Name="TBL_Portfolio">
     <Key>
@@ -296,4 +1238,411 @@
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
+  <EntityType Name="TemplateLibrary">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ItemDesc" Type="ntext" />
+    <Property Name="ItemLink" Type="nvarchar" MaxLength="255" />
+    <Property Name="Activated" Type="nvarchar" MaxLength="5" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="DateAdded" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="TemplateLibraryCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryDesc" Type="ntext" />
+  </EntityType>
+  <EntityType Name="TimeZonesByAreaCode">
+    <Key>
+      <PropertyRef Name="AreaCode" />
+    </Key>
+    <Property Name="AreaCode" Type="int" Nullable="false" />
+    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VehicleOwnerTypes">
+    <Key>
+      <PropertyRef Name="VehicleOwnerTypeID" />
+    </Key>
+    <Property Name="VehicleOwnerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OwnerType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VendorProducts">
+    <Key>
+      <PropertyRef Name="VendorProductID" />
+    </Key>
+    <Property Name="VendorProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="VendorProduct" Type="varchar" MaxLength="50" />
+    <Property Name="PerHitCost" Type="money" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Vendor" Type="varchar" MaxLength="50" />
+    <Property Name="VendorTypeID" Type="int" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="3" />
+    <Property Name="Zip_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="10" />
+    <Property Name="HTTPURL" Type="varchar" MaxLength="50" />
+    <Property Name="FTPURL" Type="varchar" MaxLength="50" />
+    <Property Name="FTPUser" Type="varchar" MaxLength="50" />
+    <Property Name="FTPPassword" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="dtsJob" Type="varchar" MaxLength="50" />
+    <Property Name="importJob" Type="varchar" MaxLength="50" />
+    <Property Name="exportJob" Type="varchar" MaxLength="50" />
+    <Property Name="import" Type="bit" />
+    <Property Name="ExportToFTP" Type="bit" />
+    <Property Name="FTPFolder" Type="varchar" MaxLength="20" />
+    <Property Name="Secured" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorTypes">
+    <Key>
+      <PropertyRef Name="VendorTypeID" />
+    </Key>
+    <Property Name="VendorTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VendorType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WeatherConditions">
+    <Key>
+      <PropertyRef Name="WeatherCondtionID" />
+    </Key>
+    <Property Name="WeatherCondtionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WeatherCondition" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkFlow">
+    <Key>
+      <PropertyRef Name="WorkFlowID" />
+    </Key>
+    <Property Name="WorkFlowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkFlow" Type="varchar" MaxLength="50" />
+    <Property Name="WorkFlowSQL" Type="text" />
+    <Property Name="WorkFlowType" Type="int" />
+    <Property Name="WorkFlowTypeValue" Type="varchar" MaxLength="255" />
+    <Property Name="WhereClause" Type="text" />
+    <Property Name="FieldList" Type="text" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="AutoRun" Type="bit" />
+    <Property Name="Start" Type="datetime" />
+    <Property Name="LastDateProcessed" Type="datetime" />
+    <Property Name="NextWorkFlowID" Type="int" />
+    <Property Name="SQLStatement" Type="text" />
+    <Property Name="FromClause" Type="text" />
+    <Property Name="SelectClause" Type="text" />
+  </EntityType>
+  <EntityType Name="WorkFlowJobs">
+    <Key>
+      <PropertyRef Name="WorkFlowJobID" />
+    </Key>
+    <Property Name="WorkFlowJobID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkFlowStatus">
+    <Key>
+      <PropertyRef Name="WorkFlowStatusID" />
+    </Key>
+    <Property Name="WorkFlowStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkFlowStatus" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="WorkFlowTypes">
+    <Key>
+      <PropertyRef Name="WorkFlowTypeID" />
+    </Key>
+    <Property Name="WorkFlowTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkFlowType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkStatus">
+    <Key>
+      <PropertyRef Name="WorkStatusID" />
+    </Key>
+    <Property Name="WorkStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="YesNo">
+    <Key>
+      <PropertyRef Name="YesNoID" />
+    </Key>
+    <Property Name="YesNoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="YesNo" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="YGCStatus">
+    <Key>
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="10" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_PortfolioCashFlow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_PortfolioCashFlow">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="TransType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__21B6055D">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="CascadeDBModel.Store.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__22AA2996">
+    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="CascadeDBModel.Store.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__628FA481">
+    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="CascadeDBModel.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__68487DD7">
+    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__693CA210">
+    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__38996AB5">
+    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="CascadeDBModel.Store.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__440B1D61">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="CascadeDBModel.Store.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__0DAF0CB0">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+    <End Role="aspnet_Roles" Type="CascadeDBModel.Store.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="CascadeDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="CascadeDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batch_BatchTypes">
+    <End Role="BatchTypes" Type="CascadeDBModel.Store.BatchTypes" Multiplicity="1" />
+    <End Role="Batch" Type="CascadeDBModel.Store.Batch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BatchTypes">
+        <PropertyRef Name="BatchTypeID" />
+      </Principal>
+      <Dependent Role="Batch">
+        <PropertyRef Name="BatchTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statute_StatuteTypes">
+    <End Role="StatuteTypes" Type="CascadeDBModel.Store.StatuteTypes" Multiplicity="1" />
+    <End Role="Statute" Type="CascadeDBModel.Store.Statute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatuteTypes">
+        <PropertyRef Name="StatuteTypeID" />
+      </Principal>
+      <Dependent Role="Statute">
+        <PropertyRef Name="StatuteTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateLibrary_DocumentLibraryCategory">
+    <End Role="DocumentLibraryCategory" Type="CascadeDBModel.Store.DocumentLibraryCategory" Multiplicity="0..1" />
+    <End Role="TemplateLibrary" Type="CascadeDBModel.Store.TemplateLibrary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentLibraryCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="TemplateLibrary">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VendorProducts_Vendors">
+    <End Role="Vendors" Type="CascadeDBModel.Store.Vendors" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VendorProducts" Type="CascadeDBModel.Store.VendorProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="VendorProducts">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_VendorTypes">
+    <End Role="VendorTypes" Type="CascadeDBModel.Store.VendorTypes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vendors" Type="CascadeDBModel.Store.Vendors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorTypes">
+        <PropertyRef Name="VendorTypeID" />
+      </Principal>
+      <Dependent Role="Vendors">
+        <PropertyRef Name="VendorTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkFlow_WorkFlowTypes">
+    <End Role="WorkFlowTypes" Type="CascadeDBModel.Store.WorkFlowTypes" Multiplicity="0..1" />
+    <End Role="WorkFlow" Type="CascadeDBModel.Store.WorkFlow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkFlowTypes">
+        <PropertyRef Name="WorkFlowTypeID" />
+      </Principal>
+      <Dependent Role="WorkFlow">
+        <PropertyRef Name="WorkFlowType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'CascadeDB.dbo.MedicalCodes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MedicalCodes">
+        <Property Name="Description" Type="varchar" MaxLength="255" />
+        <Property Name="DiagnosisCode" Type="varchar" MaxLength="10" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'CascadeDB.dbo.tZips' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="tZips">
+        <Property Name="ZipCode" Type="nvarchar" MaxLength="5" />
+        <Property Name="State" Type="nvarchar" MaxLength="2" />
+        <Property Name="City" Type="nvarchar" MaxLength="28" />
+        <Property Name="Type" Type="nvarchar" MaxLength="1" />
+        <Property Name="CountyFIPSCode" Type="varchar" MaxLength="5" />
+        <Property Name="Latitude" Type="nvarchar" MaxLength="7" />
+        <Property Name="Longitude" Type="nvarchar" MaxLength="8" />
+        <Property Name="AreaCode" Type="nvarchar" MaxLength="3" />
+        <Property Name="FinanceCode" Type="nvarchar" MaxLength="6" />
+        <Property Name="LastLine" Type="nvarchar" MaxLength="1" />
+        <Property Name="FacilityCode" Type="nvarchar" MaxLength="1" />
+        <Property Name="MetroStatisticalArea" Type="nvarchar" MaxLength="4" />
+        <Property Name="PrimaryMetroStatArea" Type="nvarchar" MaxLength="4" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'CascadeDB.dbo.Zips' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Zips">
+        <Property Name="ZIP" Type="varchar" MaxLength="255" />
+        <Property Name="STATE" Type="varchar" MaxLength="255" />
+        <Property Name="CITY" Type="varchar" MaxLength="255" />
+        <Property Name="COUNTY" Type="varchar" MaxLength="255" />
+      </EntityType>-->
 </Schema>

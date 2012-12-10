@@ -16,14 +16,15 @@
                     <header>
                         <table>
                             <tr>
-                                <td><img src="~/Images/Cascadelogo.png" /></td>
-                                <td style="vertical-align:middle">
+                                <td>
+                                    <img src="~/Images/Cascadelogo.png" /></td>
+                                <td style="vertical-align: middle">
                                     <nav>
                                         @{Html.RenderPartial("_MenuPartial", ViewData["Menu"]);}
                                     </nav>
                                 </td>
 
-                                <td style="vertical-align:middle">
+                                <td style="vertical-align: middle">
                                     <section id="login">
                                         @Html.Partial("_LoginPartial")
                                     </section>
@@ -38,7 +39,7 @@
                     <table>
                         <tr>
                             <td style="width: 20%;">
-                                <section style=" margin-top:5px; padding-left:30px">
+                                <section style="margin-top: 5px; padding-left: 30px">
                                     <div id="lhsMenuContainer">
                                         <nav>
                                             @{Html.RenderPartial("_LHSMenuPartial", ViewData["Menu"]);}
@@ -47,7 +48,7 @@
                                 </section>
                             </td>
                             <td style="width: 80%">
-                                <section style=" margin-top:5px;padding-right:30px;">
+                                <section style="margin-top: 5px; padding-right: 30px;">
                                     <div id="workspaceViewContainer">
                                         @RenderBody()
                                     </div>
@@ -80,6 +81,21 @@
 
         log(baseUrl);
         $(document).ready(function () {
+            $('#lnkAdvanced').click(function () {
+                if ($('#lnkAdvanced').html() == 'Basic Search') {
+                    $('#advancedSerach').hide(500);
+                    $('#lnkAdvanced').html('Advanced Search');
+                }
+                else {
+                    $('#advancedSerach').show(500);
+                    $('#lnkAdvanced').html('Basic Search');
+                }
+            });
+
+            $('#txtField1').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields1'); });
+            $('#txtField2').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields2'); });
+            $('#txtField3').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields3'); });
+            $('#txtField4').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields4'); });
             //$('#menu li a').click(function (event) {
             //    $('#menu  li a').each(function () {
             //        $(this).removeClass('activeLink');
@@ -101,9 +117,9 @@
 
             $('#privacyStatementLink').click(function (e) {
                 e.preventDefault();
-                $('#privacyStatementBlock').show(200);                
+                $('#privacyStatementBlock').show(200);
             });
-            
+
             $('#closePrivacySt').click(function () {
                 $('#privacyStatementBlock').hide();
             });

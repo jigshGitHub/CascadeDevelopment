@@ -52,10 +52,11 @@ footer {
     height:50px;
 }
 ul.lhsLinks {
-    position: relative;
+    position: relative; 
 }
 
 ul.lhsLinks li {
+    margin-left:2px;
     width: 150px;
     display:block;
     float:left;
@@ -156,14 +157,44 @@ ul.lhsLinks li a {
     text-decoration:underline;
 }
 
+#advancedSearchLnk a{
+    margin-left:2px;
+    width: 140px;
+    display:block;
+    float:left;
+    background-color: #fff;
+    text-align:center;
+    margin-top:5px;
+    color: #1f497d;
+    text-decoration: none;
+    padding-top: 0.1em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-bottom: 0.1em;
+    border-style: solid;
+    border-width: .2em;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+
+#advancedSearchLnk a:hover{
+    text-decoration:underline;
+}
+
 #messageBoardTitle {
     width: 150px;
-    color: #fff;
+    color: #fff;    
     text-align:center;
     text-decoration: none;
     display: block;
     padding-top:5px;
     padding-bottom:5px;
+}
+.tblCommon {
+    background-color: #fff;
+    color: #1f497d;
+    -moz-border-radius-topleft: 4px /*{cornerRadius}*/;
+    -webkit-border-radius: 4px /*{cornerRadius}*/;
+    border-radius: 4px /*{cornerRadius}*/;
 }
 /* ---------------------------------------------------------------------
 Full Company List
@@ -249,6 +280,10 @@ td.pagination {
 {
     width: 153px;
 }
+.splTBwidth
+{
+    width: 60px;
+}
 .originaltable
 {
     background-color: lightblue;
@@ -286,3 +321,77 @@ td.pagination {
 {
     height: 5px;
 }
+
+.confirmBtnContainer
+    {
+        padding-top: 10px;
+        padding-right: 10px;
+        text-align: right;
+    }
+
+#addRecord{   background-image: url('../Content/images/add.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+#editRecord{   background-image: url('../Content/images/ico_edit_16.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+#deleteRecord{   background-image: url('../Content/images/ico_delete_16.png'); 
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 16px;
+                padding-left: 16px;}
+                
+ #refreshBtn
+ {
+     background-image: url('../Content/images/refresh.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                padding-left: 24px;
+ }
+ 
+ #saveNewBtn {
+    background-image: url('../Content/images/Addbutton.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 80px;
+}
+ 
+#saveEditBtn
+ {
+     background-image: url('../Content/images/savebutton.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                width: 80px;
+ }
+ 
+ #cancelNewBtn, #cancelEditBtn
+ {
+     background-image: url('../Content/images/Cancelbutton.png'); 
+     background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                height: 30px;
+                width: 80px;
+ }
