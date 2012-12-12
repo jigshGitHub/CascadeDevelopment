@@ -55,7 +55,7 @@ namespace Cascade.Data.Repositories
             return data.AsEnumerable<PortfolioPieRpt>();
         }
 
-        public IEnumerable<SearchResult> GetSearchResults(string name)
+        public IQueryable<SearchResult> GetSearchResults(string name)
         {
             DBFactory db;
             SqlDataReader rdr;
@@ -84,7 +84,7 @@ namespace Cascade.Data.Repositories
             {
                 throw new Exception("Exception in DataQueries.GetSearchResults:" + ex.Message);
             }
-            return data.AsEnumerable<SearchResult>();
+            return data.AsQueryable<SearchResult>();
         }
     }
 }

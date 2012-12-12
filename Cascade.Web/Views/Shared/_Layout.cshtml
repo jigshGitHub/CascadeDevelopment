@@ -98,11 +98,16 @@
             $('#txtField3').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields3'); });
             $('#txtField4').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields4'); });
 
-            $('#basicSearch').click(function () {
-                $('#loading').show();
-                $("#workspaceViewContainer").load(baseUrl + '/Search/Home/Basic', { 'name': $('#lhsMenuSerachText').val(), 'parameter2': 'test2' }, function () {
-                    $('#loading').hide();
-                });
+            $('#basicSearch').click(function (e) {
+                //$('#loading').show();
+                //$("#workspaceViewContainer").load(baseUrl + '/Search/Home/Basic', { 'name': $('#lhsMenuSerachText').val(), 'parameter2': 'test2' }, function () {
+                //    $('#loading').hide();
+                //});
+                e.preventDefault();
+                if ($('#basicSearchVal').val() != '') {
+                    log($('#basicSearchVal').val());
+                    $('#basicSearchFrm').submit();
+                }
             });
             //$('#menu li a').click(function (event) {
             //    $('#menu  li a').each(function () {

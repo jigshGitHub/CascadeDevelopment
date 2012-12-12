@@ -56,6 +56,10 @@
       <HintPath>..\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcContrib, Version=3.0.51.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MvcContrib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -146,6 +150,7 @@
     <Compile Include="ApplicationIntegration\ImageActionExtenstions.cs" />
     <Compile Include="ApplicationIntegration\Menu.cs" />
     <Compile Include="ApplicationIntegration\MenuFactory.cs" />
+    <Compile Include="ApplicationIntegration\QueryExtention.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -190,6 +195,7 @@
     <Compile Include="Infrastructure\DateRangeAttribute.cs" />
     <Compile Include="Infrastructure\ModelClientValidationRangeDateRule.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\PagedViewModel.cs" />
     <Compile Include="Presentation\ExtensionMethods\DateTimeExtensions.cs" />
     <Compile Include="Presentation\ExtensionMethods\DecimalHelpers.cs" />
     <Compile Include="Presentation\ViewModels\DPS\AddDPSViewModel.cs" />
@@ -376,6 +382,8 @@
     <Content Include="Areas\CRM\Views\Company\_companyRecords.cshtml" />
     <Content Include="Areas\Search\Views\Web.config" />
     <Content Include="Areas\Search\Views\Home\_BasicPartial.cshtml" />
+    <Content Include="Areas\Search\Views\Home\Basic.cshtml" />
+    <Content Include="Areas\Search\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
@@ -452,6 +460,8 @@
     <Content Include="Views\Account\Copy of Login.cshtml" />
     <Content Include="Views\Shared\_LHSMenuPartial.cshtml" />
     <Content Include="Views\UnderConstruction\Index.cshtml" />
+    <Content Include="Views\Shared\_BasicSearchPartial.cshtml" />
+    <Content Include="Views\Shared\_AdvancedSearchPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

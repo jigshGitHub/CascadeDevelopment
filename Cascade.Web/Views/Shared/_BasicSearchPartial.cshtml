@@ -1,0 +1,15 @@
+﻿<form id="basicSearchFrm" action="Search/Home/Basic" method="get">
+    <table>
+        <tr>
+            <td style="width: 70%">@Html.TextBox("basicSearchVal", "", new { @class = "searchBox" })
+            </td>
+            <td style="width: 30%; text-align: left; border: thin  aqua"><a href="" id="basicSearch" style="text-align: left">
+                <img src="~/Images/search.jpg" /></a></td>
+        </tr>
+        <tr style="display: none">
+            <td style="width: 70%">@Html.ActionLink("Search", "Basic", "Home", new { area = "Search", id = "test" }, null)
+            </td>
+            <td style="width: 30%; text-align: left; border: thin  aqua"></td>
+        </tr>
+    </table>
+</form>

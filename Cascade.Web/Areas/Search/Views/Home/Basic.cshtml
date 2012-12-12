@@ -1,6 +1,6 @@
 ﻿@using MvcContrib.UI.Grid;
 @using MvcContrib.UI.Pager;
-@model Cascade.Web.Models.PagedViewModel<Cascade.Data.Models.TBL_COMPANIES>
+@model Cascade.Web.Models.PagedViewModel<Cascade.Data.Models.SearchResult>
 
 @{
     ViewBag.Title = "Basic";
@@ -9,7 +9,10 @@
 <h2>Search Rsults:</h2>
 @Html.Pager(Model.PagedList).First("First").Last("Last").Next("Next").Previous("Previous")
 @Html.Grid(Model.PagedList).Columns(column =>{
-    column.For(record => record.COMPANIESID);
-})
-@section scripts{
-}
+    column.For(record => record.ACCOUNT);
+    column.For(record => record.Name);
+    column.For(record => record.ProductDescription);
+    column.For(record => record.StatusDescription);
+    column.For(record => record.WorkStatusDescription);
+}).Sort(Model.GridSortOptions).Attributes(@class => "grid-style")
+

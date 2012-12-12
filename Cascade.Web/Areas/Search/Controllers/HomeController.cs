@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Cascade.Web.Controllers;
 using Cascade.Data.Repositories;
 using Cascade.Data.Models;
+using MvcContrib.UI.Grid;
+using Cascade.Web.Models;
 namespace Cascade.Web.Areas.Search.Controllers
 {
     public class HomeController : BaseController
@@ -34,11 +36,23 @@ namespace Cascade.Web.Areas.Search.Controllers
             return View();
         }
 
-        public ActionResult Basic(string name, string parameter2)
+        public ActionResult Basic(string basicSearchVal, GridSortOptions gridSortOptions, int? page)
         {
             var dataQueries = new DataQueries();
-            IEnumerable<SearchResult> results = dataQueries.GetSearchResults(name);
-            return PartialView("_BasicPartial", results);
+            IQueryable<SearchResult> results = dataQueries.GetSearchResults(basicSearchVal);
+            //return PartialView("_BasicPartial", results);
+            var pagedViewModel = new PagedViewModel<SearchResult>
+            {
+                ViewData = ViewData,
+                Query = results,
+                GridSortOptions = gridSortOptions,
+                DefaultSortColumn = "ACCOUNT",
+                Page = page,
+                PageSize = 10,
+            }
+            .Setup();
+            return View(pagedViewModel);
+            //return PartialView("_BasicPartial",pagedViewModel);
         }
         //
         // POST: /Search/Home/Create
