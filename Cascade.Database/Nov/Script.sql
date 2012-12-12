@@ -76,8 +76,8 @@ declare @_email NVARCHAR(256)
 DECLARE @User_Id uniqueidentifier
 SET @CurrentTime = GetDate();
 
-set @user_Name = 'jshah'--firstname.lastname
-set @_email = 'jshah@gmail.com'
+set @user_Name = 'mmerz'--firstname.lastname
+set @_email = 'mmerz@cascadereceivables.com'
 EXEC [dbo].[aspnet_Membership_CreateUser] @ApplicationName = 'CascadeWeb', @UserName = @user_Name, @Password = N'DE5aG4DJKaWNAC6qtb9Ex1mw0YQ=', @PasswordSalt = N'CgWo/aHD6MDFG4AYqW/5wQ==', @Email = @_email, @PasswordQuestion = NULL, @PasswordAnswer = NULL, @IsApproved = 1, @CurrentTimeUtc = @CurrentTime, @CreateDate = @CurrentTime, @UniqueEmail = NULL, @PasswordFormat = 1, @UserId = @User_Id OUTPUT;
 PRINT CAST(@User_Id AS VARCHAR(50))	
 

@@ -50,6 +50,7 @@
                             <td style="width: 80%">
                                 <section style="margin-top: 5px; padding-right: 30px;">
                                     <div id="workspaceViewContainer">
+                                        <div id="loading" style="display:none"><img src="~/Content/images/ajax-loader.gif" /></div>
                                         @RenderBody()
                                     </div>
                                 </section>
@@ -79,7 +80,7 @@
         var windlowLocation = window.location.href.split('/');
         var baseUrl = windlowLocation[0] + '//' + windlowLocation[2]// + windlowLocation[3];
 
-        log(baseUrl);
+        //log(baseUrl);
         $(document).ready(function () {
             $('#lnkAdvanced').click(function () {
                 if ($('#lnkAdvanced').html() == 'Basic Search') {
@@ -96,6 +97,13 @@
             $('#txtField2').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields2'); });
             $('#txtField3').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields3'); });
             $('#txtField4').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields4'); });
+
+            $('#basicSearch').click(function () {
+                $('#loading').show();
+                $("#workspaceViewContainer").load(baseUrl + '/Search/Home/Basic', { 'name': $('#lhsMenuSerachText').val(), 'parameter2': 'test2' }, function () {
+                    $('#loading').hide();
+                });
+            });
             //$('#menu li a').click(function (event) {
             //    $('#menu  li a').each(function () {
             //        $(this).removeClass('activeLink');
@@ -131,6 +139,8 @@
 
             //log($('footer').position().top);
             //log($('#messages').position().top);
+
+            
         });
 
     </script>

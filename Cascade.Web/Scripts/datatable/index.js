@@ -508,6 +508,8 @@ $(document).ready(function () {
     //        });
     //    }
     //});
-            
+    if ($("#searchRecords").length != 0) {
+        $('#searchRecords').dataTable();
+    }
 });
 

@@ -54,5 +54,37 @@ namespace Cascade.Data.Repositories
             }
             return data.AsEnumerable<PortfolioPieRpt>();
         }
+
+        public IEnumerable<SearchResult> GetSearchResults(string name)
+        {
+            DBFactory db;
+            SqlDataReader rdr;
+            List<SearchResult> data = null;
+            try
+            {
+                db = new DBFactory();
+                rdr = db.ExecuteReader("MSI_spAccountSearch", new SqlParameter("@name", name));
+                data = new List<SearchResult>();
+                SearchResult record;
+                while (rdr.Read())
+                {
+                    record = new SearchResult();
+                    record.Name = rdr["Name"].ToString();
+                    record.ProductDescription = rdr["ProductDescription"].ToString();
+                    record.WorkStatusDescription = rdr["WorkStatusDescription"].ToString();
+                    record.RespAgency = rdr["RespAgency"].ToString();
+                    record.StatusDescription = rdr["StatusDescription"].ToString();
+                    record.ACCOUNT = rdr["ACCOUNT"].ToString();
+
+                    data.Add(record);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception in DataQueries.GetSearchResults:" + ex.Message);
+            }
+            return data.AsEnumerable<SearchResult>();
+        }
     }
 }
