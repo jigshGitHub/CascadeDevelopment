@@ -1,7 +1,13 @@
-Create View MSI_vwSearch
+/****** Object:  View [dbo].[MSI_vwSearch]    Script Date: 12/12/2012 02:04:14 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[MSI_vwSearch]'))
+DROP VIEW [dbo].[MSI_vwSearch]
+GO
+
+Create View [dbo].[MSI_vwSearch]
 As
 SELECT 
 		rel.Name
+	  ,rel.SS_NO AS SSN
       ,rProd.[DESCRIPTION] As ProductDescription
       ,wStat.[Description] AS WorkStatusDescription
       ,ragc.Name As RespAgency
@@ -246,8 +252,11 @@ SELECT
   LEFT JOIN [dbo].[RAGENCY] rAgc ON rAgc.[AGENCY_ID] = ra.[RESPONSIBILITY]
   LEFT JOIN [dbo].[RPRODCDE] rProd ON rProd.PRODUCT_CODE = ra.[PRODUCT_CODE] 
   LEFT JOIN [dbo].[RSTATUS] rStat ON rStat.[STATUS] = ra.[STATUS]
-  LEFT JOIN [dbo].[WorkStatus] wStat ON wStat.WorkStatusID = ra.WorkStatusID;
-  
+  LEFT JOIN [dbo].[WorkStatus] wStat ON wStat.WorkStatusID = ra.WorkStatusID
+GO
+
+
+GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_spAccountSearch]') AND type in (N'P', N'PC'))
 	DROP PROCEDURE [dbo].[MSI_spAccountSearch]
 GO
@@ -255,7 +264,7 @@ GO
 Create Procedure [dbo].[MSI_spAccountSearch]
   @name VARCHAR(255)
 AS
-  SET @name = 'miller' + '%';
+  SET @name = @name + '%';
   Select * From MSI_vwSearch
   Where Name LIKE @name;
 GO

@@ -9,6 +9,7 @@ namespace Cascade.Data.Models
     public class SearchResult
     {
         public string Name{get;set;}
+        public string SSN { get; set; }
         public string ProductDescription{get;set;}
         public string WorkStatusDescription{get;set;}
         public string RespAgency{get;set;}

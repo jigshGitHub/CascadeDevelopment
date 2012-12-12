@@ -141,6 +141,7 @@ ul.lhsLinks li a {
     color:#fff;
     padding-left:5px;
     font-weight:bold;
+    padding-bottom:2px;
 }
 #searchLnk a{
     width: 150px;
@@ -451,4 +452,8 @@ td.pagination {
     background-color: #fff;
     margin: 10px;
     color:#1f497d;
+}
+
+#basicSearchFrm td {
+
 }

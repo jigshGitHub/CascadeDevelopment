@@ -75,6 +75,8 @@ namespace Cascade.Data.Repositories
                     record.RespAgency = rdr["RespAgency"].ToString();
                     record.StatusDescription = rdr["StatusDescription"].ToString();
                     record.ACCOUNT = rdr["ACCOUNT"].ToString();
+                    record.Originator = rdr["Originator"].ToString();
+                    record.Seller = rdr["Seller"].ToString();
 
                     data.Add(record);
                 }

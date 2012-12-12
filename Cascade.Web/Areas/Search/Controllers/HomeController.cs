@@ -48,7 +48,7 @@ namespace Cascade.Web.Areas.Search.Controllers
                 GridSortOptions = gridSortOptions,
                 DefaultSortColumn = "ACCOUNT",
                 Page = page,
-                PageSize = 10,
+                PageSize = 100,
             }
             .Setup();
             return View(pagedViewModel);

@@ -82,21 +82,24 @@
 
         //log(baseUrl);
         $(document).ready(function () {
-            $('#lnkAdvanced').click(function () {
+            $('#lnkAdvanced').click(function (e) {
+                e.preventDefault();
                 if ($('#lnkAdvanced').html() == 'Basic Search') {
                     $('#advancedSerach').hide(500);
                     $('#lnkAdvanced').html('Advanced Search');
+                    
                 }
                 else {
                     $('#advancedSerach').show(500);
                     $('#lnkAdvanced').html('Basic Search');
+                    log('here');
                 }
             });
 
-            $('#txtField1').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields1'); });
-            $('#txtField2').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields2'); });
-            $('#txtField3').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields3'); });
-            $('#txtField4').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('fields4'); });
+            $('#account').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('account #'); });
+            $('#originator').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('originator'); });
+            $('#seller').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('seller'); });
+            $('#ssn').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('last 4 digits of SSN'); });
 
             $('#basicSearch').click(function (e) {
                 //$('#loading').show();
@@ -104,6 +107,7 @@
                 //    $('#loading').hide();
                 //});
                 e.preventDefault();
+                log('Basicsearch submit');
                 if ($('#basicSearchVal').val() != '') {
                     log($('#basicSearchVal').val());
                     $('#basicSearchFrm').submit();

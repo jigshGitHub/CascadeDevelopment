@@ -2,4 +2,3 @@ C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Ca
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\bin\Debug\Cascade.Helpers.pdb
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.pdb
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.csprojResolveAssemblyReference.cache

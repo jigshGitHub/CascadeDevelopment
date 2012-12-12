@@ -1,37 +1,30 @@
 ﻿<table>
     <tr>
         <td style="border: thin  aqua">
-            <div id="advancedSearchLnk"><a id="lnkAdvanced" href="#">Advanced Search</a></div>
+            <div id="advancedSearchLnk"><a id="lnkAdvanced" href="">Advanced Search</a></div>
         </td>
 
     </tr>
     <tr>
-        <td>
-            <div id="advancedSerach" style="display: none">
-                <table>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" class="searchBox" id="txtField1" value="field1" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" class="searchBox" id="txtField2" value="field2" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" class="searchBox" id="txtField3" value="field3" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" class="searchBox" id="txtField4" value="field4" /></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 70%; border: thin  aqua">&nbsp;</td>
-                        <td style="width: 30%; border: thin  aqua"><a href="#" style="text-align: right">
-                            <img src="~/Images/search.jpg" /></a></td>
-                    </tr>
-                </table>
-            </div>
+        <td id="advancedSerach" style="display: none">
+            <table>
+                <tr>
+                    <td>
+                        @Html.TextBox("account", "account #", new { @class = "searchBox" })</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("originator", "originator", new { @class = "searchBox" })</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("seller", "seller", new { @class = "searchBox" })</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("ssn", "last 4 digits of SSN", new { @class = "searchBox" })&nbsp;<img src="~/Images/search.jpg" id="advanceSearch" style="cursor: pointer; vertical-align: middle" title="Search" /></td>
+                </tr>
+            </table>
         </td>
 
     </tr>
