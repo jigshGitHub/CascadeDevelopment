@@ -257,15 +257,90 @@ GO
 
 
 GO
+
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_spAccountSearch]') AND type in (N'P', N'PC'))
 	DROP PROCEDURE [dbo].[MSI_spAccountSearch]
 GO
 
-Create Procedure [dbo].[MSI_spAccountSearch]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_spBasicSearch]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[MSI_spBasicSearch]
+GO
+
+Create Procedure [dbo].[MSI_spBasicSearch]
   @name VARCHAR(255)
 AS
   SET @name = @name + '%';
   Select * From MSI_vwSearch
   Where Name LIKE @name;
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_spAdvanceSearch]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[MSI_spAdvanceSearch]
+GO
+
+Create Procedure [dbo].[MSI_spAdvanceSearch]
+	@originator VARCHAR(51) = NULL,
+	@accountNumber VARCHAR(20) = NULL,
+	@seller VARCHAR(255) = NULL,
+	@ssnFourDigits NVARCHAR(5) = NULL
+AS
+	DECLARE @sqlQry VARCHAR(MAX);
+	DECLARE @selectClause VARCHAR(1000);
+	DECLARE @whereClause VARCHAR(MAX);
+	DECLARE @isANDReq bit;
+	
+	SET @isANDReq = 0;
+
+	SET @selectClause = 'Select * FROM MSI_vwSearch search '
+	SET @whereClause = 'Where ';
+
+	IF @originator IS NOT NULL
+	BEGIN
+		SET @whereClause = @whereClause + ' search.Originator LIKE ''' + @originator + '%'''
+		SET @isANDReq = 1
+	END
+	
+	IF @accountNumber IS NOT NULL
+	BEGIN
+		IF (@isANDReq = 1)
+		BEGIN
+			SET @whereClause = @whereClause + ' AND '
+			SET @isANDReq = 0
+		ENd
+
+		
+		SET @whereClause = @whereClause + ' search.Account = ' + @accountNumber
+		SET @isANDReq = 1
+	END
+
+	
+	IF @seller IS NOT NULL
+	BEGIN
+		IF (@isANDReq = 1)
+		BEGIN
+			SET @whereClause = @whereClause + ' AND '
+			SET @isANDReq = 0
+		ENd
+		
+		SET @whereClause = @whereClause + ' search.Seller LIKE ''' + @seller + '%'''
+		SET @isANDReq = 1
+	END
+	
+	IF @ssnFourDigits IS NOT NULL
+	BEGIN
+		IF (@isANDReq = 1)
+		BEGIN
+			SET @whereClause = @whereClause + ' AND '
+			SET @isANDReq = 0
+		ENd
+		SET @whereClause = @whereClause + ' search.SSN LIKE ''' + '%' + @ssnFourDigits + '''';
+		SET @isANDReq = 1
+	END
+	
+	SET @sqlQry = @selectClause + @whereClause;
+
+	PRINT @sqlQry;
+
+	EXECUTE(@sqlQry);
 GO
 

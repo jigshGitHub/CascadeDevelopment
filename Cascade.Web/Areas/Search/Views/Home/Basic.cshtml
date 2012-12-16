@@ -7,7 +7,7 @@
 }
 
 <h2>Search Rsults:</h2>
-@Html.Pager(Model.PagedList).First("First").Last("Last").Next("Next").Previous("Previous")
+
 @Html.Grid(Model.PagedList).Columns(column =>{
     column.For(record => record.ACCOUNT).Named("Account#");
     column.For(record => record.Name);
@@ -18,3 +18,4 @@
     column.For(record => record.WorkStatusDescription).Named("Work Status");
 }).Sort(Model.GridSortOptions).Attributes(@class => "grid-style")
 
+@Html.Pager(Model.PagedList).First("First").Last("Last").Next("Next").Previous("Previous")

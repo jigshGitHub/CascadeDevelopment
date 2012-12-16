@@ -63,20 +63,14 @@ namespace Cascade.Data.Repositories
             try
             {
                 db = new DBFactory();
-                rdr = db.ExecuteReader("MSI_spAccountSearch", new SqlParameter("@name", name));
+                rdr = db.ExecuteReader("MSI_spBasicSearch", new SqlParameter("@name", name));
                 data = new List<SearchResult>();
                 SearchResult record;
                 while (rdr.Read())
                 {
                     record = new SearchResult();
-                    record.Name = rdr["Name"].ToString();
-                    record.ProductDescription = rdr["ProductDescription"].ToString();
-                    record.WorkStatusDescription = rdr["WorkStatusDescription"].ToString();
-                    record.RespAgency = rdr["RespAgency"].ToString();
-                    record.StatusDescription = rdr["StatusDescription"].ToString();
-                    record.ACCOUNT = rdr["ACCOUNT"].ToString();
-                    record.Originator = rdr["Originator"].ToString();
-                    record.Seller = rdr["Seller"].ToString();
+
+                    CreateSearchResult(rdr, record);
 
                     data.Add(record);
                 }
@@ -87,6 +81,76 @@ namespace Cascade.Data.Repositories
                 throw new Exception("Exception in DataQueries.GetSearchResults:" + ex.Message);
             }
             return data.AsQueryable<SearchResult>();
+        }
+
+        public IQueryable<SearchResult> GetSearchResults(string account, string originator, string seller, string _4digitsSSN)
+        {
+            DBFactory db;
+            SqlDataReader rdr;
+            List<SearchResult> data = null;
+            object _account, _originator, _seller, __4digitsSSN = null;
+            if (string.IsNullOrEmpty(account))
+                _account = DBNull.Value;
+            else
+                _account = account;
+            if (string.IsNullOrEmpty(originator))
+                _originator = DBNull.Value;
+            else
+                _originator = originator;
+            if (string.IsNullOrEmpty(seller))
+                _seller = DBNull.Value;
+            else
+                _seller = seller;
+            if (string.IsNullOrEmpty(_4digitsSSN))
+                __4digitsSSN = DBNull.Value;
+            else
+                __4digitsSSN = _4digitsSSN;
+
+            try
+            {
+                db = new DBFactory();
+                rdr = db.ExecuteReader("MSI_spAdvanceSearch",
+                    new SqlParameter("@accountNumber", _account),
+                    new SqlParameter("@originator", _originator),
+                    new SqlParameter("@seller", _seller),
+                    new SqlParameter("@ssnFourDigits", __4digitsSSN));
+                data = new List<SearchResult>();
+                SearchResult record;
+                while (rdr.Read())
+                {
+                    record = new SearchResult();
+
+                    CreateSearchResult(rdr, record);
+
+                    data.Add(record);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception in DataQueries.GetSearchResults:" + ex.Message);
+            }
+            return data.AsQueryable<SearchResult>();
+        }
+
+        private void CreateSearchResult(SqlDataReader rdr, SearchResult record)
+        {
+            try
+            {
+                record.Name = rdr["Name"].ToString();
+                record.ProductDescription = rdr["ProductDescription"].ToString();
+                record.WorkStatusDescription = rdr["WorkStatusDescription"].ToString();
+                record.RespAgency = rdr["RespAgency"].ToString();
+                record.StatusDescription = rdr["StatusDescription"].ToString();
+                record.ACCOUNT = rdr["ACCOUNT"].ToString();
+                record.Originator = rdr["Originator"].ToString();
+                record.Seller = rdr["Seller"].ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception in DataQueries.CreateSearchResult:" + ex.Message);
+            }
+
         }
     }
 }

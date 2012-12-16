@@ -50,7 +50,8 @@
                             <td style="width: 80%">
                                 <section style="margin-top: 5px; padding-right: 30px;">
                                     <div id="workspaceViewContainer">
-                                        <div id="loading" style="display:none"><img src="~/Content/images/ajax-loader.gif" /></div>
+                                        <div id="loading" style="display: none">
+                                            <img src="~/Content/images/ajax-loader.gif" /></div>
                                         @RenderBody()
                                     </div>
                                 </section>
@@ -87,7 +88,7 @@
                 if ($('#lnkAdvanced').html() == 'Basic Search') {
                     $('#advancedSerach').hide(500);
                     $('#lnkAdvanced').html('Advanced Search');
-                    
+
                 }
                 else {
                     $('#advancedSerach').show(500);
@@ -96,10 +97,14 @@
                 }
             });
 
-            $('#account').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('account #'); });
-            $('#originator').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('originator'); });
-            $('#seller').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('seller'); });
-            $('#ssn').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val('last 4 digits of SSN'); });
+            var originalAccount = 'account #';
+            var originalOriginator = 'originator';
+            var originalSeller = 'seller';
+            var originalSSN = 'last 4 digits of SSN'
+            $('#account').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val(originalAccount); });
+            $('#originator').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val(originalOriginator); });
+            $('#seller').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val(originalSeller); });
+            $('#ssn').focus(function () { $(this).val(''); }).blur(function () { if ($(this).val() == '') $(this).val(originalSSN); });
 
             $('#basicSearch').click(function (e) {
                 //$('#loading').show();
@@ -111,6 +116,43 @@
                 if ($('#basicSearchVal').val() != '') {
                     log($('#basicSearchVal').val());
                     $('#basicSearchFrm').submit();
+                }
+            });
+
+            advanceSearchHasFielstToSearch = function () {
+                if ($('#account').val() != originalAccount)
+                    return true;
+                if ($('#originator').val() != originalOriginator)
+                    return true;
+                if ($('#seller').val() != originalSeller)
+                    return true;
+                if ($('#ssn').val() != originalSSN)
+                    return true;
+                return false;
+            }
+
+            resetBeforeSubmit = function () {
+                if ($('#account').val() == originalAccount)
+                    $('#account').val('');
+                if ($('#originator').val() == originalOriginator)
+                    $('#originator').val('')
+                if ($('#seller').val() == originalSeller)
+                    $('#seller').val('');
+                if ($('#ssn').val() == originalSSN)
+                    $('#ssn').val('');
+            }
+            $('#advanceSearch').click(function (e) {
+                e.preventDefault();
+                
+                log('advance search submit');
+                log($('#basicSearchVal').val());
+                
+                if (advanceSearchHasFielstToSearch()) {
+                    //resetBeforeSubmit();
+                    $('#advanceSearchFrm').submit();
+                }
+                else {
+                    alert('Please enter something to search!');
                 }
             });
             //$('#menu li a').click(function (event) {
@@ -149,7 +191,7 @@
             //log($('footer').position().top);
             //log($('#messages').position().top);
 
-            
+
         });
 
     </script>
