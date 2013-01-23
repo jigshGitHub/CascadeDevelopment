@@ -253,5 +253,28 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+    public class RACCOUNTRepository : RepositoryBase<RACCOUNT>
+    {
+        public RACCOUNTRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public RACCOUNTRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class ReSaleRestrictionRepository : RepositoryBase<MSI_ResaleRestriction>
+    {
+        public ReSaleRestrictionRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public ReSaleRestrictionRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
 
 }

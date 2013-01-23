@@ -1,112 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CascadeDBModelStoreContainer">
-    <EntitySet Name="AccidentCauses" EntityType="CascadeDBModel.Store.AccidentCauses" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AgencyType" EntityType="CascadeDBModel.Store.AgencyType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AlertStatus" EntityType="CascadeDBModel.Store.AlertStatus" store:Type="Tables" store:Schema="dbo" store:Name="AlertStatus">
-      <DefiningQuery>SELECT 
-      [AlertStatus].[StatusAlertID] AS [StatusAlertID], 
-      [AlertStatus].[Status] AS [Status], 
-      [AlertStatus].[Alert] AS [Alert]
-      FROM [dbo].[AlertStatus] AS [AlertStatus]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="AlertTypes" EntityType="CascadeDBModel.Store.AlertTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AnnualRateCodes" EntityType="CascadeDBModel.Store.AnnualRateCodes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AreaCodes" EntityType="CascadeDBModel.Store.AreaCodes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AreaCodesByTimeZones" EntityType="CascadeDBModel.Store.AreaCodesByTimeZones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_Applications" EntityType="CascadeDBModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_Membership" EntityType="CascadeDBModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_Paths" EntityType="CascadeDBModel.Store.aspnet_Paths" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="CascadeDBModel.Store.aspnet_PersonalizationAllUsers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="CascadeDBModel.Store.aspnet_PersonalizationPerUser" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_Profile" EntityType="CascadeDBModel.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_Roles" EntityType="CascadeDBModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_SchemaVersions" EntityType="CascadeDBModel.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_Users" EntityType="CascadeDBModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_UsersInRoles" EntityType="CascadeDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="aspnet_WebEvent_Events" EntityType="CascadeDBModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BankAccountTypes" EntityType="CascadeDBModel.Store.BankAccountTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BankruptcyDispositions" EntityType="CascadeDBModel.Store.BankruptcyDispositions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BankTransactionTypes" EntityType="CascadeDBModel.Store.BankTransactionTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Batch" EntityType="CascadeDBModel.Store.Batch" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BatchTrackReportStatus" EntityType="CascadeDBModel.Store.BatchTrackReportStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BatchTrackReportTypes" EntityType="CascadeDBModel.Store.BatchTrackReportTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BatchTypes" EntityType="CascadeDBModel.Store.BatchTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BillingOptions" EntityType="CascadeDBModel.Store.BillingOptions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Calendar" EntityType="CascadeDBModel.Store.Calendar" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CBRAccountStatus" EntityType="CascadeDBModel.Store.CBRAccountStatus" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CBRBankruptStatus" EntityType="CascadeDBModel.Store.CBRBankruptStatus" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CBRDisputeStatus" EntityType="CascadeDBModel.Store.CBRDisputeStatus" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CBRSpecialStatus" EntityType="CascadeDBModel.Store.CBRSpecialStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Colors" EntityType="CascadeDBModel.Store.Colors" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Company" EntityType="CascadeDBModel.Store.Company" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CourtTypes" EntityType="CascadeDBModel.Store.CourtTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CreditCardTypes" EntityType="CascadeDBModel.Store.CreditCardTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DamageTypes" EntityType="CascadeDBModel.Store.DamageTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DataTypes" EntityType="CascadeDBModel.Store.DataTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DebtTypes" EntityType="CascadeDBModel.Store.DebtTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Departments" EntityType="CascadeDBModel.Store.Departments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DocumentLibraryCategory" EntityType="CascadeDBModel.Store.DocumentLibraryCategory" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DocumentTypes" EntityType="CascadeDBModel.Store.DocumentTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DominantHand" EntityType="CascadeDBModel.Store.DominantHand" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="EmploymentTypes" EntityType="CascadeDBModel.Store.EmploymentTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Genders" EntityType="CascadeDBModel.Store.Genders" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Groups" EntityType="CascadeDBModel.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clients" EntityType="CascadeDBModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DebtorsEmployer" EntityType="CascadeDBModel.Store.DebtorsEmployer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DebtorsVehicle" EntityType="CascadeDBModel.Store.DebtorsVehicle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Division" EntityType="CascadeDBModel.Store.Division" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Industries" EntityType="CascadeDBModel.Store.Industries" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="InsuranceTypes" EntityType="CascadeDBModel.Store.InsuranceTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="InvoiceOptions" EntityType="CascadeDBModel.Store.InvoiceOptions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="KBCategories" EntityType="CascadeDBModel.Store.KBCategories" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Languages" EntityType="CascadeDBModel.Store.Languages" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NamePrefix" EntityType="CascadeDBModel.Store.NamePrefix" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NameSuffix" EntityType="CascadeDBModel.Store.NameSuffix" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NCOACodes" EntityType="CascadeDBModel.Store.NCOACodes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NegoiationTypes" EntityType="CascadeDBModel.Store.NegoiationTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Office" EntityType="CascadeDBModel.Store.Office" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PaperAges" EntityType="CascadeDBModel.Store.PaperAges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LastCallResults" EntityType="CascadeDBModel.Store.LastCallResults" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_DPSForm" EntityType="CascadeDBModel.Store.MSI_DPSForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_MediaForm" EntityType="CascadeDBModel.Store.MSI_MediaForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_RecallForm" EntityType="CascadeDBModel.Store.MSI_RecallForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_ResaleRestriction" EntityType="CascadeDBModel.Store.MSI_ResaleRestriction" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PaperTypes" EntityType="CascadeDBModel.Store.PaperTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PassengerTypes" EntityType="CascadeDBModel.Store.PassengerTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PaymentPlanStatuses" EntityType="CascadeDBModel.Store.PaymentPlanStatuses" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PaymentTypes" EntityType="CascadeDBModel.Store.PaymentTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PhoneTypes" EntityType="CascadeDBModel.Store.PhoneTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PolicyTypes" EntityType="CascadeDBModel.Store.PolicyTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Store.Port_Acq" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Store.Port_DPS" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Store.Port_Media" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Recall" EntityType="CascadeDBModel.Store.Port_Recall" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Trans" EntityType="CascadeDBModel.Store.Port_Trans" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PortfolioStatus" EntityType="CascadeDBModel.Store.PortfolioStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PortfolioType" EntityType="CascadeDBModel.Store.PortfolioType" store:Type="Tables" store:Schema="dbo" store:Name="PortfolioType">
-      <DefiningQuery>SELECT 
-      [PortfolioType].[PortfolioType] AS [PortfolioType], 
-      [PortfolioType].[Descr] AS [Descr]
-      FROM [dbo].[PortfolioType] AS [PortfolioType]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="PortfolioTypes" EntityType="CascadeDBModel.Store.PortfolioTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProductCodeSummary" EntityType="CascadeDBModel.Store.ProductCodeSummary" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PromiseTypes" EntityType="CascadeDBModel.Store.PromiseTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Relationships" EntityType="CascadeDBModel.Store.Relationships" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ReportOptions" EntityType="CascadeDBModel.Store.ReportOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Portfolios" EntityType="CascadeDBModel.Store.Portfolios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCBKRP" EntityType="CascadeDBModel.Store.RACCBKRP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCOUNT" EntityType="CascadeDBModel.Store.RACCOUNT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCTLGL" EntityType="CascadeDBModel.Store.RACCTLGL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCTREL" EntityType="CascadeDBModel.Store.RACCTREL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACTPLAC" EntityType="CascadeDBModel.Store.RACTPLAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RAGENCY" EntityType="CascadeDBModel.Store.RAGENCY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="recallmaster" EntityType="CascadeDBModel.Store.recallmaster" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ResponsibilityTypes" EntityType="CascadeDBModel.Store.ResponsibilityTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RoadConditions" EntityType="CascadeDBModel.Store.RoadConditions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ScoreTypes" EntityType="CascadeDBModel.Store.ScoreTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SecurityTypes" EntityType="CascadeDBModel.Store.SecurityTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SettingCategories" EntityType="CascadeDBModel.Store.SettingCategories" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SettingDataTypes" EntityType="CascadeDBModel.Store.SettingDataTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SettleRequestStatus" EntityType="CascadeDBModel.Store.SettleRequestStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SkipDataType" EntityType="CascadeDBModel.Store.SkipDataType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SkipStatus" EntityType="CascadeDBModel.Store.SkipStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="StateConditionals" EntityType="CascadeDBModel.Store.StateConditionals" store:Type="Tables" store:Schema="dbo" store:Name="StateConditionals">
-      <DefiningQuery>SELECT 
-      [StateConditionals].[State] AS [State], 
-      [StateConditionals].[Description] AS [Description], 
-      [StateConditionals].[Office] AS [Office], 
-      [StateConditionals].[Conditional] AS [Conditional]
-      FROM [dbo].[StateConditionals] AS [StateConditionals]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="States" EntityType="CascadeDBModel.Store.States" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Statute" EntityType="CascadeDBModel.Store.Statute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RFINTRAN" EntityType="CascadeDBModel.Store.RFINTRAN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RINTRATE" EntityType="CascadeDBModel.Store.RINTRATE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RPRODCDE" EntityType="CascadeDBModel.Store.RPRODCDE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RSTATUS" EntityType="CascadeDBModel.Store.RSTATUS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RTRANCDE" EntityType="CascadeDBModel.Store.RTRANCDE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Scores" EntityType="CascadeDBModel.Store.Scores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Segments" EntityType="CascadeDBModel.Store.Segments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SegmentTypes" EntityType="CascadeDBModel.Store.SegmentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SettlementRequests" EntityType="CascadeDBModel.Store.SettlementRequests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatusTypes" EntityType="CascadeDBModel.Store.StatusTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="StatuteTypes" EntityType="CascadeDBModel.Store.StatuteTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SubIndustries" EntityType="CascadeDBModel.Store.SubIndustries" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_BrockettCompanies" EntityType="CascadeDBModel.Store.Sup_BrockettCompanies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_Company" EntityType="CascadeDBModel.Store.Sup_Company" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_PmtType" EntityType="CascadeDBModel.Store.Sup_PmtType" store:Type="Tables" Schema="dbo" />
@@ -118,25 +57,22 @@
     <EntitySet Name="Sup_UploadRecalls" EntityType="CascadeDBModel.Store.Sup_UploadRecalls" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Surnames" EntityType="CascadeDBModel.Store.Surnames" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TaskCategories" EntityType="CascadeDBModel.Store.TaskCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Categories" EntityType="CascadeDBModel.Store.Tbl_Categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Expense" EntityType="CascadeDBModel.Store.Tbl_Expense" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_ExpenseDetails" EntityType="CascadeDBModel.Store.Tbl_ExpenseDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_ExpenseDetailsUpdated" EntityType="CascadeDBModel.Store.Tbl_ExpenseDetailsUpdated" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_State" EntityType="CascadeDBModel.Store.TBL_State" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TemplateLibrary" EntityType="CascadeDBModel.Store.TemplateLibrary" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TemplateLibraryCategory" EntityType="CascadeDBModel.Store.TemplateLibraryCategory" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TimeZonesByAreaCode" EntityType="CascadeDBModel.Store.TimeZonesByAreaCode" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VehicleOwnerTypes" EntityType="CascadeDBModel.Store.VehicleOwnerTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VendorProducts" EntityType="CascadeDBModel.Store.VendorProducts" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Vendors" EntityType="CascadeDBModel.Store.Vendors" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VendorTypes" EntityType="CascadeDBModel.Store.VendorTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WeatherConditions" EntityType="CascadeDBModel.Store.WeatherConditions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WorkFlow" EntityType="CascadeDBModel.Store.WorkFlow" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WorkFlowJobs" EntityType="CascadeDBModel.Store.WorkFlowJobs" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WorkFlowStatus" EntityType="CascadeDBModel.Store.WorkFlowStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WorkFlowTypes" EntityType="CascadeDBModel.Store.WorkFlowTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblIRR" EntityType="CascadeDBModel.Store.tblIRR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeZones" EntityType="CascadeDBModel.Store.TimeZones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TOT_CALL_ATMPS" EntityType="CascadeDBModel.Store.TOT_CALL_ATMPS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TOT_CALL_COST" EntityType="CascadeDBModel.Store.TOT_CALL_COST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TOT_CALL_DURATION" EntityType="CascadeDBModel.Store.TOT_CALL_DURATION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WKDY_CALL_ATMPS" EntityType="CascadeDBModel.Store.WKDY_CALL_ATMPS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WKND_CALL_ATMPS" EntityType="CascadeDBModel.Store.WKND_CALL_ATMPS" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="WorkStatus" EntityType="CascadeDBModel.Store.WorkStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="YesNo" EntityType="CascadeDBModel.Store.YesNo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="YGCStatus" EntityType="CascadeDBModel.Store.YGCStatus" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="vw_PortfolioCashFlow" EntityType="CascadeDBModel.Store.vw_PortfolioCashFlow" store:Type="Views" store:Schema="dbo" store:Name="vw_PortfolioCashFlow">
       <DefiningQuery>SELECT 
       [vw_PortfolioCashFlow].[Portfolio#] AS [Portfolio#], 
@@ -146,134 +82,107 @@
       [vw_PortfolioCashFlow].[Company] AS [Company]
       FROM [dbo].[vw_PortfolioCashFlow] AS [vw_PortfolioCashFlow]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="CascadeDBModel.Store.FK__aspnet_Me__Appli__21B6055D">
+    <AssociationSet Name="FK__aspnet_Me__Appli__4707859D" Association="CascadeDBModel.Store.FK__aspnet_Me__Appli__4707859D">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="CascadeDBModel.Store.FK__aspnet_Me__UserI__22AA2996">
+    <AssociationSet Name="FK__aspnet_Me__UserI__47FBA9D6" Association="CascadeDBModel.Store.FK__aspnet_Me__UserI__47FBA9D6">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="CascadeDBModel.Store.FK__aspnet_Pa__Appli__5AEE82B9">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="CascadeDBModel.Store.FK__aspnet_Pe__PathI__628FA481">
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__68487DD7" Association="CascadeDBModel.Store.FK__aspnet_Pe__PathI__68487DD7">
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__UserI__693CA210" Association="CascadeDBModel.Store.FK__aspnet_Pe__UserI__693CA210">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="CascadeDBModel.Store.FK__aspnet_Pr__UserI__38996AB5">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Ro__Appli__440B1D61" Association="CascadeDBModel.Store.FK__aspnet_Ro__Appli__440B1D61">
+    <AssociationSet Name="FK__aspnet_Ro__Appli__4DB4832C" Association="CascadeDBModel.Store.FK__aspnet_Ro__Appli__4DB4832C">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__Appli__0DAF0CB0" Association="CascadeDBModel.Store.FK__aspnet_Us__Appli__0DAF0CB0">
+    <AssociationSet Name="FK__aspnet_Us__Appli__4EA8A765" Association="CascadeDBModel.Store.FK__aspnet_Us__Appli__4EA8A765">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="CascadeDBModel.Store.FK__aspnet_Us__RoleI__4AB81AF0">
+    <AssociationSet Name="FK__aspnet_Us__RoleI__4F9CCB9E" Association="CascadeDBModel.Store.FK__aspnet_Us__RoleI__4F9CCB9E">
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="CascadeDBModel.Store.FK__aspnet_Us__UserI__49C3F6B7">
+    <AssociationSet Name="FK__aspnet_Us__UserI__5090EFD7" Association="CascadeDBModel.Store.FK__aspnet_Us__UserI__5090EFD7">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK_Batch_BatchTypes" Association="CascadeDBModel.Store.FK_Batch_BatchTypes">
-      <End Role="BatchTypes" EntitySet="BatchTypes" />
-      <End Role="Batch" EntitySet="Batch" />
+    <AssociationSet Name="FK_DebtorsEmployer_RACCOUNT" Association="CascadeDBModel.Store.FK_DebtorsEmployer_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="DebtorsEmployer" EntitySet="DebtorsEmployer" />
     </AssociationSet>
-    <AssociationSet Name="FK_Statute_StatuteTypes" Association="CascadeDBModel.Store.FK_Statute_StatuteTypes">
+    <AssociationSet Name="FK_DebtorsVehicle_RACCOUNT" Association="CascadeDBModel.Store.FK_DebtorsVehicle_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="DebtorsVehicle" EntitySet="DebtorsVehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LastCallResults_RACCOUNT" Association="CascadeDBModel.Store.FK_LastCallResults_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="LastCallResults" EntitySet="LastCallResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Portfolios_PaperTypes" Association="CascadeDBModel.Store.FK_Portfolios_PaperTypes">
+      <End Role="PaperTypes" EntitySet="PaperTypes" />
+      <End Role="Portfolios" EntitySet="Portfolios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCBKRP_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCBKRP_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCBKRP" EntitySet="RACCBKRP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_Clients" Association="CascadeDBModel.Store.FK_RACCOUNT_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_Portfolios" Association="CascadeDBModel.Store.FK_RACCOUNT_Portfolios">
+      <End Role="Portfolios" EntitySet="Portfolios" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_RAGENCY" Association="CascadeDBModel.Store.FK_RACCOUNT_RAGENCY">
+      <End Role="RAGENCY" EntitySet="RAGENCY" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_RPRODCDE" Association="CascadeDBModel.Store.FK_RACCOUNT_RPRODCDE">
+      <End Role="RPRODCDE" EntitySet="RPRODCDE" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_RSTATUS" Association="CascadeDBModel.Store.FK_RACCOUNT_RSTATUS">
+      <End Role="RSTATUS" EntitySet="RSTATUS" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_StatuteTypes" Association="CascadeDBModel.Store.FK_RACCOUNT_StatuteTypes">
       <End Role="StatuteTypes" EntitySet="StatuteTypes" />
-      <End Role="Statute" EntitySet="Statute" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
     </AssociationSet>
-    <AssociationSet Name="FK_TemplateLibrary_DocumentLibraryCategory" Association="CascadeDBModel.Store.FK_TemplateLibrary_DocumentLibraryCategory">
-      <End Role="DocumentLibraryCategory" EntitySet="DocumentLibraryCategory" />
-      <End Role="TemplateLibrary" EntitySet="TemplateLibrary" />
+    <AssociationSet Name="FK_RACCOUNT_WorkStatus" Association="CascadeDBModel.Store.FK_RACCOUNT_WorkStatus">
+      <End Role="WorkStatus" EntitySet="WorkStatus" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
     </AssociationSet>
-    <AssociationSet Name="FK_VendorProducts_Vendors" Association="CascadeDBModel.Store.FK_VendorProducts_Vendors">
-      <End Role="Vendors" EntitySet="Vendors" />
-      <End Role="VendorProducts" EntitySet="VendorProducts" />
+    <AssociationSet Name="FK_RACCTLGL_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCTLGL_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCTLGL" EntitySet="RACCTLGL" />
     </AssociationSet>
-    <AssociationSet Name="FK_Vendors_VendorTypes" Association="CascadeDBModel.Store.FK_Vendors_VendorTypes">
-      <End Role="VendorTypes" EntitySet="VendorTypes" />
-      <End Role="Vendors" EntitySet="Vendors" />
+    <AssociationSet Name="FK_RACCTREL_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCTREL_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCTREL" EntitySet="RACCTREL" />
     </AssociationSet>
-    <AssociationSet Name="FK_WorkFlow_WorkFlowTypes" Association="CascadeDBModel.Store.FK_WorkFlow_WorkFlowTypes">
-      <End Role="WorkFlowTypes" EntitySet="WorkFlowTypes" />
-      <End Role="WorkFlow" EntitySet="WorkFlow" />
+    <AssociationSet Name="FK_RACTPLAC_RACCOUNT" Association="CascadeDBModel.Store.FK_RACTPLAC_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACTPLAC" EntitySet="RACTPLAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RFINTRAN_RACCOUNT" Association="CascadeDBModel.Store.FK_RFINTRAN_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RFINTRAN" EntitySet="RFINTRAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RFINTRAN_RTRANCDE" Association="CascadeDBModel.Store.FK_RFINTRAN_RTRANCDE">
+      <End Role="RTRANCDE" EntitySet="RTRANCDE" />
+      <End Role="RFINTRAN" EntitySet="RFINTRAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scores_RACCOUNT" Association="CascadeDBModel.Store.FK_Scores_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="Scores" EntitySet="Scores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Expense_Tbl_Categories" Association="CascadeDBModel.Store.FK_Tbl_Expense_Tbl_Categories">
+      <End Role="Tbl_Categories" EntitySet="Tbl_Categories" />
+      <End Role="Tbl_Expense" EntitySet="Tbl_Expense" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="AccidentCauses">
-    <Key>
-      <PropertyRef Name="AccidentCasueID" />
-    </Key>
-    <Property Name="AccidentCasueID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="AccidentCause" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="AgencyType">
-    <Key>
-      <PropertyRef Name="Agency_Type" />
-    </Key>
-    <Property Name="Agency_Type" Type="char" Nullable="false" MaxLength="1" />
-    <Property Name="Descr" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'CascadeDB.dbo.AlertStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-  <EntityType Name="AlertStatus">
-    <Key>
-      <PropertyRef Name="StatusAlertID" />
-      <PropertyRef Name="Status" />
-      <PropertyRef Name="Alert" />
-    </Key>
-    <Property Name="StatusAlertID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="6" />
-    <Property Name="Alert" Type="varchar" Nullable="false" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="AlertTypes">
-    <Key>
-      <PropertyRef Name="AlertTypeID" />
-    </Key>
-    <Property Name="AlertTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="AlertType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="AnnualRateCodes">
-    <Key>
-      <PropertyRef Name="AnnualRateCodeID" />
-    </Key>
-    <Property Name="AnnualRateCodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="AnnualRateCode" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="AreaCodes">
-    <Key>
-      <PropertyRef Name="AreaCode" />
-    </Key>
-    <Property Name="AreaCode" Type="int" Nullable="false" />
-    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
-    <Property Name="State" Type="varchar" MaxLength="50" />
-    <Property Name="TimeZoneID" Type="int" />
-  </EntityType>
-  <EntityType Name="AreaCodesByTimeZones">
-    <Key>
-      <PropertyRef Name="AreaCode" />
-    </Key>
-    <Property Name="AreaCode" Type="int" Nullable="false" />
-    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
-    <Property Name="State" Type="varchar" MaxLength="50" />
-    <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="50" />
-  </EntityType>
   <EntityType Name="aspnet_Applications">
     <Key>
       <PropertyRef Name="ApplicationId" />
@@ -309,43 +218,6 @@
     <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
     <Property Name="Comment" Type="ntext" />
   </EntityType>
-  <EntityType Name="aspnet_Paths">
-    <Key>
-      <PropertyRef Name="PathId" />
-    </Key>
-    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
-    <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="aspnet_PersonalizationAllUsers">
-    <Key>
-      <PropertyRef Name="PathId" />
-    </Key>
-    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PageSettings" Type="image" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_PersonalizationPerUser">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PathId" Type="uniqueidentifier" />
-    <Property Name="UserId" Type="uniqueidentifier" />
-    <Property Name="PageSettings" Type="image" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_Profile">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
-    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
-    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
-  </EntityType>
   <EntityType Name="aspnet_Roles">
     <Key>
       <PropertyRef Name="RoleId" />
@@ -355,15 +227,6 @@
     <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="aspnet_SchemaVersions">
-    <Key>
-      <PropertyRef Name="Feature" />
-      <PropertyRef Name="CompatibleSchemaVersion" />
-    </Key>
-    <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="aspnet_Users">
     <Key>
@@ -384,97 +247,6 @@
     </Key>
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_WebEvent_Events">
-    <Key>
-      <PropertyRef Name="EventId" />
-    </Key>
-    <Property Name="EventId" Type="char" Nullable="false" MaxLength="32" />
-    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
-    <Property Name="EventTime" Type="datetime" Nullable="false" />
-    <Property Name="EventType" Type="nvarchar" Nullable="false" MaxLength="256" />
-    <Property Name="EventSequence" Type="decimal" Nullable="false" Precision="19" />
-    <Property Name="EventOccurrence" Type="decimal" Nullable="false" Precision="19" />
-    <Property Name="EventCode" Type="int" Nullable="false" />
-    <Property Name="EventDetailCode" Type="int" Nullable="false" />
-    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
-    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
-    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
-    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
-    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
-    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
-    <Property Name="Details" Type="ntext" />
-  </EntityType>
-  <EntityType Name="BankAccountTypes">
-    <Key>
-      <PropertyRef Name="BankAccountTypeID" />
-    </Key>
-    <Property Name="BankAccountTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="BankAccountType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="BankruptcyDispositions">
-    <Key>
-      <PropertyRef Name="DispositionID" />
-    </Key>
-    <Property Name="DispositionID" Type="nvarchar" Nullable="false" MaxLength="2" />
-    <Property Name="Disposition" Type="nvarchar" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="BankTransactionTypes">
-    <Key>
-      <PropertyRef Name="BankTransactionTypeID" />
-    </Key>
-    <Property Name="BankTransactionTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="BankTransactionType" Type="varchar" MaxLength="20" />
-    <Property Name="BankTransactionTypeCode" Type="varchar" MaxLength="1" />
-  </EntityType>
-  <EntityType Name="Batch">
-    <Key>
-      <PropertyRef Name="BatchID" />
-    </Key>
-    <Property Name="BatchID" Type="char" Nullable="false" MaxLength="3" />
-    <Property Name="BatchTypeID" Type="int" Nullable="false" />
-    <Property Name="Batch_Type" Type="varchar" MaxLength="25" />
-  </EntityType>
-  <EntityType Name="BatchTrackReportStatus">
-    <Key>
-      <PropertyRef Name="BatchTrackReportStatusID" />
-    </Key>
-    <Property Name="BatchTrackReportStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="BatchTrackReportStatus" Type="varchar" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="BatchTrackReportTypes">
-    <Key>
-      <PropertyRef Name="BatchTrackReportTypeID" />
-    </Key>
-    <Property Name="BatchTrackReportTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="BatchTrackReportType" Type="varchar" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="BatchTypes">
-    <Key>
-      <PropertyRef Name="BatchTypeID" />
-    </Key>
-    <Property Name="BatchTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Batch_Type" Type="varchar" MaxLength="25" />
-    <Property Name="Begin_seq" Type="char" MaxLength="3" />
-    <Property Name="End_seq" Type="char" MaxLength="3" />
-  </EntityType>
-  <EntityType Name="BillingOptions">
-    <Key>
-      <PropertyRef Name="BillingOptionID" />
-    </Key>
-    <Property Name="BillingOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="BillingOption" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Calendar">
-    <Key>
-      <PropertyRef Name="CalendarID" />
-    </Key>
-    <Property Name="CalendarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="StartDate" Type="datetime" />
-    <Property Name="EndDate" Type="datetime" />
-    <Property Name="WorkDays" Type="int" />
-    <Property Name="Period" Type="varchar" MaxLength="6" />
-    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="CBRAccountStatus">
     <Key>
@@ -508,107 +280,169 @@
     <Property Name="CBRSpecialStatus" Type="varchar" MaxLength="6" />
     <Property Name="CBRSpecialStatusDesc" Type="varchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Colors">
+  <EntityType Name="Clients">
     <Key>
-      <PropertyRef Name="ColorID" />
+      <PropertyRef Name="ClientID" />
     </Key>
-    <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Color" Type="varchar" MaxLength="10" />
-    <Property Name="ColorCode" Type="varchar" MaxLength="10" />
+    <Property Name="ClientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SalesRepID" Type="int" />
+    <Property Name="CustomerServiceRepID" Type="int" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="20" />
+    <Property Name="ClientName" Type="varchar" MaxLength="255" />
+    <Property Name="ClientTypeID" Type="int" />
+    <Property Name="BillingCompany" Type="varchar" MaxLength="255" />
+    <Property Name="BillingContact" Type="varchar" MaxLength="255" />
+    <Property Name="BillingAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="BillingAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="BillingCity" Type="varchar" MaxLength="50" />
+    <Property Name="BillingState" Type="varchar" MaxLength="50" />
+    <Property Name="BillingZip" Type="varchar" MaxLength="50" />
+    <Property Name="BillingPhone" Type="varchar" MaxLength="50" />
+    <Property Name="BillingFax" Type="varchar" MaxLength="50" />
+    <Property Name="BillingEmail" Type="varchar" MaxLength="2000" />
+    <Property Name="BillingTypeID" Type="int" />
+    <Property Name="BillingOptionID" Type="int" />
+    <Property Name="Terms" Type="int" />
+    <Property Name="FinanceCharge" Type="float" />
+    <Property Name="InvoiceSchedule" Type="int" />
+    <Property Name="InvoiceoptionID" Type="int" />
+    <Property Name="InvoiceTemplateID" Type="int" />
+    <Property Name="InvoiceDetail" Type="bit" />
+    <Property Name="BillingNotes" Type="varchar" MaxLength="255" />
+    <Property Name="CustomerServiceContact" Type="varchar" MaxLength="255" />
+    <Property Name="CustomerServiceAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerServiceAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerServiceCity" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerServiceState" Type="varchar" MaxLength="3" />
+    <Property Name="CustomerServiceZip" Type="varchar" MaxLength="10" />
+    <Property Name="CustomerServicePhone" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerServiceFax" Type="varchar" MaxLength="50" />
+    <Property Name="ReportEmails" Type="varchar" MaxLength="2000" />
+    <Property Name="ReportOptionID" Type="int" />
+    <Property Name="CustomerServiceNotes" Type="varchar" MaxLength="255" />
+    <Property Name="httpURL" Type="varchar" MaxLength="255" />
+    <Property Name="ftpURL" Type="varchar" MaxLength="255" />
+    <Property Name="ftpUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ftpPassword" Type="varchar" MaxLength="50" />
+    <Property Name="ftpFolder" Type="varchar" MaxLength="50" />
+    <Property Name="ClientPassword" Type="varchar" MaxLength="20" />
+    <Property Name="LateFeeTerms" Type="int" />
+    <Property Name="LateFee" Type="money" />
   </EntityType>
-  <EntityType Name="Company">
+  <EntityType Name="DebtorsEmployer">
     <Key>
-      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Employer" Type="varchar" MaxLength="50" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="Address3" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="35" />
+    <Property Name="State" Type="varchar" MaxLength="3" />
+    <Property Name="Zip" Type="varchar" MaxLength="10" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="Fax" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="DOH" Type="datetime" />
+    <Property Name="DOF" Type="datetime" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="Supervisor" Type="varchar" MaxLength="50" />
+    <Property Name="SupervisorPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Income" Type="varchar" MaxLength="10" />
+    <Property Name="Shift" Type="varchar" MaxLength="20" />
+    <Property Name="MonthsSinceHire" Type="varchar" MaxLength="10" />
+    <Property Name="IncomeHolder" Type="varchar" MaxLength="22" />
+    <Property Name="IncomeType" Type="varchar" MaxLength="22" />
+    <Property Name="GrossPay" Type="varchar" MaxLength="10" />
+    <Property Name="Day_Of_Week" Type="varchar" MaxLength="22" />
+    <Property Name="Direct_Deposit" Type="varchar" MaxLength="22" />
+    <Property Name="Next_Pay_Date" Type="datetime" />
+    <Property Name="Pay_Frequency" Type="varchar" MaxLength="22" />
+    <Property Name="Est_Next_Pay_Date" Type="datetime" />
+    <Property Name="CorporateAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="CorporateAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="CorporateCity" Type="varchar" MaxLength="35" />
+    <Property Name="CorporateState" Type="varchar" MaxLength="3" />
+    <Property Name="CorporateZip" Type="varchar" MaxLength="10" />
+    <Property Name="CorporatePhone" Type="varchar" MaxLength="15" />
+    <Property Name="CorporateFax" Type="varchar" MaxLength="15" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Update_ID" Type="varchar" MaxLength="6" />
+    <Property Name="Update_Type" Type="char" MaxLength="1" />
+    <Property Name="Last_Pay_Date" Type="datetime" />
+    <Property Name="Employeed" Type="bit" />
+    <Property Name="Verified" Type="bit" />
+    <Property Name="DateVerified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DebtorsVehicle">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="VehicleYear" Type="varchar" MaxLength="4" />
+    <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleYearMakeModel" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleMiles" Type="varchar" MaxLength="12" />
+    <Property Name="VehicleVIN" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleBookValue" Type="varchar" MaxLength="10" />
+    <Property Name="VehicleCondition" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleTag" Type="varchar" MaxLength="20" />
+    <Property Name="VehicleColor" Type="varchar" MaxLength="25" />
+    <Property Name="VehicleOwnerTypeID" Type="int" />
+    <Property Name="DamageTypeID" Type="int" />
+    <Property Name="DamageAmount" Type="varchar" MaxLength="10" />
+    <Property Name="NameOnTitle" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Update_ID" Type="varchar" MaxLength="6" />
+    <Property Name="Update_Type" Type="char" MaxLength="1" />
+    <Property Name="PaymentAmount" Type="varchar" MaxLength="10" />
+    <Property Name="DownPayment" Type="varchar" MaxLength="10" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="LoanTerms" Type="int" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="SaleAmount" Type="varchar" MaxLength="10" />
+    <Property Name="RepoStatus" Type="varchar" MaxLength="10" />
+    <Property Name="RepoAgent" Type="varchar" MaxLength="50" />
+    <Property Name="RepoAgentAddress1" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentCity" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentState" Type="varchar" MaxLength="2" />
+    <Property Name="RepoAgentZip" Type="varchar" MaxLength="10" />
+    <Property Name="RepoAgentPhone" Type="varchar" MaxLength="20" />
+    <Property Name="RepoAgentFax" Type="varchar" MaxLength="20" />
+    <Property Name="RepoAgentEmail" Type="varchar" MaxLength="255" />
+    <Property Name="RepoDate" Type="datetime" />
+    <Property Name="RepoFee" Type="varchar" MaxLength="10" />
+    <Property Name="AuctionName" Type="varchar" MaxLength="50" />
+    <Property Name="AuctionDate" Type="datetime" />
+    <Property Name="AuctionAmount" Type="varchar" MaxLength="10" />
+    <Property Name="AuctionFee" Type="varchar" MaxLength="10" />
+    <Property Name="ReconditioningFee" Type="varchar" MaxLength="10" />
+    <Property Name="TransportationFee" Type="varchar" MaxLength="10" />
+    <Property Name="RedemptionExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+    </Key>
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
     <Property Name="CompanyName" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="CourtTypes">
-    <Key>
-      <PropertyRef Name="CourtTypeID" />
-    </Key>
-    <Property Name="CourtTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CourtType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="CreditCardTypes">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CreditCardType" Type="varchar" Nullable="false" MaxLength="25" />
-    <Property Name="Image" Type="varchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DamageTypes">
-    <Key>
-      <PropertyRef Name="DamgeTypeID" />
-    </Key>
-    <Property Name="DamgeTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DamageType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DataTypes">
-    <Key>
-      <PropertyRef Name="DataTypeID" />
-    </Key>
-    <Property Name="DataTypeID" Type="int" Nullable="false" />
-    <Property Name="DataType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DebtTypes">
-    <Key>
-      <PropertyRef Name="DebtTypeID" />
-    </Key>
-    <Property Name="DebtTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DebtType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Departments">
-    <Key>
-      <PropertyRef Name="DepartmentID" />
-    </Key>
-    <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Department" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DocumentLibraryCategory">
-    <Key>
-      <PropertyRef Name="CategoryID" />
-    </Key>
-    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
-    <Property Name="CategoryDesc" Type="ntext" />
-    <Property Name="Media" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="DocumentTypes">
-    <Key>
-      <PropertyRef Name="DocumentTypeID" />
-    </Key>
-    <Property Name="DocumentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DocumentType" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DominantHand">
-    <Key>
-      <PropertyRef Name="DominantHandID" />
-    </Key>
-    <Property Name="DominantHandID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DominantHand" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="EmploymentTypes">
-    <Key>
-      <PropertyRef Name="EmploymentTypeID" />
-    </Key>
-    <Property Name="EmploymentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Genders">
-    <Key>
-      <PropertyRef Name="GenderID" />
-    </Key>
-    <Property Name="GenderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Gender" Type="char" MaxLength="1" />
-  </EntityType>
-  <EntityType Name="Groups">
-    <Key>
-      <PropertyRef Name="GroupID" />
-    </Key>
-    <Property Name="GroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="GroupName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="City" Type="varchar" MaxLength="20" />
+    <Property Name="State" Type="varchar" MaxLength="2" />
+    <Property Name="Zip" Type="varchar" MaxLength="10" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="Fax" Type="varchar" MaxLength="15" />
+    <Property Name="Website" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Industries">
     <Key>
@@ -618,79 +452,132 @@
     <Property Name="ShortDescription" Type="nvarchar" MaxLength="30" />
     <Property Name="Code" Type="nvarchar" MaxLength="10" />
   </EntityType>
-  <EntityType Name="InsuranceTypes">
+  <EntityType Name="LastCallResults">
     <Key>
-      <PropertyRef Name="InsuranceTypeID" />
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="InsuranceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="InsuranceType" Type="varchar" MaxLength="50" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Last_Call_Result_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Date_Home" Type="datetime" />
+    <Property Name="Last_Call_Date_Work" Type="datetime" />
+    <Property Name="Last_Call_Date_Cell" Type="datetime" />
+    <Property Name="Last_Call_Date_Other" Type="datetime" />
+    <Property Name="Last_Call_Time_Home" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Work" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Cell" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Other" Type="varchar" MaxLength="20" />
   </EntityType>
-  <EntityType Name="InvoiceOptions">
+  <EntityType Name="MSI_DPSForm">
     <Key>
-      <PropertyRef Name="InvoiceOptionID" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="InvoiceOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="InvoiceOption" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="NetPayment" Type="money" />
+    <Property Name="TransCode" Type="varchar" MaxLength="50" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PmtType" Type="int" />
+    <Property Name="TransSource" Type="int" />
+    <Property Name="Portfolio" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AcctName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateRec" Type="datetime" />
+    <Property Name="CurrentResp" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OriginalAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OurCheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Uploaded" Type="bit" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
   </EntityType>
-  <EntityType Name="KBCategories">
+  <EntityType Name="MSI_MediaForm">
     <Key>
-      <PropertyRef Name="KBCategoryID" />
+      <PropertyRef Name="Portfolio" />
+      <PropertyRef Name="OrderNumber" />
     </Key>
-    <Property Name="KBCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="KBCategory" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CompanyRequesting" Type="varchar" MaxLength="255" />
+    <Property Name="Portfolio" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OriginalLender" Type="varchar" MaxLength="255" />
+    <Property Name="OrigAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="AcctName" Type="varchar" MaxLength="255" />
+    <Property Name="IsApplication" Type="bit" />
+    <Property Name="IsAffidavitIssuer" Type="bit" />
+    <Property Name="IsAffidavitSeller" Type="bit" />
+    <Property Name="StmtsFrom" Type="datetime" />
+    <Property Name="StmtsTo" Type="datetime" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="CODate" Type="datetime" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="SellerFee" Type="money" />
+    <Property Name="DateSellerPaid" Type="datetime" />
+    <Property Name="OurFee" Type="money" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="DateForwarded" Type="datetime" />
+    <Property Name="MediaTypeReceived" Type="varchar" MaxLength="255" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="IsUnavailable" Type="bit" />
+    <Property Name="IsClosed" Type="bit" />
+    <Property Name="UnavailableDate" Type="datetime" />
+    <Property Name="SellerInvoice" Type="varchar" MaxLength="50" />
+    <Property Name="DatePayRec" Type="datetime" />
+    <Property Name="BuyerCheck" Type="varchar" MaxLength="150" />
+    <Property Name="OurCheck" Type="varchar" MaxLength="150" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OurInvoice" Type="varchar" MaxLength="50" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Languages">
+  <EntityType Name="MSI_RecallForm">
     <Key>
-      <PropertyRef Name="LangID" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="LangID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Lang" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OrigAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AcctName" Type="varchar" MaxLength="255" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentResp" Type="varchar" MaxLength="150" />
+    <Property Name="RecallReason" Type="varchar" MaxLength="255" />
+    <Property Name="DateNoteSent" Type="datetime" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="NewStatus" Type="varchar" MaxLength="150" />
+    <Property Name="NewResp" Type="varchar" MaxLength="150" />
+    <Property Name="UploadedDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Invoice" Type="varchar" MaxLength="50" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="FaceValueofAcct" Type="money" />
+    <Property Name="CostBasis" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesBasis" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SellerCheck" Type="varchar" MaxLength="50" />
+    <Property Name="Putback" Type="bit" />
+    <Property Name="DateAcctClosed" Type="datetime" />
+    <Property Name="AmtReceivable" Type="money" />
+    <Property Name="AmtPayable" Type="money" />
+    <Property Name="Seller" Type="varchar" MaxLength="150" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
   </EntityType>
-  <EntityType Name="NamePrefix">
+  <EntityType Name="MSI_ResaleRestriction">
     <Key>
-      <PropertyRef Name="PrefixID" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="PrefixID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Prefix" Type="varchar" MaxLength="15" />
-  </EntityType>
-  <EntityType Name="NameSuffix">
-    <Key>
-      <PropertyRef Name="SuffixID" />
-    </Key>
-    <Property Name="SuffixID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Suffix" Type="varchar" MaxLength="15" />
-  </EntityType>
-  <EntityType Name="NCOACodes">
-    <Key>
-      <PropertyRef Name="NCOAID" />
-    </Key>
-    <Property Name="NCOAID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="NCOACode" Type="varchar" MaxLength="10" />
-    <Property Name="NCOADescription" Type="varchar" MaxLength="50" />
-    <Property Name="UpdateAccount" Type="bit" />
-    <Property Name="NewStatus" Type="varchar" MaxLength="6" />
-    <Property Name="BadAddressFlag" Type="char" MaxLength="1" />
-  </EntityType>
-  <EntityType Name="NegoiationTypes">
-    <Key>
-      <PropertyRef Name="NegoiationTypeID" />
-    </Key>
-    <Property Name="NegoiationTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="NegoiationType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Office">
-    <Key>
-      <PropertyRef Name="OfficeID" />
-    </Key>
-    <Property Name="OfficeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="OfficeName" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="PaperAges">
-    <Key>
-      <PropertyRef Name="PaperAgeID" />
-    </Key>
-    <Property Name="PaperAgeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ShortDescription" Type="nvarchar" MaxLength="15" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Restriction" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="PaperTypes">
     <Key>
@@ -699,42 +586,6 @@
     <Property Name="PaperTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ShortDescription" Type="nvarchar" MaxLength="20" />
     <Property Name="Code" Type="varchar" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="PassengerTypes">
-    <Key>
-      <PropertyRef Name="PassengerTypeID" />
-    </Key>
-    <Property Name="PassengerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PassengerType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="PaymentPlanStatuses">
-    <Key>
-      <PropertyRef Name="PaymentPlanStatusID" />
-    </Key>
-    <Property Name="PaymentPlanStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PaymentPlanStatus" Type="varchar" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="PaymentTypes">
-    <Key>
-      <PropertyRef Name="PaymentTypeID" />
-    </Key>
-    <Property Name="PaymentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="PhoneTypes">
-    <Key>
-      <PropertyRef Name="PhoneTypeID" />
-    </Key>
-    <Property Name="PhoneTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PhoneType" Type="varchar" MaxLength="50" />
-    <Property Name="Skip" Type="bit" />
-  </EntityType>
-  <EntityType Name="PolicyTypes">
-    <Key>
-      <PropertyRef Name="PolicyTypeID" />
-    </Key>
-    <Property Name="PolicyTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PolicyType" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Port_Acq">
     <Key>
@@ -867,61 +718,672 @@
     <Property Name="ProfitShare_after" Type="float" />
     <Property Name="Notes" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="PortfolioStatus">
+  <EntityType Name="Portfolios">
     <Key>
-      <PropertyRef Name="PortfolioStatusID" />
+      <PropertyRef Name="lngPortfolioID" />
     </Key>
-    <Property Name="PortfolioStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Status" Type="varchar" MaxLength="50" />
-    <Property Name="PortfoliotypeID" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'CascadeDB.dbo.PortfolioType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-  <EntityType Name="PortfolioType">
-    <Key>
-      <PropertyRef Name="PortfolioType" />
-    </Key>
-    <Property Name="PortfolioType" Type="char" Nullable="false" MaxLength="1" />
-    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="PortfolioTypes">
-    <Key>
-      <PropertyRef Name="PortfolioTypeID" />
-    </Key>
-    <Property Name="PortfolioTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Type" Type="varchar" MaxLength="25" />
-  </EntityType>
-  <EntityType Name="ProductCodeSummary">
-    <Key>
-      <PropertyRef Name="Product_Code" />
-      <PropertyRef Name="PlaceDate" />
-    </Key>
-    <Property Name="Product_Code" Type="varchar" Nullable="false" MaxLength="6" />
-    <Property Name="PlaceDate" Type="datetime" Nullable="false" />
-    <Property Name="Records" Type="int" />
+    <Property Name="lngPortfolioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="2000" />
+    <Property Name="PortfolioTypeID" Type="int" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="PortfolioStatusID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Accounts" Type="int" />
     <Property Name="Balance" Type="money" />
+    <Property Name="PaperAgeID" Type="int" />
+    <Property Name="PaperTypeID" Type="int" />
+    <Property Name="IndustryID" Type="int" />
+    <Property Name="SubIndustryID" Type="int" />
+    <Property Name="Notes" Type="varchar" MaxLength="2000" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="BidFile" Type="varchar" MaxLength="255" />
+    <Property Name="PurchaseFile" Type="varchar" MaxLength="255" />
+    <Property Name="ScoreFileName" Type="varchar" MaxLength="255" />
+    <Property Name="TableSourceName" Type="varchar" MaxLength="50" />
+    <Property Name="DataType" Type="varchar" MaxLength="10" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="Branch" Type="varchar" MaxLength="6" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Status" Type="varchar" MaxLength="6" />
+    <Property Name="Office" Type="varchar" MaxLength="6" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="SalePrice" Type="money" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="50" />
+    <Property Name="SoldToName" Type="varchar" MaxLength="50" />
+    <Property Name="SoldToPhone" Type="varchar" MaxLength="50" />
+    <Property Name="SaleFileName" Type="varchar" MaxLength="50" />
+    <Property Name="PreSaleFileName" Type="varchar" MaxLength="50" />
+    <Property Name="PutbackDeadLine" Type="datetime" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="User1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User3" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User4" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User5" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User6" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User7" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User8" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User9" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User10" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User11" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User12" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User13" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User14" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User15" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User16" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User17" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User18" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User19" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User20" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
-  <EntityType Name="PromiseTypes">
+  <EntityType Name="RACCBKRP">
     <Key>
-      <PropertyRef Name="PMT_TYPEID" />
+      <PropertyRef Name="BankruptRecordID" />
     </Key>
-    <Property Name="PMT_TYPEID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PMT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="BankruptRecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentBKT" Type="bit" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Screen" Type="nvarchar" MaxLength="1" />
+    <Property Name="CaseNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="Chapter" Type="nvarchar" MaxLength="2" />
+    <Property Name="FileDate" Type="datetime" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="DispositionCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="Business" Type="nvarchar" MaxLength="255" />
+    <Property Name="PreFix" Type="varchar" MaxLength="10" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="35" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="15" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="35" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Address1Filed" Type="nvarchar" MaxLength="32" />
+    <Property Name="Address2Filed" Type="varchar" MaxLength="50" />
+    <Property Name="CityFiled" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateFiled" Type="nvarchar" MaxLength="2" />
+    <Property Name="ZipCodeFiled" Type="nvarchar" MaxLength="10" />
+    <Property Name="Zip4Filed" Type="varchar" MaxLength="4" />
+    <Property Name="CountyFiled" Type="nvarchar" MaxLength="25" />
+    <Property Name="CountryFiled" Type="varchar" MaxLength="50" />
+    <Property Name="Business1" Type="nvarchar" MaxLength="45" />
+    <Property Name="Business2" Type="nvarchar" MaxLength="45" />
+    <Property Name="Business3" Type="nvarchar" MaxLength="45" />
+    <Property Name="DebtorsAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="DebtorsState" Type="nvarchar" MaxLength="2" />
+    <Property Name="DebtorsZip" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsZip4" Type="varchar" MaxLength="4" />
+    <Property Name="DebtorsCounty" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsCountry" Type="varchar" MaxLength="50" />
+    <Property Name="ECOA" Type="nvarchar" MaxLength="1" />
+    <Property Name="LawFirm" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyAddress1" Type="nvarchar" MaxLength="35" />
+    <Property Name="AttorneyAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="AttorneyCity" Type="nvarchar" MaxLength="35" />
+    <Property Name="AttorneyState" Type="nvarchar" MaxLength="2" />
+    <Property Name="AttorneyZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="AttorneyPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="AttorneyFax" Type="varchar" MaxLength="20" />
+    <Property Name="Date341" Type="nvarchar" MaxLength="10" />
+    <Property Name="Time341" Type="nvarchar" MaxLength="10" />
+    <Property Name="Location341" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trustee" Type="nvarchar" MaxLength="40" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="Court" Type="varchar" MaxLength="255" />
+    <Property Name="TrusteeAddress1" Type="nvarchar" MaxLength="40" />
+    <Property Name="TrusteeAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="TrusteeCity" Type="nvarchar" MaxLength="32" />
+    <Property Name="TrusteeState" Type="nvarchar" MaxLength="2" />
+    <Property Name="TrusteeZip" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrusteePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrusteeFax" Type="varchar" MaxLength="20" />
+    <Property Name="Judges_Intials" Type="nvarchar" MaxLength="16" />
+    <Property Name="Funds" Type="nvarchar" MaxLength="1" />
+    <Property Name="BarDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="DebtorsPhone" Type="varchar" MaxLength="50" />
+    <Property Name="AttorneyLastNameSuffix" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyMiddleInit" Type="nvarchar" MaxLength="1" />
+    <Property Name="AttorneyFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CourtAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="CourtAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="CourtCity" Type="varchar" MaxLength="50" />
+    <Property Name="CourtState" Type="varchar" MaxLength="2" />
+    <Property Name="CourtZip" Type="varchar" MaxLength="50" />
+    <Property Name="CourtPhone" Type="varchar" MaxLength="50" />
+    <Property Name="ECF" Type="bit" />
+    <Property Name="POCDate" Type="datetime" />
+    <Property Name="POCDeadline" Type="datetime" />
+    <Property Name="ClaimNumber" Type="varchar" MaxLength="50" />
+    <Property Name="POCConfirmDate" Type="datetime" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="BKRTDateGranted" Type="datetime" />
   </EntityType>
-  <EntityType Name="Relationships">
+  <EntityType Name="RACCOUNT">
     <Key>
-      <PropertyRef Name="RelationshipID" />
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
     </Key>
-    <Property Name="RelationshipID" Type="int" Nullable="false" />
-    <Property Name="Relationship" Type="varchar" MaxLength="50" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PrimaryAccount" Type="varchar" MaxLength="20" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="ToolSetID" Type="int" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="DateWorked" Type="smalldatetime" />
+    <Property Name="DEBT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="BRANCH_NUMBER" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_LIMIT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CONTRACT_DATE" Type="datetime" />
+    <Property Name="INT_RATE_CODE" Type="varchar" MaxLength="8" />
+    <Property Name="INT_START_DATE" Type="datetime" />
+    <Property Name="CYCLE_CODE" Type="decimal" Precision="2" />
+    <Property Name="LAST_POST_DATE" Type="datetime" />
+    <Property Name="CHGOFF_DATE" Type="datetime" />
+    <Property Name="CHGOFF_RSN_CODE" Type="varchar" MaxLength="3" />
+    <Property Name="CHGOFF_PRINCPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_OTH_AMTS" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REASON_INTO_COL" Type="varchar" MaxLength="3" />
+    <Property Name="FIRST_PAY_DEFAULT" Type="char" MaxLength="1" />
+    <Property Name="CYCLES_DELQ" Type="decimal" Precision="3" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="LAST_CONT_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="Transfer_By" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Date_Placed" Type="datetime" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="RESP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="Status_Change_Date" Type="datetime" />
+    <Property Name="Previous_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Status_Date" Type="datetime" />
+    <Property Name="ALLOC_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="TOT_CHARGES" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRINCIPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_NUM_PMTS" Type="decimal" Precision="8" />
+    <Property Name="TOT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTH_INC_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DELQ_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DUE_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SETTLE_ALLOW" Type="float" />
+    <Property Name="TOT_NSF_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NUM_NSF_PMNTS" Type="decimal" Precision="4" />
+    <Property Name="DATE_LAST_NSF" Type="datetime" />
+    <Property Name="LAST_NSF_AMT" Type="money" />
+    <Property Name="FRST_PMT_DATE" Type="datetime" />
+    <Property Name="FIRST_PMT_AMOUNT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NEXT_CYCLE" Type="varchar" MaxLength="6" />
+    <Property Name="CALL_ATMPS_CONT" Type="decimal" Precision="6" />
+    <Property Name="WKDY_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKNT_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKND_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="DATE_SENT_AGENCY" Type="datetime" />
+    <Property Name="DATE_LAST_RECALL" Type="datetime" />
+    <Property Name="BAD_PHONE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="BAD_ADDR_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOME_OWN_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOLD_FLAG" Type="char" MaxLength="1" />
+    <Property Name="FIRST_CONT_FLAG" Type="char" MaxLength="1" />
+    <Property Name="LAST_CALL_NUM" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_CALL_DATE" Type="datetime" />
+    <Property Name="LAST_CALL_TIME" Type="varchar" MaxLength="15" />
+    <Property Name="LAST_CALL_RESULT" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_CALL_STATUS" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_LETTER_GENERATED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_GENERATED_DATE" Type="datetime" />
+    <Property Name="LAST_LETTER_PRINTED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_PRINTED_DATE" Type="datetime" />
+    <Property Name="HEADER_NOTE" Type="varchar" MaxLength="3000" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="FLAGS" Type="varchar" MaxLength="26" />
+    <Property Name="LAST_PMT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REPORT_TO_BUREAU" Type="bit" />
+    <Property Name="BUR_UPDATE_DATE" Type="datetime" />
+    <Property Name="BUR_UPDATE_TIME" Type="decimal" Precision="6" />
+    <Property Name="BUR_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_DISPUTE_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_BKT_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_SPECIAL_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_STATUS_DATE" Type="datetime" />
+    <Property Name="SCORE_STRATEGY" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_SCORE" Type="varchar" MaxLength="10" />
+    <Property Name="BEHAVIOR_SCORE" Type="decimal" Precision="5" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Putback" Type="bit" />
+    <Property Name="PutbackDate" Type="datetime" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="60" />
+    <Property Name="Sold" Type="bit" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="Buyback" Type="bit" />
+    <Property Name="BuybackDate" Type="datetime" />
+    <Property Name="PreviousOwner" Type="varchar" MaxLength="35" />
+    <Property Name="PreviousAcct" Type="varchar" MaxLength="35" />
+    <Property Name="OriginalBalance" Type="money" />
+    <Property Name="OriginalPrincipal" Type="money" />
+    <Property Name="OriginalInterest" Type="money" />
+    <Property Name="Originator" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalAccount" Type="varchar" MaxLength="50" />
+    <Property Name="oLastPayDate" Type="datetime" />
+    <Property Name="oLastPayAmt" Type="money" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="ClientAccount" Type="varchar" MaxLength="50" />
+    <Property Name="cLastPayDate" Type="datetime" />
+    <Property Name="cLastPayAmt" Type="money" />
+    <Property Name="Commission" Type="varchar" MaxLength="4" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="SellerAccount" Type="varchar" MaxLength="50" />
+    <Property Name="sLastPayDate" Type="datetime" />
+    <Property Name="sLastPayAmt" Type="money" />
+    <Property Name="Bankrupt" Type="bit" />
+    <Property Name="POE" Type="char" MaxLength="1" />
+    <Property Name="Stage" Type="varchar" MaxLength="255" />
+    <Property Name="Legal" Type="bit" />
+    <Property Name="LegalReject" Type="bit" />
+    <Property Name="PreLegalReject" Type="bit" />
+    <Property Name="Note" Type="varchar" MaxLength="2000" />
+    <Property Name="RetailVendor" Type="varchar" MaxLength="50" />
+    <Property Name="WIP" Type="bit" />
+    <Property Name="WIPDate" Type="datetime" />
+    <Property Name="PortfolioID" Type="int" />
+    <Property Name="User1" Type="varchar" MaxLength="50" />
+    <Property Name="User2" Type="varchar" MaxLength="50" />
+    <Property Name="User3" Type="varchar" MaxLength="50" />
+    <Property Name="User4" Type="varchar" MaxLength="50" />
+    <Property Name="User5" Type="varchar" MaxLength="50" />
+    <Property Name="User6" Type="varchar" MaxLength="50" />
+    <Property Name="User7" Type="varchar" MaxLength="50" />
+    <Property Name="User8" Type="varchar" MaxLength="50" />
+    <Property Name="User9" Type="varchar" MaxLength="50" />
+    <Property Name="User10" Type="varchar" MaxLength="50" />
+    <Property Name="LastChargeDate" Type="datetime" />
+    <Property Name="LastChargeAmt" Type="money" />
+    <Property Name="DateOfOccur" Type="datetime" />
+    <Property Name="YearsSinceLastActivity" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="LastCashAdvance" Type="datetime" />
+    <Property Name="LastCashAdvanceAmt" Type="money" />
+    <Property Name="LastPDCDate" Type="datetime" />
+    <Property Name="LastPDCAmount" Type="money" />
+    <Property Name="insight_score" Type="varchar" MaxLength="50" />
+    <Property Name="FieldParse" Type="text" />
+    <Property Name="Archive" Type="bit" />
+    <Property Name="Purge" Type="bit" />
+    <Property Name="MonthlyPayment" Type="money" />
+    <Property Name="Terms" Type="int" />
+    <Property Name="MatureDate" Type="datetime" />
+    <Property Name="ScriptID" Type="int" Nullable="false" />
+    <Property Name="StartingPayments" Type="int" Nullable="false" />
+    <Property Name="StartingPaymentAmount" Type="money" Nullable="false" />
+    <Property Name="PaymentPlanDate" Type="datetime" />
+    <Property Name="LAST_LETTER_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LAST_LETTER_DATE" Type="datetime" />
+    <Property Name="MEDIA_FLAG" Type="char" MaxLength="1" />
+    <Property Name="OriginalInterestDate" Type="datetime" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="CollectorCommission" Type="varchar" MaxLength="4" />
+    <Property Name="User11" Type="varchar" MaxLength="50" />
+    <Property Name="User12" Type="varchar" MaxLength="50" />
+    <Property Name="User13" Type="varchar" MaxLength="50" />
+    <Property Name="User14" Type="varchar" MaxLength="50" />
+    <Property Name="User15" Type="varchar" MaxLength="50" />
+    <Property Name="User16" Type="varchar" MaxLength="50" />
+    <Property Name="User17" Type="varchar" MaxLength="50" />
+    <Property Name="User18" Type="varchar" MaxLength="50" />
+    <Property Name="User19" Type="varchar" MaxLength="50" />
+    <Property Name="User20" Type="varchar" MaxLength="50" />
+    <Property Name="LastCCDDate" Type="datetime" />
+    <Property Name="LastCCDAmount" Type="money" />
+    <Property Name="LastPRMDate" Type="datetime" />
+    <Property Name="LastPRMAmount" Type="money" />
+    <Property Name="DateLastPRMEntered" Type="datetime" />
+    <Property Name="FileNo" Type="varchar" MaxLength="10" />
+    <Property Name="Forw_File" Type="varchar" MaxLength="20" />
+    <Property Name="Masco_File" Type="varchar" MaxLength="15" />
+    <Property Name="Forw_ID" Type="varchar" MaxLength="10" />
+    <Property Name="Firm_ID" Type="varchar" MaxLength="10" />
+    <Property Name="AssignDate" Type="datetime" />
+    <Property Name="CheckFeeType" Type="int" />
+    <Property Name="CreditCardFeeType" Type="int" />
+    <Property Name="CheckFee" Type="money" />
+    <Property Name="CreditCardFee" Type="money" />
+    <Property Name="Claim_Date" Type="datetime" />
+    <Property Name="Law_List" Type="varchar" MaxLength="4" />
+    <Property Name="sFee" Type="varchar" MaxLength="4" />
+    <Property Name="Rate_Pre" Type="varchar" MaxLength="16" />
+    <Property Name="Rates_Post" Type="varchar" MaxLength="16" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorName2" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorStreet" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorCS" Type="varchar" MaxLength="15" />
+    <Property Name="CreditorZip" Type="varchar" MaxLength="9" />
+    <Property Name="Debt_Bal" Type="varchar" MaxLength="16" />
+    <Property Name="Debtor_No" Type="varchar" MaxLength="20" />
+    <Property Name="Batch_No" Type="varchar" MaxLength="2" />
+    <Property Name="SOL_Date" Type="varchar" MaxLength="8" />
+    <Property Name="TU_Score" Type="varchar" MaxLength="4" />
+    <Property Name="PimsLoadDate" Type="datetime" />
+    <Property Name="Closed" Type="bit" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="LastTranCode" Type="varchar" MaxLength="10" />
+    <Property Name="LastTranSource" Type="varchar" MaxLength="1" />
+    <Property Name="LastReturnCode" Type="varchar" MaxLength="3" />
+    <Property Name="AnnualRateCodeID" Type="int" />
+    <Property Name="LastMediaAttachDate" Type="datetime" />
+    <Property Name="StatuteTypeID" Type="int" />
+    <Property Name="RestrictedAccount" Type="bit" />
+    <Property Name="Previous_WorkStatusID" Type="int" />
+    <Property Name="WorkStatusID_ChangeDate" Type="datetime" />
+    <Property Name="WorkStatusID_UpdateID" Type="varchar" MaxLength="6" />
+    <Property Name="CitationCount" Type="int" />
+    <Property Name="DONOTACH" Type="bit" Nullable="false" />
+    <Property Name="Liquidation" Type="money" />
+    <Property Name="AgencyAccount" Type="varchar" MaxLength="20" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesPrice" Type="decimal" Precision="8" Scale="6" />
   </EntityType>
-  <EntityType Name="ReportOptions">
+  <EntityType Name="RACCTLGL">
     <Key>
-      <PropertyRef Name="ReportOptionID" />
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
     </Key>
-    <Property Name="ReportOptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ReportOption" Type="varchar" MaxLength="50" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="JUDG_BAL_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="WHO_SUED" Type="int" />
+    <Property Name="SUIT_STATE" Type="varchar" MaxLength="2" />
+    <Property Name="SUIT_COUNTY" Type="varchar" MaxLength="40" />
+    <Property Name="SUIT_COURT" Type="varchar" MaxLength="40" />
+    <Property Name="SUIT_ATTY" Type="varchar" MaxLength="40" />
+    <Property Name="COMPLAINT_DATE" Type="datetime" />
+    <Property Name="COMPLAINT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CASE_NO" Type="varchar" MaxLength="20" />
+    <Property Name="DATE_SERVED1" Type="datetime" />
+    <Property Name="SERVICER1" Type="varchar" MaxLength="50" />
+    <Property Name="LOCATION_SERV1" Type="varchar" MaxLength="255" />
+    <Property Name="P_A_SERV1" Type="char" MaxLength="1" />
+    <Property Name="DATE_SERVED2" Type="datetime" />
+    <Property Name="SERVICER2" Type="varchar" MaxLength="50" />
+    <Property Name="LOCATION_SERV2" Type="varchar" MaxLength="255" />
+    <Property Name="P_A_SERV2" Type="char" MaxLength="1" />
+    <Property Name="HEARING_DATE" Type="datetime" />
+    <Property Name="TRIAL_DATE" Type="datetime" />
+    <Property Name="STIP_DATE" Type="datetime" />
+    <Property Name="STIP_AMOUNT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_PRINCIPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_COSTS" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_INT_RATE" Type="varchar" MaxLength="8" />
+    <Property Name="JUDGEMENT_DATE" Type="datetime" />
+    <Property Name="JUDGEMENT_EXP" Type="datetime" />
+    <Property Name="JUDGEMENT_RENEW" Type="int" />
+    <Property Name="JUDGEMENT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_PRIN" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_INT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_PJ_CR" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_INTRT" Type="varchar" MaxLength="8" />
+    <Property Name="GARN_DATE" Type="datetime" />
+    <Property Name="GARN_EXP_DATE" Type="datetime" />
+    <Property Name="GARN_WHO" Type="varchar" MaxLength="50" />
+    <Property Name="GARN_ADDRESS" Type="varchar" MaxLength="255" />
+    <Property Name="GARN_P_A_ADDR" Type="char" MaxLength="1" />
+    <Property Name="ABST_DATE" Type="datetime" />
+    <Property Name="ABST_LOCATION" Type="varchar" MaxLength="2" />
+    <Property Name="ABST_P_A_LOC" Type="char" MaxLength="1" />
+    <Property Name="ABST_RECORDER" Type="varchar" MaxLength="6" />
+    <Property Name="ABST_REFERENCE" Type="varchar" MaxLength="20" />
+    <Property Name="WRIT_DATE" Type="datetime" />
+    <Property Name="WRIT_EXP" Type="datetime" />
+    <Property Name="OTHER_DATE" Type="datetime" />
+    <Property Name="OTHER_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="UPDATE_TIME" Type="decimal" Precision="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ACCUM_DATE" Type="datetime" />
+    <Property Name="ACCUM_INT_PRIN" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_INT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SERVICER1_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="SERVICER2_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="COURT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="HEARING_TIME" Type="decimal" Precision="6" />
+    <Property Name="TRIAL_TIME" Type="decimal" Precision="6" />
+    <Property Name="OTHER_DESC2" Type="varchar" MaxLength="30" />
+    <Property Name="WRIT_COURT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="WRIT_STATE" Type="varchar" MaxLength="2" />
+    <Property Name="STIP_DESC" Type="varchar" MaxLength="2000" />
+    <Property Name="JUDGEMENT_INT_START_DATE" Type="datetime" />
+    <Property Name="WRIT_COURT" Type="varchar" MaxLength="255" />
+    <Property Name="WRIT_REQUEST_DATE" Type="datetime" />
+    <Property Name="WRIT_SENT_DATE" Type="datetime" />
+    <Property Name="DocketNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Docket_Date" Type="datetime" />
+    <Property Name="Stay_Date" Type="datetime" />
+    <Property Name="COURT_DISTRICT" Type="varchar" MaxLength="255" />
+    <Property Name="COURT_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="COURT_ADDRESS1" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_ADDRESS2" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_CITY" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_STATE" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_ZIP" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_COUNTY" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_PHONE" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="LetterDate1" Type="datetime" />
+    <Property Name="Exemption" Type="varchar" MaxLength="50" />
+    <Property Name="ExemptionType" Type="varchar" MaxLength="50" />
+    <Property Name="ExemptionDate" Type="datetime" />
+    <Property Name="ExemptionExpirationDate" Type="datetime" />
+    <Property Name="FilingFees" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="GarnBank1" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBankAccount1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnRouting1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Address1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Address2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1State" Type="varchar" MaxLength="2" />
+    <Property Name="GarnBank1City" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Zip" Type="varchar" MaxLength="15" />
+    <Property Name="GarnBank1County" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank1Phone" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Fax" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBankAccount2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnRouting2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Address1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Address2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2City" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank2State" Type="varchar" MaxLength="2" />
+    <Property Name="GarnBank2Zip" Type="varchar" MaxLength="12" />
+    <Property Name="GarnBank2County" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank2Phone" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Fax" Type="varchar" MaxLength="50" />
+    <Property Name="ABST_ISSUANCE_DATE" Type="datetime" />
+    <Property Name="ABST_RECORDING_DATE" Type="datetime" />
+    <Property Name="ABST_DOCUMENT_NUMBER" Type="varchar" MaxLength="20" />
+    <Property Name="ABST_FEE" Type="money" />
+    <Property Name="ABST_RECORDING_FEE" Type="money" />
+    <Property Name="TaskID" Type="int" />
+  </EntityType>
+  <EntityType Name="RACCTREL">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
+      <PropertyRef Name="REL_POS" />
+      <PropertyRef Name="P_A_ADDR_FLAG" />
+    </Key>
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="REL_TYPE" Type="varchar" MaxLength="10" />
+    <Property Name="REL_POS" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="P_A_ADDR_FLAG" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="SALUTATION" Type="varchar" MaxLength="35" />
+    <Property Name="PREFIX" Type="varchar" MaxLength="35" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="35" />
+    <Property Name="MIDDLENAME" Type="varchar" MaxLength="35" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="35" />
+    <Property Name="SUFFIX" Type="varchar" MaxLength="35" />
+    <Property Name="GENDER" Type="char" MaxLength="1" />
+    <Property Name="ADDRESS1" Type="varchar" MaxLength="35" />
+    <Property Name="ADDRESS2" Type="varchar" MaxLength="35" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="STATE" Type="varchar" MaxLength="50" />
+    <Property Name="ZIP_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="ZIP4" Type="char" MaxLength="4" />
+    <Property Name="COUNTY" Type="varchar" MaxLength="50" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="15" />
+    <Property Name="SS_NO" Type="varchar" MaxLength="256" />
+    <Property Name="PHONE_HOME" Type="varchar" MaxLength="15" />
+    <Property Name="PHONE_WORK" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_OTHER" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_CELL" Type="varchar" MaxLength="20" />
+    <Property Name="WorkExt" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="DRIV_LIC_NO" Type="varchar" MaxLength="27" />
+    <Property Name="TIME_ZONE" Type="varchar" MaxLength="50" />
+    <Property Name="COMMNT" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DOD" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="DLState" Type="varchar" MaxLength="10" />
+    <Property Name="DeathCertificate" Type="varchar" MaxLength="20" />
+    <Property Name="FuneralHome" Type="varchar" MaxLength="40" />
+    <Property Name="CityOD" Type="varchar" MaxLength="50" />
+    <Property Name="CountyOD" Type="varchar" MaxLength="50" />
+    <Property Name="StateOD" Type="varchar" MaxLength="20" />
+    <Property Name="ContactName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactTelephone" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_Home_StatusID" Type="int" />
+    <Property Name="Phone_Work_StatusID" Type="int" Nullable="false" />
+    <Property Name="Phone_Other_StatusID" Type="int" />
+    <Property Name="Phone_Cell_StatusID" Type="int" />
+    <Property Name="bad_addr_flag" Type="char" MaxLength="1" />
+    <Property Name="Last_Call_Result_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Desc_Home" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Work" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Cell" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Other" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Number_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Date_Home" Type="datetime" />
+    <Property Name="Last_Call_Date_Work" Type="datetime" />
+    <Property Name="Last_Call_Date_Cell" Type="datetime" />
+    <Property Name="Last_Call_Date_Other" Type="datetime" />
+    <Property Name="Last_Call_Time_Home" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Work" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Cell" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Other" Type="varchar" MaxLength="15" />
+    <Property Name="Bur_Update_ID" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Update_Date" Type="datetime" />
+    <Property Name="Bur_Status_Date" Type="datetime" />
+    <Property Name="Bur_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Dispute_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_BKT_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Special_Status" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RACTPLAC">
+    <Key>
+      <PropertyRef Name="PLACEMENTID" />
+    </Key>
+    <Property Name="PLACEMENTID" Type="decimal" Nullable="false" Precision="10" StoreGeneratedPattern="Identity" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PLACEMENT_DATE" Type="datetime" Nullable="false" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="PLACED_BY_ID" Type="varchar" MaxLength="6" />
+    <Property Name="AMT_PLACED" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="RETURN_DATE" Type="datetime" />
+    <Property Name="AMT_RETURNED" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REASON_RETURNED" Type="text" />
+    <Property Name="Stage" Type="varchar" MaxLength="10" />
+    <Property Name="COLLECTED" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RAGENCY">
+    <Key>
+      <PropertyRef Name="AGENCY_ID" />
+    </Key>
+    <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AGENCY_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ResponsibilityTypeID" Type="int" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="6" />
+    <Property Name="ACTIVE_YN" Type="bit" />
+    <Property Name="GROSS_PAYMENTS" Type="char" MaxLength="1" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="ADDRESS1" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS2" Type="varchar" MaxLength="35" />
+    <Property Name="CITY" Type="varchar" MaxLength="35" />
+    <Property Name="STATE" Type="varchar" MaxLength="3" />
+    <Property Name="ZIP_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="15" />
+    <Property Name="PHONE" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="CONTACT_NAME" Type="varchar" MaxLength="35" />
+    <Property Name="CONTACT_EMAIL" Type="varchar" MaxLength="500" />
+    <Property Name="CONTACT_DESC" Type="varchar" MaxLength="255" />
+    <Property Name="TERRITORIES" Type="varchar" MaxLength="192" />
+    <Property Name="TaxID" Type="varchar" MaxLength="20" />
+    <Property Name="AGENCY_TYPE" Type="char" MaxLength="1" />
+    <Property Name="CREATE_BANKRUPT" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_BANKRUPT" Type="char" MaxLength="1" />
+    <Property Name="CREATE_LEGAL" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_LEGAL" Type="char" MaxLength="1" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="6" />
+    <Property Name="VALIDATE_BAL" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="OpenDesk" Type="bit" />
+    <Property Name="Budget" Type="money" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Restricted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="recallmaster">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="Agency" Type="nvarchar" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="OriginalAccount" Type="nvarchar" MaxLength="20" />
+    <Property Name="Recall" Type="smalldatetime" />
+    <Property Name="Portfolio" Type="nvarchar" MaxLength="6" />
+    <Property Name="Principal" Type="money" />
   </EntityType>
   <EntityType Name="ResponsibilityTypes">
     <Key>
@@ -930,96 +1392,215 @@
     <Property Name="ResponsibilityTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ResponsibilityType" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="RoadConditions">
+  <EntityType Name="RFINTRAN">
     <Key>
-      <PropertyRef Name="RoadConditionID" />
+      <PropertyRef Name="Transaction_ID" />
     </Key>
-    <Property Name="RoadConditionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="RoadCondition" Type="varchar" MaxLength="50" />
+    <Property Name="Transaction_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DIVISION_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" MaxLength="20" />
+    <Property Name="TRAN_DATE" Type="datetime" />
+    <Property Name="TRAN_SEQ" Type="numeric" Precision="4" />
+    <Property Name="TRAN_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="TRAN_SOURCE" Type="char" MaxLength="1" />
+    <Property Name="RREFERENCE" Type="varchar" MaxLength="50" />
+    <Property Name="AMOUNT" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="PRINCIPAL" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="INTEREST" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="COSTS" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="OTHER" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="COMMISSION" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="DUE_AGENCY" Type="char" MaxLength="1" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="RESP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="ORIG_TRAN_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="ALLOCATION_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="ENTRY_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ENTRY_TYPE" Type="char" MaxLength="1" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="10" />
+    <Property Name="PaymentTypeID" Type="int" />
+    <Property Name="PrintStatement" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Comment" Type="varchar" MaxLength="2000" />
+    <Property Name="Balance" Type="money" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="10" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="CollectorCommission" Type="money" />
+    <Property Name="Fee" Type="money" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="PaymentID" Type="varchar" MaxLength="10" />
+    <Property Name="ExportDirectPayment" Type="bit" />
+    <Property Name="ExportDirectPaymentDate" Type="datetime" />
+    <Property Name="Memo" Type="varchar" MaxLength="50" />
+    <Property Name="Recon" Type="money" />
+    <Property Name="DepositDate" Type="datetime" />
   </EntityType>
-  <EntityType Name="ScoreTypes">
+  <EntityType Name="RINTRATE">
     <Key>
-      <PropertyRef Name="ScoreTypeID" />
+      <PropertyRef Name="CODE" />
     </Key>
-    <Property Name="ScoreTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="TYPE" Type="char" MaxLength="1" />
+    <Property Name="DATE_STARTED" Type="datetime" />
+    <Property Name="DATE_ENDED" Type="datetime" />
+    <Property Name="RATE" Type="numeric" Precision="8" Scale="4" />
+    <Property Name="COMPOUND_PERIOD" Type="varchar" MaxLength="4" />
+    <Property Name="GEN_TRAN_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="INT_DAYS_PER_YR" Type="numeric" Precision="6" Scale="2" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_USER" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RPRODCDE">
+    <Key>
+      <PropertyRef Name="PRODUCT_CODE" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_CODE" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="DESCRIPTION" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="ACTIVE_YN" Type="bit" Nullable="false" />
+    <Property Name="Collateral" Type="bit" />
+    <Property Name="UPDATE_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="3" />
+    <Property Name="Zip" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioName" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioOwner" Type="varchar" MaxLength="50" />
+    <Property Name="AgencyCode" Type="varchar" MaxLength="10" />
+    <Property Name="SIFPercent" Type="float" />
+    <Property Name="GrossNet" Type="bit" />
+    <Property Name="ProductTypeID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="SaveBankInfo" Type="bit" Nullable="false" />
+    <Property Name="SaveCCInfo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RSTATUS">
+    <Key>
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="STATUS" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="DESCR" Type="varchar" MaxLength="255" />
+    <Property Name="StatusTypeID" Type="int" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="LETTER_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="ACTIVE_YN" Type="bit" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="PCode" Type="varchar" MaxLength="10" />
+    <Property Name="ChangeDays" Type="int" />
+    <Property Name="PcodeOnly" Type="int" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="Billable" Type="bit" />
+    <Property Name="CBR_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_BKT_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_Special_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_Dispute_Status" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RTRANCDE">
+    <Key>
+      <PropertyRef Name="TRAN_CODE" />
+    </Key>
+    <Property Name="TRAN_CODE" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="IS_PAYMENT" Type="char" MaxLength="1" />
+    <Property Name="CREDIT_DEBIT" Type="char" MaxLength="1" />
+    <Property Name="DESCR" Type="varchar" MaxLength="30" />
+    <Property Name="IS_NSF" Type="char" MaxLength="1" />
+    <Property Name="IS_ADJUSTMENT" Type="char" MaxLength="1" />
+    <Property Name="IS_COST" Type="char" MaxLength="1" />
+    <Property Name="BATCHTYPEID" Type="int" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="TranCodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Scores">
+    <Key>
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="Division_ID" />
+    </Key>
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="Score" Type="int" />
-    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
   </EntityType>
-  <EntityType Name="SecurityTypes">
+  <EntityType Name="Segments">
     <Key>
-      <PropertyRef Name="SecurityTypeID" />
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="SecurityTypeID" Type="int" Nullable="false" />
-    <Property Name="SecurityType" Type="varchar" MaxLength="35" />
-  </EntityType>
-  <EntityType Name="SettingCategories">
-    <Key>
-      <PropertyRef Name="SettingCategoryID" />
-    </Key>
-    <Property Name="SettingCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="SettingCategory" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="SettingDataTypes">
-    <Key>
-      <PropertyRef Name="SettingDataTypeID" />
-    </Key>
-    <Property Name="SettingDataTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="SettingDataType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="SettleRequestStatus">
-    <Key>
-      <PropertyRef Name="Status" />
-    </Key>
-    <Property Name="Status" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="SkipDataType">
-    <Key>
-      <PropertyRef Name="SkipDataTypeID" />
-    </Key>
-    <Property Name="SkipDataTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DataType" Type="varchar" MaxLength="15" />
-  </EntityType>
-  <EntityType Name="SkipStatus">
-    <Key>
-      <PropertyRef Name="SkipStatusID" />
-    </Key>
-    <Property Name="SkipStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Status" Type="varchar" MaxLength="10" />
-  </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'CascadeDB.dbo.StateConditionals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-  <EntityType Name="StateConditionals">
-    <Key>
-      <PropertyRef Name="State" />
-      <PropertyRef Name="Office" />
-    </Key>
-    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="3" />
-    <Property Name="Description" Type="nvarchar" MaxLength="50" />
-    <Property Name="Office" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Conditional" Type="varchar" MaxLength="2000" />
-  </EntityType>
-  <EntityType Name="States">
-    <Key>
-      <PropertyRef Name="State" />
-    </Key>
-    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="3" />
-    <Property Name="Description" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Statute">
-    <Key>
-      <PropertyRef Name="StatuteID" />
-    </Key>
-    <Property Name="State" Type="varchar" Nullable="false" MaxLength="3" />
-    <Property Name="Statute" Type="int" />
-    <Property Name="StateName" Type="varchar" MaxLength="25" />
-    <Property Name="StatuteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="StatuteTypeID" Type="int" Nullable="false" />
-    <Property Name="Prefer" Type="varchar" MaxLength="50" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="LastName" Type="varchar" MaxLength="35" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="TimeZone" Type="varchar" MaxLength="50" />
+    <Property Name="Zip" Type="varchar" MaxLength="5" />
+    <Property Name="ZipValidation" Type="char" MaxLength="1" />
+    <Property Name="SSN3" Type="varchar" MaxLength="3" />
+    <Property Name="SSNValidation" Type="char" MaxLength="1" />
+    <Property Name="AreaCode" Type="varchar" MaxLength="3" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="6" />
+    <Property Name="HomePhoneValidation" Type="char" MaxLength="1" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="6" />
+    <Property Name="WorkPhoneValidation" Type="char" MaxLength="1" />
+    <Property Name="Language" Type="varchar" MaxLength="255" />
+    <Property Name="AverageHomeValue" Type="money" />
+    <Property Name="AverageIncome" Type="money" />
+    <Property Name="Score" Type="int" />
+    <Property Name="EmploymentTypeID" Type="int" />
+    <Property Name="HomeOwner" Type="int" />
+    <Property Name="CTC" Type="money" />
     <Property Name="Price" Type="money" />
-    <Property Name="ExpectedLiquidation" Type="money" />
-    <Property Name="StateConditional" Type="varchar" MaxLength="255" />
+    <Property Name="NewBalance" Type="money" />
+    <Property Name="MonthlyPayment" Type="money" />
+    <Property Name="IRR" Type="float" />
+    <Property Name="Segment" Type="varchar" MaxLength="50" />
+    <Property Name="Issuer" Type="varchar" MaxLength="255" />
+    <Property Name="StatuteOpen" Type="int" />
+    <Property Name="StatuteWritten" Type="int" />
+    <Property Name="Liq" Type="money" />
+    <Property Name="Statute" Type="int" />
+    <Property Name="StatuteType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SegmentTypes">
+    <Key>
+      <PropertyRef Name="SegmentTypeID" />
+    </Key>
+    <Property Name="SegmentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SegmentType" Type="varchar" MaxLength="50" />
+    <Property Name="SegmentTypeDescription" Type="varchar" MaxLength="255" />
+    <Property Name="SegmentWhereClause" Type="varchar" />
+    <Property Name="SegmentQuery" Type="varchar" />
+    <Property Name="SegmentOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SettlementRequests">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="varchar" MaxLength="20" />
+    <Property Name="Collector" Type="varchar" MaxLength="50" />
+    <Property Name="Offer" Type="money" />
+    <Property Name="OfferPercent" Type="float" />
+    <Property Name="OfferExpireDate" Type="smalldatetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateRequested" Type="smalldatetime" />
+    <Property Name="DateProcessed" Type="smalldatetime" />
+    <Property Name="TotalPaid" Type="money" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="GracePeriodDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="StatusTypes">
+    <Key>
+      <PropertyRef Name="StatusTypeID" />
+    </Key>
+    <Property Name="StatusTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="StatuteTypes">
     <Key>
@@ -1027,17 +1608,6 @@
     </Key>
     <Property Name="StatuteTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StatuteType" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="SubIndustries">
-    <Key>
-      <PropertyRef Name="lngSubIndustryID" />
-    </Key>
-    <Property Name="lngSubIndustryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="lngIndustryID" Type="int" />
-    <Property Name="ShortDescription" Type="nvarchar" MaxLength="30" />
-    <Property Name="Code" Type="nvarchar" MaxLength="10" />
-    <Property Name="SOLType" Type="nvarchar" MaxLength="100" />
-    <Property Name="memLongDescription" Type="ntext" />
   </EntityType>
   <EntityType Name="Sup_BrockettCompanies">
     <Key>
@@ -1124,6 +1694,13 @@
     <Property Name="TaskCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Category" Type="varchar" MaxLength="30" />
   </EntityType>
+  <EntityType Name="Tbl_Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="TBL_CHART">
     <Key>
       <PropertyRef Name="Id" />
@@ -1201,6 +1778,34 @@
     <Property Name="IndustryId" Type="int" />
     <Property Name="FranchiseeId" Type="int" />
   </EntityType>
+  <EntityType Name="Tbl_Expense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ExpenseAmount" Type="decimal" />
+    <Property Name="ExpenseDate" Type="datetime" />
+    <Property Name="ExpenseDescription" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpenseDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="PurchasePrice" Type="decimal" />
+    <Property Name="SalesPrice" Type="decimal" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpenseDetailsUpdated">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="PurchasePrice" Type="decimal" Nullable="false" />
+    <Property Name="SalesPrice" Type="decimal" Nullable="false" />
+  </EntityType>
   <EntityType Name="TBL_Portfolio">
     <Key>
       <PropertyRef Name="ACCOUNT" />
@@ -1238,135 +1843,59 @@
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
-  <EntityType Name="TemplateLibrary">
+  <EntityType Name="tblIRR">
     <Key>
-      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="irrPort" />
     </Key>
-    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ItemName" Type="nvarchar" MaxLength="255" />
-    <Property Name="ItemDesc" Type="ntext" />
-    <Property Name="ItemLink" Type="nvarchar" MaxLength="255" />
-    <Property Name="Activated" Type="nvarchar" MaxLength="5" />
-    <Property Name="CategoryID" Type="int" />
-    <Property Name="DateAdded" Type="smalldatetime" />
+    <Property Name="irrPort" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="irrIRR" Type="float" />
   </EntityType>
-  <EntityType Name="TemplateLibraryCategory">
+  <EntityType Name="TimeZones">
     <Key>
-      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="TimeZoneID" />
     </Key>
-    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
-    <Property Name="CategoryDesc" Type="ntext" />
-  </EntityType>
-  <EntityType Name="TimeZonesByAreaCode">
-    <Key>
-      <PropertyRef Name="AreaCode" />
-    </Key>
-    <Property Name="AreaCode" Type="int" Nullable="false" />
-    <Property Name="AreaCodeName" Type="varchar" MaxLength="50" />
-    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="TimeZoneID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Start1" Type="datetime" Nullable="false" />
+    <Property Name="Stop1" Type="datetime" Nullable="false" />
+    <Property Name="Start2" Type="datetime" Nullable="false" />
+    <Property Name="Stop2" Type="datetime" Nullable="false" />
+    <Property Name="Offset" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="VehicleOwnerTypes">
+  <EntityType Name="TOT_CALL_ATMPS">
     <Key>
-      <PropertyRef Name="VehicleOwnerTypeID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="VehicleOwnerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="OwnerType" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="bigint" Nullable="false" />
+    <Property Name="Calls" Type="int" />
   </EntityType>
-  <EntityType Name="VendorProducts">
+  <EntityType Name="TOT_CALL_COST">
     <Key>
-      <PropertyRef Name="VendorProductID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="VendorProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="VendorID" Type="int" />
-    <Property Name="VendorProduct" Type="varchar" MaxLength="50" />
-    <Property Name="PerHitCost" Type="money" />
-  </EntityType>
-  <EntityType Name="Vendors">
-    <Key>
-      <PropertyRef Name="VendorID" />
-    </Key>
-    <Property Name="VendorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Vendor" Type="varchar" MaxLength="50" />
-    <Property Name="VendorTypeID" Type="int" />
-    <Property Name="Address1" Type="varchar" MaxLength="50" />
-    <Property Name="Address2" Type="varchar" MaxLength="50" />
-    <Property Name="City" Type="varchar" MaxLength="50" />
-    <Property Name="State" Type="varchar" MaxLength="3" />
-    <Property Name="Zip_Code" Type="varchar" MaxLength="10" />
-    <Property Name="Contact" Type="varchar" MaxLength="50" />
-    <Property Name="Phone" Type="varchar" MaxLength="20" />
-    <Property Name="Fax" Type="varchar" MaxLength="10" />
-    <Property Name="HTTPURL" Type="varchar" MaxLength="50" />
-    <Property Name="FTPURL" Type="varchar" MaxLength="50" />
-    <Property Name="FTPUser" Type="varchar" MaxLength="50" />
-    <Property Name="FTPPassword" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="bigint" Nullable="false" />
     <Property Name="Cost" Type="money" />
-    <Property Name="Email" Type="varchar" MaxLength="50" />
-    <Property Name="dtsJob" Type="varchar" MaxLength="50" />
-    <Property Name="importJob" Type="varchar" MaxLength="50" />
-    <Property Name="exportJob" Type="varchar" MaxLength="50" />
-    <Property Name="import" Type="bit" />
-    <Property Name="ExportToFTP" Type="bit" />
-    <Property Name="FTPFolder" Type="varchar" MaxLength="20" />
-    <Property Name="Secured" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="VendorTypes">
+  <EntityType Name="TOT_CALL_DURATION">
     <Key>
-      <PropertyRef Name="VendorTypeID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="VendorTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="VendorType" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="bigint" Nullable="false" />
+    <Property Name="Duration" Type="char" MaxLength="10" />
   </EntityType>
-  <EntityType Name="WeatherConditions">
+  <EntityType Name="WKDY_CALL_ATMPS">
     <Key>
-      <PropertyRef Name="WeatherCondtionID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="WeatherCondtionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="WeatherCondition" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="bigint" Nullable="false" />
+    <Property Name="Calls" Type="int" />
   </EntityType>
-  <EntityType Name="WorkFlow">
+  <EntityType Name="WKND_CALL_ATMPS">
     <Key>
-      <PropertyRef Name="WorkFlowID" />
+      <PropertyRef Name="Account" />
     </Key>
-    <Property Name="WorkFlowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="WorkFlow" Type="varchar" MaxLength="50" />
-    <Property Name="WorkFlowSQL" Type="text" />
-    <Property Name="WorkFlowType" Type="int" />
-    <Property Name="WorkFlowTypeValue" Type="varchar" MaxLength="255" />
-    <Property Name="WhereClause" Type="text" />
-    <Property Name="FieldList" Type="text" />
-    <Property Name="Active" Type="bit" />
-    <Property Name="Enabled" Type="bit" />
-    <Property Name="AutoRun" Type="bit" />
-    <Property Name="Start" Type="datetime" />
-    <Property Name="LastDateProcessed" Type="datetime" />
-    <Property Name="NextWorkFlowID" Type="int" />
-    <Property Name="SQLStatement" Type="text" />
-    <Property Name="FromClause" Type="text" />
-    <Property Name="SelectClause" Type="text" />
-  </EntityType>
-  <EntityType Name="WorkFlowJobs">
-    <Key>
-      <PropertyRef Name="WorkFlowJobID" />
-    </Key>
-    <Property Name="WorkFlowJobID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="JobName" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="WorkFlowStatus">
-    <Key>
-      <PropertyRef Name="WorkFlowStatusID" />
-    </Key>
-    <Property Name="WorkFlowStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="WorkFlowStatus" Type="varchar" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="WorkFlowTypes">
-    <Key>
-      <PropertyRef Name="WorkFlowTypeID" />
-    </Key>
-    <Property Name="WorkFlowTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="WorkFlowType" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="bigint" Nullable="false" />
+    <Property Name="Calls" Type="int" />
   </EntityType>
   <EntityType Name="WorkStatus">
     <Key>
@@ -1374,21 +1903,6 @@
     </Key>
     <Property Name="WorkStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="YesNo">
-    <Key>
-      <PropertyRef Name="YesNoID" />
-    </Key>
-    <Property Name="YesNoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="YesNo" Type="char" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="YGCStatus">
-    <Key>
-      <PropertyRef Name="Status" />
-    </Key>
-    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="6" />
-    <Property Name="ReturnCode" Type="varchar" MaxLength="10" />
-    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'CascadeDB.dbo.vw_PortfolioCashFlow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1403,7 +1917,7 @@
     <Property Name="SalesPrice" Type="money" />
     <Property Name="Company" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__aspnet_Me__Appli__21B6055D">
+  <Association Name="FK__aspnet_Me__Appli__4707859D">
     <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Membership" Type="CascadeDBModel.Store.aspnet_Membership" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1415,7 +1929,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Me__UserI__22AA2996">
+  <Association Name="FK__aspnet_Me__UserI__47FBA9D6">
     <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_Membership" Type="CascadeDBModel.Store.aspnet_Membership" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -1427,67 +1941,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
-    <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Paths">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__PathI__628FA481">
-    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="1" />
-    <End Role="aspnet_PersonalizationAllUsers" Type="CascadeDBModel.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Paths">
-        <PropertyRef Name="PathId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationAllUsers">
-        <PropertyRef Name="PathId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__PathI__68487DD7">
-    <End Role="aspnet_Paths" Type="CascadeDBModel.Store.aspnet_Paths" Multiplicity="0..1" />
-    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Paths">
-        <PropertyRef Name="PathId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationPerUser">
-        <PropertyRef Name="PathId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__UserI__693CA210">
-    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="0..1" />
-    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationPerUser">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pr__UserI__38996AB5">
-    <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
-    <End Role="aspnet_Profile" Type="CascadeDBModel.Store.aspnet_Profile" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_Profile">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Ro__Appli__440B1D61">
+  <Association Name="FK__aspnet_Ro__Appli__4DB4832C">
     <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Roles" Type="CascadeDBModel.Store.aspnet_Roles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1499,7 +1953,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__Appli__0DAF0CB0">
+  <Association Name="FK__aspnet_Us__Appli__4EA8A765">
     <End Role="aspnet_Applications" Type="CascadeDBModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1511,7 +1965,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+  <Association Name="FK__aspnet_Us__RoleI__4F9CCB9E">
     <End Role="aspnet_Roles" Type="CascadeDBModel.Store.aspnet_Roles" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="CascadeDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1523,7 +1977,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+  <Association Name="FK__aspnet_Us__UserI__5090EFD7">
     <End Role="aspnet_Users" Type="CascadeDBModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="CascadeDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1535,114 +1989,266 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Batch_BatchTypes">
-    <End Role="BatchTypes" Type="CascadeDBModel.Store.BatchTypes" Multiplicity="1" />
-    <End Role="Batch" Type="CascadeDBModel.Store.Batch" Multiplicity="*" />
+  <Association Name="FK_DebtorsEmployer_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DebtorsEmployer" Type="CascadeDBModel.Store.DebtorsEmployer" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="BatchTypes">
-        <PropertyRef Name="BatchTypeID" />
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
       </Principal>
-      <Dependent Role="Batch">
-        <PropertyRef Name="BatchTypeID" />
+      <Dependent Role="DebtorsEmployer">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Statute_StatuteTypes">
-    <End Role="StatuteTypes" Type="CascadeDBModel.Store.StatuteTypes" Multiplicity="1" />
-    <End Role="Statute" Type="CascadeDBModel.Store.Statute" Multiplicity="*" />
+  <Association Name="FK_DebtorsVehicle_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DebtorsVehicle" Type="CascadeDBModel.Store.DebtorsVehicle" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="DebtorsVehicle">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LastCallResults_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LastCallResults" Type="CascadeDBModel.Store.LastCallResults" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="LastCallResults">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Portfolios_PaperTypes">
+    <End Role="PaperTypes" Type="CascadeDBModel.Store.PaperTypes" Multiplicity="0..1" />
+    <End Role="Portfolios" Type="CascadeDBModel.Store.Portfolios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaperTypes">
+        <PropertyRef Name="PaperTypeID" />
+      </Principal>
+      <Dependent Role="Portfolios">
+        <PropertyRef Name="PaperTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCBKRP_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RACCBKRP" Type="CascadeDBModel.Store.RACCBKRP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACCBKRP">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_Clients">
+    <End Role="Clients" Type="CascadeDBModel.Store.Clients" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_Portfolios">
+    <End Role="Portfolios" Type="CascadeDBModel.Store.Portfolios" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolios">
+        <PropertyRef Name="lngPortfolioID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="PortfolioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_RAGENCY">
+    <End Role="RAGENCY" Type="CascadeDBModel.Store.RAGENCY" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RAGENCY">
+        <PropertyRef Name="AGENCY_ID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="RESPONSIBILITY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_RPRODCDE">
+    <End Role="RPRODCDE" Type="CascadeDBModel.Store.RPRODCDE" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RPRODCDE">
+        <PropertyRef Name="PRODUCT_CODE" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="PRODUCT_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_RSTATUS">
+    <End Role="RSTATUS" Type="CascadeDBModel.Store.RSTATUS" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RSTATUS">
+        <PropertyRef Name="STATUS" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_StatuteTypes">
+    <End Role="StatuteTypes" Type="CascadeDBModel.Store.StatuteTypes" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StatuteTypes">
         <PropertyRef Name="StatuteTypeID" />
       </Principal>
-      <Dependent Role="Statute">
+      <Dependent Role="RACCOUNT">
         <PropertyRef Name="StatuteTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TemplateLibrary_DocumentLibraryCategory">
-    <End Role="DocumentLibraryCategory" Type="CascadeDBModel.Store.DocumentLibraryCategory" Multiplicity="0..1" />
-    <End Role="TemplateLibrary" Type="CascadeDBModel.Store.TemplateLibrary" Multiplicity="*" />
+  <Association Name="FK_RACCOUNT_WorkStatus">
+    <End Role="WorkStatus" Type="CascadeDBModel.Store.WorkStatus" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DocumentLibraryCategory">
-        <PropertyRef Name="CategoryID" />
+      <Principal Role="WorkStatus">
+        <PropertyRef Name="WorkStatusID" />
       </Principal>
-      <Dependent Role="TemplateLibrary">
-        <PropertyRef Name="CategoryID" />
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="WorkStatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_VendorProducts_Vendors">
-    <End Role="Vendors" Type="CascadeDBModel.Store.Vendors" Multiplicity="0..1">
+  <Association Name="FK_RACCTLGL_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="VendorProducts" Type="CascadeDBModel.Store.VendorProducts" Multiplicity="*" />
+    <End Role="RACCTLGL" Type="CascadeDBModel.Store.RACCTLGL" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="Vendors">
-        <PropertyRef Name="VendorID" />
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
       </Principal>
-      <Dependent Role="VendorProducts">
-        <PropertyRef Name="VendorID" />
+      <Dependent Role="RACCTLGL">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Vendors_VendorTypes">
-    <End Role="VendorTypes" Type="CascadeDBModel.Store.VendorTypes" Multiplicity="0..1">
+  <Association Name="FK_RACCTREL_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1" />
+    <End Role="RACCTREL" Type="CascadeDBModel.Store.RACCTREL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACCTREL">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACTPLAC_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1" />
+    <End Role="RACTPLAC" Type="CascadeDBModel.Store.RACTPLAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACTPLAC">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RFINTRAN_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Vendors" Type="CascadeDBModel.Store.Vendors" Multiplicity="*" />
+    <End Role="RFINTRAN" Type="CascadeDBModel.Store.RFINTRAN" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="VendorTypes">
-        <PropertyRef Name="VendorTypeID" />
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
       </Principal>
-      <Dependent Role="Vendors">
-        <PropertyRef Name="VendorTypeID" />
+      <Dependent Role="RFINTRAN">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_WorkFlow_WorkFlowTypes">
-    <End Role="WorkFlowTypes" Type="CascadeDBModel.Store.WorkFlowTypes" Multiplicity="0..1" />
-    <End Role="WorkFlow" Type="CascadeDBModel.Store.WorkFlow" Multiplicity="*" />
+  <Association Name="FK_RFINTRAN_RTRANCDE">
+    <End Role="RTRANCDE" Type="CascadeDBModel.Store.RTRANCDE" Multiplicity="0..1" />
+    <End Role="RFINTRAN" Type="CascadeDBModel.Store.RFINTRAN" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="WorkFlowTypes">
-        <PropertyRef Name="WorkFlowTypeID" />
+      <Principal Role="RTRANCDE">
+        <PropertyRef Name="TRAN_CODE" />
       </Principal>
-      <Dependent Role="WorkFlow">
-        <PropertyRef Name="WorkFlowType" />
+      <Dependent Role="RFINTRAN">
+        <PropertyRef Name="TRAN_CODE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-      warning 6013: The table/view 'CascadeDB.dbo.MedicalCodes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="MedicalCodes">
-        <Property Name="Description" Type="varchar" MaxLength="255" />
-        <Property Name="DiagnosisCode" Type="varchar" MaxLength="10" />
-      </EntityType>
-      Errors Found During Generation:
-      warning 6013: The table/view 'CascadeDB.dbo.tZips' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="tZips">
-        <Property Name="ZipCode" Type="nvarchar" MaxLength="5" />
-        <Property Name="State" Type="nvarchar" MaxLength="2" />
-        <Property Name="City" Type="nvarchar" MaxLength="28" />
-        <Property Name="Type" Type="nvarchar" MaxLength="1" />
-        <Property Name="CountyFIPSCode" Type="varchar" MaxLength="5" />
-        <Property Name="Latitude" Type="nvarchar" MaxLength="7" />
-        <Property Name="Longitude" Type="nvarchar" MaxLength="8" />
-        <Property Name="AreaCode" Type="nvarchar" MaxLength="3" />
-        <Property Name="FinanceCode" Type="nvarchar" MaxLength="6" />
-        <Property Name="LastLine" Type="nvarchar" MaxLength="1" />
-        <Property Name="FacilityCode" Type="nvarchar" MaxLength="1" />
-        <Property Name="MetroStatisticalArea" Type="nvarchar" MaxLength="4" />
-        <Property Name="PrimaryMetroStatArea" Type="nvarchar" MaxLength="4" />
-      </EntityType>
-      Errors Found During Generation:
-      warning 6013: The table/view 'CascadeDB.dbo.Zips' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Zips">
-        <Property Name="ZIP" Type="varchar" MaxLength="255" />
-        <Property Name="STATE" Type="varchar" MaxLength="255" />
-        <Property Name="CITY" Type="varchar" MaxLength="255" />
-        <Property Name="COUNTY" Type="varchar" MaxLength="255" />
-      </EntityType>-->
+  <Association Name="FK_Scores_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scores" Type="CascadeDBModel.Store.Scores" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="Scores">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Expense_Tbl_Categories">
+    <End Role="Tbl_Categories" Type="CascadeDBModel.Store.Tbl_Categories" Multiplicity="0..1" />
+    <End Role="Tbl_Expense" Type="CascadeDBModel.Store.Tbl_Expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tbl_Expense">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

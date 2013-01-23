@@ -16,7 +16,6 @@ namespace Cascade.Data.Models
     {
         public aspnet_Users()
         {
-            this.aspnet_PersonalizationPerUser = new HashSet<aspnet_PersonalizationPerUser>();
             this.aspnet_Roles = new HashSet<aspnet_Roles>();
         }
     
@@ -30,8 +29,6 @@ namespace Cascade.Data.Models
     
         public virtual aspnet_Applications aspnet_Applications { get; set; }
         public virtual aspnet_Membership aspnet_Membership { get; set; }
-        public virtual ICollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser { get; set; }
-        public virtual aspnet_Profile aspnet_Profile { get; set; }
         public virtual ICollection<aspnet_Roles> aspnet_Roles { get; set; }
     }
 }

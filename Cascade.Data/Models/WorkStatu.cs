@@ -14,7 +14,14 @@ namespace Cascade.Data.Models
     
     public partial class WorkStatu
     {
+        public WorkStatu()
+        {
+            this.RACCOUNTs = new HashSet<RACCOUNT>();
+        }
+    
         public int WorkStatusID { get; set; }
         public string Description { get; set; }
+    
+        public virtual ICollection<RACCOUNT> RACCOUNTs { get; set; }
     }
 }

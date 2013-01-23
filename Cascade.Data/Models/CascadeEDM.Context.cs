@@ -25,93 +25,50 @@ namespace Cascade.Data.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<AccidentCaus> AccidentCauses { get; set; }
-        public DbSet<AgencyType> AgencyTypes { get; set; }
-        public DbSet<AlertStatu> AlertStatus { get; set; }
-        public DbSet<AlertType> AlertTypes { get; set; }
-        public DbSet<AnnualRateCode> AnnualRateCodes { get; set; }
-        public DbSet<AreaCode> AreaCodes { get; set; }
-        public DbSet<AreaCodesByTimeZone> AreaCodesByTimeZones { get; set; }
         public DbSet<aspnet_Applications> aspnet_Applications { get; set; }
         public DbSet<aspnet_Membership> aspnet_Membership { get; set; }
-        public DbSet<aspnet_Paths> aspnet_Paths { get; set; }
-        public DbSet<aspnet_PersonalizationAllUsers> aspnet_PersonalizationAllUsers { get; set; }
-        public DbSet<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser { get; set; }
-        public DbSet<aspnet_Profile> aspnet_Profile { get; set; }
         public DbSet<aspnet_Roles> aspnet_Roles { get; set; }
-        public DbSet<aspnet_SchemaVersions> aspnet_SchemaVersions { get; set; }
         public DbSet<aspnet_Users> aspnet_Users { get; set; }
-        public DbSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events { get; set; }
-        public DbSet<BankAccountType> BankAccountTypes { get; set; }
-        public DbSet<BankruptcyDisposition> BankruptcyDispositions { get; set; }
-        public DbSet<BankTransactionType> BankTransactionTypes { get; set; }
-        public DbSet<Batch> Batches { get; set; }
-        public DbSet<BatchTrackReportStatu> BatchTrackReportStatus { get; set; }
-        public DbSet<BatchTrackReportType> BatchTrackReportTypes { get; set; }
-        public DbSet<BatchType> BatchTypes { get; set; }
-        public DbSet<BillingOption> BillingOptions { get; set; }
-        public DbSet<Calendar> Calendars { get; set; }
         public DbSet<CBRAccountStatu> CBRAccountStatus { get; set; }
         public DbSet<CBRBankruptStatu> CBRBankruptStatus { get; set; }
         public DbSet<CBRDisputeStatu> CBRDisputeStatus { get; set; }
         public DbSet<CBRSpecialStatu> CBRSpecialStatus { get; set; }
-        public DbSet<Color> Colors { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<CourtType> CourtTypes { get; set; }
-        public DbSet<CreditCardType> CreditCardTypes { get; set; }
-        public DbSet<DamageType> DamageTypes { get; set; }
-        public DbSet<DataType> DataTypes { get; set; }
-        public DbSet<DebtType> DebtTypes { get; set; }
-        public DbSet<Department> Departments { get; set; }
-        public DbSet<DocumentLibraryCategory> DocumentLibraryCategories { get; set; }
-        public DbSet<DocumentType> DocumentTypes { get; set; }
-        public DbSet<DominantHand> DominantHands { get; set; }
-        public DbSet<EmploymentType> EmploymentTypes { get; set; }
-        public DbSet<Gender> Genders { get; set; }
-        public DbSet<Group> Groups { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<DebtorsEmployer> DebtorsEmployers { get; set; }
+        public DbSet<DebtorsVehicle> DebtorsVehicles { get; set; }
+        public DbSet<Division> Divisions { get; set; }
         public DbSet<Industry> Industries { get; set; }
-        public DbSet<InsuranceType> InsuranceTypes { get; set; }
-        public DbSet<InvoiceOption> InvoiceOptions { get; set; }
-        public DbSet<KBCategory> KBCategories { get; set; }
-        public DbSet<Language> Languages { get; set; }
-        public DbSet<NamePrefix> NamePrefixes { get; set; }
-        public DbSet<NameSuffix> NameSuffixes { get; set; }
-        public DbSet<NCOACode> NCOACodes { get; set; }
-        public DbSet<NegoiationType> NegoiationTypes { get; set; }
-        public DbSet<Office> Offices { get; set; }
-        public DbSet<PaperAge> PaperAges { get; set; }
+        public DbSet<LastCallResult> LastCallResults { get; set; }
+        public DbSet<MSI_DPSForm> MSI_DPSForm { get; set; }
+        public DbSet<MSI_MediaForm> MSI_MediaForm { get; set; }
+        public DbSet<MSI_RecallForm> MSI_RecallForm { get; set; }
+        public DbSet<MSI_ResaleRestriction> MSI_ResaleRestriction { get; set; }
         public DbSet<PaperType> PaperTypes { get; set; }
-        public DbSet<PassengerType> PassengerTypes { get; set; }
-        public DbSet<PaymentPlanStatus> PaymentPlanStatuses { get; set; }
-        public DbSet<PaymentType> PaymentTypes { get; set; }
-        public DbSet<PhoneType> PhoneTypes { get; set; }
-        public DbSet<PolicyType> PolicyTypes { get; set; }
         public DbSet<Port_Acq> Port_Acq { get; set; }
         public DbSet<Port_DPS> Port_DPS { get; set; }
         public DbSet<Port_Media> Port_Media { get; set; }
         public DbSet<Port_Recall> Port_Recall { get; set; }
         public DbSet<Port_Trans> Port_Trans { get; set; }
-        public DbSet<PortfolioStatu> PortfolioStatus { get; set; }
-        public DbSet<PortfolioType> PortfolioTypes { get; set; }
-        public DbSet<PortfolioType1> PortfolioTypes1 { get; set; }
-        public DbSet<ProductCodeSummary> ProductCodeSummaries { get; set; }
-        public DbSet<PromiseType> PromiseTypes { get; set; }
-        public DbSet<Relationship> Relationships { get; set; }
-        public DbSet<ReportOption> ReportOptions { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<RACCBKRP> RACCBKRPs { get; set; }
+        public DbSet<RACCOUNT> RACCOUNTs { get; set; }
+        public DbSet<RACCTLGL> RACCTLGLs { get; set; }
+        public DbSet<RACCTREL> RACCTRELs { get; set; }
+        public DbSet<RACTPLAC> RACTPLACs { get; set; }
+        public DbSet<RAGENCY> RAGENCies { get; set; }
+        public DbSet<recallmaster> recallmasters { get; set; }
         public DbSet<ResponsibilityType> ResponsibilityTypes { get; set; }
-        public DbSet<RoadCondition> RoadConditions { get; set; }
-        public DbSet<ScoreType> ScoreTypes { get; set; }
-        public DbSet<SecurityType> SecurityTypes { get; set; }
-        public DbSet<SettingCategory> SettingCategories { get; set; }
-        public DbSet<SettingDataType> SettingDataTypes { get; set; }
-        public DbSet<SettleRequestStatu> SettleRequestStatus { get; set; }
-        public DbSet<SkipDataType> SkipDataTypes { get; set; }
-        public DbSet<SkipStatu> SkipStatus { get; set; }
-        public DbSet<StateConditional> StateConditionals { get; set; }
-        public DbSet<State> States { get; set; }
-        public DbSet<Statute> Statutes { get; set; }
+        public DbSet<RFINTRAN> RFINTRANs { get; set; }
+        public DbSet<RINTRATE> RINTRATEs { get; set; }
+        public DbSet<RPRODCDE> RPRODCDEs { get; set; }
+        public DbSet<RSTATU> RSTATUS { get; set; }
+        public DbSet<RTRANCDE> RTRANCDEs { get; set; }
+        public DbSet<Score> Scores { get; set; }
+        public DbSet<Segment> Segments { get; set; }
+        public DbSet<SegmentType> SegmentTypes { get; set; }
+        public DbSet<SettlementRequest> SettlementRequests { get; set; }
+        public DbSet<StatusType> StatusTypes { get; set; }
         public DbSet<StatuteType> StatuteTypes { get; set; }
-        public DbSet<SubIndustry> SubIndustries { get; set; }
         public DbSet<Sup_BrockettCompanies> Sup_BrockettCompanies { get; set; }
         public DbSet<Sup_Company> Sup_Company { get; set; }
         public DbSet<Sup_PmtType> Sup_PmtType { get; set; }
@@ -123,25 +80,22 @@ namespace Cascade.Data.Models
         public DbSet<Sup_UploadRecalls> Sup_UploadRecalls { get; set; }
         public DbSet<Surname> Surnames { get; set; }
         public DbSet<TaskCategory> TaskCategories { get; set; }
+        public DbSet<Tbl_Categories> Tbl_Categories { get; set; }
         public DbSet<TBL_CHART> TBL_CHART { get; set; }
         public DbSet<TBL_COMPANIES> TBL_COMPANIES { get; set; }
+        public DbSet<Tbl_Expense> Tbl_Expense { get; set; }
+        public DbSet<Tbl_ExpenseDetails> Tbl_ExpenseDetails { get; set; }
+        public DbSet<Tbl_ExpenseDetailsUpdated> Tbl_ExpenseDetailsUpdated { get; set; }
         public DbSet<TBL_Portfolio> TBL_Portfolio { get; set; }
         public DbSet<TBL_State> TBL_State { get; set; }
-        public DbSet<TemplateLibrary> TemplateLibraries { get; set; }
-        public DbSet<TemplateLibraryCategory> TemplateLibraryCategories { get; set; }
-        public DbSet<TimeZonesByAreaCode> TimeZonesByAreaCodes { get; set; }
-        public DbSet<VehicleOwnerType> VehicleOwnerTypes { get; set; }
-        public DbSet<VendorProduct> VendorProducts { get; set; }
-        public DbSet<Vendor> Vendors { get; set; }
-        public DbSet<VendorType> VendorTypes { get; set; }
-        public DbSet<WeatherCondition> WeatherConditions { get; set; }
-        public DbSet<WorkFlow> WorkFlows { get; set; }
-        public DbSet<WorkFlowJob> WorkFlowJobs { get; set; }
-        public DbSet<WorkFlowStatu> WorkFlowStatus { get; set; }
-        public DbSet<WorkFlowType> WorkFlowTypes { get; set; }
+        public DbSet<tblIRR> tblIRRs { get; set; }
+        public DbSet<TimeZone> TimeZones { get; set; }
+        public DbSet<TOT_CALL_ATMPS> TOT_CALL_ATMPS { get; set; }
+        public DbSet<TOT_CALL_COST> TOT_CALL_COST { get; set; }
+        public DbSet<TOT_CALL_DURATION> TOT_CALL_DURATION { get; set; }
+        public DbSet<WKDY_CALL_ATMPS> WKDY_CALL_ATMPS { get; set; }
+        public DbSet<WKND_CALL_ATMPS> WKND_CALL_ATMPS { get; set; }
         public DbSet<WorkStatu> WorkStatus { get; set; }
-        public DbSet<YesNo> YesNoes { get; set; }
-        public DbSet<YGCStatu> YGCStatus { get; set; }
         public DbSet<vw_PortfolioCashFlow> vw_PortfolioCashFlow { get; set; }
     }
 }

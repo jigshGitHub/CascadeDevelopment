@@ -16,12 +16,12 @@ namespace Cascade.Data.Models
     {
         public StatuteType()
         {
-            this.Statutes = new HashSet<Statute>();
+            this.RACCOUNTs = new HashSet<RACCOUNT>();
         }
     
         public int StatuteTypeID { get; set; }
         public string StatuteType1 { get; set; }
     
-        public virtual ICollection<Statute> Statutes { get; set; }
+        public virtual ICollection<RACCOUNT> RACCOUNTs { get; set; }
     }
 }

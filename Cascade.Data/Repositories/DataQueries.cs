@@ -152,5 +152,33 @@ namespace Cascade.Data.Repositories
             }
 
         }
+
+        public Port_Acq GetPortfolioPurchaseSummary(string productCode)
+        {
+            Port_Acq portfolio = null;
+            DBFactory db;
+            System.Data.DataSet ds;
+            System.Data.DataRow dr;
+            try
+            {
+                portfolio = new Port_Acq();
+                db = new DBFactory();
+                ds = db.ExecuteDataset("sp_GetPortfolioPurchaseSummary", "PurchaseSummary", new SqlParameter("@productCode", productCode));
+
+                dr = ds.Tables["PurchaseSummary"].Rows[0];
+                portfolio.Portfolio_ = dr["PRODUCT_CODE"].ToString();
+                portfolio.Company = dr["PortfolioOwner"].ToString();
+                portfolio.Seller = dr["Seller"].ToString();
+                portfolio.CostBasis = Convert.ToDouble(dr["CostBasis"].ToString());
+                portfolio.Face = Convert.ToDecimal(dr["FaceValue"].ToString());
+                portfolio.Cut_OffDate = DateTime.Parse(dr["PurchaseDate"].ToString());
+                portfolio.C_ofAccts = Convert.ToDouble(dr["#OfAccounts"].ToString());
+                portfolio.PurchasePrice = portfolio.Face * Convert.ToDecimal(portfolio.CostBasis.ToString());
+            }
+            catch (Exception ex)
+            {
+            }
+            return portfolio;
+        }
     }
 }

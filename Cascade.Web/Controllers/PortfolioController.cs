@@ -18,8 +18,10 @@ namespace Cascade.Web.Controllers
 
             try
             {
-                repository = new PortAcqRepository();
-                portfolio = repository.GetById(portfolioNumber);
+                //repository = new PortAcqRepository();
+                //portfolio = repository.GetById(portfolioNumber);
+                DataQueries query = new DataQueries();
+                portfolio = query.GetPortfolioPurchaseSummary(portfolioNumber);
             }
             catch (Exception ex)
             {
@@ -49,7 +51,7 @@ namespace Cascade.Web.Controllers
                 portfolioToSave.PutbackTerm__days_ = inPortfolio.PutbackTerm__days_;
                 portfolioToSave.PurchasePrice = inPortfolio.PurchasePrice;
 
-                repository.Update(portfolioToSave);
+                //repository.Update(portfolioToSave);
             }
             catch (Exception ex)
             {

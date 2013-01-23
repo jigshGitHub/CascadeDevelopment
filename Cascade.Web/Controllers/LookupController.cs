@@ -13,7 +13,7 @@ namespace Cascade.Web.Controllers
         public IEnumerable<LookUp> Get(string id)
         {
             IEnumerable<LookUp> lookupData = null;
-            //SupCompanyRepository supCompanyRepo = null;
+            List<LookUp> data = new List<LookUp>();
             switch (id)
             {
                 case "TransCode":
@@ -33,8 +33,35 @@ namespace Cascade.Web.Controllers
                     break;
                 case "Portfolio":
                     PortAcqRepository portfolioRepo = new PortAcqRepository();
-                    lookupData = from port in portfolioRepo.GetAll().OrderBy(x => x.Portfolio_)
-                                 select new LookUp(port.Portfolio_, port.Portfolio_);
+                    //lookupData = from port in portfolioRepo.GetAll().OrderBy(x => x.Portfolio_)
+                    //             select new LookUp(port.Portfolio_, port.Portfolio_);
+                    
+                    //data.Add(new LookUp("GMC001","GMC001"));
+                    //data.Add(new LookUp("GMC002","GMC002"));
+                    //data.Add(new LookUp("GMC003","GMC003"));
+                    //data.Add(new LookUp("GMC004","GMC004"));
+                    //lookupData = data.AsEnumerable<LookUp>();
+                    RACCOUNTRepository repo = new RACCOUNTRepository();
+                    lookupData = from account in repo.GetAll().Distinct(new Product_CodeDistinct())
+                                 select new LookUp(account.PRODUCT_CODE, account.PRODUCT_CODE);
+
+                    break;
+                case "ResaleRestriction":
+                    //data = new List<LookUp>();
+                    //data.Add(new LookUp("No Approval Required", "1"));
+                    //data.Add(new LookUp("Approval Required", "2"));
+                    //data.Add(new LookUp("Notice Required", "3"));
+                    //lookupData = data.AsEnumerable<LookUp>();
+                    ReSaleRestrictionRepository resaleRepo = new ReSaleRestrictionRepository();
+                    lookupData = from reSale in resaleRepo.GetAll()
+                                 select new LookUp(reSale.Restriction,reSale.Value.ToString());
+                    break;
+                case "PutbackTerm":
+                    data = new List<LookUp>();
+                    data.Add(new LookUp("90", "90"));
+                    data.Add(new LookUp("120", "120"));
+                    data.Add(new LookUp("180", "180"));
+                    lookupData = data.AsEnumerable<LookUp>();
                     break;
                 case "Responsibility":
                     SupCompanyRepository respoRepo = new SupCompanyRepository();
@@ -83,5 +110,23 @@ namespace Cascade.Web.Controllers
                 return "";
             }
         }
+    }
+
+    public class Product_CodeDistinct : IEqualityComparer<RACCOUNT>
+    {
+
+        #region IEqualityComparer<Task> Members
+
+        public bool Equals(RACCOUNT x, RACCOUNT y)
+        {
+            return x.PRODUCT_CODE == y.PRODUCT_CODE;
+        }
+
+        public int GetHashCode(RACCOUNT obj)
+        {
+            return obj.PRODUCT_CODE.GetHashCode();
+        }
+
+        #endregion
     }
 }

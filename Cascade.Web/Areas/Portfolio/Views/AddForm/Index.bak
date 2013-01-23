@@ -8,7 +8,7 @@
 <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
 
 <style>
-    #collectionsGrid thead th {
+    .portfolioGrid thead th {
         padding: 3px 18px 3px 10px;
         border-bottom: 1px solid black;
         font-weight: bold;
@@ -18,39 +18,34 @@
         color: #fff;
     }
 
-    #collectionsGrid tfoot th {
+    .portfolioGrid tfoot th {
         padding: 3px 18px 3px 10px;
         border-top: 1px solid black;
         font-weight: bold;
     }
 
-    #collectionsGrid tr.heading2 td {
+    .portfolioGrid tr.heading2 td {
         border-bottom: 1px solid #aaa;
     }
 
-    #collectionsGrid td {
+    .portfolioGrid td {
         padding: 3px 10px;
         color: black;
     }
 
-        #collectionsGrid td.center {
+        .portfolioGrid td.center {
             text-align: center;
         }
 
-    #collectionsGrid tr:nth-child(even) {
+    .portfolioGrid tr:nth-child(even) {
         background: #fff;
     }
 
-    #collectionsGrid tr:nth-child(odd) {
+    .portfolioGrid tr:nth-child(odd) {
         background: #E2E4FF;
     }
 </style>
 <h2>Portfolio Form</h2>
-<div id="loading" style="display: none;">
-    &nbsp;&nbsp;&nbsp;<img src="~/Content/images/ajax-loader.gif" />
-    <br />
-    Working ...
-</div>
 <table>
     <tr>
         <td>Go to portfolio:
@@ -239,12 +234,18 @@
                                     <img src="~/Content/images/savebutton.png" data-bind="click:saveRecord" />
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <div data-bind="fadeVisible:showMessage" style="background-color: #1f497d; color: #fff"><span data-bind="text:message"></span></div>
+                                </td>
+                            </tr>
                         </table>
                     </div>
+
                     <div id="collectionsTab" data-bind="with: collectionsTabVM">
 
                         <div style="width: 100%; height: 300px; overflow: auto;">
-                            <table id="collectionsGrid">
+                            <table id="collectionsGrid" class="portfolioGrid">
                                 <thead>
                                     <tr>
                                         <th style="width: 20%">Portfolio Number</th>
@@ -313,6 +314,227 @@
                                 </tr>
                             </table>
                         </div>
+                        <div data-bind="fadeVisible:showMessage" style="background-color: #1f497d; color: #fff;text-align:center"><span data-bind="text:message"></span></div>
+                    </div>
+
+                    <div id="investmentsTab" data-bind="with: investmentsTabVM">
+                        <table>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Portfolio Number</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="portfolioNumber-invest" data-bind="enable:false,value:currentInvestmentRecord().portfolioNumber" /></td>
+
+                                <td style="text-align: right; width: 20%">Investor</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <select data-bind="options:investors,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: currentInvestmentRecord().investor">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Profit Share Before</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="profiteShareBefore" data-bind="value:currentInvestmentRecord().prftShareBfr" /></td>
+
+                                <td style="text-align: right; width: 20%">Profit Share After</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="profitShareAfter" data-bind="value:currentInvestmentRecord().prftShareAftr" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Contribution</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="contribution" data-bind="value:currentInvestmentRecord().contribution" /></td>
+
+                                <td style="text-align: right; width: 20%">Interest Rate</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="interestRate" data-bind="value:currentInvestmentRecord().interestRate" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Trans Type</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <select data-bind="enable:false,options:investmentTransTypes,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value:currentInvestmentRecord().investmentTransType">
+                                    </select></td>
+
+                                <td style="text-align: right; width: 20%">Notes</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <textarea id="notes-invest" rows="5" cols="30" data-bind="value:currentInvestmentRecord().notes"></textarea></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/back_enabled.jpg" data-bind="click:previousRecord,visible:visiblePrevious" />&nbsp;<span data-bind="text:recordCounts"></span> &nbsp;
+                                    <img src="~/Content/images/forward_enabled.jpg" data-bind="click:nextRecord,visible:visibleNext" /></td>
+                            </tr>
+                            <tr style="background-color: #1f497d">
+                                <td colspan="6">
+                                    <table style="width: 100%; border-color: white; border-style: solid; border-width: 2px">
+                                        <tr>
+                                            <td style="text-align: right; width: 88%; color: #fff">Total Contributions</td>
+                                            <td style="text-align: right; width: 2%; color: #fff">:</td>
+                                            <td style="text-align: left; width: 10%; color: #fff"><span data-bind="text:totalContributions"></span></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/savebutton.png" data-bind="click:saveRecord" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="distributionsTab" data-bind="with: distributionsTabVM">
+                        <table>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Portfolio Number</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="portfolioNumber-distn" data-bind="enable:false,value:currentDistributionRecord().portfolioNumber" /></td>
+
+                                <td style="text-align: right; width: 20%">Investor</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <select data-bind="options:investors,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: currentDistributionRecord().investor">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Check#</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="checkNo" data-bind="value:currentDistributionRecord().checkNumber" /></td>
+
+                                <td style="text-align: right; width: 20%">Closing Date</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <input type="text" id="closingDt-Distn" data-bind="value:currentDistributionRecord().closingDt" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Distribution</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 20%">
+                                    <input type="text" id="distribution" data-bind="value:currentDistributionRecord().distribution" /></td>
+
+                                <td style="text-align: right; width: 20%">Trans Type</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left; width: 36%">
+                                    <select data-bind="enable:false,options:distributionTransTypes,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value:currentDistributionRecord().distributionTransType">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; width: 20%">Notes</td>
+                                <td style="width: 2%">:</td>
+                                <td style="text-align: left" colspan="4">
+                                    <textarea id="notes-distn" rows="5" cols="30" data-bind="value:currentDistributionRecord().notes"></textarea></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/back_enabled.jpg" data-bind="click:previousRecord,visible:visiblePrevious" />&nbsp;<span data-bind="text:recordCounts"></span> &nbsp;
+                                    <img src="~/Content/images/forward_enabled.jpg" data-bind="click:nextRecord,visible:visibleNext" /></td>
+                            </tr>
+                            <tr style="background-color: #1f497d">
+                                <td colspan="6">
+                                    <table style="width: 100%; border-color: white; border-style: solid; border-width: 2px">
+                                        <tr>
+                                            <td style="text-align: right; width: 88%; color: #fff">Total Distributions</td>
+                                            <td style="text-align: right; width: 2%; color: #fff">:</td>
+                                            <td style="text-align: left; width: 10%; color: #fff"><span data-bind="text:totalDistributions"></span></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" style="text-align: center">
+                                    <img src="~/Content/images/savebutton.png" data-bind="click:saveRecord" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="interestTab" data-bind="with:interestTabVM">
+
+                        <div style="width: 100%; height: 300px; overflow: auto;">
+                            <table id="interestGrid" class="portfolioGrid">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%">Portfolio Number</th>
+                                        <th style="width: 20%">Closing Date</th>
+                                        <th style="width: 20%">Agency</th>
+                                        <th style="width: 20%">Sales Price</th>
+                                        <th style="width: 20%">Check#</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach:interestRecords()">
+                                    <tr data-bind="click:$parent.selectedRecordIndexChanged">
+                                        <td style="text-align: center" data-bind="text:portfolioNumber"></td>
+                                        <td style="text-align: center" data-bind="text:closingDt"></td>
+                                        <td style="text-align: center" data-bind="text:agencyName"></td>
+                                        <td style="text-align: center" data-bind="text:salesPrice"></td>
+                                        <td style="text-align: center" data-bind="text:checkNumber"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                        <p style="background-color: #1f497d; color: #fff; text-align: right">Total interest paid:<span data-bind="text:totalInterest"></span></p>
+
+                        <div data-bind="with: currentInterestRecord">
+                            <table>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Closing Date</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 36%">
+                                        <input type="text" id="closingDate-int" data-bind="value:closingDt" /></td>
+                                    <td style="text-align: right; width: 20%">Portfolio Number</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 20%">
+                                        <input type="text" id="portfolioNumber-int" data-bind="enable:false,value:portfolioNumber" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Agency Name</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left" colspan="4">
+                                        <select data-bind="options:$parent.agencies,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: $parent.selectedAgency">
+                                        </select></td>
+
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; width: 20%">Sales Price</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 36%">
+                                        <input type="text" id="salesPrice" data-bind="value:salesPrice" /></td>
+                                    <td style="text-align: right; width: 20%">Check#</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="text-align: left; width: 20%">
+                                        <input type="text" id="checkNumber" data-bind="value:checkNumber" /></td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="text-align: center">
+                                        <img src="~/Content/images/savebutton.png" data-bind="click:$parent.saveRecord" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="notesTab">
+                        <table>
+                            <tr>
+                                <td>Notes:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea id="notes" rows="5" cols="100"></textarea></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </td>
@@ -328,122 +550,34 @@
     <script src="~/Scripts/portfolio.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
 
-            //$.ajax({
-            //    url: baseUrl + '/api/Lookup/',
-            //    type: 'GET',
-            //    contentType: 'application/json',
-            //    data: { id: 'Portfolio' },
-            //    success: function (data) {
-            //        $('#portfolioList').append(new Option('', ''));
-            //        $.each(data, function (i, item) {
-            //            $('#portfolioList').append(new Option(item.Text, item.Value));
-            //        });
-            //    },
-            //    error: function (xhr, status, somthing) {
-            //        log(status);
-            //    }
-            //});
-
-            $('#companyList').append(new Option('', ''));
-            //$.each(portfolioViewModels.supBrockettCompanies(), function (i, item) {
-            //    $('#companyList').append(new Option(item.Text, item.Text));
-            //});
-
-            $('#sellerList').append(new Option('', ''));
-            //$.each(portfolioViewModels.sellers(), function (i, item) {
-            //    $('#sellerList').append(new Option(item.Text, item.Text));
-            //});
-
-            $('#agencyList').append(new Option('', ''));
-            //$.each(portfolioViewModels.agencies(), function (i, item) {
-            //    $('#agencyList').append(new Option(item.Text, item.Text));
-            //});
-
-            //portfolioViewModels.inittializeVMS('');
-            //ko.applyBindings(portfolioViewModels.portfolioAcqVM(), $('#portfolioAcqSection')[0]);
             ko.applyBindings(new portfolioVM());
-            //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
-            //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#salesTab')[0]);
+
             $("#portfolioTabs").tabs();
             $("#portfolioTabs").bind('tabsselect', portfolioTabsChangedHandler);
-
             $('#closingDt').datepicker();
             $('#cutoffDt').datepicker();
             $('#closingDate-int').datepicker();
 
             $('#portfolioList').live('change', function () {
-                //if ($('#portfolioList').val() != '') {
-                //    portfolioViewModels.resetVMS();
-                //    $('#companyList').val('');
-                //    $('#sellerList').val('');
 
-                //    portfolioViewModels.inittializeVMS($('#portfolioList').val());
-                //    ko.applyBindings(portfolioViewModels.portfolioAcqVM(), $('#portfolioAcqSection')[0]);
-
-                //    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
-                //    ko.applyBindings(portfolioViewModels.salesTransVM(), $('#salesTab')[0]);
-
-                //    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.collectionsTransVM());
-                //    ko.applyBindings(portfolioViewModels.collectionsTransVM(), $('#collectionsTab')[0]);
-
-                //    //$("#portfolioTabs").tabs('load', $("#portfolioTabs").tabs('option', 'selected'));
-                //    $("#portfolioTabs").tabs('select', 0);
-                //    $('#purchasePrice').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-                //    $('#salesPrice-sales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-                //    $('#faceValue-sales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-                //    $('#totalSales').formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-
-
-                //}
             });
-
-
-            //$("#collectionsGrid tbody").click(function (event) {
-            //    var agency = $(event.target.parentNode)[0].cells[1].innerText || $(event.target.parentNode)[0].cells[1].textContent;
-            //    log(agency);
-            //});
         });
 
-        function deleteRows(id, toDeleteHeader) {
-            var obj = document.getElementById(id);
-            if (!obj && !obj.rows)
-                return;
-            if (typeof toDeleteHeader == 'undefined')
-                toDeleteHeader = false;
-            var limit = !!toDeleteHeader ? 0 : 1;
-            var rows = obj.rows;
-            if (limit > rows.length)
-                return;
-            for (; rows.length > limit;) {
-                obj.deleteRow(limit);
-            }
-        }
+
         function portfolioTabsChangedHandler(event, tab) {
 
             switch (tab.index) {
                 case 0:
-                    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.salesTransVM());
-                    //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#salesTab')[0]);
                     break;
                 case 1:
-
-                    //portfolioViewModels.setActiveTabViewModel(portfolioViewModels.collectionsTransVM());
-                    //ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#collectionsTab')[0]);
                     break;
                 case 2:
-                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.investmentsTransVM());
-                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#investmentsTab')[0]);
                     break;
                 case 3:
-                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.distributionsTransVM());
-                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#distributionsTab')[0]);
                     break;
                 case 4:
-                    portfolioViewModels.setActiveTabViewModel(portfolioViewModels.interestVM());
-                    ko.applyBindings(portfolioViewModels.getActiveTabViewModel(), $('#interestTab')[0]);
                     break;
                 case 5:
                     break;
