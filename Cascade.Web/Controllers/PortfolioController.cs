@@ -18,10 +18,8 @@ namespace Cascade.Web.Controllers
 
             try
             {
-                //repository = new PortAcqRepository();
-                //portfolio = repository.GetById(portfolioNumber);
-                DataQueries query = new DataQueries();
-                portfolio = query.GetPortfolioPurchaseSummary(portfolioNumber);
+                repository = new PortAcqRepository();
+                portfolio = repository.GetById(portfolioNumber);                
             }
             catch (Exception ex)
             {

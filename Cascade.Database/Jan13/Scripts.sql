@@ -33,27 +33,41 @@ INSERT INTO MSI_ResaleRestriction (Value, Restriction) VALUES(1,'No Approval Req
 INSERT INTO MSI_ResaleRestriction (Value, Restriction) VALUES(2,'Approval Required');
 INSERT INTO MSI_ResaleRestriction (Value, Restriction) VALUES(3,'Notice Required');
 
-/****** Object:  StoredProcedure [dbo].[sp_GetPortfolioPurchaseSummary]    Script Date: 01/19/2013 08:46:04 ******/
+
+
+/****** Object:  StoredProcedure [dbo].[sp_GetPortfolioPurchaseSummary]    Script Date: 01/24/2013 06:00:44 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_GetPortfolioPurchaseSummary]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[sp_GetPortfolioPurchaseSummary]
 GO
 
-Create Procedure [dbo].[sp_GetPortfolioPurchaseSummary](
+
+CREATE Procedure [dbo].[sp_GetPortfolioPurchaseSummary](
 @productCode VARCHAR(6)
 )
 AS
 
-SELECT 
-Count(Account) #OfAccounts,PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice As CostBasis,SUM(OriginalBalance) As FaceValue,PurchaseDate
-INTO #tmpPortfolioData
-FROM vwAccounts WHERE PRODUCT_CODE = @productCode
-Group by PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice,PurchaseDate;
+If Exists(Select [Portfolio#] From [MSI_Port_Acq_Original] Where [Portfolio#] = @productCode)
+BEGIN
+	Select [Portfolio#],[Cut-OffDate],[ClosingDate] ,[Lender/FileDescription] ,[Seller] ,[CostBasis] ,[Face] ,[PurchasePrice] ,[#ofAccts] ,[PutbackTerm (days)] As PutBackTerm ,[PutbackDeadline] ,[Notes] ,[ResaleRestrictionId] ,[Company]
+	FROM [CascadeDB].[dbo].[MSI_Port_Acq_Original]
+	Where [Portfolio#] = @productCode;
+END
+ELSE
+BEGIN
+	SELECT 
+	Count(Account) #OfAccounts,PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice As CostBasis,SUM(OriginalBalance) As FaceValue,PurchaseDate
+	INTO #tmpPortfolioData
+	FROM vwAccounts WHERE PRODUCT_CODE = @productCode
+	Group by PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice,PurchaseDate;
 
-Select Sum(#OfAccounts) As #OfAccounts,PRODUCT_CODE, PortfolioOwner,Seller,Avg(CostBasis)As  CostBasis,SUM(FaceValue) As FaceValue,PurchaseDate
-From #tmpPortfolioData
-Group By PRODUCT_CODE,PortfolioOwner,Seller,PurchaseDate;
-DROP Table #tmpPortfolioData;
+	Select PRODUCT_CODE AS [Portfolio#],PurchaseDate AS [Cut-OffDate],'' As [ClosingDate], '' As [Lender/FileDescription],Seller,Avg(CostBasis)As  CostBasis,SUM(FaceValue) As Face, SUM(FaceValue) * Avg(CostBasis) As [PurchasePrice],Sum(#OfAccounts) As [#ofAccts],'' As PutBackTerm ,'' As[PutbackDeadline],'' As Notes,'' As [ResaleRestrictionId],PortfolioOwner As [Company]
+	From #tmpPortfolioData
+	Group By PRODUCT_CODE,PortfolioOwner,Seller,PurchaseDate;
+	DROP Table #tmpPortfolioData;
+END
+
 GO
+
 
 
 /****** Object:  Table [dbo].[MSI_Port_Acq_Original]    Script Date: 01/19/2013 08:56:26 ******/

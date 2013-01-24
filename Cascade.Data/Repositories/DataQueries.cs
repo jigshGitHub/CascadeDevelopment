@@ -153,27 +153,42 @@ namespace Cascade.Data.Repositories
 
         }
 
-        public Port_Acq GetPortfolioPurchaseSummary(string productCode)
+        public MSI_Port_Acq_Original GetPortfolioPurchaseSummary(string productCode)
         {
-            Port_Acq portfolio = null;
+            MSI_Port_Acq_Original portfolio = null;
             DBFactory db;
             System.Data.DataSet ds;
             System.Data.DataRow dr;
             try
             {
-                portfolio = new Port_Acq();
+                portfolio = new MSI_Port_Acq_Original();
                 db = new DBFactory();
                 ds = db.ExecuteDataset("sp_GetPortfolioPurchaseSummary", "PurchaseSummary", new SqlParameter("@productCode", productCode));
 
                 dr = ds.Tables["PurchaseSummary"].Rows[0];
-                portfolio.Portfolio_ = dr["PRODUCT_CODE"].ToString();
-                portfolio.Company = dr["PortfolioOwner"].ToString();
+                portfolio.Portfolio_ = dr["Portfolio#"].ToString();
+                portfolio.Company = dr["Company"].ToString();
                 portfolio.Seller = dr["Seller"].ToString();
                 portfolio.CostBasis = Convert.ToDouble(dr["CostBasis"].ToString());
-                portfolio.Face = Convert.ToDecimal(dr["FaceValue"].ToString());
-                portfolio.Cut_OffDate = DateTime.Parse(dr["PurchaseDate"].ToString());
-                portfolio.C_ofAccts = Convert.ToDouble(dr["#OfAccounts"].ToString());
-                portfolio.PurchasePrice = portfolio.Face * Convert.ToDecimal(portfolio.CostBasis.ToString());
+                portfolio.Face = Convert.ToDecimal(dr["Face"].ToString());
+                portfolio.Cut_OffDate = DateTime.Parse(dr["Cut-OffDate"].ToString());
+                portfolio.C_ofAccts = Convert.ToDouble(dr["#ofAccts"].ToString());
+                portfolio.PurchasePrice = Convert.ToDecimal(dr["PurchasePrice"].ToString());
+                DateTime closingDate;
+                if(DateTime.TryParse(dr["ClosingDate"].ToString(),out closingDate))
+                    portfolio.ClosingDate = closingDate;
+                portfolio.Lender_FileDescription = dr["Lender/FileDescription"].ToString();
+                int putbackTermDays;
+                if (int.TryParse(dr["PutBackTerm"].ToString(), out putbackTermDays))
+                    portfolio.PutbackTerm__days_ = putbackTermDays;
+                DateTime putbackDeadLine;
+                if(DateTime.TryParse(dr["PutbackDeadLine"].ToString(),out putbackDeadLine))
+                    portfolio.PutbackDeadline = putbackDeadLine;
+                portfolio.Notes = dr["Notes"].ToString();
+                int resaleId;
+                if (int.TryParse(dr["ResaleRestrictionId"].ToString(), out resaleId))
+                    portfolio.ResaleRestrictionId = resaleId;
+
             }
             catch (Exception ex)
             {

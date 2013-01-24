@@ -652,7 +652,8 @@ function purchaseSummaryVM() {
             Cut_OffDate: self.cutOffDt(),
             CostBasis: self.costBasis(),
             Portfolio_: self.portfolioNumber(),
-            ResaleRestrictionId: self.resaleRestriction()
+            ResaleRestrictionId: self.resaleRestriction(),
+            Notes: self.notes()
         });
         //log(json);
         $.ajax({
@@ -687,7 +688,8 @@ function portfolioVM() {
             //load acqusitions portfolio data
 
             $.ajax({
-                url: baseUrl + '/api/Portfolio/',
+//                url: baseUrl + '/api/Portfolio/',
+                url: baseUrl + '/api/MSIPortfolioOriginal/',
                 type: 'GET',
                 contentType: 'application/json',
                 data: { portfolioNumber: self.portfolioNumber() },
@@ -709,16 +711,20 @@ function portfolioVM() {
                     //self.purchaseSummarySectionVM.closingDt($.datepicker.formatDate('mm/dd/yy', new Date(data.ClosingDate)));
                     self.purchaseSummarySectionVM.costBasis(data.CostBasis);
                     self.purchaseSummarySectionVM.putbackTerm(data.PutbackTerm__days_);
-                    if (data.PutbackDeadline = 'undefined') {
+                    if (data.PutbackDeadline == undefined) {
                     }
                     else {
-                        //self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', new Date(data.PutbackDeadline)));
+                        var putbackDeadline = new Date(data.PutbackDeadline);
+                        putbackDeadline.setDate(putbackDeadline.getDate() + 1);
+                        self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
                     self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
                     self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                    self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
+                    self.purchaseSummarySectionVM.notes(data.Notes);
                 },
                 error: function (xhr, status, somthing) {
                     log(status);

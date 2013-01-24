@@ -14,12 +14,11 @@ namespace Cascade.Web.Controllers
         public MSI_Port_Acq_Original Get(string portfolioNumber)
         {
             MSI_Port_Acq_Original portfolio = null;
-            MSI_Port_Acq_OriginalRepository repository = null;
 
             try
             {
-                repository = new MSI_Port_Acq_OriginalRepository();
-                portfolio = repository.GetById(portfolioNumber);
+                DataQueries query = new DataQueries();
+                portfolio = query.GetPortfolioPurchaseSummary(portfolioNumber);
             }
             catch (Exception ex)
             {
@@ -31,12 +30,18 @@ namespace Cascade.Web.Controllers
         {
             MSI_Port_Acq_Original portfolioToSave = null;
             MSI_Port_Acq_OriginalRepository repository = null;
-
+            bool editingRequired = true;
             try
             {
-                repository = new MSI_Port_Acq_OriginalRepository();
 
-                portfolioToSave = new MSI_Port_Acq_Original();
+                repository = new MSI_Port_Acq_OriginalRepository();
+                portfolioToSave = repository.GetById(inPortfolio.Portfolio_);
+
+                if (portfolioToSave == null)
+                {
+                    editingRequired = false;
+                    portfolioToSave = new MSI_Port_Acq_Original();
+                }
                 portfolioToSave.Portfolio_ = inPortfolio.Portfolio_;
                 portfolioToSave.Company = inPortfolio.Company;
                 portfolioToSave.Cut_OffDate = inPortfolio.Cut_OffDate;
@@ -50,7 +55,11 @@ namespace Cascade.Web.Controllers
                 portfolioToSave.PutbackTerm__days_ = inPortfolio.PutbackTerm__days_;
                 portfolioToSave.PurchasePrice = inPortfolio.PurchasePrice;
                 portfolioToSave.ResaleRestrictionId = inPortfolio.ResaleRestrictionId;
-                repository.Add(portfolioToSave);
+                portfolioToSave.Notes = inPortfolio.Notes;
+                if (editingRequired)
+                    repository.Update(portfolioToSave);
+                else
+                    repository.Add(portfolioToSave);
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException validationException)
             {
