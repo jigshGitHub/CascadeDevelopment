@@ -51,7 +51,7 @@ namespace Cascade.Web.Controllers
                 portfolioToSave.PutbackTerm__days_ = inPortfolio.PutbackTerm__days_;
                 portfolioToSave.PurchasePrice = inPortfolio.PurchasePrice;
 
-                //repository.Update(portfolioToSave);
+                repository.Update(portfolioToSave);
             }
             catch (Exception ex)
             {

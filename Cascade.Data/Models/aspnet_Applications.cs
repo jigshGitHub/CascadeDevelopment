@@ -17,6 +17,7 @@ namespace Cascade.Data.Models
         public aspnet_Applications()
         {
             this.aspnet_Membership = new HashSet<aspnet_Membership>();
+            this.aspnet_Paths = new HashSet<aspnet_Paths>();
             this.aspnet_Roles = new HashSet<aspnet_Roles>();
             this.aspnet_Users = new HashSet<aspnet_Users>();
         }
@@ -27,6 +28,7 @@ namespace Cascade.Data.Models
         public string Description { get; set; }
     
         public virtual ICollection<aspnet_Membership> aspnet_Membership { get; set; }
+        public virtual ICollection<aspnet_Paths> aspnet_Paths { get; set; }
         public virtual ICollection<aspnet_Roles> aspnet_Roles { get; set; }
         public virtual ICollection<aspnet_Users> aspnet_Users { get; set; }
     }

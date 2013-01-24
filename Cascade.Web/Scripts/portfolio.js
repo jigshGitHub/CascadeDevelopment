@@ -636,7 +636,8 @@ function purchaseSummaryVM() {
     //$.each(portfolioViewModels.sellers(), function (i, item) {
     //    self.sellers.push(item);
     //});
-
+    self.showMessage = ko.observable(false);
+    self.message = ko.observable('');
     self.saveMainRecord = function () {
         var json = JSON.stringify({
             Company: self.company(),
@@ -650,11 +651,13 @@ function purchaseSummaryVM() {
             ClosingDate: self.closingDt(),
             Cut_OffDate: self.cutOffDt(),
             CostBasis: self.costBasis(),
-            Portfolio_: self.portfolioNumber()
+            Portfolio_: self.portfolioNumber(),
+            ResaleRestrictionId: self.resaleRestriction()
         });
         //log(json);
         $.ajax({
-            url: baseUrl + '/api/Portfolio/',
+            //url: baseUrl + '/api/Portfolio/',
+            url: baseUrl + '/api/MSIPortfolioOriginal/',
             type: "POST",
             data: json,
             dataType: "json",
@@ -665,6 +668,8 @@ function purchaseSummaryVM() {
             error: function (response, errorText) {
             }
         });
+        self.showMessage(true);
+        self.message('Data saved successfully!');
     }
 };
 

@@ -1,6 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CascadeDBModelStoreContainer" CdmEntityContainer="CascadeDBEntities">
+    <EntitySetMapping Name="AccountActivities">
+      <EntityTypeMapping TypeName="CascadeDBModel.AccountActivity">
+        <MappingFragment StoreEntitySet="AccountActivity">
+          <ScalarProperty Name="AccountActivityID" ColumnName="AccountActivityID" />
+          <ScalarProperty Name="Division_ID" ColumnName="Division_ID" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountPaymentPlans">
+      <EntityTypeMapping TypeName="CascadeDBModel.AccountPaymentPlan">
+        <MappingFragment StoreEntitySet="AccountPaymentPlans">
+          <ScalarProperty Name="PaymentPlanID" ColumnName="PaymentPlanID" />
+          <ScalarProperty Name="Division_ID" ColumnName="Division_ID" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="PaymentPlanDate" ColumnName="PaymentPlanDate" />
+          <ScalarProperty Name="PaymentPlanStatusID" ColumnName="PaymentPlanStatusID" />
+          <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+          <ScalarProperty Name="LastPaymentAmount" ColumnName="LastPaymentAmount" />
+          <ScalarProperty Name="FirstPaymentDate" ColumnName="FirstPaymentDate" />
+          <ScalarProperty Name="FirstPaymentAmount" ColumnName="FirstPaymentAmount" />
+          <ScalarProperty Name="CycleDay" ColumnName="CycleDay" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="Responsibility" ColumnName="Responsibility" />
+          <ScalarProperty Name="Portfolio" ColumnName="Portfolio" />
+          <ScalarProperty Name="StartingPayments" ColumnName="StartingPayments" />
+          <ScalarProperty Name="StartingPaymentAmount" ColumnName="StartingPaymentAmount" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="PaymentPlanAmount" ColumnName="PaymentPlanAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountStatutes">
+      <EntityTypeMapping TypeName="CascadeDBModel.AccountStatute">
+        <MappingFragment StoreEntitySet="AccountStatutes">
+          <ScalarProperty Name="Division_ID" ColumnName="Division_ID" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Statute" ColumnName="Statute" />
+          <ScalarProperty Name="StatuteTypeID" ColumnName="StatuteTypeID" />
+          <ScalarProperty Name="StatuteDate" ColumnName="StatuteDate" />
+          <ScalarProperty Name="DaysRemaining" ColumnName="DaysRemaining" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="aspnet_Applications">
       <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Applications">
         <MappingFragment StoreEntitySet="aspnet_Applications">
@@ -38,6 +86,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Paths">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Paths">
+        <MappingFragment StoreEntitySet="aspnet_Paths">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_PersonalizationAllUsers">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_PersonalizationPerUser">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Profile">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Profile">
+        <MappingFragment StoreEntitySet="aspnet_Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+          <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="aspnet_Roles">
       <EntityTypeMapping TypeName="CascadeDBModel.aspnet_Roles">
         <MappingFragment StoreEntitySet="aspnet_Roles">
@@ -46,6 +135,15 @@
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
           <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_SchemaVersions">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_SchemaVersions">
+        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,6 +157,57 @@
           <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
           <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
           <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_WebEvent_Events">
+      <EntityTypeMapping TypeName="CascadeDBModel.aspnet_WebEvent_Events">
+        <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+          <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+          <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+          <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+          <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBAs">
+      <EntityTypeMapping TypeName="CascadeDBModel.CBA">
+        <MappingFragment StoreEntitySet="CBA">
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="OwnHome" ColumnName="OwnHome" />
+          <ScalarProperty Name="AcctsOpenedLast6mths" ColumnName="AcctsOpenedLast6mths" />
+          <ScalarProperty Name="InquiriesLast6mths" ColumnName="InquiriesLast6mths" />
+          <ScalarProperty Name="DerogatoryAccts" ColumnName="DerogatoryAccts" />
+          <ScalarProperty Name="PaidLast6mths" ColumnName="PaidLast6mths" />
+          <ScalarProperty Name="MortgageHighCredit" ColumnName="MortgageHighCredit" />
+          <ScalarProperty Name="MortgageBalance" ColumnName="MortgageBalance" />
+          <ScalarProperty Name="SecondMortgageHighCredit" ColumnName="SecondMortgageHighCredit" />
+          <ScalarProperty Name="SecondMortgageBalance" ColumnName="SecondMortgageBalance" />
+          <ScalarProperty Name="RevolvingHighCredit" ColumnName="RevolvingHighCredit" />
+          <ScalarProperty Name="RevolvingBalance" ColumnName="RevolvingBalance" />
+          <ScalarProperty Name="AvailableRevolving" ColumnName="AvailableRevolving" />
+          <ScalarProperty Name="AvailableBankCard" ColumnName="AvailableBankCard" />
+          <ScalarProperty Name="AutoBalance" ColumnName="AutoBalance" />
+          <ScalarProperty Name="PercentAutoUsed" ColumnName="PercentAutoUsed" />
+          <ScalarProperty Name="AutoLeaseBalance" ColumnName="AutoLeaseBalance" />
+          <ScalarProperty Name="PercentLeaseUsed" ColumnName="PercentLeaseUsed" />
+          <ScalarProperty Name="Division_ID" ColumnName="Division_ID" />
+          <ScalarProperty Name="Score2" ColumnName="Score2" />
+          <ScalarProperty Name="DateLoaded" ColumnName="DateLoaded" />
+          <ScalarProperty Name="BKStatus" ColumnName="BKStatus" />
+          <ScalarProperty Name="Deceased" ColumnName="Deceased" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -360,6 +509,46 @@
           <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
           <ScalarProperty Name="OurInvoice" ColumnName="OurInvoice" />
           <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSI_Port_Acq_Edited">
+      <EntityTypeMapping TypeName="CascadeDBModel.MSI_Port_Acq_Edited">
+        <MappingFragment StoreEntitySet="MSI_Port_Acq_Edited">
+          <ScalarProperty Name="Portfolio_" ColumnName="Portfolio#" />
+          <ScalarProperty Name="Cut_OffDate" ColumnName="Cut-OffDate" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="Lender_FileDescription" ColumnName="Lender/FileDescription" />
+          <ScalarProperty Name="Seller" ColumnName="Seller" />
+          <ScalarProperty Name="CostBasis" ColumnName="CostBasis" />
+          <ScalarProperty Name="Face" ColumnName="Face" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="C_ofAccts" ColumnName="#ofAccts" />
+          <ScalarProperty Name="PutbackTerm__days_" ColumnName="PutbackTerm (days)" />
+          <ScalarProperty Name="PutbackDeadline" ColumnName="PutbackDeadline" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ResaleRestrictionId" ColumnName="ResaleRestrictionId" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSI_Port_Acq_Original">
+      <EntityTypeMapping TypeName="CascadeDBModel.MSI_Port_Acq_Original">
+        <MappingFragment StoreEntitySet="MSI_Port_Acq_Original">
+          <ScalarProperty Name="Portfolio_" ColumnName="Portfolio#" />
+          <ScalarProperty Name="Cut_OffDate" ColumnName="Cut-OffDate" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="Lender_FileDescription" ColumnName="Lender/FileDescription" />
+          <ScalarProperty Name="Seller" ColumnName="Seller" />
+          <ScalarProperty Name="CostBasis" ColumnName="CostBasis" />
+          <ScalarProperty Name="Face" ColumnName="Face" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="C_ofAccts" ColumnName="#ofAccts" />
+          <ScalarProperty Name="PutbackTerm__days_" ColumnName="PutbackTerm (days)" />
+          <ScalarProperty Name="PutbackDeadline" ColumnName="PutbackDeadline" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ResaleRestrictionId" ColumnName="ResaleRestrictionId" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1782,6 +1971,19 @@
           <ScalarProperty Name="TransType" ColumnName="TransType" />
           <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
           <ScalarProperty Name="Company" ColumnName="Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PortfolioCashPosition">
+      <EntityTypeMapping TypeName="CascadeDBModel.vw_PortfolioCashPosition">
+        <MappingFragment StoreEntitySet="vw_PortfolioCashPosition">
+          <ScalarProperty Name="Portfolio_" ColumnName="Portfolio#" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SumOfSalesPrice" ColumnName="SumOfSalesPrice" />
+          <ScalarProperty Name="CashPos" ColumnName="CashPos" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Return_on_Capital" ColumnName="Return on Capital" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

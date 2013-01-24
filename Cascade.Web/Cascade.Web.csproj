@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\MSIPortfolioOriginalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
@@ -384,6 +385,7 @@
     <Content Include="Areas\Search\Views\Home\_BasicPartial.cshtml" />
     <Content Include="Areas\Search\Views\Home\Basic.cshtml" />
     <Content Include="Areas\Search\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Portfolio\Views\EditForm\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />

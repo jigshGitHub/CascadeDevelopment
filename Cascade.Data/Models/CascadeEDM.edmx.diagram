@@ -4,83 +4,104 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a940da3ea6a34fcebb61dc9a98e4cc01" Name="Diagram1">
-        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Applications" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Membership" Width="1.5" PointX="16.5" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Roles" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Users" Width="1.5" PointX="14.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.CBRAccountStatu" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.CBRBankruptStatu" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.CBRDisputeStatu" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.CBRSpecialStatu" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Client" Width="1.5" PointX="3" PointY="39.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.DebtorsEmployer" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.DebtorsVehicle" Width="1.5" PointX="7.5" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Division" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Industry" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.LastCallResult" Width="1.5" PointX="7.5" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.MSI_DPSForm" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.MSI_MediaForm" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.MSI_RecallForm" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.MSI_ResaleRestriction" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.PaperType" Width="1.5" PointX="0.75" PointY="56" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Port_Acq" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Port_DPS" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Port_Media" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Port_Recall" Width="1.5" PointX="9.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Port_Trans" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Portfolio" Width="1.5" PointX="3" PointY="50.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RACCBKRP" Width="1.5" PointX="7.5" PointY="41.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RACCOUNT" Width="1.5" PointX="5.25" PointY="32.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RACCTLGL" Width="1.5" PointX="7.5" PointY="75.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RACCTREL" Width="1.5" PointX="7.5" PointY="58.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RACTPLAC" Width="1.5" PointX="7.5" PointY="37.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RAGENCY" Width="1.5" PointX="3" PointY="64" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.recallmaster" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ee8636758db74881afc1bf6ad54a3950" Name="Diagram1">
+        <EntityTypeShape EntityType="CascadeDBModel.AccountActivity" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.AccountPaymentPlan" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.AccountStatute" Width="1.5" PointX="7.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Applications" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Membership" Width="1.5" PointX="15" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Paths" Width="1.5" PointX="12" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="14.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="14.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Profile" Width="1.5" PointX="19.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Roles" Width="1.5" PointX="12" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_SchemaVersions" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_Users" Width="1.5" PointX="17.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.aspnet_WebEvent_Events" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.CBA" Width="1.5" PointX="7.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.CBRAccountStatu" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.CBRBankruptStatu" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.CBRDisputeStatu" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.CBRSpecialStatu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Client" Width="1.5" PointX="3" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.DebtorsEmployer" Width="1.5" PointX="7.5" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.DebtorsVehicle" Width="1.5" PointX="7.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Division" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Industry" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.LastCallResult" Width="1.5" PointX="7.5" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_DPSForm" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_MediaForm" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_Port_Acq_Edited" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_Port_Acq_Original" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_RecallForm" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.MSI_ResaleRestriction" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.PaperType" Width="1.5" PointX="0.75" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Acq" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_DPS" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Media" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Recall" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Port_Trans" Width="1.5" PointX="4.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Portfolio" Width="1.5" PointX="3" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RACCBKRP" Width="1.5" PointX="7.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RACCOUNT" Width="1.5" PointX="5.25" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RACCTLGL" Width="1.5" PointX="7.5" PointY="88.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RACCTREL" Width="1.5" PointX="7.5" PointY="72.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RACTPLAC" Width="1.5" PointX="7.5" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RAGENCY" Width="1.5" PointX="3" PointY="71.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.recallmaster" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CascadeDBModel.ResponsibilityType" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RFINTRAN" Width="1.5" PointX="10.5" PointY="52.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RINTRATE" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RPRODCDE" Width="1.5" PointX="3" PointY="72.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RSTATU" Width="1.5" PointX="3" PointY="78.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.RTRANCDE" Width="1.5" PointX="8.25" PointY="101.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Score" Width="1.5" PointX="7.5" PointY="110.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Segment" Width="1.5" PointX="15.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.SegmentType" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.SettlementRequest" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.StatusType" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.StatuteType" Width="1.5" PointX="3" PointY="84.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_BrockettCompanies" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_Company" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_PmtType" Width="1.5" PointX="11.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_Reason" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_Status" Width="1.5" PointX="17.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransCode" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransSource" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_UploadDPS" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Sup_UploadRecalls" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Surname" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TaskCategory" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RFINTRAN" Width="1.5" PointX="10.5" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RINTRATE" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RPRODCDE" Width="1.5" PointX="3" PointY="79.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RSTATU" Width="1.5" PointX="3" PointY="85.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.RTRANCDE" Width="1.5" PointX="8.25" PointY="115.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Score" Width="1.5" PointX="7.5" PointY="124.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Segment" Width="1.5" PointX="9.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.SegmentType" Width="1.5" PointX="11.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.SettlementRequest" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.StatusType" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.StatuteType" Width="1.5" PointX="3" PointY="91.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_BrockettCompanies" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_Company" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_PmtType" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_Reason" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_Status" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransCode" Width="1.5" PointX="21.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_TransSource" Width="1.5" PointX="21.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_UploadDPS" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Sup_UploadRecalls" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Surname" Width="1.5" PointX="11.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TaskCategory" Width="1.5" PointX="13.75" PointY="22.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CascadeDBModel.Tbl_Categories" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_CHART" Width="1.5" PointX="19.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_COMPANIES" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_CHART" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_COMPANIES" Width="1.5" PointX="15.75" PointY="22.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CascadeDBModel.Tbl_Expense" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Tbl_ExpenseDetails" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.Tbl_ExpenseDetailsUpdated" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_Portfolio" Width="1.5" PointX="9.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TBL_State" Width="1.5" PointX="11.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.tblIRR" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TimeZone" Width="1.5" PointX="21.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_ATMPS" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_COST" Width="1.5" PointX="21.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_DURATION" Width="1.5" PointX="21.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.WKDY_CALL_ATMPS" Width="1.5" PointX="21.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.WKND_CALL_ATMPS" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.WorkStatu" Width="1.5" PointX="3" PointY="86.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CascadeDBModel.vw_PortfolioCashFlow" Width="1.5" PointX="13.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Tbl_ExpenseDetails" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.Tbl_ExpenseDetailsUpdated" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_Portfolio" Width="1.5" PointX="23.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TBL_State" Width="1.5" PointX="19.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.tblIRR" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TimeZone" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_ATMPS" Width="1.5" PointX="2.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_COST" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.TOT_CALL_DURATION" Width="1.5" PointX="4.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.WKDY_CALL_ATMPS" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.WKND_CALL_ATMPS" Width="1.5" PointX="24.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.WorkStatu" Width="1.5" PointX="3" PointY="93.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.vw_PortfolioCashFlow" Width="1.5" PointX="24.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CascadeDBModel.vw_PortfolioCashPosition" Width="1.5" PointX="21.75" PointY="24.75" IsExpanded="true" />
+        <AssociationConnector Association="CascadeDBModel.FK_AccountActivity_RACCOUNT" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK_AccountStatutes_RACCOUNT" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK__aspnet_Me__Appli__4707859D" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK__aspnet_Pa__Appli__48EFCE0F" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK__aspnet_Ro__Appli__4DB4832C" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK__aspnet_Us__Appli__4EA8A765" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK__aspnet_Me__UserI__47FBA9D6" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK__aspnet_Pe__PathI__49E3F248" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK__aspnet_Pe__PathI__4AD81681" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK__aspnet_Pe__UserI__4BCC3ABA" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK__aspnet_Pr__UserI__4CC05EF3" ManuallyRouted="false" />
+        <AssociationConnector Association="CascadeDBModel.FK_CBA_RACCOUNT" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK_RACCOUNT_Clients" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK_DebtorsEmployer_RACCOUNT" ManuallyRouted="false" />
         <AssociationConnector Association="CascadeDBModel.FK_DebtorsVehicle_RACCOUNT" ManuallyRouted="false" />

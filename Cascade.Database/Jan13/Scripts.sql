@@ -92,3 +92,32 @@ PRIMARY KEY CLUSTERED
 
 GO
 
+/****** Object:  Table [dbo].[MSI_Port_Acq_Edited]    Script Date: 01/23/2013 13:00:59 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_Port_Acq_Edited]') AND type in (N'U'))
+DROP TABLE [dbo].[MSI_Port_Acq_Edited]
+GO
+
+
+CREATE TABLE [dbo].[MSI_Port_Acq_Edited](
+	[Portfolio#] [nvarchar](255) NOT NULL,
+	[Cut-OffDate] [datetime] NULL,
+	[ClosingDate] [datetime] NULL,
+	[Lender/FileDescription] [nvarchar](255) NULL,
+	[Seller] [nvarchar](255) NULL,
+	[CostBasis] [float] NULL,
+	[Face] [money] NULL,
+	[PurchasePrice] [money] NULL,
+	[#ofAccts] [float] NULL,
+	[PutbackTerm (days)] [int] NULL,
+	[PutbackDeadline] [datetime] NULL,
+	[Notes] [nvarchar](max) NULL,
+	[ResaleRestrictionId] [int] NULL,
+	[Company] [nvarchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Portfolio#] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
