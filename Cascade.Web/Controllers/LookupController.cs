@@ -46,6 +46,12 @@ namespace Cascade.Web.Controllers
                                  select new LookUp(account.PRODUCT_CODE, account.PRODUCT_CODE);
 
                     break;
+                case "PortfolioOriginal":
+                    MSI_Port_Acq_OriginalRepository repository = new MSI_Port_Acq_OriginalRepository();
+                    lookupData = from port_acq in repository.GetAll()
+                                 select new LookUp(port_acq.Portfolio_, port_acq.Portfolio_);
+
+                    break;
                 case "ResaleRestriction":
                     //data = new List<LookUp>();
                     //data.Add(new LookUp("No Approval Required", "1"));

@@ -55,36 +55,39 @@
 <div id="portfolioAcqSection" data-bind="with:purchaseSummarySectionVM">
     <table class="tblCommon">
         <tr>
+            <td colspan="6" style="text-align: right"><a href="#" data-bind="visible:updatedData,click:getOriginal">Show Original</a>&nbsp;&nbsp<a href="#" data-bind="visible:originalData,click:getUpdated">Show Updated</a>
+        </tr>
+        <tr>
             <td style="text-align: right; width: 20%">Company</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 20%">
-                <input type="text" id="company" data-bind="value:company" disabled="disabled" /></td>
+                <input type="text" id="company" data-bind="value:company,enable:makeFieldsEditable" />&nbsp;<input type="radio" value="company" data-bind="checked:companyEditedValue" /></td>
             <td style="text-align: right; width: 20%">Resale Restriction</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 36%">
-                <select data-bind="options:resaleRestrictions,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: resaleRestriction">
-                </select></td>
+                <select data-bind="options:resaleRestrictions,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: resaleRestriction,enable:makeFieldsEditable">
+                </select>&nbsp;<input type="radio" value="reSale" data-bind="checked:resaleEditedValue" /></td>
         </tr>
         <tr>
             <td style="text-align: right; width: 20%">Lender/File Description</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 20%">
-                <input type="text" id="lenderFileDes" data-bind="value:lender" /></td>
+                <input type="text" id="lenderFileDes" data-bind="value:lender,enable:makeFieldsEditable" />&nbsp;<input type="radio" value="lender" data-bind="checked:lenderFileEditedValue" /></td>
             <td style="text-align: right; width: 20%">Purchase Date</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 20%">
-                <input type="text" id="purchaseDate" data-bind="value:purchaseDate" disabled="disabled" /></td>
+                <input type="text" id="purchaseDate" data-bind="value:purchaseDate,enable:makeFieldsEditable" />&nbsp;<input type="radio" value="cutOffDt" data-bind="checked:cuttOfDateEditedValue" /></td>
         </tr>
         <tr>
             <td style="text-align: right; width: 20%">Seller</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 20%">
-                <input type="text" id="seller" data-bind="value:seller" />
+                <input type="text" id="seller" data-bind="value:seller,enable:makeFieldsEditable" />&nbsp;<input type="radio" value="seller" data-bind="checked:sellerEditedValue" />
             </td>
             <td style="text-align: right; width: 20%">Cut-Off Date</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 36%">
-                <input type="text" id="cutoffDt" data-bind="value:cutOffDt" /></td>
+                <input type="text" id="cutoffDt" data-bind="value:cutOffDt,enable:makeFieldsEditable" />&nbsp;<input type="radio" value="cutOffDt" data-bind="checked:cuttOfDateEditedValue" /></td>
         </tr>
         <tr>
             <td style="text-align: right; width: 20%">Cost Basis</td>
@@ -94,7 +97,7 @@
             <td style="text-align: right; width: 20%">Putback Term(days)</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 36%">
-                <select id="putbackTerm" data-bind="options:putbackTerms,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: putbackTerm"></select></td>
+                <select id="putbackTerm" data-bind="options:putbackTerms,optionsValue:'Value', optionsText: 'Text',optionsCaption: ' ', value: putbackTerm,enable:makeFieldsEditable"></select>&nbsp;<input type="radio" value="putbackTerm" data-bind="checked:putbackTermEditedValue" /></td>
         </tr>
         <tr>
             <td style="text-align: right; width: 20%">Face Value</td>
@@ -104,7 +107,7 @@
             <td style="text-align: right; width: 20%">Putback Deadline</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left; width: 36%">
-                <input type="text" id="putbackDeadline" data-bind="value:putbackDeadline" disabled="disabled" /></td>
+                <input type="text" id="putbackDeadline" data-bind="value:putbackDeadline,enable:makeFieldsEditable" /></td>
         </tr>
         <tr>
             <td style="text-align: right; width: 20%">#Of Accounts</td>
@@ -121,10 +124,11 @@
             <td style="text-align: right; width: 20%">Notes</td>
             <td style="width: 2%">:</td>
             <td style="text-align: left;" colspan="4">
-                <textarea id="purchaseNotes" cols="70" rows="3" data-bind="value:notes"></textarea></td>
+                <textarea id="purchaseNotes" cols="70" rows="3" data-bind="value:notes,enable:makeFieldsEditable"></textarea>&nbsp;<input type="radio" value="notesEdited" data-bind="checked:notesEditedValue" /></td>
             <tr>
                 <td colspan="6" style="text-align: center">
-                    <img src="~/Content/images/savebutton.png" data-bind="click:saveMainRecord" />
+                    <input type="button" class="editButton" value="  Edit   " data-bind="click:editRecord, visible:editVisible" />&nbsp;
+                    <img src="~/Content/images/savebutton.png" data-bind="click:saveMainRecord, visible:saveVisible" />
                 </td>
             </tr>
         <tr>
@@ -256,7 +260,7 @@
 
     <script src="~/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
     <script src="~/Scripts/datatable/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/portfolio.js" type="text/javascript"></script>
+    <script src="~/Scripts/portfolio_viewedit.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {

@@ -287,5 +287,16 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+    public class MSI_Port_Acq_EditedRepository : RepositoryBase<MSI_Port_Acq_Edited>
+    {
+        public MSI_Port_Acq_EditedRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_Port_Acq_EditedRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
 
 }
