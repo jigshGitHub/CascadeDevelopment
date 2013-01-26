@@ -1,4 +1,9 @@
 ﻿var portfolioViewModels = namespace("cascade.viewModels.portfolio");
+//var applicationname = "/Cascade";
+var applicationname = "";
+var myhost = window.location.protocol + "//" + window.location.host
+var absoluteapp = myhost + applicationname;
+var imagedir = "/Content/Images";
 function allCommentedCode() {
     //function interestRecord(id, portfolioNumber, agencyName, checkNumber, closingDt, salesPrice, transType) {
     //    this.id = id;
@@ -684,6 +689,9 @@ function portfolioVM() {
     self.portfolioNumber = ko.observable();
     self.portfolioNumber.subscribe(function (number) {
         if (number != '') {
+            $("#loading").dialog('open');
+            $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
+
             self.portfolioNumber(number);
             //load acqusitions portfolio data
 
@@ -694,7 +702,7 @@ function portfolioVM() {
                 contentType: 'application/json',
                 data: { portfolioNumber: self.portfolioNumber() },
                 dataType: 'json',
-                async: false,
+                async: true,
                 success: function (data) {
                     log(data);
                     self.purchaseSummarySectionVM.portfolioNumber(data.Portfolio_);
@@ -719,12 +727,16 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
+                    if(data.Face != undefined)
+                        self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
-                    self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                    if (data.PurchasePrice != undefined)
+                        self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
+                    $("#loading").html("&nbsp;");
+                    $("#loading").dialog('close');
                 },
                 error: function (xhr, status, somthing) {
                     log(status);

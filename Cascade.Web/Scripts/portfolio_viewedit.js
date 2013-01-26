@@ -1,4 +1,9 @@
 ﻿var portfolioViewModels = namespace("cascade.viewModels.portfolio");
+//var applicationname = "/Cascade";
+var applicationname = "";
+var myhost = window.location.protocol + "//" + window.location.host
+var absoluteapp = myhost + applicationname;
+var imagedir = "/Content/Images";
 function allCommentedCode() {
     //function interestRecord(id, portfolioNumber, agencyName, checkNumber, closingDt, salesPrice, transType) {
     //    this.id = id;
@@ -730,14 +735,18 @@ function purchaseSummaryVM() {
             self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
         }
         self.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-        self.face(formatCurrency(data.Face));
+        if(data.Face != undefined)
+            self.face(formatCurrency(data.Face));
         self.accounts(data.C_ofAccts);
-        self.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+        if(data.PurchasePrice != undefined)
+            self.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
         self.resaleRestriction(data.ResaleRestrictionId);
         self.notes(data.Notes);
     }
     self.getOriginal = function () {
         log('getting original');
+        $("#loading").dialog('open');
+        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         self.companyEditedValue('');
         self.resaleEditedValue('');
         self.lenderFileEditedValue('');
@@ -753,7 +762,7 @@ function purchaseSummaryVM() {
             contentType: 'application/json',
             data: { portfolioNumber: self.portfolioNumber() },
             dataType: 'json',
-            async: false,
+            async: true,
             success: function (data) {
                 //log(data);
                 loadPurchaseData(data);
@@ -781,6 +790,8 @@ function purchaseSummaryVM() {
                 //self.notes(data.Notes);
                 self.updatedData(false);
                 self.originalData(true);
+                $("#loading").html("&nbsp;");
+                $("#loading").dialog('close');
             },
             error: function (xhr, status, somthing) {
                 log(status);
@@ -789,6 +800,8 @@ function purchaseSummaryVM() {
     }
     self.getUpdated = function () {
         log('getting updated');
+        $("#loading").dialog('open');
+        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         $.ajax({
             //                url: baseUrl + '/api/Portfolio/',
             url: baseUrl + '/api/MSIPortfolioEdited/',
@@ -796,7 +809,7 @@ function purchaseSummaryVM() {
             contentType: 'application/json',
             data: { portfolioNumber: self.portfolioNumber() },
             dataType: 'json',
-            async: false,
+            async: true,
             success: function (data) {
                 //log(data);
                 if (data == null) {
@@ -847,6 +860,8 @@ function purchaseSummaryVM() {
 
                     self.updatedData(true);
                     self.originalData(false);
+                    $("#loading").html("&nbsp;");
+                    $("#loading").dialog('close');
                 }
             },
             error: function (xhr, status, somthing) {
@@ -866,6 +881,9 @@ function portfolioVM() {
     self.portfolioNumber = ko.observable();
     self.portfolioNumber.subscribe(function (number) {
         if (number != '') {
+            $("#loading").dialog('open');
+            $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
+
             self.portfolioNumber(number);
             //load acqusitions portfolio data
 
@@ -876,7 +894,7 @@ function portfolioVM() {
                 contentType: 'application/json',
                 data: { portfolioNumber: self.portfolioNumber() },
                 dataType: 'json',
-                async: false,
+                async: true,
                 success: function (data) {
                     log(data);
                     self.purchaseSummarySectionVM.portfolioNumber(data.Portfolio_);
@@ -901,10 +919,12 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
+                    if(data.Face != undefined)
+                        self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
-                    self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+                    if(data.PurchasePrice != undefined)
+                        self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
 
@@ -922,6 +942,8 @@ function portfolioVM() {
                     self.purchaseSummarySectionVM.putbackTermEditedValue('');
                     self.purchaseSummarySectionVM.putbackDeadlineEditedValue('');
                     self.purchaseSummarySectionVM.notesEditedValue('');
+                    $("#loading").html("&nbsp;");
+                    $("#loading").dialog('close');
                 },
                 error: function (xhr, status, somthing) {
                     log(status);
