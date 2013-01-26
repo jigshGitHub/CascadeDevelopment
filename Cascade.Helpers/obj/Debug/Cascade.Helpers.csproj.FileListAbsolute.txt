@@ -2,3 +2,12 @@ C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Ca
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\bin\Debug\Cascade.Helpers.pdb
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Helpers\obj\Debug\Cascade.Helpers.csprojResolveAssemblyReference.cache
+C:\Projects\Cascade Project\11132012\Cascade.Helpers\bin\Debug\Cascade.Helpers.dll
+C:\Projects\Cascade Project\11132012\Cascade.Helpers\bin\Debug\Cascade.Helpers.pdb
+C:\Projects\Cascade Project\11132012\Cascade.Helpers\obj\Debug\Cascade.Helpers.dll
+C:\Projects\Cascade Project\11132012\Cascade.Helpers\obj\Debug\Cascade.Helpers.pdb
+C:\Projects\Cascade Project\11302012\Cascade.Helpers\bin\Debug\Cascade.Helpers.dll
+C:\Projects\Cascade Project\11302012\Cascade.Helpers\bin\Debug\Cascade.Helpers.pdb
+C:\Projects\Cascade Project\11302012\Cascade.Helpers\obj\Debug\Cascade.Helpers.dll
+C:\Projects\Cascade Project\11302012\Cascade.Helpers\obj\Debug\Cascade.Helpers.pdb

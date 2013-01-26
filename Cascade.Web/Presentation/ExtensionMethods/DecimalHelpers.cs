@@ -42,6 +42,7 @@ namespace Cascade.Web.Presentation.ExtensionMethods
             nfi.PercentDecimalDigits = 2;
             return String.Format(nfi, "{0:P2}", dec);
         }
-        
+
+                
     }
 }

@@ -101,30 +101,8 @@ namespace Cascade.Data.Repositories
         {
         }
     }
-
-    //Used for Collections
-    public class PortfolioRepository : RepositoryBase<TBL_Portfolio>
-    {
-        public PortfolioRepository(IDatabaseFactory dbFactory)
-            : base(dbFactory)
-        {
-        }
-        public PortfolioRepository()
-            : base(new DBFactory())
-        {
-        }
-    }
     
-    //Used for States - Testing Purpose
-    public class StateRepository : RepositoryBase<TBL_State>
-    {
-        public StateRepository(IDatabaseFactory dbFactory)  : base(dbFactory)
-        {
-        }
-        public StateRepository() : base(new DBFactory())
-        {
-        }
-    }
+   
 
     #region Sup Tables
     //Used for SupTransCode
@@ -177,6 +155,16 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+    public class SupReasonRepository : RepositoryBase<Sup_Reason>
+    {
+        public SupReasonRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SupReasonRepository() : base(new DBFactory())
+        {
+        }
+    }
+    
     #endregion
 
     #region Port Tables
@@ -231,6 +219,8 @@ namespace Cascade.Data.Repositories
         }
     }
     #endregion
+    
+    //Used for BockettCompany Table
     public class BockettCompanyRepository : RepositoryBase<Sup_BrockettCompanies>
     {
         public BockettCompanyRepository(IDatabaseFactory dbFactory)
@@ -242,17 +232,207 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+
+    #region For Views
+    //Used for Portfolio Cash Flow Report
     public class PortCashFlowRepository : RepositoryBase<vw_PortfolioCashFlow>
     {
-        public PortCashFlowRepository(IDatabaseFactory dbFactory)
+        public PortCashFlowRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortCashFlowRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Portfolio Cash Position Report
+    public class PortCashPositionRepository : RepositoryBase<vw_PortfolioCashPosition>
+    {
+        public PortCashPositionRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortCashPositionRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Collections Recon
+    public class CollectionsReconRepository : RepositoryBase<vw_CollectionsRecon>
+    {
+        public CollectionsReconRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public CollectionsReconRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Portfolio Summary
+    public class PortfolioSummaryRepository : RepositoryBase<vw_PortfolioSummary>
+    {
+        public PortfolioSummaryRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortfolioSummaryRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Portfolio Transactions
+    public class PortfolioTransactionsRepository : RepositoryBase<vw_PortfolioTransactions>
+    {
+        public PortfolioTransactionsRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PortfolioTransactionsRepository() : base(new DBFactory())
+        {
+        }
+    }
+    //Used for Add DPS check
+    public class AddDPSCheckRepository : RepositoryBase<vw_AddDPSCheck>
+    {
+        public AddDPSCheckRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public AddDPSCheckRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+    //Used for vwAccounts
+    public class vwAccountRepository : RepositoryBase<vwAccount>
+    {
+        public vwAccountRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public vwAccountRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+
+    
+
+
+    //For Recall Data
+    public class RecallDataRepository : RepositoryBase<MSI_vwRecallData>
+    {
+        public RecallDataRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public RecallDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+    //Used Media Data - MSI
+    public class MSIMediaFormRepository : RepositoryBase<MSI_MediaForm>
+    {
+        public MSIMediaFormRepository(IDatabaseFactory dbFactory)
             : base(dbFactory)
         {
         }
-        public PortCashFlowRepository()
+        public MSIMediaFormRepository()
             : base(new DBFactory())
         {
         }
     }
+
+
+    //For Recall Data - MSI
+    public class MSIRecallFormRepository : RepositoryBase<MSI_RecallForm>
+    {
+        public MSIRecallFormRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public MSIRecallFormRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+    //For DPS Data - MSI
+    public class MSIDPSFormDataRepository : RepositoryBase<MSI_DPSForm>
+    {
+        public MSIDPSFormDataRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public MSIDPSFormDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+
+    //For Media Data
+    public class MediaDataRepository : RepositoryBase<MSI_vwMediaData>
+    {
+        public MediaDataRepository(IDatabaseFactory dbFactory)  : base(dbFactory)
+        {
+        }
+        public MediaDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+    #endregion
+
+    #region R Tables
+    public class RProductCodeRepository : RepositoryBase<RPRODCDE>
+    {
+        public RProductCodeRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public RProductCodeRepository() : base(new DBFactory())
+        {
+        }
+    }
+    
+    public class RAgencyRepository : RepositoryBase<RAGENCY>
+    {
+        public RAgencyRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public RAgencyRepository() : base(new DBFactory())
+        {
+        }
+    }
+    
+    public class RTranCodeRepository : RepositoryBase<RTRANCDE>
+    {
+        public RTranCodeRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public RTranCodeRepository() : base(new DBFactory())
+        {
+        }
+    }
+        
+    #endregion
+
+    public class PeopleDataRepository : RepositoryBase<Tbl_People>
+    {
+        public PeopleDataRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public PeopleDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MoneyDataRepository : RepositoryBase<Tbl_Money>
+    {
+        public MoneyDataRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public MoneyDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+    
+    public class SourceDataRepository : RepositoryBase<Tbl_Source>
+    {
+        public SourceDataRepository(IDatabaseFactory dbFactory) : base(dbFactory)
+        {
+        }
+        public SourceDataRepository() : base(new DBFactory())
+        {
+        }
+    }
+
     public class RACCOUNTRepository : RepositoryBase<RACCOUNT>
     {
         public RACCOUNTRepository(IDatabaseFactory dbFactory)
@@ -276,6 +456,7 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+
     public class MSI_Port_Acq_OriginalRepository : RepositoryBase<MSI_Port_Acq_Original>
     {
         public MSI_Port_Acq_OriginalRepository(IDatabaseFactory dbFactory)
@@ -298,5 +479,4 @@ namespace Cascade.Data.Repositories
         {
         }
     }
-
 }

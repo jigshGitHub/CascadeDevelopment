@@ -120,8 +120,6 @@ C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Ca
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Web\obj\Debug\Cascade.Web.csprojResolveAssemblyReference.cache
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Web\obj\Debug\Cascade.Web.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Web\obj\Debug\Cascade.Web.pdb
-C:\Projects\Cascade Project\11302012\Cascade.Web\obj\Debug\Cascade.Web.dll
-C:\Projects\Cascade Project\11302012\Cascade.Web\obj\Debug\Cascade.Web.pdb
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Cascade.Web.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Cascade.Web.pdb
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Antlr3.Runtime.dll
@@ -131,6 +129,7 @@ C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Cascade.Helpers.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Cascade.UI.Controls.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\EntityFramework.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\Cascade Project\11302012\Cascade.Web\bin\MvcContrib.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\Newtonsoft.Json.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Net.Http.dll
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Net.Http.Formatting.dll
@@ -163,5 +162,8 @@ C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Web.Razor.xml
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Web.WebPages.xml
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Projects\Cascade Project\11302012\Cascade.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\Cascade Project\11302012\Cascade.Web\obj\Debug\Cascade.Web.dll
+C:\Projects\Cascade Project\11302012\Cascade.Web\obj\Debug\Cascade.Web.pdb
+C:\Projects\Cascade Project\11302012\Cascade.Web\obj\Debug\Cascade.Web.csprojResolveAssemblyReference.cache
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Web\bin\Cascade.Helpers.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Web\bin\Cascade.Helpers.pdb

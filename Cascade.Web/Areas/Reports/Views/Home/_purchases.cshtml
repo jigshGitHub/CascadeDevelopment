@@ -1,4 +1,4 @@
-﻿@model IList<Cascade.Data.Models.Port_Acq>
+﻿@model IList<Cascade.Data.Models.Purchases>
 @using Cascade.Web.Presentation.ExtensionMethods
 
 <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
@@ -13,9 +13,11 @@
     <table id="purchases" class="display">
         <thead>
             <tr> 
+                <th>Account#</th>
                 <th>Portfolio#</th>
                 <th>Closing Date</th>
                 <th>Seller</th>
+                <th>Original Balance</th>
                 <th>Purchase Price</th>
             </tr> 
         </thead> 
@@ -23,10 +25,12 @@
             @foreach (var purchase in Model)
             {
                 <tr>
-                    <td>@purchase.Portfolio_</td>
-                    <td>@purchase.ClosingDate.ConverToDate()</td>
+                    <td>@purchase.ACCOUNT</td>
+                    <td>@purchase.PRODUCT_CODE</td>
+                    <td>@purchase.PurchaseDate.ConverToDate()</td>
                     <td>@purchase.Seller</td>
-                    <td>@purchase.PurchasePrice.ToIntegerCurrency()</td>
+                    <td>@purchase.OriginalBalance.ToIntegerCurrency()</td>
+                    <td>@purchase.purchaseprice.ToIntegerCurrency()</td>
                 </tr> 
             }
         </tbody>

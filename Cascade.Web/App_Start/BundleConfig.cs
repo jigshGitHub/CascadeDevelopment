@@ -47,6 +47,7 @@ namespace Cascade.Web
                 "~/Scripts/External.js",
                 "~/Scripts/application.js",
                 "~/Scripts/jquery.formatCurrency-1.4.0.min.js",
+                 "~/Scripts/jquery.cascade.search.js",
                 "~/Scripts/plugins.js", 
                 "~/Scripts/datatable/jquery-1.4.4.min.js",
                 "~/Scripts/datatable/jquery.dataTables.min.js",

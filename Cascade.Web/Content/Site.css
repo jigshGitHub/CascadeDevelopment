@@ -284,15 +284,35 @@ td.pagination {
 {
     width: 153px;
 }
+.txtwidth
+{
+    width: 300px;
+}
+.guidwidth
+{
+    width: 250px;
+}
 .splTBwidth
 {
     width: 60px;
 }
+
+.searchtable
+{
+    background-color: lightcyan;
+    width: 80%;
+    border: solid 1px #000;
+}
 .originaltable
 {
     background-color: lightblue;
-    width: 70%;
+    width: 80%;
     border: solid 1px #000;
+}
+.searchtable td
+{
+    color:black;
+    width: 50%;
 }
 .originaltable td
 {
@@ -302,7 +322,7 @@ td.pagination {
 .PIMSDatatable
 {
     background-color: lightgreen;
-    width: 70%;
+    width: 80%;
     border: solid 1px #000;
 }
 .PIMSDatatable td
@@ -313,7 +333,7 @@ td.pagination {
 .FollowupDatatable
 {
     background-color: lightgrey;
-    width: 70%;
+    width: 80%;
     border: solid 1px #000;
 }
 .FollowupDatatable td
@@ -399,6 +419,16 @@ td.pagination {
                 height: 30px;
                 width: 80px;
  }
+
+ #findBtn {
+    background-image: url('../Content/images/search.jpg'); 
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 19px;
+    width: 19px;
+}
 /********************************************
    MvcContrib Grid Style
 ********************************************/ 
@@ -456,12 +486,4 @@ td.pagination {
 
 #basicSearchFrm td {
 
-}
-
-.editButton {
-    background-color: #40FF40;
-    color: #FFFFFF;
-    -moz-border-radius-topleft: 4px /*{cornerRadius}*/;
-    -webkit-border-radius: 4px /*{cornerRadius}*/;
-    border-radius: 4px /*{cornerRadius}*/;
 }

@@ -1,4 +1,4 @@
-﻿@model IList<Cascade.Data.Models.Port_Trans>
+﻿@model IList<Cascade.Data.Models.Sales>
 @using Cascade.Web.Presentation.ExtensionMethods
 
 <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
@@ -13,26 +13,26 @@
     <table id="sales" class="display">
         <thead>
             <tr> 
-                <th>Portfolio#</th>
-                <th>Closing Date</th>
+                <th>Account</th>
+                <th>Product Code</th>
+                <th>Sold Date</th>
                 <th>Buyer</th>
                 <th>Face Value</th>
-                <th>SalesBasis</th>
                 <th>SalesPrice</th>
-                <th>TransType</th>
+                
             </tr> 
         </thead> 
         <tbody> 
             @foreach (var sale in Model)
             {
                 <tr>
-                    <td>@sale.Portfolio_</td>
-                    <td>@sale.ClosingDate.ConverToDate()</td>
-                    <td>@sale.Buyer</td>
+                    <td>@sale.ACCOUNT</td>
+                    <td>@sale.PRODUCT_CODE</td>
+                    <td>@sale.SoldDate.ConverToDate()</td>
+                    <td>@sale.Responsibility</td>
                     <td>@sale.FaceValue.ToIntegerCurrency()</td>
-                    <td>@sale.SalesBasis</td>
                     <td>@sale.SalesPrice.ToIntegerCurrency()</td>
-                    <td>@sale.TransType</td>
+                    
                 </tr> 
             }
         </tbody>

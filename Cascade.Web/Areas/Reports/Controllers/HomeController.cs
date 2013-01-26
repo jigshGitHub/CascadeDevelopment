@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Cascade.Web.Controllers;
 using Cascade.Data.Models;
 using Cascade.Data.Repositories;
-using Cascade.Web.Areas.Collections.Models;
+using Cascade.Web.Areas.Recourse.Models;
 
 namespace Cascade.Web.Areas.Reports.Controllers
 {
@@ -41,29 +41,6 @@ namespace Cascade.Web.Areas.Reports.Controllers
             return View();
         }
 
-        [HttpPost]
-        public JsonResult EditDPSData(Form _dpsform)
-        {
-            PortDPSRepository repository;
-            Port_DPS dpsToSave;
-            try
-            {
-                repository = new PortDPSRepository();
-                if (_dpsform.ID > 0)
-                {
-                    //Edit Operation
-                    dpsToSave = new Port_DPS();
-                    Mappings.ViewModelToModelWithId(dpsToSave, _dpsform);
-                    repository.Update(dpsToSave);
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-            //return _dpsform;
-            return Json(_dpsform, JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult GetReportData(DateTime? StartDate, DateTime? EndDate, int? Company, string ToRange, string FromRange, string ReportType)
         {
             //Get Bockett Company Repository
@@ -72,9 +49,22 @@ namespace Cascade.Web.Areas.Reports.Controllers
                 //We are just setting it up// This report does not require Company 
                 Company = 1;
             }
-            BockettCompanyRepository bockettCompRepo = new BockettCompanyRepository();
+            //BockettCompanyRepository bockettCompRepo = new BockettCompanyRepository();
             //Find out Company Name
-            var _companyName = bockettCompRepo.GetAll().Where(x => x.Id == Company).SingleOrDefault().Company;
+            //var _companyName = bockettCompRepo.GetAll().Where(x => x.Id == Company).SingleOrDefault().Company;
+            var _companyName = "";
+            RProductCodeRepository rProdCodeRepo = new RProductCodeRepository();
+            if (Company == 1)
+            {
+                _companyName = rProdCodeRepo.GetAll().Where(x => x.ProductID == 1 || x.ProductID == 330).SingleOrDefault().PRODUCT_CODE;
+            }
+            else 
+            {
+                _companyName = rProdCodeRepo.GetAll().Where(x => x.ProductID == Company).SingleOrDefault().PRODUCT_CODE;
+            }
+            
+
+            var dataQueries = new DataQueries();
             //For Report based on Report Type selection
             switch (ReportType)
             {
@@ -92,67 +82,54 @@ namespace Cascade.Web.Areas.Reports.Controllers
 
                 case "CashPosition":
                     //Get the View Repository
-                    //PortCashPositionRepository portCashPositionRepo = new PortCashPositionRepository();
-                    ////Get the Report Data
-                    //var _cashPositionreportData = portCashPositionRepo.GetAll().Distinct().Where(p => p.Company == _companyName);
-                    //return PartialView("_portfolioCashPosition", _cashPositionreportData.ToList());
+                    PortCashPositionRepository portCashPositionRepo = new PortCashPositionRepository();
+                    //Get the Report Data
+                    var _cashPositionreportData = portCashPositionRepo.GetAll().Distinct().Where(p => p.Company == _companyName);
+                    return PartialView("_portfolioCashPosition", _cashPositionreportData.ToList());
 
                 case "Purchases":
-                    //Get the View Repository
-                    PortAcqRepository portAcqRepo = new PortAcqRepository();
-                    //Get the Report Data
-                    var _purchasesData = portAcqRepo.GetAll().Distinct().Where(p => p.ClosingDate >= StartDate && p.ClosingDate <= EndDate);
-                    return PartialView("_purchases", _purchasesData.ToList());
+
+                    IEnumerable<Purchases> results = dataQueries.GetPurchases(StartDate, EndDate, _companyName);
+                    return PartialView("_purchases", results);
 
                 case "Sales":
-                    //Get the View Repository
-                    PortTransRepository portTransRepo = new PortTransRepository();
-                    //Get the Report Data
-                    var _salesData = portTransRepo.GetAll().Distinct().Where(p => p.TransType == "Sale" && (p.ClosingDate >= StartDate && p.ClosingDate <= EndDate));
-                    return PartialView("_sales", _salesData.ToList());
+
+                    IEnumerable<Sales> salesresults = dataQueries.GetSales(StartDate, EndDate, _companyName);
+                    return PartialView("_sales", salesresults);
+
                      
                 case "CollectionsRecon":
                     //Get the View Repository
-                    //CollectionsReconRepository collectionsReconRepo = new CollectionsReconRepository();
-                    ////Get the Report Data
-                    //var _collectionsReconData = from collectionRecon in collectionsReconRepo.GetAll().Distinct()
-                    //                            where collectionRecon.Company == _companyName
-                    //                          && collectionRecon.ClosingDate >= StartDate
-                    //                          && collectionRecon.ClosingDate <= EndDate
-                    //                            select collectionRecon;
-                    ////return the data
-                    //return PartialView("_collectionsRecon", _collectionsReconData.ToList());
+                    CollectionsReconRepository collectionsReconRepo = new CollectionsReconRepository();
+                    //Get the Report Data
+                    var _collectionsReconData = from collectionRecon in collectionsReconRepo.GetAll().Distinct()
+                                                where collectionRecon.Company == _companyName
+                                              && collectionRecon.ClosingDate >= StartDate
+                                              && collectionRecon.ClosingDate <= EndDate
+                                                select collectionRecon;
+                    //return the data
+                    return PartialView("_collectionsRecon", _collectionsReconData.ToList());
 
-                //case "PortfolioSummary":
-                //    //Get the View Repository
-                //    PortfolioSummaryRepository portSummaryRepo = new PortfolioSummaryRepository();
-                //    //Get the Report Data
-                //    var _portSummaryData = from portSummary in portSummaryRepo.GetAll().Distinct()
-                //                           where portSummary.Company == _companyName
-                //                           select portSummary;
-                //    //return the data
-                //    return PartialView("_portfolioSummary", _portSummaryData.ToList());
+                case "PortfolioSummary":
+                    
+                    IEnumerable<PortfolioSummary> portSummaryresults = dataQueries.GetPortfolioSummaryReports(_companyName);
+                    return PartialView("_portfolioSummary", portSummaryresults);
 
-                //case "PortTransactions":
-                //    //Get the View Repository
-                //    PortfolioTransactionsRepository portTransactionsRepo = new PortfolioTransactionsRepository();
-                //    //Get the Report Data
-                //    var _portTransactionsData = from portTransaction in portTransactionsRepo.GetAll().Distinct()
-                //                                where portTransaction.Company == _companyName
-                //                                select portTransaction;
-                //    //return the data
-                //    return PartialView("_portfolioTransactions", _portTransactionsData.ToList());
+                case "PortTransactions":
+                    
+                    IEnumerable<PortfolioTransactions> portTransactionsresults = dataQueries.GetPortfolioTransactionsReports(_companyName);
+                    return PartialView("_portfolioTransactions", portTransactionsresults);
 
 
-                //case "AddDPSCheck":
-                //    //Get the View Repository
-                //    AddDPSCheckRepository portDPSRepo = new AddDPSCheckRepository();
-                //    //Get the Report Data
-                //    var _portDPSAddCheckData = from addCheckData in portDPSRepo.GetAll().Distinct()
-                //                               where addCheckData.Company == _companyName
-                //                               select addCheckData;
-                //    //return the data
-                //    return PartialView("_portDPSAddCheck", _portDPSAddCheckData.ToList());
+                case "AddDPSCheck":
+                    //Get the View Repository
+                    AddDPSCheckRepository portDPSRepo = new AddDPSCheckRepository();
+                    //Get the Report Data
+                    var _portDPSAddCheckData = from addCheckData in portDPSRepo.GetAll().Distinct()
+                                               where addCheckData.Company == _companyName
+                                               select addCheckData;
+                    //return the data
+                    return PartialView("_portDPSAddCheck", _portDPSAddCheckData.ToList());
 
                 
 

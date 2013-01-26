@@ -4,107 +4,30 @@
     <EntitySetMapping Name="TBL_CHART">
       <EntityTypeMapping TypeName="CascadeDBModel.TBL_CHART">
         <MappingFragment StoreEntitySet="TBL_CHART">
-          <ScalarProperty Name="LastCreatedBy" ColumnName="LastCreatedBy" />
-          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
-          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="DrillLevelChartIDs" ColumnName="DrillLevelChartIDs" />
-          <ScalarProperty Name="PlotGradientColor" ColumnName="PlotGradientColor" />
-          <ScalarProperty Name="ShowLabels" ColumnName="ShowLabels" />
-          <ScalarProperty Name="ShowLegend" ColumnName="ShowLegend" />
-          <ScalarProperty Name="EnableRotation" ColumnName="EnableRotation" />
-          <ScalarProperty Name="PieRadius" ColumnName="PieRadius" />
-          <ScalarProperty Name="BgAlpha" ColumnName="BgAlpha" />
-          <ScalarProperty Name="CanvasBgAlpha" ColumnName="CanvasBgAlpha" />
-          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
-          <ScalarProperty Name="CanvasBgColor" ColumnName="CanvasBgColor" />
-          <ScalarProperty Name="YaxisName" ColumnName="YaxisName" />
-          <ScalarProperty Name="XaxisName" ColumnName="XaxisName" />
-          <ScalarProperty Name="SNumberSuffix" ColumnName="SNumberSuffix" />
-          <ScalarProperty Name="NumberSuffix" ColumnName="NumberSuffix" />
-          <ScalarProperty Name="ChartID" ColumnName="ChartID" />
-          <ScalarProperty Name="SWFile" ColumnName="SWFile" />
-          <ScalarProperty Name="Caption" ColumnName="Caption" />
-          <ScalarProperty Name="TypeOfChart" ColumnName="TypeOfChart" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBL_COMPANIES">
-      <EntityTypeMapping TypeName="CascadeDBModel.TBL_COMPANIES">
-        <MappingFragment StoreEntitySet="TBL_COMPANIES">
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="IsSameBillingAddress" ColumnName="IsSameBillingAddress" />
-          <ScalarProperty Name="Notes" ColumnName="Notes" />
-          <ScalarProperty Name="EmpQuantity" ColumnName="EmpQuantity" />
-          <ScalarProperty Name="Website" ColumnName="Website" />
-          <ScalarProperty Name="AssistantPhone" ColumnName="AssistantPhone" />
-          <ScalarProperty Name="AssistantFirstName" ColumnName="AssistantFirstName" />
-          <ScalarProperty Name="AssistantLastName" ColumnName="AssistantLastName" />
-          <ScalarProperty Name="POCFax" ColumnName="POCFax" />
-          <ScalarProperty Name="POCEmail" ColumnName="POCEmail" />
-          <ScalarProperty Name="POCDepartment" ColumnName="POCDepartment" />
-          <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
-          <ScalarProperty Name="BillingZip" ColumnName="BillingZip" />
-          <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
-          <ScalarProperty Name="BillingState" ColumnName="BillingState" />
-          <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
-          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
-          <ScalarProperty Name="CompanyOwnership" ColumnName="CompanyOwnership" />
-          <ScalarProperty Name="Zip" ColumnName="Zip" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TypeOfChart" ColumnName="TypeOfChart" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="SWFile" ColumnName="SWFile" />
+          <ScalarProperty Name="ChartID" ColumnName="ChartID" />
+          <ScalarProperty Name="NumberSuffix" ColumnName="NumberSuffix" />
+          <ScalarProperty Name="SNumberSuffix" ColumnName="SNumberSuffix" />
+          <ScalarProperty Name="XaxisName" ColumnName="XaxisName" />
+          <ScalarProperty Name="YaxisName" ColumnName="YaxisName" />
+          <ScalarProperty Name="CanvasBgColor" ColumnName="CanvasBgColor" />
+          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+          <ScalarProperty Name="CanvasBgAlpha" ColumnName="CanvasBgAlpha" />
+          <ScalarProperty Name="BgAlpha" ColumnName="BgAlpha" />
+          <ScalarProperty Name="PieRadius" ColumnName="PieRadius" />
+          <ScalarProperty Name="EnableRotation" ColumnName="EnableRotation" />
+          <ScalarProperty Name="ShowLegend" ColumnName="ShowLegend" />
+          <ScalarProperty Name="ShowLabels" ColumnName="ShowLabels" />
+          <ScalarProperty Name="PlotGradientColor" ColumnName="PlotGradientColor" />
+          <ScalarProperty Name="DrillLevelChartIDs" ColumnName="DrillLevelChartIDs" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-          <ScalarProperty Name="NEXTCONTACT_DATE" ColumnName="NEXTCONTACT_DATE" />
-          <ScalarProperty Name="LASTCONTACT_DATE" ColumnName="LASTCONTACT_DATE" />
-          <ScalarProperty Name="ACTIONSTEP" ColumnName="ACTIONSTEP" />
-          <ScalarProperty Name="DiscussionTopic" ColumnName="DiscussionTopic" />
-          <ScalarProperty Name="RepFirstName" ColumnName="RepFirstName" />
-          <ScalarProperty Name="RepLastName" ColumnName="RepLastName" />
-          <ScalarProperty Name="COMPANYVALUEGOAL" ColumnName="COMPANYVALUEGOAL" />
-          <ScalarProperty Name="IsNewCompany" ColumnName="IsNewCompany" />
-          <ScalarProperty Name="POCPhone" ColumnName="POCPhone" />
-          <ScalarProperty Name="POCFirstName" ColumnName="POCFirstName" />
-          <ScalarProperty Name="POCLastName" ColumnName="POCLastName" />
-          <ScalarProperty Name="STATE" ColumnName="STATE" />
-          <ScalarProperty Name="CITY" ColumnName="CITY" />
-          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
-          <ScalarProperty Name="COMPANIESID" ColumnName="COMPANIESID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBL_Portfolio">
-      <EntityTypeMapping TypeName="CascadeDBModel.TBL_Portfolio">
-        <MappingFragment StoreEntitySet="TBL_Portfolio">
-          <ScalarProperty Name="PortfolioName" ColumnName="PortfolioName" />
-          <ScalarProperty Name="PortfolioOwner" ColumnName="PortfolioOwner" />
-          <ScalarProperty Name="WorkGroup" ColumnName="WorkGroup" />
-          <ScalarProperty Name="WorkStatusDescription" ColumnName="WorkStatusDescription" />
-          <ScalarProperty Name="Closed" ColumnName="Closed" />
-          <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
-          <ScalarProperty Name="StatuteDate" ColumnName="StatuteDate" />
-          <ScalarProperty Name="DaysRemainingInStat" ColumnName="DaysRemainingInStat" />
-          <ScalarProperty Name="Statute" ColumnName="Statute" />
-          <ScalarProperty Name="ZIP_CODE" ColumnName="ZIP_CODE" />
-          <ScalarProperty Name="STATE" ColumnName="STATE" />
-          <ScalarProperty Name="CITY" ColumnName="CITY" />
-          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
-          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
-          <ScalarProperty Name="TotalInterest" ColumnName="TotalInterest" />
-          <ScalarProperty Name="AccruedInterest" ColumnName="AccruedInterest" />
-          <ScalarProperty Name="Portfolio" ColumnName="Portfolio" />
-          <ScalarProperty Name="PortfolioID" ColumnName="PortfolioID" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
-          <ScalarProperty Name="DaysSinceLastPay" ColumnName="DaysSinceLastPay" />
-          <ScalarProperty Name="LAST_PAY_AMT" ColumnName="LAST_PAY_AMT" />
-          <ScalarProperty Name="LAST_PAY_DATE" ColumnName="LAST_PAY_DATE" />
-          <ScalarProperty Name="NAME" ColumnName="NAME" />
-          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastCreatedBy" ColumnName="LastCreatedBy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

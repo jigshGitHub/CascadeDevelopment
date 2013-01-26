@@ -36,8 +36,13 @@ namespace Cascade.Web.Areas.Search.Controllers
             return View();
         }
 
-        public ActionResult Basic(string basicSearchVal, GridSortOptions gridSortOptions, int? page)
+        public ActionResult Basic(string basicSearchVal, string columnToSort, string sortDirection, GridSortOptions gridSortOptions, int? page)
         {
+            if (Request.IsAjaxRequest())
+            {
+                gridSortOptions.Column = columnToSort;
+                gridSortOptions.Direction = (sortDirection == "ASC") ? MvcContrib.Sorting.SortDirection.Ascending : MvcContrib.Sorting.SortDirection.Descending;
+            }
             var dataQueries = new DataQueries();
             IQueryable<SearchResult> results = dataQueries.GetSearchResults(basicSearchVal);
             //return PartialView("_BasicPartial", results);
@@ -48,25 +53,32 @@ namespace Cascade.Web.Areas.Search.Controllers
                 GridSortOptions = gridSortOptions,
                 DefaultSortColumn = "ACCOUNT",
                 Page = page,
-                PageSize = 100,
+                PageSize = 50,
             }
             .Setup();
+            if (Request.IsAjaxRequest())
+                return PartialView("_BasicPartial", pagedViewModel);
             return View(pagedViewModel);
             //return PartialView("_BasicPartial",pagedViewModel);
         }
 
-        public ActionResult Advance(string account, string originator, string seller, string ssn, GridSortOptions gridSortOptions, int? page)
+        public ActionResult Advance(string account, string originator, string seller, string investor, string columnToSort, string sortDirection,GridSortOptions gridSortOptions, int? page)
         {
+            if (Request.IsAjaxRequest())
+            {
+                gridSortOptions.Column = columnToSort;
+                gridSortOptions.Direction = (sortDirection == "ASC") ? MvcContrib.Sorting.SortDirection.Ascending : MvcContrib.Sorting.SortDirection.Descending;
+            }
             if (account == "account #")
                 account = "";
             if (originator == "originator")
                 originator = "";
             if (seller == "seller")
                 seller = "";
-            if (ssn == "last 4 digits of SSN")
-                ssn = "";
+            if (investor == "investor")
+                investor = "";
             var dataQueries = new DataQueries();
-            IQueryable<SearchResult> results = dataQueries.GetSearchResults(account,originator,seller,ssn);
+            IQueryable<SearchResult> results = dataQueries.GetSearchResults(account, originator, seller, investor);
             //return PartialView("_BasicPartial", results);
             var pagedViewModel = new PagedViewModel<SearchResult>
             {
@@ -75,11 +87,13 @@ namespace Cascade.Web.Areas.Search.Controllers
                 GridSortOptions = gridSortOptions,
                 DefaultSortColumn = "ACCOUNT",
                 Page = page,
-                PageSize = 100,
+                PageSize = 20,
             }
             .Setup();
+            if (Request.IsAjaxRequest())
+                return PartialView("_BasicPartial",pagedViewModel);
             return View("Basic",pagedViewModel);
-            //return PartialView("_BasicPartial",pagedViewModel);
+            
         }
         //
         // POST: /Search/Home/Create

@@ -1,4 +1,4 @@
-﻿@model IList<Cascade.Data.Models.vw_PortfolioTransactions>
+﻿@model IList<Cascade.Data.Models.PortfolioTransactions>
 @using Cascade.Web.Presentation.ExtensionMethods
 
 <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
@@ -13,32 +13,30 @@
     <table id="portTransaction" class="display">
         <thead>
             <tr> 
+                <th>Account</th>
                 <th>Portfolio#</th>
-                <th>Closing Date</th>
-                <th>Purchase Price</th>
-                <th>Sales Price</th>
-                <th>Trans Type</th>
-                <th>Company</th>
-                <th>Lender</th>
-                <th>Agency</th>
-                <th>Seller</th>
+                <th>Responsibility</th>
+                <th>Tran Date</th>
+                <th>Amount</th>
+                <th>Trans Code</th>
+                <th>Tran Source</th>
+                
             </tr> 
         </thead> 
         <tbody> 
             @foreach (var portTransaction in Model)
             {
                 <tr>
-                    <td>@portTransaction.Portfolio_</td>
-                    <td>@portTransaction.ClosingDate.ConverToDate()</td>
-                    <td>@portTransaction.PurchasePrice.ToIntegerCurrency()</td>
-                    <td>@portTransaction.SalesPrice.ToIntegerCurrency()</td>
-                    <td>@portTransaction.TransType</td>
-                    <td>@portTransaction.Company</td>
-                    <td>@portTransaction.Lender_FileDescription</td>
-                    <td>@portTransaction.Agency</td>
-                    <td>@portTransaction.Seller</td>
+                    <td>@portTransaction.ACCOUNT</td>
+                    <td>@portTransaction.PRODUCT_CODE</td>
+                    <td>@portTransaction.Responsibility</td>
+                    <td>@portTransaction.Tran_Date.ConverToDate()</td>
+                    <td>@portTransaction.Amount.ToIntegerCurrency()</td>
+                    <td>@portTransaction.TRAN_CODE</td>
+                    <td>@portTransaction.TRAN_SOURCE</td>
                 </tr> 
             }
         </tbody>
     </table>
 </div>
+

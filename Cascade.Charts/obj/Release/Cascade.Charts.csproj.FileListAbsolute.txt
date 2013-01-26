@@ -2,14 +2,3 @@ C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Re
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\bin\Release\Cascade.Charts.pdb
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Release\Cascade.Charts.dll
 C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\Cascade.Charts\obj\Release\Cascade.Charts.pdb
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Charts.dll
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Charts.pdb
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Data.dll
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Helpers.dll
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\EntityFramework.dll
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Data.pdb
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\Cascade.Helpers.pdb
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Release\EntityFramework.xml
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Release\Cascade.Charts.csprojResolveAssemblyReference.cache
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Release\Cascade.Charts.dll
-C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Release\Cascade.Charts.pdb

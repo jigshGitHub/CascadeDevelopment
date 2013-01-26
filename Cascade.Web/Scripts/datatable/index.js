@@ -2,113 +2,12 @@
 
 $(document).ready(function () {
 
-    //alert("here beginning");
-    //get Window Location
-    var windlowLocation = window.location.href.split('/');
-    //Get BaseURL Info
-    var baseUrl = windlowLocation[0] + '//' + windlowLocation[2] + '/' + windlowLocation[3];
-
-    //var baseUrlColl = windlowLocation[0] + '//' + windlowLocation[2] + '/' + windlowLocation[3] + '/' + windlowLocation[4];
-    //alert(baseUrl);
-    //alert(baseUrlColl);
-
-    //Create Ajax Source - For CRM Company
-    var _ajaxSource = baseUrl + "/Company/AjaxHandler";
-    //For Collections
-    var _ajaxSourceColl = baseUrl + "/Home/AjaxHandler";
-                
-    //alert(_ajaxSourceColl);
-    //if ($("#myCompanyTable").length != 0) {
-    //    var oTable = $('#myCompanyTable').dataTable({
-    //        "bServerSide": true,
-    //        "sAjaxSource": _ajaxSource,
-    //        "bProcessing": true,
-    //        "aoColumns": [
-    //                        {
-    //                            "sName": "COMPANIESID",
-    //                            "bSearchable": false,
-    //                            "bSortable": false,
-    //                            "fnRender": function (oObj) {
-    //                                return '<a href=\"Company/Details/' + oObj.aData[0] + '\">View</a>';
-    //                            }
-    //                        },
-    //                        { "sName": "COMPANYNAME" },
-    //                        { "sName": "POCLastName" },
-    //                        { "sName": "POCFirstName" },
-    //                        { "sName": "CITY" },
-    //                        { "sName": "Country" }
-    //        ]
-    //    });
-
-    //}
-    
-    //Used for Collections - myCollectionsTable
-    //if ($("#myCollectionsTable").length != 0) {
-    //    var oCollTable = $('#myCollectionsTable').dataTable({
-    //        "bServerSide": true,
-    //        "sAjaxSource": _ajaxSourceColl,
-    //        "bProcessing": true,
-    //        "aoColumns": [
-    //                        {
-    //                            "sName": "ACCOUNT",
-    //                            "bSearchable": false,
-    //                            "bSortable": false,
-    //                            "fnRender": function (oObj) {
-    //                                return '<a href=\"Home/Details/' + oObj.aData[0] + '\">View</a>';
-    //                            }
-    //                        },
-    //                        { "sName": "ACCOUNT" },
-    //                        { "sName": "PortfolioName" },
-    //                        { "sName": "PortfolioOwner" },
-    //                        { "sName": "NAME" },
-    //                        { "sName": "LAST_PAY_DATE" },
-    //                        { "sName": "LAST_PAY_AMT" },
-    //                        { "sName": "DaysSinceLastPay" },
-    //                        { "sName": "Balance" },
-    //                        { "sName": "AccruedInterest" },
-    //                        { "sName": "TotalInterest" },
-    //                        { "sName": "ADDRESS1" },
-    //                        { "sName": "CITY" },
-    //                        { "sName": "STATE" },
-    //                        { "sName": "ZIP_CODE" },
-    //                        { "sName": "WorkStatusDescription" },
-    //                        { "sName": "WorkGroup" }
-    //        ]
-    //    });
-    //}
-    
-    //Used for Collections - myDPSTable
-    //if ($("#myDPSTable").length != 0) {
-    //    //alert("let us start processing");
-    //    var oCollTable = $('#myDPSTable').dataTable({
-    //        "bServerSide": true,
-    //        "sAjaxSource": _ajaxSourceColl,
-    //        "bProcessing": true,
-    //        "aoColumns": [
-    //                        {
-    //                            "sName": "ID",
-    //                            "bSearchable": false,
-    //                            "bSortable": false,
-    //                            "fnRender": function (oObj) {
-    //                                return '<a href=\"Home/Details/' + oObj.aData[0] + '\">View</a>';
-    //                            }
-    //                        },
-    //                        { "sName": "Portfolio" },
-    //                        { "sName": "Amount", "sType": "currency" },
-    //                        { "sName": "DateRec" },
-    //                        { "sName": "TranDate"},
-    //                        { "sName": "Name" },
-    //                        { "sName": "OriginalAccount" },
-    //                        { "sName": "PIMSAccount" }
-                            
-    //        ]
-    //    });
-    //}
-        
+            
     //View Company Records
     if ($("#companyRecords").length != 0) {
         $('#companyRecords').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     {
                       "bSearchable": false,
@@ -128,6 +27,7 @@ $(document).ready(function () {
     if ($("#dpsRecords").length != 0) {
         $('#dpsRecords').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     {
                         "bSearchable": false,
@@ -141,16 +41,277 @@ $(document).ready(function () {
                     null,
                     null,
                     null
+                    
                 ]
             });
     }
 
+
+    //View People Records
+    if ($("#peopleRecords").length != 0) {
+        $('#peopleRecords').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null
+
+                ]
+            });
+    }
+
+    //View Money Records
+    if ($("#moneyRecords").length != 0) {
+        $('#moneyRecords').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                     { "sType": "currency" }
+
+                ]
+            });
+    }
+
+    //View Recall Records
+    if ($("#recallRecords").length != 0) {
+        $('#recallRecords').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    { "sType": "currency" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                   
+                ]
+            });
+    }
+
+    //Recalls Upload Report
+    if ($("#recallsUpload").length != 0) {
+        $('#recallsUpload').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null
+                    
+                ]
+            });
+    }
+
+    //Recalls Not Closed Report
+    if ($("#recallsNotClosed").length != 0) {
+        $('#recallsNotClosed').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    { "sType": "currency" },
+                    null
+                 ]
+            });
+    }
+
+    
+    //Add Seller Check Report
+    if ($("#addSellerCheck").length != 0) {
+        $('#addSellerCheck').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    { "sType": "currency" },
+                    null
+                ]
+            });
+    }
+
+    //Recalls No Note Sent
+    if ($("#recallsNoNoteSent").length != 0) {
+        $('#recallsNoNoteSent').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    { "sType": "currency" },
+                    null
+                ]
+            });
+    }
+
+    //Recalls Not Uploaded
+    if ($("#recallsNotUploaded").length != 0) {
+        $('#recallsNotUploaded').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    { "sType": "currency" },
+                    null
+                ]
+            });
+    }
+
+    //Media Not Submitted
+    if ($("#mediaNotSubmitted").length != 0) {
+        $('#mediaNotSubmitted').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+
+    //Media Not Received
+    if ($("#mediaNotReceived").length != 0) {
+        $('#mediaNotReceived').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+
+    //Media Not Forwarded
+    if ($("#mediaNotForwarded").length != 0) {
+        $('#mediaNotForwarded').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+
+    //Media Not Confirmed
+    if ($("#mediaNotConfirmed").length != 0) {
+        $('#mediaNotConfirmed').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+
+
+    //View Media Records
+    if ($("#mediaRecords").length != 0) {
+        $('#mediaRecords').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    { "sType": "currency" },
+                    { "sType": "currency" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                    
+                ]
+            });
+    }
 
     //For Portfolio Cash Flow Report
     if ($("#portCashFlow").length != 0)
     {
         $('#portCashFlow').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
@@ -166,6 +327,7 @@ $(document).ready(function () {
     {
         $('#portCashPosition').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
@@ -182,10 +344,13 @@ $(document).ready(function () {
     if ($("#purchases").length != 0) {
         $('#purchases').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
                     null,
+                    null,
+                    { "sType": "currency" },
                     { "sType": "currency" }
                 ]
             });
@@ -195,14 +360,14 @@ $(document).ready(function () {
     if ($("#sales").length != 0) {
         $('#sales').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
                     null,
-                    { "sType": "currency" },
                     null,
                     { "sType": "currency" },
-                    null
+                    { "sType": "currency" }
                 ]
             });
    
@@ -212,6 +377,7 @@ $(document).ready(function () {
     if ($("#CollectionRecon").length != 0) {
         $('#CollectionRecon').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
@@ -226,15 +392,13 @@ $(document).ready(function () {
     if ($("#portSummary").length != 0) {
         $('#portSummary').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
-                    { "sType": "currency" },
-                    null,
                     null,
                     { "sType": "currency" },
-                    { "sType": "currency" },
-                    { "sType": "currency" },
+                    null,
                     null,
                     null
                  ]
@@ -244,14 +408,13 @@ $(document).ready(function () {
     if ($("#portTransaction").length != 0) {
         $('#portTransaction').dataTable(
             {
+                "bFilter": false,
                 "aoColumns": [
                     null,
                     null,
+                    null,
+                    null,
                     { "sType": "currency" },
-                    { "sType": "currency" },
-                    null,
-                    null,
-                    null,
                     null,
                     null
                 ]
@@ -261,6 +424,7 @@ $(document).ready(function () {
     if ($("#adddpscheck").length != 0) {
         $('#adddpscheck').dataTable(
              {
+                 "bFilter": false,
                  "aoColumns": [
                      null,
                      null,
@@ -274,9 +438,9 @@ $(document).ready(function () {
     }
 
     //For All Reports where Company Name is not required
-    if ($('#reportType').val() == 'Purchases' || $('#reportType').val() == 'Sales') {
-        $('#companytr').hide();
-    }
+    //if ($('#reportType').val() == 'Purchases' || $('#reportType').val() == 'Sales') {
+      //  $('#companytr').hide();
+    //}
 
     //For All Reports where StartDate and EndDate is not required
     if ($('#reportType').val() == 'CashPosition'
@@ -367,6 +531,117 @@ $(document).ready(function () {
         else if (isNaN(y)) return -1;
         return ((x < y) ? 1 : ((x > y) ? -1 : 0));
     };
+
+    //Used for Search Results - Left side navigation
+    if ($("#searchRecords").length != 0) {
+        $('#searchRecords').dataTable();
+    }
+
+    //"bFilter": false 
+
+    //alert("here beginning");
+    //get Window Location
+    //var windlowLocation = window.location.href.split('/');
+    //Get BaseURL Info
+    //var baseUrl = windlowLocation[0] + '//' + windlowLocation[2] + '/' + windlowLocation[3];
+
+    //var baseUrlColl = windlowLocation[0] + '//' + windlowLocation[2] + '/' + windlowLocation[3] + '/' + windlowLocation[4];
+    //alert(baseUrl);
+    //alert(baseUrlColl);
+
+    //Create Ajax Source - For CRM Company
+    //var _ajaxSource = baseUrl + "/Company/AjaxHandler";
+    //For Collections
+    //var _ajaxSourceColl = baseUrl + "/Home/AjaxHandler";
+
+    //alert(_ajaxSourceColl);
+    //if ($("#myCompanyTable").length != 0) {
+    //    var oTable = $('#myCompanyTable').dataTable({
+    //        "bServerSide": true,
+    //        "sAjaxSource": _ajaxSource,
+    //        "bProcessing": true,
+    //        "aoColumns": [
+    //                        {
+    //                            "sName": "COMPANIESID",
+    //                            "bSearchable": false,
+    //                            "bSortable": false,
+    //                            "fnRender": function (oObj) {
+    //                                return '<a href=\"Company/Details/' + oObj.aData[0] + '\">View</a>';
+    //                            }
+    //                        },
+    //                        { "sName": "COMPANYNAME" },
+    //                        { "sName": "POCLastName" },
+    //                        { "sName": "POCFirstName" },
+    //                        { "sName": "CITY" },
+    //                        { "sName": "Country" }
+    //        ]
+    //    });
+
+    //}
+
+    //Used for Collections - myCollectionsTable
+    //if ($("#myCollectionsTable").length != 0) {
+    //    var oCollTable = $('#myCollectionsTable').dataTable({
+    //        "bServerSide": true,
+    //        "sAjaxSource": _ajaxSourceColl,
+    //        "bProcessing": true,
+    //        "aoColumns": [
+    //                        {
+    //                            "sName": "ACCOUNT",
+    //                            "bSearchable": false,
+    //                            "bSortable": false,
+    //                            "fnRender": function (oObj) {
+    //                                return '<a href=\"Home/Details/' + oObj.aData[0] + '\">View</a>';
+    //                            }
+    //                        },
+    //                        { "sName": "ACCOUNT" },
+    //                        { "sName": "PortfolioName" },
+    //                        { "sName": "PortfolioOwner" },
+    //                        { "sName": "NAME" },
+    //                        { "sName": "LAST_PAY_DATE" },
+    //                        { "sName": "LAST_PAY_AMT" },
+    //                        { "sName": "DaysSinceLastPay" },
+    //                        { "sName": "Balance" },
+    //                        { "sName": "AccruedInterest" },
+    //                        { "sName": "TotalInterest" },
+    //                        { "sName": "ADDRESS1" },
+    //                        { "sName": "CITY" },
+    //                        { "sName": "STATE" },
+    //                        { "sName": "ZIP_CODE" },
+    //                        { "sName": "WorkStatusDescription" },
+    //                        { "sName": "WorkGroup" }
+    //        ]
+    //    });
+    //}
+
+    //Used for Collections - myDPSTable
+    //if ($("#myDPSTable").length != 0) {
+    //    //alert("let us start processing");
+    //    var oCollTable = $('#myDPSTable').dataTable({
+    //        "bServerSide": true,
+    //        "sAjaxSource": _ajaxSourceColl,
+    //        "bProcessing": true,
+    //        "aoColumns": [
+    //                        {
+    //                            "sName": "ID",
+    //                            "bSearchable": false,
+    //                            "bSortable": false,
+    //                            "fnRender": function (oObj) {
+    //                                return '<a href=\"Home/Details/' + oObj.aData[0] + '\">View</a>';
+    //                            }
+    //                        },
+    //                        { "sName": "Portfolio" },
+    //                        { "sName": "Amount", "sType": "currency" },
+    //                        { "sName": "DateRec" },
+    //                        { "sName": "TranDate"},
+    //                        { "sName": "Name" },
+    //                        { "sName": "OriginalAccount" },
+    //                        { "sName": "PIMSAccount" }
+
+    //        ]
+    //    });
+    //}
+
 
     //Use for State DDL
     //$(function () {
@@ -508,8 +783,6 @@ $(document).ready(function () {
     //        });
     //    }
     //});
-    if ($("#searchRecords").length != 0) {
-        $('#searchRecords').dataTable();
-    }
+            
 });
 

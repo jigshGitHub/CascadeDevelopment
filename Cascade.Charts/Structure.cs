@@ -209,7 +209,7 @@ namespace Cascade.Charts
                             //}
                         }
                         break;
-                    
+
                     default:
                         break;
                 }
@@ -331,7 +331,7 @@ namespace Cascade.Charts
                             {
                                 try
                                 {
-                                    this.SetsCollection.Add(new SetValue { Color = colorCodes[index].ToString(), Label = record.ToString(), Value = values[index].ToString()});
+                                    this.SetsCollection.Add(new SetValue { Color = colorCodes[index].ToString(), Label = record.ToString(), Value = values[index].ToString() });
                                 }
                                 catch (System.InvalidOperationException)
                                 {
@@ -441,10 +441,10 @@ namespace Cascade.Charts
 
         public new void LoadChart()
         {
-            DataQueries queries=null;
+            DataQueries queries = null;
             //List<string> colorCodes = ColorCodeHelper.GetColorCodes();
-            int index=0;
-            string [] colors= ConfigurationManager.AppSettings["colorCodes"].Split(new char[] { '#'});
+            int index = 0;
+            string[] colors = ConfigurationManager.AppSettings["colorCodes"].Split(new char[] { '#' });
             try
             {
                 queries = new DataQueries();
@@ -518,7 +518,7 @@ namespace Cascade.Charts
                         }
                         break;
                     case ChartID.PortfolioOwnerBreakdown:
-                        
+
                         portfiloData = queries.GetPortfolioOwner();
                         if (portfiloData != null)
                         {

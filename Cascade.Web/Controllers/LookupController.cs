@@ -14,6 +14,7 @@ namespace Cascade.Web.Controllers
         {
             IEnumerable<LookUp> lookupData = null;
             List<LookUp> data = new List<LookUp>();
+            //SupCompanyRepository supCompanyRepo = null;
             switch (id)
             {
                 case "TransCode":
@@ -32,18 +33,8 @@ namespace Cascade.Web.Controllers
                                  select new LookUp(pmtType.Payment_Type_ID_code.ToString() + GetDescriptionDetails(pmtType.Payment_Type_ID), pmtType.Payment_Type_ID_code.ToString());
                     break;
                 case "Portfolio":
-                    PortAcqRepository portfolioRepo = new PortAcqRepository();
-                    //lookupData = from port in portfolioRepo.GetAll().OrderBy(x => x.Portfolio_)
-                    //             select new LookUp(port.Portfolio_, port.Portfolio_);
-                    
-                    //data.Add(new LookUp("GMC001","GMC001"));
-                    //data.Add(new LookUp("GMC002","GMC002"));
-                    //data.Add(new LookUp("GMC003","GMC003"));
-                    //data.Add(new LookUp("GMC004","GMC004"));
-                    //lookupData = data.AsEnumerable<LookUp>();
-                    RACCOUNTRepository repo = new RACCOUNTRepository();
-                    lookupData = from account in repo.GetAll().Distinct(new Product_CodeDistinct())
-                                 select new LookUp(account.PRODUCT_CODE, account.PRODUCT_CODE);
+                    DataQueries query = new DataQueries();
+                    lookupData = query.GetDistinctProductCodes();
 
                     break;
                 case "PortfolioOriginal":
@@ -60,7 +51,7 @@ namespace Cascade.Web.Controllers
                     //lookupData = data.AsEnumerable<LookUp>();
                     ReSaleRestrictionRepository resaleRepo = new ReSaleRestrictionRepository();
                     lookupData = from reSale in resaleRepo.GetAll()
-                                 select new LookUp(reSale.Restriction,reSale.Value.ToString());
+                                 select new LookUp(reSale.Restriction, reSale.Value.ToString());
                     break;
                 case "PutbackTerm":
                     data = new List<LookUp>();
@@ -94,6 +85,41 @@ namespace Cascade.Web.Controllers
                     lookupData = from investor in supCompanyRepo.GetAll().Where(record => record.Type == id).OrderBy(x => x.Agency)
                                  select new LookUp(investor.Name, investor.Agency);
                     break;
+                case "RProdCode":
+                    RProductCodeRepository rprodCodeRepo = new RProductCodeRepository();
+                    lookupData = from prodCode in rprodCodeRepo.GetAll().OrderBy(x => x.PRODUCT_CODE)
+                                 select new LookUp(prodCode.PRODUCT_CODE + GetDescriptionDetails(prodCode.PortfolioOwner), prodCode.ProductID.ToString());
+                    break;
+                case "RTranCode":
+                    RTranCodeRepository rtranCodeRepo = new RTranCodeRepository();
+                    lookupData = from tranCode in rtranCodeRepo.GetAll().OrderBy(x => x.TRAN_CODE)
+                                 select new LookUp(tranCode.TRAN_CODE + GetDescriptionDetails(tranCode.DESCR), tranCode.TRAN_CODE);
+                    break;
+                case "Status":
+                    SupStatusRepository supStatusRepo = new SupStatusRepository();
+                    lookupData = from status in supStatusRepo.GetAll().OrderBy(x => x.WorkGroup)
+                                 select new LookUp(status.Status + GetDescriptionDetails(status.WorkGroup), status.Status);
+                    break;
+                case "Reason":
+                    SupReasonRepository supReasonRepo = new SupReasonRepository();
+                    lookupData = from reason in supReasonRepo.GetAll().OrderBy(x => x.Reason)
+                                 select new LookUp(reason.Reason, reason.Reason);
+                    break;
+
+                case "MoneySource":
+                    SourceDataRepository sourceRepo = new SourceDataRepository();
+                    lookupData = from source in sourceRepo.GetAll().OrderBy(x => x.SText)
+                                 select new LookUp(source.SText, source.SID.ToString());
+                    break;
+
+                case "People":
+                    PeopleDataRepository peopleRepo = new PeopleDataRepository();
+                    lookupData = from people in peopleRepo.GetAll().OrderBy(x => x.FName)
+                                 select new LookUp(people.FName + " " +  people.LName, people.PID.ToString());
+                    break;
+                //People
+
+
                 default:
                     break;
             }
@@ -116,23 +142,22 @@ namespace Cascade.Web.Controllers
                 return "";
             }
         }
-    }
-
-    public class Product_CodeDistinct : IEqualityComparer<RACCOUNT>
-    {
-
-        #region IEqualityComparer<Task> Members
-
-        public bool Equals(RACCOUNT x, RACCOUNT y)
+        public class Product_CodeDistinct : IEqualityComparer<RACCOUNT>
         {
-            return x.PRODUCT_CODE == y.PRODUCT_CODE;
-        }
 
-        public int GetHashCode(RACCOUNT obj)
-        {
-            return obj.PRODUCT_CODE.GetHashCode();
-        }
+            #region IEqualityComparer<Task> Members
 
-        #endregion
+            public bool Equals(RACCOUNT x, RACCOUNT y)
+            {
+                return x.PRODUCT_CODE == y.PRODUCT_CODE;
+            }
+
+            public int GetHashCode(RACCOUNT obj)
+            {
+                return obj.PRODUCT_CODE.GetHashCode();
+            }
+
+            #endregion
+        }
     }
 }

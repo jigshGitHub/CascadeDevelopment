@@ -1,4 +1,4 @@
-﻿@model IList<Cascade.Data.Models.vw_PortfolioSummary>
+﻿@model IList<Cascade.Data.Models.PortfolioSummary>
 @using Cascade.Web.Presentation.ExtensionMethods
 
 <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
@@ -14,31 +14,27 @@
         <thead>
             <tr> 
                 <th>Portfolio#</th>
-                <th>Closing Date</th>
-                <th>Face</th>
-                <th>Costbasis</th>
-                <th>Lender</th>
-                <th>Purchase Price</th>
-                <th>Sum of Sales Price</th>
-                <th>CashPos</th>
-                <th>Return on Capital</th>
-                <th>irrIRR</th>
+                <th>Type</th>
+                <th>Accounts</th>
+                <th>Balance</th>
+                <th>Industry</th>
+                <th>Seller</th>
+                <th>Status</th>
+                
             </tr> 
         </thead> 
         <tbody> 
             @foreach (var portSummary  in Model)
             {
                 <tr>
-                    <td>@portSummary.Portfolio_</td>
-                    <td>@portSummary.ClosingDate.ConverToDate()</td>
-                    <td>@portSummary.Face.ToIntegerCurrency()</td>
-                    <td>@portSummary.CostBasis</td>
-                    <td>@portSummary.Lender_FileDescription</td>
-                    <td>@portSummary.PurchasePrice.ToIntegerCurrency()</td>
-                    <td>@portSummary.SumOfSalesPrice.ToIntegerCurrency()</td>
-                    <td>@portSummary.CashPos.ToIntegerCurrency()</td>
-                    <td>@portSummary.Return_on_Capital</td>
-                    <td>@portSummary.irrIRR</td>
+                    <td>@portSummary.Description</td>
+                    <td>@portSummary.Type</td>
+                    <td>@portSummary.Accounts</td>
+                    <td>@portSummary.Balance.ToIntegerCurrency()</td>
+                    <td>@portSummary.ShortDescription</td>
+                    <td>@portSummary.Seller</td>
+                    <td>@portSummary.Status</td>
+
                 </tr> 
             }
         </tbody>

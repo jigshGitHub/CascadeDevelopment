@@ -1,3 +1,7 @@
+/*
+executed on 139 01/25/2013 at around 2:00 PM
+*/
+
 USE [CascadeDB]
 GO
 
@@ -54,6 +58,13 @@ BEGIN
 END
 ELSE
 BEGIN
+	/*
+	SELECT 
+	PRODUCT_CODE AS [Portfolio#],PurchaseDate AS [Cut-OffDate],'' As [ClosingDate], '' As [Lender/FileDescription],Seller,Avg(PurchasePrice)As  CostBasis,SUM(OriginalBalance) As Face, SUM(OriginalBalance) * Avg(PurchasePrice) As [PurchasePrice],Count(Account) AS [#ofAccts],'' As PutBackTerm ,'' As[PutbackDeadline],'' As Notes,'' As [ResaleRestrictionId],PortfolioOwner As [Company]
+	FROM vwAccounts WHERE PRODUCT_CODE = @productCode
+	Group by PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice,PurchaseDate;
+	*/
+
 	SELECT 
 	Count(Account) #OfAccounts,PRODUCT_CODE,PortfolioOwner,Seller,PurchasePrice As CostBasis,SUM(OriginalBalance) As FaceValue,PurchaseDate
 	INTO #tmpPortfolioData
