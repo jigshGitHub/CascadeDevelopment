@@ -577,6 +577,57 @@ namespace Cascade.Data.Repositories
             return portfolio;
         }
 
+        public IEnumerable<MSI_Port_SalesTrans_Original> GetPortfolioSalesSummary(string productCode)
+        {
+            MSI_Port_SalesTrans_Original salesTransaction = null;
+            DBFactory db;
+            List<MSI_Port_SalesTrans_Original> salesTransactions = null;
+            System.Data.DataSet ds;
+            try
+            {
+                salesTransaction = new MSI_Port_SalesTrans_Original();
+                db = new DBFactory();
+                ds = db.ExecuteDataset("sp_GetPortfolioSalesSummary", "PurchaseSalesSummary", new SqlParameter("@productCode", productCode));
+
+                if (ds.Tables["PurchaseSalesSummary"].Rows.Count > 0)
+                {
+                    salesTransactions = new List<MSI_Port_SalesTrans_Original>();
+                    foreach (System.Data.DataRow dr in ds.Tables["PurchaseSalesSummary"].Rows)
+                    {
+                        salesTransaction.Portfolio_ = dr["Portfolio#"].ToString();
+                        salesTransaction.Buyer = dr["Buyer"].ToString();
+                        if(dr["SalesBasis"] != DBNull.Value)
+                            salesTransaction.SalesBasis = Convert.ToDouble(dr["SalesBasis"].ToString());
+                        if (dr["FaceValue"] != DBNull.Value)
+                            salesTransaction.FaceValue = Convert.ToDecimal(dr["FaceValue"].ToString());
+                        if (dr["Cut-OffDate"] != DBNull.Value)
+                            salesTransaction.Cut_OffDate = DateTime.Parse(dr["Cut-OffDate"].ToString());
+                        if (dr["#ofAccts"] != DBNull.Value)
+                            salesTransaction.C_ofAccts = Convert.ToDouble(dr["#ofAccts"].ToString());
+                        if (dr["SalesPrice"] != DBNull.Value)
+                            salesTransaction.SalesPrice = Convert.ToDecimal(dr["SalesPrice"].ToString());
+                        DateTime closingDate;
+                        if (DateTime.TryParse(dr["ClosingDate"].ToString(), out closingDate))
+                            salesTransaction.ClosingDate = closingDate;
+                        salesTransaction.Lender = dr["Lender"].ToString();
+                        int putbackTermDays;
+                        if (int.TryParse(dr["PutBackTerm"].ToString(), out putbackTermDays))
+                            salesTransaction.PutbackTerm_days_ = putbackTermDays;
+                        DateTime putbackDeadLine;
+                        if (DateTime.TryParse(dr["PutbackDeadLine"].ToString(), out putbackDeadLine))
+                            salesTransaction.PutbackDeadline = putbackDeadLine;
+                        salesTransaction.Notes = dr["Notes"].ToString();
+                        salesTransactions.Add(salesTransaction);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+            return salesTransactions.AsEnumerable<MSI_Port_SalesTrans_Original>();
+        }
+
         public IEnumerable<LookUp> GetDistinctProductCodes()
         {
             DBFactory db;
@@ -599,6 +650,32 @@ namespace Cascade.Data.Repositories
             catch (Exception ex)
             {
                 throw new Exception("Exception in DataQueries.GetSearchResults:" + ex.Message);
+            }
+            return data.AsQueryable<LookUp>();
+        }
+
+        public IEnumerable<LookUp> GetDistinctResponsibility()
+        {
+            DBFactory db;
+            SqlDataReader rdr;
+            List<LookUp> data = null;
+            try
+            {
+                db = new DBFactory();
+                rdr = db.ExecuteReader("MSI_sp_GetDistinctResponsibility");
+                data = new List<LookUp>();
+                LookUp record;
+                while (rdr.Read())
+                {
+                    record = new LookUp(rdr["RESPONSIBILITY"].ToString(), rdr["RESPONSIBILITY"].ToString());
+
+                    data.Add(record);
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception in DataQueries.GetDistinctResponsibility:" + ex.Message);
             }
             return data.AsQueryable<LookUp>();
         }

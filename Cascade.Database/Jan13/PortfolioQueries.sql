@@ -20,14 +20,16 @@ Group By PRODUCT_CODE,PortfolioOwner,Seller,PurchaseDate;
 DROP Table #tmpPortfolioData;
 
 EXEC sp_GetPortfolioPurchaseSummary 'GMC002'
-EXEC sp_GetPortfolioPurchaseSummary 'GMC004'
-select distinct seller from RACCOUNT
 -------------------------------------------------------------------------------------------------------
 SELECT Portfolio,PRODUCT_CODE,RESPONSIBILITY,Seller,SalesPrice As SalesBasis,OriginalBalance As FaceValue,SoldDate
 FROM vwAccounts
-WHERE PRODUCT_CODE = 'GMC002';
+WHERE PRODUCT_CODE = 'GMC003' 
+--ANd RESPONSIBILITY = 'ARCHES'
 
-SELECT PRODUCT_CODE,RESPONSIBILITY,Seller,SalesPrice As SalesBasis,Sum(OriginalBalance) As FaceValue,SoldDate
+SELECT PRODUCT_CODE AS Portfolio#, SoldDate AS [Cut-OffDate],'' As [ClosingDate],'' As Lender,RESPONSIBILITY As Buyer,Seller,(Sum(OriginalBalance) * AVG(SalesPrice)) As SalesPrice, AVG(SalesPrice) As SalesBasis,Sum(OriginalBalance) As FaceValue,Count(Account) As #ofAccts,'' As [PutbackTerm(days)], '' As [PutbackDeadline], '' As Notes
 FROM vwAccounts
-WHERE PRODUCT_CODE = 'GMC002'
+WHERE PRODUCT_CODE = 'GMC003' 
+--ANd RESPONSIBILITY = 'ARCHES'
 Group By PRODUCT_CODE,RESPONSIBILITY,Seller,SalesPrice,SoldDate
+
+EXEC sp_GetPortfolioSalesSummary 'GMC002'

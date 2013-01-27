@@ -49,6 +49,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\AccountActivity.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountPaymentPlan.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountStatute.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Applications.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Paths.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_PersonalizationAllUsers.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_PersonalizationPerUser.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Profile.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Roles.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_SchemaVersions.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Users.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_WebEvent_Events.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CascadeEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +103,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CascadeEDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CBA.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBRAccountStatu.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBRBankruptStatu.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBRDisputeStatu.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBRSpecialStatu.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DebtorsEmployer.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DebtorsVehicle.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Division.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Industry.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LastCallResult.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LookUp.cs" />
     <Compile Include="Models\MSI_DPSForm.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
@@ -75,6 +147,12 @@
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Port_Acq_Original.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_Port_SalesTrans_Edited.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_Port_SalesTrans_Original.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_RecallForm.cs">
@@ -96,6 +174,9 @@
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_vwSearch.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaperType.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PortfolioPieRptVM.cs" />
@@ -135,6 +216,9 @@
     <Compile Include="Models\recallmaster.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResponsibilityType.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RFINTRAN.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
@@ -150,7 +234,25 @@
     <Compile Include="Models\RTRANCDE.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Score.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SearchResult.cs" />
+    <Compile Include="Models\Segment.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SegmentType.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SettlementRequest.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatusType.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatuteType.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Sup_BrockettCompanies.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
@@ -176,6 +278,15 @@
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_UploadRecalls.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Surname.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaskCategory.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblIRR.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Categories.cs">
@@ -209,6 +320,18 @@
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_State.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeZone.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOT_CALL_ATMPS.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOT_CALL_COST.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOT_CALL_DURATION.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vwAccount.cs">
@@ -248,6 +371,15 @@
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_QueryPortCashPosSum.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WKDY_CALL_ATMPS.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WKND_CALL_ATMPS.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkStatu.cs">
       <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\DataFactory.cs" />

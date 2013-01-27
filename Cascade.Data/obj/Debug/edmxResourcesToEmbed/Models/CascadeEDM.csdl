@@ -1,12 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CascadeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="CascadeDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountActivities" EntityType="CascadeDBModel.AccountActivity" />
+    <EntitySet Name="AccountPaymentPlans" EntityType="CascadeDBModel.AccountPaymentPlan" />
+    <EntitySet Name="AccountStatutes" EntityType="CascadeDBModel.AccountStatute" />
+    <EntitySet Name="aspnet_Applications" EntityType="CascadeDBModel.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="CascadeDBModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="CascadeDBModel.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="CascadeDBModel.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="CascadeDBModel.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="CascadeDBModel.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="CascadeDBModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="CascadeDBModel.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="CascadeDBModel.aspnet_Users" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="CascadeDBModel.aspnet_WebEvent_Events" />
+    <EntitySet Name="CBAs" EntityType="CascadeDBModel.CBA" />
+    <EntitySet Name="CBRAccountStatus" EntityType="CascadeDBModel.CBRAccountStatu" />
+    <EntitySet Name="CBRBankruptStatus" EntityType="CascadeDBModel.CBRBankruptStatu" />
+    <EntitySet Name="CBRDisputeStatus" EntityType="CascadeDBModel.CBRDisputeStatu" />
+    <EntitySet Name="CBRSpecialStatus" EntityType="CascadeDBModel.CBRSpecialStatu" />
+    <EntitySet Name="Clients" EntityType="CascadeDBModel.Client" />
+    <EntitySet Name="DebtorsEmployers" EntityType="CascadeDBModel.DebtorsEmployer" />
+    <EntitySet Name="DebtorsVehicles" EntityType="CascadeDBModel.DebtorsVehicle" />
+    <EntitySet Name="Divisions" EntityType="CascadeDBModel.Division" />
+    <EntitySet Name="Industries" EntityType="CascadeDBModel.Industry" />
+    <EntitySet Name="LastCallResults" EntityType="CascadeDBModel.LastCallResult" />
     <EntitySet Name="MSI_DPSForm" EntityType="CascadeDBModel.MSI_DPSForm" />
     <EntitySet Name="MSI_MediaForm" EntityType="CascadeDBModel.MSI_MediaForm" />
     <EntitySet Name="MSI_Port_Acq_Edited" EntityType="CascadeDBModel.MSI_Port_Acq_Edited" />
     <EntitySet Name="MSI_Port_Acq_Original" EntityType="CascadeDBModel.MSI_Port_Acq_Original" />
+    <EntitySet Name="MSI_Port_SalesTrans_Edited" EntityType="CascadeDBModel.MSI_Port_SalesTrans_Edited" />
+    <EntitySet Name="MSI_Port_SalesTrans_Original" EntityType="CascadeDBModel.MSI_Port_SalesTrans_Original" />
     <EntitySet Name="MSI_RecallForm" EntityType="CascadeDBModel.MSI_RecallForm" />
     <EntitySet Name="MSI_ResaleRestriction" EntityType="CascadeDBModel.MSI_ResaleRestriction" />
+    <EntitySet Name="PaperTypes" EntityType="CascadeDBModel.PaperType" />
     <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Port_Acq" />
     <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Port_DPS" />
     <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Port_Media" />
@@ -19,11 +46,18 @@
     <EntitySet Name="RACTPLACs" EntityType="CascadeDBModel.RACTPLAC" />
     <EntitySet Name="RAGENCies" EntityType="CascadeDBModel.RAGENCY" />
     <EntitySet Name="recallmasters" EntityType="CascadeDBModel.recallmaster" />
+    <EntitySet Name="ResponsibilityTypes" EntityType="CascadeDBModel.ResponsibilityType" />
     <EntitySet Name="RFINTRANs" EntityType="CascadeDBModel.RFINTRAN" />
     <EntitySet Name="RINTRATEs" EntityType="CascadeDBModel.RINTRATE" />
     <EntitySet Name="RPRODCDEs" EntityType="CascadeDBModel.RPRODCDE" />
     <EntitySet Name="RSTATUS" EntityType="CascadeDBModel.RSTATU" />
     <EntitySet Name="RTRANCDEs" EntityType="CascadeDBModel.RTRANCDE" />
+    <EntitySet Name="Scores" EntityType="CascadeDBModel.Score" />
+    <EntitySet Name="Segments" EntityType="CascadeDBModel.Segment" />
+    <EntitySet Name="SegmentTypes" EntityType="CascadeDBModel.SegmentType" />
+    <EntitySet Name="SettlementRequests" EntityType="CascadeDBModel.SettlementRequest" />
+    <EntitySet Name="StatusTypes" EntityType="CascadeDBModel.StatusType" />
+    <EntitySet Name="StatuteTypes" EntityType="CascadeDBModel.StatuteType" />
     <EntitySet Name="Sup_BrockettCompanies" EntityType="CascadeDBModel.Sup_BrockettCompanies" />
     <EntitySet Name="Sup_Company" EntityType="CascadeDBModel.Sup_Company" />
     <EntitySet Name="Sup_PmtType" EntityType="CascadeDBModel.Sup_PmtType" />
@@ -33,6 +67,8 @@
     <EntitySet Name="Sup_TransSource" EntityType="CascadeDBModel.Sup_TransSource" />
     <EntitySet Name="Sup_UploadDPS" EntityType="CascadeDBModel.Sup_UploadDPS" />
     <EntitySet Name="Sup_UploadRecalls" EntityType="CascadeDBModel.Sup_UploadRecalls" />
+    <EntitySet Name="Surnames" EntityType="CascadeDBModel.Surname" />
+    <EntitySet Name="TaskCategories" EntityType="CascadeDBModel.TaskCategory" />
     <EntitySet Name="Tbl_Categories" EntityType="CascadeDBModel.Tbl_Categories" />
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.TBL_CHART" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.TBL_COMPANIES" />
@@ -44,6 +80,14 @@
     <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.TBL_Portfolio" />
     <EntitySet Name="Tbl_Source" EntityType="CascadeDBModel.Tbl_Source" />
     <EntitySet Name="TBL_State" EntityType="CascadeDBModel.TBL_State" />
+    <EntitySet Name="tblIRRs" EntityType="CascadeDBModel.tblIRR" />
+    <EntitySet Name="TimeZones" EntityType="CascadeDBModel.TimeZone" />
+    <EntitySet Name="TOT_CALL_ATMPS" EntityType="CascadeDBModel.TOT_CALL_ATMPS" />
+    <EntitySet Name="TOT_CALL_COST" EntityType="CascadeDBModel.TOT_CALL_COST" />
+    <EntitySet Name="TOT_CALL_DURATION" EntityType="CascadeDBModel.TOT_CALL_DURATION" />
+    <EntitySet Name="WKDY_CALL_ATMPS" EntityType="CascadeDBModel.WKDY_CALL_ATMPS" />
+    <EntitySet Name="WKND_CALL_ATMPS" EntityType="CascadeDBModel.WKND_CALL_ATMPS" />
+    <EntitySet Name="WorkStatus" EntityType="CascadeDBModel.WorkStatu" />
     <EntitySet Name="MSI_vwMediaData" EntityType="CascadeDBModel.MSI_vwMediaData" />
     <EntitySet Name="MSI_vwPurchases" EntityType="CascadeDBModel.MSI_vwPurchases" />
     <EntitySet Name="MSI_vwRecallData" EntityType="CascadeDBModel.MSI_vwRecallData" />
@@ -62,6 +106,70 @@
     <EntitySet Name="vwCoDebtors" EntityType="CascadeDBModel.vwCoDebtor" />
     <EntitySet Name="vwDebtors" EntityType="CascadeDBModel.vwDebtor" />
     <EntitySet Name="vwFinancialTransactions" EntityType="CascadeDBModel.vwFinancialTransaction" />
+    <AssociationSet Name="FK_AccountActivity_RACCOUNT" Association="CascadeDBModel.FK_AccountActivity_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="AccountActivity" EntitySet="AccountActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountStatutes_RACCOUNT" Association="CascadeDBModel.FK_AccountStatutes_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="AccountStatutes" EntitySet="AccountStatutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__4707859D" Association="CascadeDBModel.FK__aspnet_Me__Appli__4707859D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__48EFCE0F" Association="CascadeDBModel.FK__aspnet_Pa__Appli__48EFCE0F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__4DB4832C" Association="CascadeDBModel.FK__aspnet_Ro__Appli__4DB4832C">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__4EA8A765" Association="CascadeDBModel.FK__aspnet_Us__Appli__4EA8A765">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__47FBA9D6" Association="CascadeDBModel.FK__aspnet_Me__UserI__47FBA9D6">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__49E3F248" Association="CascadeDBModel.FK__aspnet_Pe__PathI__49E3F248">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__4AD81681" Association="CascadeDBModel.FK__aspnet_Pe__PathI__4AD81681">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__4BCC3ABA" Association="CascadeDBModel.FK__aspnet_Pe__UserI__4BCC3ABA">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__4CC05EF3" Association="CascadeDBModel.FK__aspnet_Pr__UserI__4CC05EF3">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CBA_RACCOUNT" Association="CascadeDBModel.FK_CBA_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="CBA" EntitySet="CBAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_Clients" Association="CascadeDBModel.FK_RACCOUNT_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtorsEmployer_RACCOUNT" Association="CascadeDBModel.FK_DebtorsEmployer_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="DebtorsEmployer" EntitySet="DebtorsEmployers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtorsVehicle_RACCOUNT" Association="CascadeDBModel.FK_DebtorsVehicle_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="DebtorsVehicle" EntitySet="DebtorsVehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LastCallResults_RACCOUNT" Association="CascadeDBModel.FK_LastCallResults_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="LastCallResults" EntitySet="LastCallResults" />
+    </AssociationSet>
     <AssociationSet Name="FK_RACCBKRP_RACCOUNT" Association="CascadeDBModel.FK_RACCBKRP_RACCOUNT">
       <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
       <End Role="RACCBKRP" EntitySet="RACCBKRPs" />
@@ -76,6 +184,14 @@
     </AssociationSet>
     <AssociationSet Name="FK_RACCOUNT_RSTATUS" Association="CascadeDBModel.FK_RACCOUNT_RSTATUS">
       <End Role="RSTATUS" EntitySet="RSTATUS" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_StatuteTypes" Association="CascadeDBModel.FK_RACCOUNT_StatuteTypes">
+      <End Role="StatuteTypes" EntitySet="StatuteTypes" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_WorkStatus" Association="CascadeDBModel.FK_RACCOUNT_WorkStatus">
+      <End Role="WorkStatus" EntitySet="WorkStatus" />
       <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
     </AssociationSet>
     <AssociationSet Name="FK_RACCTLGL_RACCOUNT" Association="CascadeDBModel.FK_RACCTLGL_RACCOUNT">
@@ -94,6 +210,10 @@
       <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
       <End Role="RFINTRAN" EntitySet="RFINTRANs" />
     </AssociationSet>
+    <AssociationSet Name="FK_Scores_RACCOUNT" Association="CascadeDBModel.FK_Scores_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNTs" />
+      <End Role="Scores" EntitySet="Scores" />
+    </AssociationSet>
     <AssociationSet Name="FK_RFINTRAN_RTRANCDE" Association="CascadeDBModel.FK_RFINTRAN_RTRANCDE">
       <End Role="RTRANCDE" EntitySet="RTRANCDEs" />
       <End Role="RFINTRAN" EntitySet="RFINTRANs" />
@@ -102,7 +222,465 @@
       <End Role="Tbl_Categories" EntitySet="Tbl_Categories" />
       <End Role="Tbl_Expense" EntitySet="Tbl_Expense" />
     </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="CascadeDBModel.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="AccountActivity">
+    <Key>
+      <PropertyRef Name="AccountActivityID" />
+    </Key>
+    <Property Name="AccountActivityID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Division_ID" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Activity" Type="Int64" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_AccountActivity_RACCOUNT" FromRole="AccountActivity" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="AccountPaymentPlan">
+    <Key>
+      <PropertyRef Name="PaymentPlanID" />
+    </Key>
+    <Property Name="PaymentPlanID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PaymentPlanDate" Type="DateTime" Precision="3" />
+    <Property Name="PaymentPlanStatusID" Type="Int32" />
+    <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="LastPaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FirstPaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="FirstPaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CycleDay" Type="Int32" />
+    <Property Name="Terms" Type="Int32" />
+    <Property Name="Responsibility" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Portfolio" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="StartingPayments" Type="Int32" />
+    <Property Name="StartingPaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccountBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentPlanAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="AccountStatute">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="Statute" Type="Int32" Nullable="false" />
+    <Property Name="StatuteTypeID" Type="Int32" Nullable="false" />
+    <Property Name="StatuteDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DaysRemaining" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_AccountStatutes_RACCOUNT" FromRole="AccountStatutes" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="CascadeDBModel.FK__aspnet_Me__Appli__4707859D" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="CascadeDBModel.FK__aspnet_Pa__Appli__48EFCE0F" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="CascadeDBModel.FK__aspnet_Ro__Appli__4DB4832C" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="CascadeDBModel.FK__aspnet_Us__Appli__4EA8A765" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="CascadeDBModel.FK__aspnet_Me__Appli__4707859D" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="CascadeDBModel.FK__aspnet_Me__UserI__47FBA9D6" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="CascadeDBModel.FK__aspnet_Pa__Appli__48EFCE0F" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="CascadeDBModel.FK__aspnet_Pe__PathI__49E3F248" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="CascadeDBModel.FK__aspnet_Pe__PathI__4AD81681" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="CascadeDBModel.FK__aspnet_Pe__PathI__49E3F248" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="CascadeDBModel.FK__aspnet_Pe__PathI__4AD81681" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="CascadeDBModel.FK__aspnet_Pe__UserI__4BCC3ABA" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Users" Relationship="CascadeDBModel.FK__aspnet_Pr__UserI__4CC05EF3" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="CascadeDBModel.FK__aspnet_Ro__Appli__4DB4832C" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="CascadeDBModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="CascadeDBModel.FK__aspnet_Us__Appli__4EA8A765" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="CascadeDBModel.FK__aspnet_Me__UserI__47FBA9D6" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="CascadeDBModel.FK__aspnet_Pe__UserI__4BCC3ABA" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="CascadeDBModel.FK__aspnet_Pr__UserI__4CC05EF3" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="CascadeDBModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CBA">
+    <Key>
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="Division_ID" />
+    </Key>
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Score" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="OwnHome" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="AcctsOpenedLast6mths" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="InquiriesLast6mths" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DerogatoryAccts" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="PaidLast6mths" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="MortgageHighCredit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MortgageBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SecondMortgageHighCredit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SecondMortgageBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RevolvingHighCredit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RevolvingBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AvailableRevolving" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AvailableBankCard" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AutoBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PercentAutoUsed" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="AutoLeaseBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PercentLeaseUsed" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Score2" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="DateLoaded" Type="DateTime" Precision="3" />
+    <Property Name="BKStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Deceased" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_CBA_RACCOUNT" FromRole="CBA" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="CBRAccountStatu">
+    <Key>
+      <PropertyRef Name="CBRAccountStatusID" />
+    </Key>
+    <Property Name="CBRAccountStatusID" Type="Int32" Nullable="false" />
+    <Property Name="CBRAccountStatus" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CBRAccountStatusDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CBRBankruptStatu">
+    <Key>
+      <PropertyRef Name="CBRBankruptID" />
+    </Key>
+    <Property Name="CBRBankruptID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CBRBankruptStatus" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CBRBankruptStatusDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CBRDisputeStatu">
+    <Key>
+      <PropertyRef Name="CBRDisputeID" />
+    </Key>
+    <Property Name="CBRDisputeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CBRDisputeStatus" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CBRDisputeStatusDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CBRSpecialStatu">
+    <Key>
+      <PropertyRef Name="CBRSpecialStatusID" />
+    </Key>
+    <Property Name="CBRSpecialStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CBRSpecialStatus" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CBRSpecialStatusDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesRepID" Type="Int32" />
+    <Property Name="CustomerServiceRepID" Type="Int32" />
+    <Property Name="ClientCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ClientName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ClientTypeID" Type="Int32" />
+    <Property Name="BillingCompany" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BillingContact" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BillingAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingCity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingZip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingFax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BillingEmail" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="BillingTypeID" Type="Int32" />
+    <Property Name="BillingOptionID" Type="Int32" />
+    <Property Name="Terms" Type="Int32" />
+    <Property Name="FinanceCharge" Type="Double" />
+    <Property Name="InvoiceSchedule" Type="Int32" />
+    <Property Name="InvoiceoptionID" Type="Int32" />
+    <Property Name="InvoiceTemplateID" Type="Int32" />
+    <Property Name="InvoiceDetail" Type="Boolean" />
+    <Property Name="BillingNotes" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceContact" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceCity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceState" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceZip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServicePhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerServiceFax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReportEmails" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="ReportOptionID" Type="Int32" />
+    <Property Name="CustomerServiceNotes" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="httpURL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ftpURL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ftpUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ftpPassword" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ftpFolder" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ClientPassword" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LateFeeTerms" Type="Int32" />
+    <Property Name="LateFee" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="RACCOUNTs" Relationship="CascadeDBModel.FK_RACCOUNT_Clients" FromRole="Clients" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="DebtorsEmployer">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Employer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DOH" Type="DateTime" Precision="3" />
+    <Property Name="DOF" Type="DateTime" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Supervisor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SupervisorPhone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Income" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Shift" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MonthsSinceHire" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="IncomeHolder" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="IncomeType" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="GrossPay" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Day_Of_Week" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="Direct_Deposit" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="Next_Pay_Date" Type="DateTime" Precision="3" />
+    <Property Name="Pay_Frequency" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="Est_Next_Pay_Date" Type="DateTime" Precision="3" />
+    <Property Name="CorporateAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CorporateAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CorporateCity" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="CorporateState" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="CorporateZip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CorporatePhone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="CorporateFax" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_ID" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Update_Type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Last_Pay_Date" Type="DateTime" Precision="3" />
+    <Property Name="Employeed" Type="Boolean" />
+    <Property Name="Verified" Type="Boolean" />
+    <Property Name="DateVerified" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_DebtorsEmployer_RACCOUNT" FromRole="DebtorsEmployer" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="DebtorsVehicle">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleYear" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleMake" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleModel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleYearMakeModel" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleMiles" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleVIN" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleBookValue" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleCondition" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleTag" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleColor" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleOwnerTypeID" Type="Int32" />
+    <Property Name="DamageTypeID" Type="Int32" />
+    <Property Name="DamageAmount" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="NameOnTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_ID" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Update_Type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="PaymentAmount" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DownPayment" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PurchaseDate" Type="DateTime" Precision="3" />
+    <Property Name="LoanTerms" Type="Int32" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="SaleAmount" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="RepoStatus" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgent" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentAddress1" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentAddress2" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentCity" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentState" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentZip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentPhone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentFax" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="RepoAgentEmail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RepoDate" Type="DateTime" Precision="3" />
+    <Property Name="RepoFee" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="AuctionName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AuctionDate" Type="DateTime" Precision="3" />
+    <Property Name="AuctionAmount" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="AuctionFee" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ReconditioningFee" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TransportationFee" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="RedemptionExpirationDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_DebtorsVehicle_RACCOUNT" FromRole="DebtorsVehicle" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Industry">
+    <Key>
+      <PropertyRef Name="lngIndustryID" />
+    </Key>
+    <Property Name="lngIndustryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ShortDescription" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LastCallResult">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Result_Home" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Result_Work" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Result_Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Result_Other" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Number_Home" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Number_Work" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Number_Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Number_Other" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Date_Home" Type="DateTime" Precision="3" />
+    <Property Name="Last_Call_Date_Work" Type="DateTime" Precision="3" />
+    <Property Name="Last_Call_Date_Cell" Type="DateTime" Precision="3" />
+    <Property Name="Last_Call_Date_Other" Type="DateTime" Precision="3" />
+    <Property Name="Last_Call_Time_Home" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Time_Work" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Time_Cell" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Call_Time_Other" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_LastCallResults_RACCOUNT" FromRole="LastCallResults" ToRole="RACCOUNT" />
+  </EntityType>
   <EntityType Name="MSI_DPSForm">
     <Key>
       <PropertyRef Name="ID" />
@@ -206,6 +784,42 @@
     <Property Name="ResaleRestrictionId" Type="Int32" />
     <Property Name="Company" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
   </EntityType>
+  <EntityType Name="MSI_Port_SalesTrans_Edited">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Portfolio_" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Cut_OffDate" Type="DateTime" Precision="3" />
+    <Property Name="ClosingDate" Type="DateTime" Precision="3" />
+    <Property Name="Lender" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Buyer" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SalesPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalesBasis" Type="Double" />
+    <Property Name="FaceValue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="C_ofAccts" Type="Double" />
+    <Property Name="PutbackTerm_days_" Type="Double" />
+    <Property Name="PutbackDeadline" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MSI_Port_SalesTrans_Original">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Portfolio_" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Cut_OffDate" Type="DateTime" Precision="3" />
+    <Property Name="ClosingDate" Type="DateTime" Precision="3" />
+    <Property Name="Lender" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Buyer" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SalesPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalesBasis" Type="Double" />
+    <Property Name="FaceValue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="C_ofAccts" Type="Double" />
+    <Property Name="PutbackTerm_days_" Type="Double" />
+    <Property Name="PutbackDeadline" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
   <EntityType Name="MSI_RecallForm">
     <Key>
       <PropertyRef Name="ID" />
@@ -243,6 +857,14 @@
     <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Value" Type="Int32" />
     <Property Name="Restriction" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PaperType">
+    <Key>
+      <PropertyRef Name="PaperTypeID" />
+    </Key>
+    <Property Name="PaperTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ShortDescription" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="Port_Acq">
     <Key>
@@ -700,14 +1322,24 @@
     <Property Name="AgencyAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="PurchasePrice" Type="Decimal" Precision="8" Scale="6" />
     <Property Name="SalesPrice" Type="Decimal" Precision="8" Scale="6" />
+    <NavigationProperty Name="AccountActivities" Relationship="CascadeDBModel.FK_AccountActivity_RACCOUNT" FromRole="RACCOUNT" ToRole="AccountActivity" />
+    <NavigationProperty Name="AccountStatute" Relationship="CascadeDBModel.FK_AccountStatutes_RACCOUNT" FromRole="RACCOUNT" ToRole="AccountStatutes" />
+    <NavigationProperty Name="CBA" Relationship="CascadeDBModel.FK_CBA_RACCOUNT" FromRole="RACCOUNT" ToRole="CBA" />
+    <NavigationProperty Name="Client1" Relationship="CascadeDBModel.FK_RACCOUNT_Clients" FromRole="RACCOUNT" ToRole="Clients" />
+    <NavigationProperty Name="DebtorsEmployer" Relationship="CascadeDBModel.FK_DebtorsEmployer_RACCOUNT" FromRole="RACCOUNT" ToRole="DebtorsEmployer" />
+    <NavigationProperty Name="DebtorsVehicle" Relationship="CascadeDBModel.FK_DebtorsVehicle_RACCOUNT" FromRole="RACCOUNT" ToRole="DebtorsVehicle" />
+    <NavigationProperty Name="LastCallResult" Relationship="CascadeDBModel.FK_LastCallResults_RACCOUNT" FromRole="RACCOUNT" ToRole="LastCallResults" />
     <NavigationProperty Name="RACCBKRPs" Relationship="CascadeDBModel.FK_RACCBKRP_RACCOUNT" FromRole="RACCOUNT" ToRole="RACCBKRP" />
     <NavigationProperty Name="RAGENCY" Relationship="CascadeDBModel.FK_RACCOUNT_RAGENCY" FromRole="RACCOUNT" ToRole="RAGENCY" />
     <NavigationProperty Name="RPRODCDE" Relationship="CascadeDBModel.FK_RACCOUNT_RPRODCDE" FromRole="RACCOUNT" ToRole="RPRODCDE" />
     <NavigationProperty Name="RSTATU" Relationship="CascadeDBModel.FK_RACCOUNT_RSTATUS" FromRole="RACCOUNT" ToRole="RSTATUS" />
+    <NavigationProperty Name="StatuteType" Relationship="CascadeDBModel.FK_RACCOUNT_StatuteTypes" FromRole="RACCOUNT" ToRole="StatuteTypes" />
+    <NavigationProperty Name="WorkStatu" Relationship="CascadeDBModel.FK_RACCOUNT_WorkStatus" FromRole="RACCOUNT" ToRole="WorkStatus" />
     <NavigationProperty Name="RACCTLGL" Relationship="CascadeDBModel.FK_RACCTLGL_RACCOUNT" FromRole="RACCOUNT" ToRole="RACCTLGL" />
     <NavigationProperty Name="RACCTRELs" Relationship="CascadeDBModel.FK_RACCTREL_RACCOUNT" FromRole="RACCOUNT" ToRole="RACCTREL" />
     <NavigationProperty Name="RACTPLACs" Relationship="CascadeDBModel.FK_RACTPLAC_RACCOUNT" FromRole="RACCOUNT" ToRole="RACTPLAC" />
     <NavigationProperty Name="RFINTRANs" Relationship="CascadeDBModel.FK_RFINTRAN_RACCOUNT" FromRole="RACCOUNT" ToRole="RFINTRAN" />
+    <NavigationProperty Name="Score" Relationship="CascadeDBModel.FK_Scores_RACCOUNT" FromRole="RACCOUNT" ToRole="Scores" />
   </EntityType>
   <EntityType Name="RACCTLGL">
     <Key>
@@ -994,6 +1626,13 @@
     <Property Name="Portfolio" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
     <Property Name="Principal" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
+  <EntityType Name="ResponsibilityType">
+    <Key>
+      <PropertyRef Name="ResponsibilityTypeID" />
+    </Key>
+    <Property Name="ResponsibilityTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ResponsibilityType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
   <EntityType Name="RFINTRAN">
     <Key>
       <PropertyRef Name="Transaction_ID" />
@@ -1125,6 +1764,99 @@
     <Property Name="TranCodeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="RFINTRANs" Relationship="CascadeDBModel.FK_RFINTRAN_RTRANCDE" FromRole="RTRANCDE" ToRole="RFINTRAN" />
   </EntityType>
+  <EntityType Name="Score">
+    <Key>
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="Division_ID" />
+    </Key>
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Score1" Type="Int32" />
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RACCOUNT" Relationship="CascadeDBModel.FK_Scores_RACCOUNT" FromRole="Scores" ToRole="RACCOUNT" />
+  </EntityType>
+  <EntityType Name="Segment">
+    <Key>
+      <PropertyRef Name="Division_ID" />
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Division_ID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Distance" Type="Double" />
+    <Property Name="TimeZone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="ZipValidation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SSN3" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="SSNValidation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="AreaCode" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="HomePhoneValidation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="WorkPhone" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhoneValidation" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Language" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="AverageHomeValue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AverageIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="EmploymentTypeID" Type="Int32" />
+    <Property Name="HomeOwner" Type="Int32" />
+    <Property Name="CTC" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NewBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MonthlyPayment" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IRR" Type="Double" />
+    <Property Name="Segment1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Issuer" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="StatuteOpen" Type="Int32" />
+    <Property Name="StatuteWritten" Type="Int32" />
+    <Property Name="Liq" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Statute" Type="Int32" />
+    <Property Name="StatuteType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SegmentType">
+    <Key>
+      <PropertyRef Name="SegmentTypeID" />
+    </Key>
+    <Property Name="SegmentTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SegmentType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SegmentTypeDescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SegmentWhereClause" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="SegmentQuery" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="SegmentOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SettlementRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Collector" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Offer" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OfferPercent" Type="Double" />
+    <Property Name="OfferExpireDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="DateRequested" Type="DateTime" Precision="0" />
+    <Property Name="DateProcessed" Type="DateTime" Precision="0" />
+    <Property Name="TotalPaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Portfolio" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="GracePeriodDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="StatusType">
+    <Key>
+      <PropertyRef Name="StatusTypeID" />
+    </Key>
+    <Property Name="StatusTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="StatuteType">
+    <Key>
+      <PropertyRef Name="StatuteTypeID" />
+    </Key>
+    <Property Name="StatuteTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StatuteType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RACCOUNTs" Relationship="CascadeDBModel.FK_RACCOUNT_StatuteTypes" FromRole="StatuteTypes" ToRole="RACCOUNT" />
+  </EntityType>
   <EntityType Name="Sup_BrockettCompanies">
     <Key>
       <PropertyRef Name="Id" />
@@ -1195,6 +1927,20 @@
     <Property Name="NewStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="NewResp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="Uploaded__y_n_" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Surname">
+    <Key>
+      <PropertyRef Name="SurName1" />
+    </Key>
+    <Property Name="SurName1" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Nationality" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaskCategory">
+    <Key>
+      <PropertyRef Name="TaskCategoryID" />
+    </Key>
+    <Property Name="TaskCategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="Tbl_Categories">
     <Key>
@@ -1374,6 +2120,68 @@
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblIRR">
+    <Key>
+      <PropertyRef Name="irrPort" />
+    </Key>
+    <Property Name="irrPort" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="irrIRR" Type="Double" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="TimeZoneID" />
+    </Key>
+    <Property Name="TimeZoneID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ZoneName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Start1" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Stop1" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Start2" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Stop2" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Offset" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TOT_CALL_ATMPS">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="Int64" Nullable="false" />
+    <Property Name="Calls" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TOT_CALL_COST">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="Int64" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="TOT_CALL_DURATION">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="Int64" Nullable="false" />
+    <Property Name="Duration" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="WKDY_CALL_ATMPS">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="Int64" Nullable="false" />
+    <Property Name="Calls" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WKND_CALL_ATMPS">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="Int64" Nullable="false" />
+    <Property Name="Calls" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WorkStatu">
+    <Key>
+      <PropertyRef Name="WorkStatusID" />
+    </Key>
+    <Property Name="WorkStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RACCOUNTs" Relationship="CascadeDBModel.FK_RACCOUNT_WorkStatus" FromRole="WorkStatus" ToRole="RACCOUNT" />
   </EntityType>
   <EntityType Name="MSI_vwMediaData">
     <Key>
@@ -2644,6 +3452,222 @@
     <Property Name="CalculateNetAmount" Type="Decimal" Precision="35" Scale="8" />
     <Property Name="PLACEMENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
   </EntityType>
+  <Association Name="FK_AccountActivity_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountActivity" Type="CascadeDBModel.AccountActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="AccountActivity">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountStatutes_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountStatutes" Type="CascadeDBModel.AccountStatute" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="AccountStatutes">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__4707859D">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="CascadeDBModel.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__48EFCE0F">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="CascadeDBModel.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__4DB4832C">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="CascadeDBModel.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__4EA8A765">
+    <End Role="aspnet_Applications" Type="CascadeDBModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="CascadeDBModel.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__47FBA9D6">
+    <End Role="aspnet_Users" Type="CascadeDBModel.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="CascadeDBModel.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__49E3F248">
+    <End Role="aspnet_Paths" Type="CascadeDBModel.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="CascadeDBModel.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__4AD81681">
+    <End Role="aspnet_Paths" Type="CascadeDBModel.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__4BCC3ABA">
+    <End Role="aspnet_Users" Type="CascadeDBModel.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="CascadeDBModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__4CC05EF3">
+    <End Role="aspnet_Users" Type="CascadeDBModel.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="CascadeDBModel.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CBA_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CBA" Type="CascadeDBModel.CBA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="CBA">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_Clients">
+    <End Role="Clients" Type="CascadeDBModel.Client" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtorsEmployer_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DebtorsEmployer" Type="CascadeDBModel.DebtorsEmployer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="DebtorsEmployer">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtorsVehicle_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DebtorsVehicle" Type="CascadeDBModel.DebtorsVehicle" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="DebtorsVehicle">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LastCallResults_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LastCallResults" Type="CascadeDBModel.LastCallResult" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="LastCallResults">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RACCBKRP_RACCOUNT">
     <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -2693,6 +3717,30 @@
       </Principal>
       <Dependent Role="RACCOUNT">
         <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_StatuteTypes">
+    <End Role="StatuteTypes" Type="CascadeDBModel.StatuteType" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatuteTypes">
+        <PropertyRef Name="StatuteTypeID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="StatuteTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_WorkStatus">
+    <End Role="WorkStatus" Type="CascadeDBModel.WorkStatu" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkStatus">
+        <PropertyRef Name="WorkStatusID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="WorkStatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2756,6 +3804,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Scores_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scores" Type="CascadeDBModel.Score" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="Scores">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RFINTRAN_RTRANCDE">
     <End Role="RTRANCDE" Type="CascadeDBModel.RTRANCDE" Multiplicity="0..1" />
     <End Role="RFINTRAN" Type="CascadeDBModel.RFINTRAN" Multiplicity="*" />
@@ -2779,5 +3843,9 @@
         <PropertyRef Name="CategoryId" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Role="aspnet_Roles" Type="CascadeDBModel.aspnet_Roles" Multiplicity="*" />
+    <End Role="aspnet_Users" Type="CascadeDBModel.aspnet_Users" Multiplicity="*" />
   </Association>
 </Schema>

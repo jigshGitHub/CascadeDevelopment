@@ -439,7 +439,7 @@ function allCommentedCode() {
 
 }
 
-function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, putbackTerms, putbackDeadline, salesBasis, salesPrice, faceValue, accounts, salesTransType) {
+function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, putbackTerms, putbackDeadline, salesBasis, salesPrice, faceValue, accounts) {
     this.Id = id;
     this.portfolioNumber = ko.observable(portfolioNumber);
     this.lender = ko.observable(lender);
@@ -452,7 +452,6 @@ function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, pu
     this.salesPrice = ko.observable(salesPrice);
     this.faceValue = ko.observable(faceValue);
     this.accounts = ko.observable(accounts);
-    this.salesTransType = ko.observable(salesTransType)
 }
 
 function salesTransVM() {
@@ -462,10 +461,10 @@ function salesTransVM() {
         var salesRecords = [];
         if (self.portfolioNumber() != '') {
             $.ajax({
-                url: baseUrl + '/api/PortfolioTransactions/',
+                url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
                 type: 'GET',
                 contentType: 'application/json',
-                data: { portfolioNumber: self.portfolioNumber(), transType: 'Sale' },
+                data: { portfolioNumber: self.portfolioNumber() },
                 dataType: 'json',
                 async: false,
                 success: function (data) {
@@ -474,7 +473,7 @@ function salesTransVM() {
                         self.currentRecordIndex(0);
                         $.each(data, function (i, item) {
                             //log(item);
-                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts, item.TransType));
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts));
                         });
                     }
                 },
@@ -483,9 +482,6 @@ function salesTransVM() {
                 }
             });
         }
-        //else {
-        //    salesRecords.push(new salesRecord('', '12345', 'lender', '', '', '', '', '', '', '', '', '100', ''));
-        //}
         return salesRecords;
     }, self);
 
@@ -494,7 +490,7 @@ function salesTransVM() {
         if (self.portfolioNumber() != '')
             return self.salesRecords()[self.currentRecordIndex()];
         else
-            return new salesRecord('', '', '', '', '', '', '', '', '', '', '', '', '');
+            return new salesRecord('', '', '', '', '', '', '', '', '', '', '', '');
     }, self);
     self.buyers = ko.observableArray([]);
     self.totalSold = ko.computed(function () {

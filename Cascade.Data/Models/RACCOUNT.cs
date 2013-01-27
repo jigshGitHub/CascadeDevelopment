@@ -16,6 +16,7 @@ namespace Cascade.Data.Models
     {
         public RACCOUNT()
         {
+            this.AccountActivities = new HashSet<AccountActivity>();
             this.RACCBKRPs = new HashSet<RACCBKRP>();
             this.RACCTRELs = new HashSet<RACCTREL>();
             this.RACTPLACs = new HashSet<RACTPLAC>();
@@ -258,13 +259,23 @@ namespace Cascade.Data.Models
         public Nullable<decimal> PurchasePrice { get; set; }
         public Nullable<decimal> SalesPrice { get; set; }
     
+        public virtual ICollection<AccountActivity> AccountActivities { get; set; }
+        public virtual AccountStatute AccountStatute { get; set; }
+        public virtual CBA CBA { get; set; }
+        public virtual Client Client1 { get; set; }
+        public virtual DebtorsEmployer DebtorsEmployer { get; set; }
+        public virtual DebtorsVehicle DebtorsVehicle { get; set; }
+        public virtual LastCallResult LastCallResult { get; set; }
         public virtual ICollection<RACCBKRP> RACCBKRPs { get; set; }
         public virtual RAGENCY RAGENCY { get; set; }
         public virtual RPRODCDE RPRODCDE { get; set; }
         public virtual RSTATU RSTATU { get; set; }
+        public virtual StatuteType StatuteType { get; set; }
+        public virtual WorkStatu WorkStatu { get; set; }
         public virtual RACCTLGL RACCTLGL { get; set; }
         public virtual ICollection<RACCTREL> RACCTRELs { get; set; }
         public virtual ICollection<RACTPLAC> RACTPLACs { get; set; }
         public virtual ICollection<RFINTRAN> RFINTRANs { get; set; }
+        public virtual Score Score { get; set; }
     }
 }

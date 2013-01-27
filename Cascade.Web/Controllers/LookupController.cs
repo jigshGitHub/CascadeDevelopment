@@ -67,8 +67,10 @@ namespace Cascade.Web.Controllers
                     break;
                 case "Buyer":
                     SupCompanyRepository supCompanyRepo = new SupCompanyRepository();
-                    lookupData = from buyer in supCompanyRepo.GetAll().OrderBy(x => x.Agency)
-                                 select new LookUp(buyer.Name, buyer.Agency);
+                    //lookupData = from buyer in supCompanyRepo.GetAll().OrderBy(x => x.Agency)
+                    //             select new LookUp(buyer.Name, buyer.Agency);
+                    query = new DataQueries();
+                    lookupData = query.GetDistinctResponsibility();
                     break;
                 case "Seller":
                     supCompanyRepo = new SupCompanyRepository();
