@@ -439,19 +439,34 @@ function allCommentedCode() {
 
 }
 
-function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, putbackTerms, putbackDeadline, salesBasis, salesPrice, faceValue, accounts) {
-    this.Id = id;
-    this.portfolioNumber = ko.observable(portfolioNumber);
-    this.lender = ko.observable(lender);
-    this.buyer = ko.observable(buyer);
-    this.cutoffDt = ko.observable(cutoffDt);
-    this.closingDt = ko.observable(closingDt);
-    this.putbackTerms = ko.observable(putbackTerms);
-    this.putbackDeadline = ko.observable(putbackDeadline);
-    this.salesBasis = ko.observable(salesBasis);
-    this.salesPrice = ko.observable(salesPrice);
-    this.faceValue = ko.observable(faceValue);
-    this.accounts = ko.observable(accounts);
+function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, putbackTerms, putbackDeadline, salesBasis, salesPrice, faceValue, accounts,salesBatch,notes) {
+
+    var self = this;
+    self.Id = id;
+    self.portfolioNumber = ko.observable(portfolioNumber);
+    self.lender = ko.observable(lender);
+    self.buyer = ko.observable(buyer);
+    self.cutoffDt = ko.observable(cutoffDt);
+    self.closingDt = ko.observable(closingDt);
+    self.putbackTerms = ko.observable(putbackTerms);
+    self.putbackDeadline = ko.observable(putbackDeadline);
+    self.salesBasis = ko.observable(salesBasis);
+    self.salesPrice = ko.observable(salesPrice);
+    self.faceValue = ko.observable(faceValue);
+    self.accounts = ko.observable(accounts);
+    self.salesBatch = ko.observable(salesBatch);
+    self.notes = ko.observable(notes);
+
+    self.putbackTerms.subscribe(function (termValue) {
+        if (termValue != undefined) {
+            var putbackDeadline = new Date(self.cutoffDt());
+            putbackDeadline.setDate(putbackDeadline.getDate() + termValue);
+            self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
+        }
+        else {
+            self.putbackDeadline('');
+        }
+    }.bind(self));
 }
 
 function salesTransVM() {
@@ -459,6 +474,8 @@ function salesTransVM() {
     self.portfolioNumber = ko.observable('');
     self.salesRecords = ko.computed(function () {
         var salesRecords = [];
+        var batchIndex;
+        var salesBatch;
         if (self.portfolioNumber() != '') {
             $.ajax({
                 url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
@@ -468,12 +485,13 @@ function salesTransVM() {
                 dataType: 'json',
                 async: false,
                 success: function (data) {
-                    //log(data.length);
+                    //log(data);
                     if (data.length > 0) {
                         self.currentRecordIndex(0);
                         $.each(data, function (i, item) {
-                            //log(item);
-                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts));
+                            batchIndex = i + 1
+                            salesBatch = self.portfolioNumber() + '-' + batchIndex;
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts, salesBatch, item.Notes));
                         });
                     }
                 },
@@ -484,30 +502,31 @@ function salesTransVM() {
         }
         return salesRecords;
     }, self);
-
+    self.putbackTerms = ko.observableArray([]);
+    $.each(portfolioViewModels.putbackTerms(), function (i, item) {
+        self.putbackTerms.push(item);
+    });
+    self.salesBatchSelected = ko.observable();
+    self.salesBatchSelected.subscribe(function (value) {
+        if (value != undefined) {
+            var index = value.substr(value.indexOf('-')+1, 1);
+            self.currentRecordIndex(index-1);
+            log(self.currentRecordIndex());
+        }
+    }.bind(self));
+    self.getsalesBatchSelected = function (index) {
+        log(index);
+        return self.portfolioNumber() + '-' + index;
+    }
     self.currentRecordIndex = ko.observable(0);
     self.currentSalesRecord = ko.computed(function () {
         if (self.portfolioNumber() != '')
             return self.salesRecords()[self.currentRecordIndex()];
         else
-            return new salesRecord('', '', '', '', '', '', '', '', '', '', '', '');
+            return new salesRecord('', '', '', '', '', '', '', '', '', '', '', '','','');
     }, self);
     self.buyers = ko.observableArray([]);
-    self.totalSold = ko.computed(function () {
-        var soldTotal = 0;
-        $.each(self.salesRecords(), function (i, item) {
-            soldTotal += item.accounts();
-        });
-        return soldTotal;
-    }, self);
-    self.totalSales = ko.computed(function () {
-        var salesTotal = 0;
-        $.each(self.salesRecords(), function (i, item) {
-            salesTotal += item.salesPrice();
-        });
-        return formatCurrency(salesTotal);
-    }, self);
-    self.salesTransTypes = [{ Text: 'Sale', Value: 'Sale' }, { Text: 'Collection', Value: 'Collection' }, { Text: 'Distribution', Value: 'Distribution' }];
+    
     $.each(portfolioViewModels.buyers(), function (i, item) {
         self.buyers.push(item);
     });
@@ -525,14 +544,17 @@ function salesTransVM() {
     }, self);
 
     self.recordCounts = ko.computed(function () {
-        return 'Records ' + (self.currentRecordIndex() + 1) + ' of ' + self.salesRecords().length;
+        return 'Portfolio Sales ' + (self.currentRecordIndex() + 1) + ' of ' + self.salesRecords().length;
     }, self);
 
     self.nextRecord = function () {
         self.currentRecordIndex(self.currentRecordIndex() + 1);
+        self.salesBatchSelected(self.getsalesBatchSelected(self.currentRecordIndex()+1));
     }
     self.previousRecord = function () {
+        var setIndex = self.currentRecordIndex();
         self.currentRecordIndex(self.currentRecordIndex() - 1);
+        self.salesBatchSelected(self.getsalesBatchSelected(setIndex));
     }
     self.showMessage = ko.observable(false);
     self.message = ko.observable('');
@@ -700,7 +722,7 @@ function portfolioVM() {
                 dataType: 'json',
                 async: true,
                 success: function (data) {
-                    log(data);
+                    //log(data);
                     self.purchaseSummarySectionVM.portfolioNumber(data.Portfolio_);
                     self.purchaseSummarySectionVM.company(data.Company);
                     self.purchaseSummarySectionVM.seller(data.Seller);
@@ -739,10 +761,7 @@ function portfolioVM() {
                 }
             });
             self.salesTabVM.portfolioNumber(self.portfolioNumber());
-            //self.collectionsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.investmentsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.distributionsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.interestTabVM.portfolioNumber(self.portfolioNumber());
+            self.salesTabVM.salesBatchSelected(self.portfolioNumber() + '-1');
         }
 
     }.bind(self));

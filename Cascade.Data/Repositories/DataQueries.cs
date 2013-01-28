@@ -585,7 +585,6 @@ namespace Cascade.Data.Repositories
             System.Data.DataSet ds;
             try
             {
-                salesTransaction = new MSI_Port_SalesTrans_Original();
                 db = new DBFactory();
                 ds = db.ExecuteDataset("sp_GetPortfolioSalesSummary", "PurchaseSalesSummary", new SqlParameter("@productCode", productCode));
 
@@ -594,6 +593,7 @@ namespace Cascade.Data.Repositories
                     salesTransactions = new List<MSI_Port_SalesTrans_Original>();
                     foreach (System.Data.DataRow dr in ds.Tables["PurchaseSalesSummary"].Rows)
                     {
+                        salesTransaction = new MSI_Port_SalesTrans_Original();
                         salesTransaction.Portfolio_ = dr["Portfolio#"].ToString();
                         salesTransaction.Buyer = dr["Buyer"].ToString();
                         if(dr["SalesBasis"] != DBNull.Value)

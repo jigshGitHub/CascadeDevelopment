@@ -487,3 +487,12 @@ td.pagination {
 #basicSearchFrm td {
 
 }
+
+.editButton {
+    background-color: #93C22B;
+    color: #FFFFFF;
+    -moz-border-radius-topleft: 4px /*{cornerRadius}*/;
+    -webkit-border-radius: 4px /*{cornerRadius}*/;
+    border-radius: 4px /*{cornerRadius}*/;
+   
+}
