@@ -476,6 +476,7 @@ function salesTransVM() {
         var salesRecords = [];
         var batchIndex;
         var salesBatch;
+        var cutOffDate;
         if (self.portfolioNumber() != '') {
             $.ajax({
                 url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
@@ -490,7 +491,9 @@ function salesTransVM() {
                         $.each(data, function (i, item) {
                             batchIndex = i + 1
                             salesBatch = self.portfolioNumber() + '-' + batchIndex;
-                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
+                            cutOffDate = new Date(item.Cut_OffDate);
+                            cutOffDate.setDate(cutOffDate.getDate() + 1);
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', cutOffDate)), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
                         });
                     }
                 },

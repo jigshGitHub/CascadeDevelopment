@@ -476,6 +476,7 @@ function salesTransVM() {
         var salesRecords = [];
         var batchIndex;
         var salesBatch;
+        var cutOffDate;
         if (self.portfolioNumber() != '') {
             $.ajax({
                 url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
@@ -491,7 +492,9 @@ function salesTransVM() {
                         $.each(data, function (i, item) {
                             batchIndex = i + 1
                             salesBatch = self.portfolioNumber() + '-' + batchIndex;
-                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
+                            cutOffDate = new Date(item.Cut_OffDate);
+                            cutOffDate.setDate(cutOffDate.getDate() + 1);
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', cutOffDate)), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
                         });
                     }
                 },
@@ -518,7 +521,7 @@ function salesTransVM() {
         }
     }.bind(self));
     self.getsalesBatchSelected = function (index) {
-        log(index);
+        //log(index);
         return self.portfolioNumber() + '-' + index;
     }
     self.currentRecordIndex = ko.observable(0);
@@ -665,8 +668,10 @@ function salesTransVM() {
         self.currentSalesRecord().Id = data.ID;
         self.currentSalesRecord().notes(data.Notes);
     }
+
     self.getOriginal = function () {
         log('getting original');
+        
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         
@@ -675,34 +680,31 @@ function salesTransVM() {
         self.cuttOfDateEditedValue('');        
         self.putbackTermEditedValue('');        
         self.notesEditedValue('')
-        loadSalesData(self.currentSalesRecord());
-        self.updatedData(false);
-        self.originalData(true);
-        $("#loading").html("&nbsp;");
-        $("#loading").dialog('close');
-        //$.ajax({
-        //    //                url: baseUrl + '/api/Portfolio/',
-        //    url: baseUrl + '/api/MSIPortfolioOriginal/',
-        //    type: 'GET',
-        //    contentType: 'application/json',
-        //    data: { portfolioNumber: self.portfolioNumber() },
-        //    dataType: 'json',
-        //    async: true,
-        //    success: function (data) {
-        //        //log(data);
-        //        loadPurchaseData(data);
-        //        self.updatedData(false);
-        //        self.originalData(true);
-        //        $("#loading").html("&nbsp;");
-        //        $("#loading").dialog('close');
-        //    },
-        //    error: function (xhr, status, somthing) {
-        //        log(status);
-        //    }
-        //});
+        
+        $.ajax({
+            //                url: baseUrl + '/api/Portfolio/',
+            url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/Details/',
+            type: 'GET',
+            contentType: 'application/json',
+            data: { id: self.currentSalesRecord().Id },
+            dataType: 'json',
+            async: true,
+            success: function (data) {
+                log(data);
+                loadSalesData(data);
+                self.updatedData(false);
+                self.originalData(true);
+                $("#loading").html("&nbsp;");
+                $("#loading").dialog('close');
+            },
+            error: function (xhr, status, somthing) {
+                log(status);
+            }
+        });
     }
     self.getUpdated = function () {
         log('getting updated');
+
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         $.ajax({
@@ -726,6 +728,8 @@ function salesTransVM() {
                         self.lenderEditedValue('lender');
                     var cutOffDate = new Date(data.Cut_OffDate);
                     cutOffDate.setDate(cutOffDate.getDate() + 1);
+                    //log(self.currentSalesRecord().cutoffDt());
+                    //log($.datepicker.formatDate('mm/dd/yy', cutOffDate))
                     if (self.currentSalesRecord().cutoffDt() != $.datepicker.formatDate('mm/dd/yy', cutOffDate))
                         self.cuttOfDateEditedValue('cutOffDt');
                     if (self.currentSalesRecord().putbackTerm() != data.PutbackTerm_days_)
@@ -734,7 +738,6 @@ function salesTransVM() {
                         self.notesEditedValue('notesEdited')
 
                     loadSalesData(data);
-
                     self.updatedData(true);
                     self.originalData(false);
                     $("#loading").html("&nbsp;");

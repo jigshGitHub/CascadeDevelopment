@@ -97,6 +97,24 @@ namespace Cascade.Web.Controllers
 
         }
 
+        [HttpGet]
+        public MSI_Port_SalesTrans_Original Details(int id)
+        {
+            MSI_Port_SalesTrans_Original transaction = null;
+            MSI_Port_SalesTrans_OriginalRepository repository = null;
+            try
+            {
+                repository = new MSI_Port_SalesTrans_OriginalRepository();
+                transaction = repository.GetById(id);
+            }
+            catch (Exception ex)
+            {
+            }
+            return transaction;
+
+
+        }
+
         public MSI_Port_SalesTrans_Original Post(MSI_Port_SalesTrans_Original inTransaction)
         {
             MSI_Port_SalesTrans_Original transactionToSave = null;
