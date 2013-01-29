@@ -97,62 +97,32 @@ namespace Cascade.Web.Controllers
 
         }
 
-        public Port_Trans Post(Port_Trans inTransaction)
+        public MSI_Port_SalesTrans_Original Post(MSI_Port_SalesTrans_Original inTransaction)
         {
-            Port_Trans transactionToSave = null;
-            PortTransRepository repository = null;
+            MSI_Port_SalesTrans_Original transactionToSave = null;
+            MSI_Port_SalesTrans_OriginalRepository repository = null;
 
             try
             {
-                repository = new PortTransRepository();
+                repository = new MSI_Port_SalesTrans_OriginalRepository();
                 transactionToSave = repository.GetById(inTransaction.ID);
 
-                if (inTransaction.TransType == "Sale")
-                {
-                    transactionToSave.PutbackDeadline = inTransaction.PutbackDeadline;
-                    transactionToSave.PutbackTerm_days_ = inTransaction.PutbackTerm_days_;
-                    transactionToSave.C_ofAccts = inTransaction.C_ofAccts;
-                    transactionToSave.FaceValue = inTransaction.FaceValue;
-                    transactionToSave.SalesBasis = inTransaction.SalesBasis;
-                    transactionToSave.SalesPrice = inTransaction.SalesPrice;
-                    transactionToSave.Buyer = inTransaction.Buyer;
-                    transactionToSave.Lender = inTransaction.Lender;
-                    transactionToSave.ClosingDate = inTransaction.ClosingDate;
-                    transactionToSave.Cut_OffDate = inTransaction.Cut_OffDate;
-                }
-                else if (inTransaction.TransType == "Collection")
-                {
-                    transactionToSave.FaceValue = inTransaction.FaceValue;
-                    transactionToSave.SalesPrice = inTransaction.SalesPrice;
-                    transactionToSave.ClosingDate = inTransaction.ClosingDate;
-                    transactionToSave.Inv_AgencyName = inTransaction.Inv_AgencyName;
-                }
-                else if (inTransaction.TransType == "Investment")
-                {
-                    transactionToSave.ProfitShare_after = inTransaction.ProfitShare_after;
-                    transactionToSave.ProfitShare_before = inTransaction.ProfitShare_before;
-                    transactionToSave.SalesPrice = inTransaction.SalesPrice;
-                    transactionToSave.InterestRate = inTransaction.InterestRate;
-                    transactionToSave.Inv_AgencyName = inTransaction.Inv_AgencyName;
-                    transactionToSave.Notes = inTransaction.Notes;
-                }
-                else if (inTransaction.TransType == "Distribution")
-                {
-                    transactionToSave.Check_ = inTransaction.Check_;
-                    transactionToSave.ClosingDate = inTransaction.ClosingDate;
-                    transactionToSave.SalesPrice = inTransaction.SalesPrice;
-                    transactionToSave.Inv_AgencyName = inTransaction.Inv_AgencyName;
-                    transactionToSave.Notes = inTransaction.Notes;
-                }
-                else if (inTransaction.TransType == "Interest")
-                {
-                    transactionToSave.Check_ = inTransaction.Check_;
-                    transactionToSave.ClosingDate = inTransaction.ClosingDate;
-                    transactionToSave.SalesPrice = inTransaction.SalesPrice;
-                    transactionToSave.Inv_AgencyName = inTransaction.Inv_AgencyName;
-                }
+                transactionToSave.PutbackDeadline = inTransaction.PutbackDeadline;
+                transactionToSave.PutbackTerm_days_ = inTransaction.PutbackTerm_days_;
+                transactionToSave.C_ofAccts = inTransaction.C_ofAccts;
+                transactionToSave.FaceValue = inTransaction.FaceValue;
+                transactionToSave.SalesBasis = inTransaction.SalesBasis;
+                transactionToSave.SalesPrice = inTransaction.SalesPrice;
+                transactionToSave.Buyer = inTransaction.Buyer;
+                transactionToSave.Lender = inTransaction.Lender;
+                transactionToSave.ClosingDate = inTransaction.ClosingDate;
+                transactionToSave.Cut_OffDate = inTransaction.Cut_OffDate;
+                transactionToSave.Notes = inTransaction.Notes;
+                transactionToSave.Portfolio_ = inTransaction.Portfolio_;
+                transactionToSave.C_ofAccts = inTransaction.C_ofAccts;
 
                 repository.Update(transactionToSave);
+
             }
             catch (Exception ex)
             {

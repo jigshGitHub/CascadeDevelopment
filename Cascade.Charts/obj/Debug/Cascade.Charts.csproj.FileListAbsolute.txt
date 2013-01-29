@@ -30,3 +30,14 @@ C:\Projects\Cascade Project\11302012\Cascade.Charts\bin\Debug\Cascade.Helpers.pd
 C:\Projects\Cascade Project\11302012\Cascade.Charts\bin\Debug\EntityFramework.xml
 C:\Projects\Cascade Project\11302012\Cascade.Charts\obj\Debug\Cascade.Charts.dll
 C:\Projects\Cascade Project\11302012\Cascade.Charts\obj\Debug\Cascade.Charts.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Charts.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Data.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Helpers.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\EntityFramework.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Data.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\Cascade.Helpers.pdb
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\bin\Debug\EntityFramework.xml
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Debug\Cascade.Charts.csprojResolveAssemblyReference.cache
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Debug\Cascade.Charts.dll
+C:\Users\jshah\Documents\GitHub\CascadeDevelopmentSolution\CascadeDevelopment\Cascade.Charts\obj\Debug\Cascade.Charts.pdb

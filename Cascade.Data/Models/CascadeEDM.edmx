@@ -1973,7 +1973,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
           <Property Name="Cut-OffDate" Type="datetime" />
           <Property Name="ClosingDate" Type="datetime" />
@@ -5899,7 +5899,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false"  />
           <Property Name="Portfolio_" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Cut_OffDate" Type="DateTime" Precision="3" />
           <Property Name="ClosingDate" Type="DateTime" Precision="3" />

@@ -479,4 +479,26 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+    public class MSI_Port_SalesTrans_OriginalRepository : RepositoryBase<MSI_Port_SalesTrans_Original>
+    {
+        public MSI_Port_SalesTrans_OriginalRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_Port_SalesTrans_OriginalRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+    public class MSI_Port_SalesTrans_EditedRepository : RepositoryBase<MSI_Port_SalesTrans_Edited>
+    {
+        public MSI_Port_SalesTrans_EditedRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_Port_SalesTrans_EditedRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
 }

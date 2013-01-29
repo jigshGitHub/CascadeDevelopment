@@ -97,5 +97,93 @@ namespace Cascade.Web.Controllers
             return portfolioToSave;
         }
     }
+    public class MSIPortfolioSalesTransactionsEditedController : ApiController
+    {
+        public MSI_Port_SalesTrans_Edited Get(int id)
+        {
+            MSI_Port_SalesTrans_Edited transaction = null;
+            MSI_Port_SalesTrans_EditedRepository repository = null;
+            try
+            {
+                repository = new MSI_Port_SalesTrans_EditedRepository();
+                transaction = repository.GetById(id);
+                if (transaction == null)
+                {
+                    MSI_Port_SalesTrans_OriginalRepository originalRepository = new MSI_Port_SalesTrans_OriginalRepository();
+                    MSI_Port_SalesTrans_Original originalTransaction = originalRepository.GetById(id);
+                    transaction = new MSI_Port_SalesTrans_Edited();
+                    transaction.C_ofAccts = originalTransaction.C_ofAccts;
+                    transaction.ClosingDate = originalTransaction.ClosingDate;
+                    transaction.Cut_OffDate = originalTransaction.Cut_OffDate;
+                    transaction.FaceValue= originalTransaction.FaceValue;
+                    transaction.Lender = originalTransaction.Lender;
+                    transaction.Notes = originalTransaction.Notes;
+                    transaction.Portfolio_ = originalTransaction.Portfolio_;
+                    transaction.SalesPrice = originalTransaction.SalesPrice;
+                    transaction.PutbackDeadline = originalTransaction.PutbackDeadline;
+                    transaction.PutbackTerm_days_ = originalTransaction.PutbackTerm_days_;
+                    transaction.ID = originalTransaction.ID;
+                    transaction.Portfolio_ = originalTransaction.Portfolio_;
+                    transaction.Buyer = originalTransaction.Buyer;
+                    transaction.SalesBasis = originalTransaction.SalesBasis;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return transaction;
 
+        }
+        public MSI_Port_SalesTrans_Edited Post(MSI_Port_SalesTrans_Edited inTransaction)
+        {
+            MSI_Port_SalesTrans_Edited transactionToSave = null;
+            MSI_Port_SalesTrans_EditedRepository repository = null;
+            bool editingRequired = true;
+            try
+            {
+
+                repository = new MSI_Port_SalesTrans_EditedRepository();
+                transactionToSave = repository.GetById(inTransaction.ID);
+
+                if (transactionToSave == null)
+                {
+                    editingRequired = false;
+                    transactionToSave = new MSI_Port_SalesTrans_Edited();
+                }
+
+                transactionToSave.PutbackDeadline = inTransaction.PutbackDeadline;
+                transactionToSave.PutbackTerm_days_ = inTransaction.PutbackTerm_days_;
+                transactionToSave.C_ofAccts = inTransaction.C_ofAccts;
+                transactionToSave.FaceValue = inTransaction.FaceValue;
+                transactionToSave.SalesBasis = inTransaction.SalesBasis;
+                transactionToSave.SalesPrice = inTransaction.SalesPrice;
+                transactionToSave.Buyer = inTransaction.Buyer;
+                transactionToSave.Lender = inTransaction.Lender;
+                transactionToSave.ClosingDate = inTransaction.ClosingDate;
+                transactionToSave.Cut_OffDate = inTransaction.Cut_OffDate;
+                transactionToSave.Notes = inTransaction.Notes;
+                transactionToSave.Portfolio_ = inTransaction.Portfolio_;
+                transactionToSave.C_ofAccts = inTransaction.C_ofAccts;
+                transactionToSave.ID = inTransaction.ID;
+                if (editingRequired)
+                    repository.Update(transactionToSave);
+                else
+                    repository.Add(transactionToSave);
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException validationException)
+            {
+                foreach (System.Data.Entity.Validation.DbEntityValidationResult errorResult in validationException.EntityValidationErrors)
+                {
+                    foreach (System.Data.Entity.Validation.DbValidationError error in errorResult.ValidationErrors)
+                    {
+                        string data = error.ErrorMessage;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return transactionToSave;
+        }
+    }
 }

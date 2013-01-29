@@ -544,7 +544,7 @@ namespace Cascade.Data.Repositories
             {
                 portfolio = new MSI_Port_Acq_Original();
                 db = new DBFactory();
-                ds = db.ExecuteDataset("sp_GetPortfolioPurchaseSummary", "PurchaseSummary", new SqlParameter("@productCode", productCode));
+                ds = db.ExecuteDataset("MSI_sp_GetPortfolioPurchaseSummary", "PurchaseSummary", new SqlParameter("@productCode", productCode));
 
                 dr = ds.Tables["PurchaseSummary"].Rows[0];
                 portfolio.Portfolio_ = dr["Portfolio#"].ToString();
@@ -586,7 +586,7 @@ namespace Cascade.Data.Repositories
             try
             {
                 db = new DBFactory();
-                ds = db.ExecuteDataset("sp_GetPortfolioSalesSummary", "PurchaseSalesSummary", new SqlParameter("@productCode", productCode));
+                ds = db.ExecuteDataset("MSI_sp_GetPortfolioSalesSummary", "PurchaseSalesSummary", new SqlParameter("@productCode", productCode));
 
                 if (ds.Tables["PurchaseSalesSummary"].Rows.Count > 0)
                 {
@@ -594,6 +594,7 @@ namespace Cascade.Data.Repositories
                     foreach (System.Data.DataRow dr in ds.Tables["PurchaseSalesSummary"].Rows)
                     {
                         salesTransaction = new MSI_Port_SalesTrans_Original();
+                        salesTransaction.ID = int.Parse(dr["ID"].ToString());
                         salesTransaction.Portfolio_ = dr["Portfolio#"].ToString();
                         salesTransaction.Buyer = dr["Buyer"].ToString();
                         if(dr["SalesBasis"] != DBNull.Value)
@@ -611,7 +612,7 @@ namespace Cascade.Data.Repositories
                             salesTransaction.ClosingDate = closingDate;
                         salesTransaction.Lender = dr["Lender"].ToString();
                         int putbackTermDays;
-                        if (int.TryParse(dr["PutBackTerm"].ToString(), out putbackTermDays))
+                        if (int.TryParse(dr["PutbackTerm"].ToString(), out putbackTermDays))
                             salesTransaction.PutbackTerm_days_ = putbackTermDays;
                         DateTime putbackDeadLine;
                         if (DateTime.TryParse(dr["PutbackDeadLine"].ToString(), out putbackDeadLine))
@@ -636,7 +637,7 @@ namespace Cascade.Data.Repositories
             try
             {
                 db = new DBFactory();
-                rdr = db.ExecuteReader("sp_GetDistinctProductCode");
+                rdr = db.ExecuteReader("MSI_sp_GetDistinctProductCode");
                 data = new List<LookUp>();
                 LookUp record;
                 while (rdr.Read())

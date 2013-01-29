@@ -448,7 +448,7 @@ function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, pu
     self.buyer = ko.observable(buyer);
     self.cutoffDt = ko.observable(cutoffDt);
     self.closingDt = ko.observable(closingDt);
-    self.putbackTerms = ko.observable(putbackTerms);
+    self.putbackTerm = ko.observable(putbackTerms);
     self.putbackDeadline = ko.observable(putbackDeadline);
     self.salesBasis = ko.observable(salesBasis);
     self.salesPrice = ko.observable(salesPrice);
@@ -457,7 +457,7 @@ function salesRecord(id, portfolioNumber, lender, buyer, cutoffDt, closingDt, pu
     self.salesBatch = ko.observable(salesBatch);
     self.notes = ko.observable(notes);
 
-    self.putbackTerms.subscribe(function (termValue) {
+    self.putbackTerm.subscribe(function (termValue) {
         if (termValue != undefined) {
             var putbackDeadline = new Date(self.cutoffDt());
             putbackDeadline.setDate(putbackDeadline.getDate() + termValue);
@@ -485,13 +485,12 @@ function salesTransVM() {
                 dataType: 'json',
                 async: false,
                 success: function (data) {
-                    //log(data);
                     if (data.length > 0) {
                         self.currentRecordIndex(0);
                         $.each(data, function (i, item) {
                             batchIndex = i + 1
                             salesBatch = self.portfolioNumber() + '-' + batchIndex;
-                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, item.SalesPrice, item.FaceValue, item.C_ofAccts, salesBatch, item.Notes));
+                            salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.Cut_OffDate))), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
                         });
                     }
                 },
@@ -509,9 +508,12 @@ function salesTransVM() {
     self.salesBatchSelected = ko.observable();
     self.salesBatchSelected.subscribe(function (value) {
         if (value != undefined) {
-            var index = value.substr(value.indexOf('-')+1, 1);
+            var startIndex = value.indexOf('-');
+            var totalChars = value.length - startIndex;
+            var index = value.substr(startIndex + 1, totalChars);
+            log('index=' + index);
             self.currentRecordIndex(index-1);
-            log(self.currentRecordIndex());
+            log('currentRecordIndex=' + self.currentRecordIndex());
         }
     }.bind(self));
     self.getsalesBatchSelected = function (index) {
@@ -570,22 +572,23 @@ function salesTransVM() {
         //log(self.currentSalesRecord().putbackDeadline());
         //log(self.currentSalesRecord().salesPrice());
         var json = JSON.stringify({
+            Portfolio_:self.portfolioNumber(),
             PutbackDeadline: self.currentSalesRecord().putbackDeadline(),
             PutbackTerm_days_: self.currentSalesRecord().putbackTerm(),
             C_ofAccts: self.currentSalesRecord().accounts(),
-            FaceValue: self.currentSalesRecord().faceValue(),
+            FaceValue: Number(self.currentSalesRecord().faceValue().replace(/[^0-9\.]+/g, "")),
             SalesBasis: self.currentSalesRecord().salesBasis(),
-            SalesPrice: self.currentSalesRecord().salesPrice(),
+            SalesPrice: Number(self.currentSalesRecord().salesPrice().replace(/[^0-9\.]+/g, "")),
             Buyer: self.currentSalesRecord().buyer(),
             Lender: self.currentSalesRecord().lender(),
             ClosingDate: self.currentSalesRecord().closingDt(),
             Cut_OffDate: self.currentSalesRecord().cutoffDt(),
             ID: self.currentSalesRecord().Id,
-            TransType: 'Sale'
+            Notes: self.currentSalesRecord().notes()
         });
 
         $.ajax({
-            url: baseUrl + '/api/PortfolioTransactions/',
+            url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
             type: "POST",
             data: json,
             dataType: "json",

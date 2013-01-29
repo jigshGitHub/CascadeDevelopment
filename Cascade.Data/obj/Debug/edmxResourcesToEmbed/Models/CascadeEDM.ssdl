@@ -1968,7 +1968,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
     <Property Name="Cut-OffDate" Type="datetime" />
     <Property Name="ClosingDate" Type="datetime" />
