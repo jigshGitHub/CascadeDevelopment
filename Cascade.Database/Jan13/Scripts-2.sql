@@ -48,7 +48,7 @@ AS
 If Exists(Select [Portfolio#] From [MSI_Port_Acq_Original] Where [Portfolio#] = @productCode)
 BEGIN
 	Select [Portfolio#],[Cut-OffDate],[ClosingDate] ,[Lender/FileDescription] ,[Seller] ,[CostBasis] ,[Face] ,[PurchasePrice] ,[#ofAccts] ,[PutbackTerm (days)] As PutBackTerm ,[PutbackDeadline] ,[Notes] ,[ResaleRestrictionId] ,[Company]
-	FROM [CascadeDB].[dbo].[MSI_Port_Acq_Original]
+	FROM [dbo].[MSI_Port_Acq_Original]
 	Where [Portfolio#] = @productCode;
 END
 ELSE
@@ -115,7 +115,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[MSI_Port_SalesTrans_Edited](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ID] [int] NOT NULL,
 	[Portfolio#] [nvarchar](255) NULL,
 	[Cut-OffDate] [datetime] NULL,
 	[ClosingDate] [datetime] NULL,

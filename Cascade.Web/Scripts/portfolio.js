@@ -515,9 +515,7 @@ function salesTransVM() {
             var startIndex = value.indexOf('-');
             var totalChars = value.length - startIndex;
             var index = value.substr(startIndex + 1, totalChars);
-            log('index=' + index);
-            self.currentRecordIndex(index-1);
-            log('currentRecordIndex=' + self.currentRecordIndex());
+            self.currentRecordIndex(index - 1);
         }
     }.bind(self));
     self.getsalesBatchSelected = function (index) {
@@ -606,6 +604,7 @@ function salesTransVM() {
             }
         });
     }
+    self.saveVisible = ko.observable(false);
     self.resetFields = function () {
         self.portfolioNumber('');
         self.currentSalesRecord().Id = undefined;
@@ -623,8 +622,7 @@ function salesTransVM() {
         self.currentSalesRecord().salesBatch('');
         self.currentSalesRecord().notes('');
         self.currentRecordIndex(0);
-        self.salesBatchSelected(undefined);
-        
+        self.salesBatchSelected(undefined);        
     }
 };
 
@@ -722,6 +720,7 @@ function purchaseSummaryVM() {
         self.showMessage(true);
         self.message('Data saved successfully!');
     }
+    self.saveVisible = ko.observable(false);
     self.resetFields = function () {
         self.portfolioNumber('');
         self.company('');
@@ -797,6 +796,7 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
+                    self.purchaseSummarySectionVM.saveVisible(true);
                     $("#loading").html("&nbsp;");
                     $("#loading").dialog('close');
                 },
@@ -806,10 +806,13 @@ function portfolioVM() {
             });
             self.salesTabVM.portfolioNumber(self.portfolioNumber());
             self.salesTabVM.salesBatchSelected(self.portfolioNumber() + '-1');
+            self.salesTabVM.saveVisible(true);
         }
         else {
             self.salesTabVM.resetFields();
             self.purchaseSummarySectionVM.resetFields();
+            self.purchaseSummarySectionVM.saveVisible(false);
+            self.salesTabVM.saveVisible(false);
         }
 
     }.bind(self));

@@ -515,9 +515,24 @@ function salesTransVM() {
             var startIndex = value.indexOf('-');
             var totalChars = value.length - startIndex;
             var index = value.substr(startIndex + 1, totalChars);
-            log('index=' + index);
-            self.currentRecordIndex(index-1);
-            log('currentRecordIndex=' + self.currentRecordIndex());
+            self.currentRecordIndex(index - 1);
+            self.saveVisible(true);
+        }
+        else {
+            self.currentSalesRecord().Id = undefined;
+            self.currentSalesRecord().lender('');
+            self.currentSalesRecord().buyer(undefined);
+            self.currentSalesRecord().cutoffDt('');
+            self.currentSalesRecord().closingDt('');
+            self.currentSalesRecord().putbackTerm(undefined);
+            self.currentSalesRecord().putbackDeadline('');
+            self.currentSalesRecord().salesBasis('');
+            self.currentSalesRecord().salesPrice('');
+            self.currentSalesRecord().faceValue('');
+            self.currentSalesRecord().accounts('');
+            self.currentSalesRecord().notes('');
+            self.currentRecordIndex(0);
+            self.saveVisible(false);
         }
     }.bind(self));
     self.getsalesBatchSelected = function (index) {
@@ -606,6 +621,7 @@ function salesTransVM() {
             }
         });
     }
+    self.saveVisible = ko.observable(false);
     self.resetFields = function () {
         self.portfolioNumber('');
         self.currentSalesRecord().Id = undefined;
@@ -670,7 +686,8 @@ function salesTransVM() {
         cutOffDate.setDate(cutOffDate.getDate() + 1);
         self.currentSalesRecord().cutoffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
         self.currentSalesRecord().salesBasis(data.SalesBasis);
-        self.currentSalesRecord().putbackTerm(data.PutbackTerm__days_);
+        log('data.PutbackTerm__days_=' + data.PutbackTerm_days_);
+        self.currentSalesRecord().putbackTerm(data.PutbackTerm_days_);
         if (data.PutbackDeadline == undefined) {
         }
         else {
@@ -1083,7 +1100,7 @@ function portfolioVM() {
     });
     self.portfolioNumber = ko.observable();
     self.portfolioNumber.subscribe(function (number) {
-        if (number != '') {
+        if (number != undefined) {
             $("#loading").dialog('open');
             $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
 
@@ -1099,7 +1116,7 @@ function portfolioVM() {
                 dataType: 'json',
                 async: true,
                 success: function (data) {
-                    log(data);
+                    //log(data);
                     self.purchaseSummarySectionVM.portfolioNumber(data.Portfolio_);
                     self.purchaseSummarySectionVM.company(data.Company);
                     self.purchaseSummarySectionVM.seller(data.Seller);
@@ -1122,11 +1139,11 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    if(data.Face != undefined)
+                    if (data.Face != undefined)
                         self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
-                    if(data.PurchasePrice != undefined)
+                    if (data.PurchasePrice != undefined)
                         self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
@@ -1159,11 +1176,11 @@ function portfolioVM() {
                 }
             });
             self.salesTabVM.portfolioNumber(self.portfolioNumber());
-            self.salesTabVM.salesBatchSelected(self.portfolioNumber()+'-1');
-            //self.collectionsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.investmentsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.distributionsTabVM.portfolioNumber(self.portfolioNumber());
-            //self.interestTabVM.portfolioNumber(self.portfolioNumber());
+            self.salesTabVM.salesBatchSelected(self.portfolioNumber() + '-1');
+        }
+        else {
+            self.salesTabVM.resetFields();
+            self.purchaseSummarySectionVM.resetFields();
         }
 
     }.bind(self));

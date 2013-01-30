@@ -515,9 +515,9 @@ function salesTransVM() {
             var startIndex = value.indexOf('-');
             var totalChars = value.length - startIndex;
             var index = value.substr(startIndex + 1, totalChars);
-            log('index=' + index);
-            self.currentRecordIndex(index-1);
-            log('currentRecordIndex=' + self.currentRecordIndex());
+            self.currentRecordIndex(index - 1);
+            self.originalData(true);
+            self.updatedData(false);
         }
     }.bind(self));
     self.getsalesBatchSelected = function (index) {
@@ -606,6 +606,7 @@ function salesTransVM() {
             }
         });
     }
+    self.saveVisible = ko.observable(false);
     self.resetFields = function () {
         self.portfolioNumber('');
         self.currentSalesRecord().Id = undefined;
@@ -670,7 +671,8 @@ function salesTransVM() {
         cutOffDate.setDate(cutOffDate.getDate() + 1);
         self.currentSalesRecord().cutoffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
         self.currentSalesRecord().salesBasis(data.SalesBasis);
-        self.currentSalesRecord().putbackTerm(data.PutbackTerm__days_);
+        log('data.PutbackTerm__days_=' + data.PutbackTerm_days_);
+        self.currentSalesRecord().putbackTerm(data.PutbackTerm_days_);
         if (data.PutbackDeadline == undefined) {
         }
         else {
@@ -1122,11 +1124,11 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    if(data.Face != undefined)
+                    if (data.Face != undefined)
                         self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
-                    if(data.PurchasePrice != undefined)
+                    if (data.PurchasePrice != undefined)
                         self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
@@ -1160,10 +1162,13 @@ function portfolioVM() {
             });
             self.salesTabVM.portfolioNumber(self.portfolioNumber());
             self.salesTabVM.salesBatchSelected(self.portfolioNumber() + '-1');
+            self.salesTabVM.saveVisible(true);
         }
         else {
             self.salesTabVM.resetFields();
             self.purchaseSummarySectionVM.resetFields();
+            self.purchaseSummarySectionVM.saveVisible(false);
+            self.salesTabVM.saveVisible(false);
         }
 
     }.bind(self));
