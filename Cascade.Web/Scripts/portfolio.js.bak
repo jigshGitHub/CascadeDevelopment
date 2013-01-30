@@ -592,7 +592,7 @@ function salesTransVM() {
         });
 
         $.ajax({
-            url: baseUrl + '/api/MSIPortfolioSalesTransactionsEdited/',
+            url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/',
             type: "POST",
             data: json,
             dataType: "json",
@@ -624,148 +624,7 @@ function salesTransVM() {
         self.currentSalesRecord().notes('');
         self.currentRecordIndex(0);
         self.salesBatchSelected(undefined);
-    }
-    self.saveVisible = ko.observable(false);
-    self.makeFieldsEditable = ko.observable(false);
-    self.editVisible = ko.observable(false);
-    self.editRecord = function () {
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioSalesTransactionsEdited/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { id: self.currentSalesRecord().Id },
-            dataType: 'json',
-            async: false,
-            success: function (data) {
-                //log(data);
-                loadSalesData(data);
-
-                self.makeFieldsEditable(true);
-                self.saveVisible(true);
-                self.editVisible(false);
-                self.originalData(false);
-                self.updatedData(false);
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
-    }
-    self.originalData = ko.observable(false);
-    self.updatedData = ko.observable(false);
-
-    self.lenderEditedValue = ko.observable();
-    self.buyerEditedValue = ko.observable();
-    self.cuttOfDateEditedValue = ko.observable();
-    self.putbackTermEditedValue = ko.observable();
-    self.putbackDeadlineEditedValue = ko.observable();
-    self.notesEditedValue = ko.observable();
-
-    loadSalesData = function (data) {
-        self.currentSalesRecord().portfolioNumber(data.Portfolio_);
-        self.currentSalesRecord().buyer(data.Buyer);
-        self.currentSalesRecord().lender(data.Lender);
-        var cutOffDate = new Date(data.Cut_OffDate);
-        cutOffDate.setDate(cutOffDate.getDate() + 1);
-        self.currentSalesRecord().cutoffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-        self.currentSalesRecord().salesBasis(data.SalesBasis);
-        self.currentSalesRecord().putbackTerm(data.PutbackTerm__days_);
-        if (data.PutbackDeadline == undefined) {
-        }
-        else {
-            var putbackDeadline = new Date(data.PutbackDeadline);
-            putbackDeadline.setDate(putbackDeadline.getDate() + 1);
-            self.currentSalesRecord().putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
-        }
-        if (data.Face != undefined)
-            self.currentSalesRecord().faceValue(formatCurrency(data.FaceValue));
-        self.currentSalesRecord().accounts(data.C_ofAccts);
-        if (data.PurchasePrice != undefined)
-            self.currentSalesRecord().salesPrice(formatCurrency(data.SalesPrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-        self.currentSalesRecord().Id = data.ID;
-        self.currentSalesRecord().notes(data.Notes);
-    }
-
-    self.getOriginal = function () {
-        log('getting original');
         
-        $("#loading").dialog('open');
-        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
-        
-        self.buyerEditedValue('');        
-        self.lenderEditedValue('');
-        self.cuttOfDateEditedValue('');        
-        self.putbackTermEditedValue('');        
-        self.notesEditedValue('')
-        
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioSalesTransactionsOriginal/Details/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { id: self.currentSalesRecord().Id },
-            dataType: 'json',
-            async: true,
-            success: function (data) {
-                log(data);
-                loadSalesData(data);
-                self.updatedData(false);
-                self.originalData(true);
-                $("#loading").html("&nbsp;");
-                $("#loading").dialog('close');
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
-    }
-    self.getUpdated = function () {
-        log('getting updated');
-
-        $("#loading").dialog('open');
-        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioSalesTransactionsEdited/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { id: self.currentSalesRecord().Id },
-            dataType: 'json',
-            async: true,
-            success: function (data) {
-                //log(data);
-                if (data == null) {
-                    self.message('Record has not been updated yet');
-                    self.showMessage(true);
-                }
-                else {
-                    if (self.currentSalesRecord().buyer() != data.Buyer)
-                        self.buyerEditedValue('buyer');
-                    if (self.currentSalesRecord().lender() != data.Lender)
-                        self.lenderEditedValue('lender');
-                    var cutOffDate = new Date(data.Cut_OffDate);
-                    cutOffDate.setDate(cutOffDate.getDate() + 1);
-                    //log(self.currentSalesRecord().cutoffDt());
-                    //log($.datepicker.formatDate('mm/dd/yy', cutOffDate))
-                    if (self.currentSalesRecord().cutoffDt() != $.datepicker.formatDate('mm/dd/yy', cutOffDate))
-                        self.cuttOfDateEditedValue('cutOffDt');
-                    if (self.currentSalesRecord().putbackTerm() != data.PutbackTerm_days_)
-                        self.putbackTermEditedValue('putbackTerm');
-                    if (self.currentSalesRecord().notes() != data.Notes)
-                        self.notesEditedValue('notesEdited')
-
-                    loadSalesData(data);
-                    self.updatedData(true);
-                    self.originalData(false);
-                    $("#loading").html("&nbsp;");
-                    $("#loading").dialog('close');
-                }
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
     }
 };
 
@@ -806,7 +665,7 @@ function purchaseSummaryVM() {
     //}, self);
     self.putbackTerm.subscribe(function (termValue) {
         if (termValue != undefined) {
-            var putbackDeadline = new Date(self.purchaseDate());
+            var putbackDeadline = new Date(self.purchaseDate());            
             putbackDeadline.setDate(putbackDeadline.getDate() + termValue);
             self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
         }
@@ -849,14 +708,13 @@ function purchaseSummaryVM() {
         //log(json);
         $.ajax({
             //url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioEdited/',
+            url: baseUrl + '/api/MSIPortfolioOriginal/',
             type: "POST",
             data: json,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (response) {
-                //log(response);
-                self.getUpdated();
+                log(response);
             },
             error: function (response, errorText) {
             }
@@ -880,197 +738,6 @@ function purchaseSummaryVM() {
         self.accounts('');
         self.purchasePrice('');
         self.notes('');
-    }
-    self.saveVisible = ko.observable(false);
-    self.makeFieldsEditable = ko.observable(false);
-    self.editVisible = ko.observable(false);
-    self.editRecord = function () {
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioEdited/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { portfolioNumber: self.portfolioNumber() },
-            dataType: 'json',
-            async: false,
-            success: function (data) {
-                //log(data);
-                loadPurchaseData(data);
-
-                self.makeFieldsEditable(true);
-                self.saveVisible(true);
-                self.editVisible(false);
-                self.originalData(false);
-                self.updatedData(false);
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
-    }
-    self.originalData = ko.observable(false);
-    self.updatedData = ko.observable(false);
-
-    self.companyEditedValue = ko.observable();
-    self.resaleEditedValue = ko.observable();
-    self.lenderFileEditedValue = ko.observable();
-    self.sellerEditedValue = ko.observable();
-    self.cuttOfDateEditedValue = ko.observable();
-    self.putbackTermEditedValue = ko.observable();
-    self.putbackDeadlineEditedValue = ko.observable();
-    self.notesEditedValue = ko.observable();
-
-    loadPurchaseData = function (data) {
-        self.portfolioNumber(data.Portfolio_);
-        self.company(data.Company);
-        self.seller(data.Seller);
-        self.lender(data.Lender_FileDescription);
-        var cutOffDate = new Date(data.Cut_OffDate);
-        cutOffDate.setDate(cutOffDate.getDate() + 1);
-        self.cutOffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-        self.costBasis(data.CostBasis);
-        self.putbackTerm(data.PutbackTerm__days_);
-        if (data.PutbackDeadline == undefined) {
-        }
-        else {
-            var putbackDeadline = new Date(data.PutbackDeadline);
-            putbackDeadline.setDate(putbackDeadline.getDate() + 1);
-            self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
-        }
-        self.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-        if(data.Face != undefined)
-            self.face(formatCurrency(data.Face));
-        self.accounts(data.C_ofAccts);
-        if(data.PurchasePrice != undefined)
-            self.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-        self.resaleRestriction(data.ResaleRestrictionId);
-        self.notes(data.Notes);
-    }
-    self.getOriginal = function () {
-        log('getting original');
-        $("#loading").dialog('open');
-        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
-        self.companyEditedValue('');
-        self.resaleEditedValue('');
-        self.lenderFileEditedValue('');
-        self.sellerEditedValue('');
-        self.cuttOfDateEditedValue('');
-        self.putbackTermEditedValue('');
-        self.putbackDeadlineEditedValue('');
-        self.notesEditedValue('');
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioOriginal/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { portfolioNumber: self.portfolioNumber() },
-            dataType: 'json',
-            async: true,
-            success: function (data) {
-                //log(data);
-                loadPurchaseData(data);
-                //self.portfolioNumber(data.Portfolio_);
-                //self.company(data.Company);
-                //self.seller(data.Seller);
-                //self.lender(data.Lender_FileDescription);
-                //var cutOffDate = new Date(data.Cut_OffDate);
-                //cutOffDate.setDate(cutOffDate.getDate() + 1);
-                //self.cutOffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                //self.costBasis(data.CostBasis);
-                //self.putbackTerm(data.PutbackTerm__days_);
-                //if (data.PutbackDeadline == undefined) {
-                //}
-                //else {
-                //    var putbackDeadline = new Date(data.PutbackDeadline);
-                //    putbackDeadline.setDate(putbackDeadline.getDate() + 1);
-                //    self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
-                //}
-                //self.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                //self.face(formatCurrency(data.Face));
-                //self.accounts(data.C_ofAccts);
-                //self.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-                //self.resaleRestriction(data.ResaleRestrictionId);
-                //self.notes(data.Notes);
-                self.updatedData(false);
-                self.originalData(true);
-                $("#loading").html("&nbsp;");
-                $("#loading").dialog('close');
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
-    }
-    self.getUpdated = function () {
-        log('getting updated');
-        $("#loading").dialog('open');
-        $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
-        $.ajax({
-            //                url: baseUrl + '/api/Portfolio/',
-            url: baseUrl + '/api/MSIPortfolioEdited/',
-            type: 'GET',
-            contentType: 'application/json',
-            data: { portfolioNumber: self.portfolioNumber() },
-            dataType: 'json',
-            async: true,
-            success: function (data) {
-                //log(data);
-                if (data == null) {
-                    self.message('Record has not been updated yet');
-                    self.showMessage(true);
-                }
-                else {
-                    if (self.company() != data.Company) 
-                        self.companyEditedValue('company');
-                    if (self.seller() != data.Seller)
-                        self.sellerEditedValue('seller');
-                    if (self.lender() != data.Lender_FileDescription)
-                        self.lenderFileEditedValue('lender');
-                    var cutOffDate = new Date(data.Cut_OffDate);
-                    cutOffDate.setDate(cutOffDate.getDate() + 1);
-                    if (self.cutOffDt() != $.datepicker.formatDate('mm/dd/yy', cutOffDate))
-                        self.cuttOfDateEditedValue('cutOffDt');
-                    if (self.putbackTerm() != data.PutbackTerm__days_)
-                        self.putbackTermEditedValue('putbackTerm');
-                    if (self.resaleRestriction() != data.ResaleRestrictionId)
-                        self.resaleEditedValue('reSale');
-                    if (self.notes() != data.Notes) 
-                        self.notesEditedValue('notesEdited')
-
-                    loadPurchaseData(data);
-                    //self.portfolioNumber(data.Portfolio_);
-                    //self.company(data.Company);
-                    //self.seller(data.Seller);
-                    //self.lender(data.Lender_FileDescription);
-                    //var cutOffDate = new Date(data.Cut_OffDate);
-                    //cutOffDate.setDate(cutOffDate.getDate() + 1);
-                    //self.cutOffDt($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    //self.costBasis(data.CostBasis);
-                    //self.putbackTerm(data.PutbackTerm__days_);
-                    //if (data.PutbackDeadline == undefined) {
-                    //}
-                    //else {
-                    //    var putbackDeadline = new Date(data.PutbackDeadline);
-                    //    putbackDeadline.setDate(putbackDeadline.getDate() + 1);
-                    //    self.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
-                    //}
-                    //self.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    //self.face(formatCurrency(data.Face));
-                    //self.accounts(data.C_ofAccts);
-                    //self.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-                    //self.resaleRestriction(data.ResaleRestrictionId);
-                    //self.notes(data.Notes);
-
-                    self.updatedData(true);
-                    self.originalData(false);
-                    $("#loading").html("&nbsp;");
-                    $("#loading").dialog('close');
-                }
-            },
-            error: function (xhr, status, somthing) {
-                log(status);
-            }
-        });
     }
 };
 
@@ -1122,37 +789,16 @@ function portfolioVM() {
                         self.purchaseSummarySectionVM.putbackDeadline($.datepicker.formatDate('mm/dd/yy', putbackDeadline));
                     }
                     self.purchaseSummarySectionVM.purchaseDate($.datepicker.formatDate('mm/dd/yy', cutOffDate));
-                    if(data.Face != undefined)
+                    if (data.Face != undefined)
                         self.purchaseSummarySectionVM.face(formatCurrency(data.Face));
                     //self.costBasisputbackTermsputbackDeadlineface(data.Face);
                     self.purchaseSummarySectionVM.accounts(data.C_ofAccts);
-                    if(data.PurchasePrice != undefined)
+                    if (data.PurchasePrice != undefined)
                         self.purchaseSummarySectionVM.purchasePrice(formatCurrency(data.PurchasePrice));//formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
                     self.purchaseSummarySectionVM.resaleRestriction(data.ResaleRestrictionId);
                     self.purchaseSummarySectionVM.notes(data.Notes);
-
-                    self.purchaseSummarySectionVM.editVisible(true);
-                    self.purchaseSummarySectionVM.saveVisible(false);
-                    self.purchaseSummarySectionVM.makeFieldsEditable(false);
-                    self.purchaseSummarySectionVM.originalData(true);
-                    self.purchaseSummarySectionVM.updatedData(false);
-
-                    self.purchaseSummarySectionVM.companyEditedValue('');
-                    self.purchaseSummarySectionVM.resaleEditedValue('');
-                    self.purchaseSummarySectionVM.lenderFileEditedValue('');
-                    self.purchaseSummarySectionVM.sellerEditedValue('');
-                    self.purchaseSummarySectionVM.cuttOfDateEditedValue('');
-                    self.purchaseSummarySectionVM.putbackTermEditedValue('');
-                    self.purchaseSummarySectionVM.putbackDeadlineEditedValue('');
-                    self.purchaseSummarySectionVM.notesEditedValue('');
                     $("#loading").html("&nbsp;");
                     $("#loading").dialog('close');
-
-                    self.salesTabVM.editVisible(true);
-                    self.salesTabVM.saveVisible(false);
-                    self.salesTabVM.makeFieldsEditable(false);
-                    self.salesTabVM.originalData(true);
-                    self.salesTabVM.updatedData(false);
                 },
                 error: function (xhr, status, somthing) {
                     log(status);
@@ -1291,7 +937,7 @@ portfolioViewModels.portfolios = function () {
             url: baseUrl + '/api/Lookup/',
             type: 'GET',
             contentType: 'application/json',
-            data: { id: 'PortfolioOriginal' },
+            data: { id: 'Portfolio' },
             async: false,
             success: function (data) {
                 //log(data);
