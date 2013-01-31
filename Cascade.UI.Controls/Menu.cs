@@ -63,6 +63,7 @@ namespace Cascade.UI.Controls
         public string Controller { get; set; }
         public string Action { get; set; }
         public string Area { get; set; }
+        public string[] Roles { get; set; }
     }
 
     public interface IMenuCollection<T>

@@ -1,3 +1,4 @@
+--Executed on server 139/dbPCS
 /****** Object:  StoredProcedure [dbo].[sp_GetDistinctProductCode]    Script Date: 01/28/2013 13:20:29 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_GetDistinctProductCode]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[sp_GetDistinctProductCode]

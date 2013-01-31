@@ -598,8 +598,11 @@ function salesTransVM() {
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (response) {
-                log(response);
+                //log(response);
+                self.getUpdated();
+                self.saveVisible(false);
                 self.showMessage(true);
+                self.editVisible(true);
                 self.message('Data saved successfully!');
             },
             error: function (response, errorText) {
@@ -656,6 +659,7 @@ function salesTransVM() {
     self.originalData = ko.observable(false);
     self.updatedData = ko.observable(false);
 
+    self.radiosVisible = ko.observable(false);
     self.lenderEditedValue = ko.observable();
     self.buyerEditedValue = ko.observable();
     self.cuttOfDateEditedValue = ko.observable();
@@ -691,7 +695,7 @@ function salesTransVM() {
 
     self.getOriginal = function () {
         log('getting original');
-        
+        self.radiosVisible(false);
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         
@@ -724,7 +728,7 @@ function salesTransVM() {
     }
     self.getUpdated = function () {
         log('getting updated');
-
+        self.radiosVisible(true);
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         $.ajax({
@@ -859,6 +863,8 @@ function purchaseSummaryVM() {
             success: function (response) {
                 //log(response);
                 self.getUpdated();
+                self.saveVisible(false);
+                self.editVisible(true);
             },
             error: function (response, errorText) {
             }
@@ -913,6 +919,7 @@ function purchaseSummaryVM() {
     self.originalData = ko.observable(false);
     self.updatedData = ko.observable(false);
 
+    self.radiosVisible = ko.observable(false);
     self.companyEditedValue = ko.observable();
     self.resaleEditedValue = ko.observable();
     self.lenderFileEditedValue = ko.observable();
@@ -950,6 +957,7 @@ function purchaseSummaryVM() {
     }
     self.getOriginal = function () {
         log('getting original');
+        self.radiosVisible(false);
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         self.companyEditedValue('');
@@ -1005,6 +1013,7 @@ function purchaseSummaryVM() {
     }
     self.getUpdated = function () {
         log('getting updated');
+        self.radiosVisible(true);
         $("#loading").dialog('open');
         $("#loading").html("<img src=\"" + absoluteapp + imagedir + "/ajax-loader.gif\" />");
         $.ajax({

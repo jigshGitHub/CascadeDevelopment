@@ -160,6 +160,8 @@
     <Compile Include="Areas\AssetSales\AssetSalesAreaRegistration.cs" />
     <Compile Include="Areas\AssetSales\Controllers\HomeController.cs" />
     <Compile Include="Areas\Collections\CollectionsAreaRegistration.cs" />
+    <Compile Include="Areas\Compliance\ComplianceAreaRegistration.cs" />
+    <Compile Include="Areas\Compliance\Controllers\HomeController.cs" />
     <Compile Include="Areas\CRM\Controllers\CompanyController.cs" />
     <Compile Include="Areas\CRM\CRMAreaRegistration.cs" />
     <Compile Include="Areas\CRM\Models\JQueryDataTableParamModel.cs" />
@@ -433,6 +435,10 @@
     <Content Include="Areas\Reports\Views\Media\_mediaNotForwarded.cshtml" />
     <Content Include="Areas\Reports\Views\Recalls\_addSellerCheck.cshtml" />
     <Content Include="Areas\Portfolio\Views\ViewEdit\Index.cshtml" />
+    <Content Include="Areas\Compliance\Views\Web.config" />
+    <Content Include="Areas\Compliance\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Compliance\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Compliance\Views\Home\Create.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />
@@ -524,6 +530,8 @@
     <Folder Include="Areas\Collections\Controllers\" />
     <Folder Include="Areas\Collections\Models\" />
     <Folder Include="Areas\Collections\Views\Shared\" />
+    <Folder Include="Areas\Compliance\Models\" />
+    <Folder Include="Areas\Compliance\Views\Shared\" />
     <Folder Include="Areas\CRM\Views\Shared\" />
     <Folder Include="Areas\InvestorManagement\Models\" />
     <Folder Include="Areas\InvestorManagement\Views\Shared\" />
