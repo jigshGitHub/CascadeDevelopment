@@ -15,6 +15,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[MSI_ComplaintMain](
+	[AgencyId] [int] NULL,
 	[Account] [varchar](20) NOT NULL,
 	[LastName] [varchar](50) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
@@ -41,6 +42,8 @@ CREATE TABLE [dbo].[MSI_ComplaintMain](
 	[ComplaintReceivedByMethodId] [int] NULL,
 	[ComplaintIssueId] [int] NOT NULL,
 	[ComplaintNotes] [varchar](1000) NULL,
+	[ComplaintSubmitedToAgency] [bit] NULL,
+	[ComplaintSubmitedToAgencyDate] [datetime] NULL,
 	[MoreInfoReqdFromDebtor] [bit] NULL,
 	[MoreInfoRequestedDate] [datetime] NULL,
 	[MoreInfoRequested] [varchar](1000) NULL,

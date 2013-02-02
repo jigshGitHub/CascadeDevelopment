@@ -9,20 +9,43 @@
     <table class="tblCommon" style="width: 100%">
         <tr>
             <td>Type PIMS Consumer Account # :
-                <input type="text" data-bind="value:accountNumber" />&nbsp;<input type="button" class="editButton" value="  Find  " data-bind="click:findData" /></td>
+                <input type="text" data-bind="value:pimsAccountNumber" />&nbsp;<input type="button" class="editButton" value="  Find  " data-bind="click:findData" /></td>
+        </tr>
+        <tr>
+            <td>
+                <div id="debtorResults" style="">
+                    <table>
+                        <tr>
+                            <th>Account</th>
+                            <th>FirstName</th>
+                            <th>LastNAme</th>
+                            <th>Dob</th>
+                        </tr>
+                        <tbody data-bind="foreach:debtors">
+                            <tr>
+                                <td data-bind="text:account,click:$root.selectedDebtor"></td>
+                                <td data-bind="text:firstName"></td>
+                                <td data-bind="text:lastName"></td>
+                                <td data-bind="text:dob"></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </td>
         </tr>
         <tr>
             <td style="width: 100%; background-color: #1f497d"><a href="#" style="text-decoration: none; font-weight: bold; color: white" data-bind="click:showHideDebtInformation">Debtor & Debt Information</a></td>
         </tr>
         <tr>
             <td>
-                <div id="debtInformation" data-bind="visible:showDebtInformation">
+                <div id="debtInformation" data-bind="with:complianceModel,visible:showDebtInformation">
                     <table class="debtorInfo">
                         <tr>
                             <td style="text-align: right; width: 20%">Consumer Account #</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <input type="text" data-bind="value:accountNumber" />
+                                <input type="text" data-bind="value:account" />
                             <td style="text-align: right; width: 20%">Last 4 of SSN</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
@@ -37,7 +60,7 @@
                             <td style="text-align: right; width: 20%">Verified Debtor Identity?</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:debtorIdentities,optionsValue:'Value', optionsText: 'Text', value: debtorIdentityVerified"></select>
+                                <select data-bind="options:$parent.debtorIdentities,optionsValue:'Value', optionsText: 'Text', value: $parent.debtorIdentityVerified"></select>
                             </td>
                         </tr>
                     </table>
@@ -90,64 +113,44 @@
 
 
     <script src="~/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+    <script src="~/Scripts/compliance.js" type="text/javascript"></script>
+    <script type="text/javascript">        
 
-    <script type="text/javascript">
-        function complianceVM() {
+        function pageViewModel() {
             var self = this;
 
-            self.accountNumber = ko.observable('');
-            self.lastName = ko.observable('');
-            self.firstName = ko.observable('');
-            self.address = ko.observable('');
-            self.city = ko.observable('');
-            self.state = ko.observable('');
-            self.zip = ko.observable('');
-            self.homePhone = ko.observable('');
-            self.workPhone = ko.observable('');
-            self.mobilePhone = ko.observable('');
-            self.lastFourSSN = ko.observable('');
-            self.debtorIdentityVerified = ko.observable('');
-            self.contactMethodId = ko.observable('');
-            self.contactTimeId = ko.observable('');
-            self.creditorName = ko.observable('');
-            self.debtProductId = ko.observable('');
-            self.debtPurchaseBalance = ko.observable('');
-            self.debtCurrentBalance = ko.observable('');
-            self.disputeDebt = ko.observable('');
-            self.disputeDebtAmount = ko.observable('');
-            self.disputeDebtDueDate = ko.observable('');
-            self.complaintID = ko.observable('');
-            self.complaiintDate = ko.observable('');
-            self.complaintReceivedByMethodId = ko.observable('');
-            self.complaintIssueId = ko.observable('');
-            self.complaintNotes = ko.observable('');
-            self.moreInfoReqdFromDebtor = ko.observable('');
-            self.moreInfoRequestedDate = ko.observable('');
-            self.moreInfoRequested = ko.observable('');
-            self.moreInfoReceivedFromDebtor = ko.observable('');
-            self.moreInfoReceivedDate = ko.observable('');
-            self.moreInfoReceived = ko.observable('');
-            self.complaintSubmittedToOwner = ko.observable('');
-            self.complaintSubmittedDate = ko.observable('');
-            self.timeToSubmitDays = ko.observable('');
-            self.moreInfoFromAgency = ko.observable('');
-            self.moreInfoFromAgencyRequestedDate = ko.observable('');
-            self.moreInfoFromAgencyRequested = ko.observable('');
-            self.moreInfoFromAgencyReceived = ko.observable('');
-            self.moreInfoFromAgencyReceivedDate = ko.observable('');
-            self.ownerResponseId = ko.observable('');
-            self.ownerResponseDate = ko.observable('');
-            self.ownerResponseDays = ko.observable('');
-            self.agencyResponseToDebtorDate = ko.observable('');
-            self.totalResponseTimeDays = ko.observable('');
-            self.debotrAgree = ko.observable('');
-            self.needFurtherAction = ko.observable('');
-            self.finalActionStepId = ko.observable('');
+            self.complianceModel = new complianceVM();
+            self.populateComplainceFromDebtor = function (account, firstName, lastName) {
+                self.complianceModel.account(account);
+                self.complianceModel.firstName(firstName);
+                self.complianceModel.lastName(lastName);
+            }
+            self.pimsAccountNumber = ko.observable('');
+            self.debtors = ko.observableArray([]);
 
+            self.selectedDebtor = function (debtor) {
+                //log(debtor.account());
+                self.pimsAccountNumber(debtor.account());
+                self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName());
+                $("#debtorResults").dialog('close');
+            };
             self.debtorIdentities = ko.observableArray([]);
             self.findData = function () {
-                if (self.accountNumber() != '') {
-                    log(self.accountNumber());
+                if (self.pimsAccountNumber() != '') {
+                    log(self.pimsAccountNumber());
+                    self.debtors.push(new pimsDebtor('12345', 'John', 'Smith', '1/1/1990'));
+                    self.debtors.push(new pimsDebtor('12346', 'Steve', 'Smith', '5/1/1981'));
+                    self.debtors.push(new pimsDebtor('12347', 'Mack', 'Donald', '1/1/1975'));
+                    self.debtors.push(new pimsDebtor('12348', 'George', 'Taylor', '6/1/1988'));
+                    self.debtors.push(new pimsDebtor('12349', 'Michale', 'Donald', '1/1/1990'));
+
+                    if (self.debtors().length > 1)
+                        $("#debtorResults").dialog('open');
+                    else {
+                        var debtor = self.debtors()[0];
+                        self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName());
+                    }
+                    //$("#debtorResults").html('<table><tr><th>Thead1</th><th>Thead2</th></tr><tr><td>Data1</td><td>Data2</td></tr></table>');
                 }
             }
             self.showDebtInformation = ko.observable(true);
@@ -180,8 +183,10 @@
             }
 
         }
+
         $(document).ready(function () {
-            ko.applyBindings(new complianceVM());
+            $('#debtorResults').dialog({ modal: true, title: 'Select debtor:', autoOpen: false, width: 500, height: 500 });
+            ko.applyBindings(new pageViewModel());
         });
 
 

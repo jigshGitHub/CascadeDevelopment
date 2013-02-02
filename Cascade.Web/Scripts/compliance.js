@@ -1,0 +1,62 @@
+﻿function complianceVM() {
+    var self = this;
+    self.account = ko.observable('');
+    self.agenct = ko.observable('');
+    self.lastName = ko.observable('');
+    self.firstName = ko.observable('');
+    self.address = ko.observable('');
+    self.city = ko.observable('');
+    self.state = ko.observable('');
+    self.zip = ko.observable('');
+    self.homePhone = ko.observable('');
+    self.workPhone = ko.observable('');
+    self.mobilePhone = ko.observable('');
+    self.lastFourSSN = ko.observable('');
+    self.debtorIdentityVerified = ko.observable('');
+    self.contactMethodId = ko.observable('');
+    self.contactTimeId = ko.observable('');
+    self.creditorName = ko.observable('');
+    self.debtProductId = ko.observable('');
+    self.debtPurchaseBalance = ko.observable('');
+    self.debtCurrentBalance = ko.observable('');
+    self.disputeDebt = ko.observable('');
+    self.disputeDebtAmount = ko.observable('');
+    self.disputeDebtDueDate = ko.observable('');
+    self.complaintID = ko.observable('');
+    self.complaiintDate = ko.observable('');
+    self.complaintReceivedByMethodId = ko.observable('');
+    self.complaintIssueId = ko.observable('');
+    self.complaintNotes = ko.observable('');
+    self.complaintSubmitedToAgency = ko.observable('');
+    self.complaintSubmitedToAgencyDate = ko.observable('');
+    self.moreInfoReqdFromDebtor = ko.observable('');
+    self.moreInfoRequestedDate = ko.observable('');
+    self.moreInfoRequested = ko.observable('');
+    self.moreInfoReceivedFromDebtor = ko.observable('');
+    self.moreInfoReceivedDate = ko.observable('');
+    self.moreInfoReceived = ko.observable('');
+    self.complaintSubmittedToOwner = ko.observable('');
+    self.complaintSubmittedDate = ko.observable('');
+    self.timeToSubmitDays = ko.observable('');
+    self.moreInfoFromAgency = ko.observable('');
+    self.moreInfoFromAgencyRequestedDate = ko.observable('');
+    self.moreInfoFromAgencyRequested = ko.observable('');
+    self.moreInfoFromAgencyReceived = ko.observable('');
+    self.moreInfoFromAgencyReceivedDate = ko.observable('');
+    self.ownerResponseId = ko.observable('');
+    self.ownerResponseDate = ko.observable('');
+    self.ownerResponseDays = ko.observable('');
+    self.agencyResponseToDebtorDate = ko.observable('');
+    self.totalResponseTimeDays = ko.observable('');
+    self.debotrAgree = ko.observable('');
+    self.needFurtherAction = ko.observable('');
+    self.finalActionStepId = ko.observable('');
+}
+
+function pimsDebtor(account, firstName, lastName, dob) {
+    var self = this;
+    self.account = ko.observable(account);
+    self.firstName = ko.observable(firstName);
+    self.lastName = ko.observable(lastName);
+    self.dob = ko.observable(dob);
+}
