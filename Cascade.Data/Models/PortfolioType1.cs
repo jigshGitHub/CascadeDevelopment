@@ -12,10 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CBRSpecialStatu
+    public partial class PortfolioType1
     {
-        public int CBRSpecialStatusID { get; set; }
-        public string CBRSpecialStatus { get; set; }
-        public string CBRSpecialStatusDesc { get; set; }
+        public int PortfolioTypeID { get; set; }
+        public string Type { get; set; }
     }
 }

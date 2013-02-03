@@ -12,9 +12,10 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TOT_CALL_ATMPS
+    public partial class PortfolioStatu
     {
-        public long Account { get; set; }
-        public Nullable<int> Calls { get; set; }
+        public int PortfolioStatusID { get; set; }
+        public string Status { get; set; }
+        public Nullable<int> PortfoliotypeID { get; set; }
     }
 }

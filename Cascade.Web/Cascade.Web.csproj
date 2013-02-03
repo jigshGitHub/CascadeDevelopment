@@ -39,21 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cascade.Charts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cascade.Charts\bin\Debug\Cascade.Charts.dll</HintPath>
-    </Reference>
     <Reference Include="Cascade.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Cascade.Data\bin\Debug\Cascade.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Cascade.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cascade.Charts\bin\Debug\Cascade.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Cascade.UI.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cascade.UI.Controls\bin\Debug\Cascade.UI.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MvcContrib">
@@ -553,6 +541,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cascade.Charts\Cascade.Charts.csproj">
+      <Project>{13c56c12-fb83-48ea-8caf-0860cbb85138}</Project>
+      <Name>Cascade.Charts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cascade.Helpers\Cascade.Helpers.csproj">
+      <Project>{2e52e329-3b7f-4538-be56-d15b56db8d4b}</Project>
+      <Name>Cascade.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cascade.UI.Controls\Cascade.UI.Controls.csproj">
+      <Project>{63dd875f-fd8e-4abb-9767-e18cdaeee264}</Project>
+      <Name>Cascade.UI.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,19 +1,22 @@
-SELECT acc.ACCOUNT, 
-acc.FirstName
-,acc.LastName
-,acc.ADDRESS1
-,acc.ADDRESS2
-,acc.CITY
-,acc.[STATE]
-,acc.ZIP_CODE
-,acc.ZIP
-,acc.SSN
-,acc.SS_NO
-,acc.PHONE_CELL
-,acc.PHONE_HOME
-,acc.PHONE_WORK
-,acc.DOB
-,racc.Debt_Bal As DebtCurrentBalance
-,(racc.OriginalBalance * racc.PurchasePrice) As DebtPurchaseBalance
-From vwAccounts acc INNER JOIN RACCOUNT rAcc ON acc.ACCOUNT = rAcc.ACCOUNT
-Where acc.ACCOUNT like '50000218%'
+SELECT vwAcc.ACCOUNT, 
+vwAcc.FirstName
+,vwAcc.LastName
+,vwAcc.ADDRESS1
+,vwAcc.ADDRESS2
+,vwAcc.CITY
+,vwAcc.[STATE]
+,vwAcc.ZIP_CODE
+,vwAcc.ZIP
+,vwAcc.SSN
+,vwAcc.SS_NO
+,vwAcc.PHONE_CELL
+,vwAcc.PHONE_HOME
+,vwAcc.PHONE_WORK
+,vwAcc.DOB
+,vwAcc.TOT_DUE_AMT As DebtCurrentBalance
+,vwAcc.Balance As DebtorPurchaseBalance
+,vwAcc.CreditorName
+From vwAccounts vwAcc INNER JOIN RACCOUNT rAcc ON vwAcc.ACCOUNT = rAcc.ACCOUNT
+Where vwAcc.ACCOUNT like '50000218%'
+
+exec [MSI_spGetDebtors] '50000218'

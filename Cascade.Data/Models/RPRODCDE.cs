@@ -16,6 +16,7 @@ namespace Cascade.Data.Models
     {
         public RPRODCDE()
         {
+            this.PortfolioStatusCrossRefs = new HashSet<PortfolioStatusCrossRef>();
             this.RACCOUNTs = new HashSet<RACCOUNT>();
         }
     
@@ -43,6 +44,7 @@ namespace Cascade.Data.Models
         public bool SaveBankInfo { get; set; }
         public bool SaveCCInfo { get; set; }
     
+        public virtual ICollection<PortfolioStatusCrossRef> PortfolioStatusCrossRefs { get; set; }
         public virtual ICollection<RACCOUNT> RACCOUNTs { get; set; }
     }
 }

@@ -12,9 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TOT_CALL_COST
+    public partial class MSI_OwnerResponses
     {
-        public long Account { get; set; }
-        public Nullable<decimal> Cost { get; set; }
+        public int Id { get; set; }
+        public string Response { get; set; }
     }
 }

@@ -12,14 +12,15 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class vw_QueryPortCashPosSum
+    public partial class PortfolioStatusCrossRef
     {
-        public string Portfolio_ { get; set; }
-        public Nullable<System.DateTime> ClosingDate { get; set; }
-        public Nullable<decimal> PurchasePrice { get; set; }
-        public Nullable<decimal> SumOfSalesPrice { get; set; }
-        public Nullable<decimal> CashPos { get; set; }
-        public string Company { get; set; }
-        public Nullable<decimal> Return_on_Capital { get; set; }
+        public int CrossRefID { get; set; }
+        public Nullable<int> ProductTypeID { get; set; }
+        public string Product_Code { get; set; }
+        public string Status { get; set; }
+        public string ReturnStatus { get; set; }
+    
+        public virtual RPRODCDE RPRODCDE { get; set; }
+        public virtual RSTATU RSTATU { get; set; }
     }
 }

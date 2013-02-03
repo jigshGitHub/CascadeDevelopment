@@ -12,13 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class recallmaster
+    public partial class MSI_FinalActionsteps
     {
-        public string Agency { get; set; }
-        public string ACCOUNT { get; set; }
-        public string OriginalAccount { get; set; }
-        public Nullable<System.DateTime> Recall { get; set; }
-        public string Portfolio { get; set; }
-        public Nullable<decimal> Principal { get; set; }
+        public int Id { get; set; }
+        public string Step { get; set; }
     }
 }

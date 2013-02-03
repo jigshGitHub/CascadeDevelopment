@@ -12,16 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class WorkStatu
+    public partial class MSI_DebtorContactMethods
     {
-        public WorkStatu()
-        {
-            this.RACCOUNTs = new HashSet<RACCOUNT>();
-        }
-    
-        public int WorkStatusID { get; set; }
-        public string Description { get; set; }
-    
-        public virtual ICollection<RACCOUNT> RACCOUNTs { get; set; }
+        public int Id { get; set; }
+        public string Method { get; set; }
     }
 }

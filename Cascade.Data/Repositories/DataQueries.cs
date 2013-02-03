@@ -10,7 +10,7 @@ namespace Cascade.Data.Repositories
 {
     public class DataQueries
     {
-        
+
         public IEnumerable<Purchases> GetPurchases(DateTime? startDate, DateTime? endDate, string productCode)
         {
             DBFactory db;
@@ -42,7 +42,7 @@ namespace Cascade.Data.Repositories
                     data.Add(record);
                 }
                 //Close the datareader
-                rdr.Close(); 
+                rdr.Close();
             }
             catch (Exception ex)
             {
@@ -110,13 +110,13 @@ namespace Cascade.Data.Repositories
                     record.Tran_Date = Convert.ToDateTime(rdr["Tran_Date"]);
                     record.Amount = rdr["Amount"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["Amount"]);
                     record.TRAN_CODE = rdr["TRAN_CODE"].ToString();
-                    record.TRAN_SOURCE = rdr["TRAN_SOURCE"].ToString(); 
+                    record.TRAN_SOURCE = rdr["TRAN_SOURCE"].ToString();
                     record.Responsibility = rdr["Responsibility"].ToString();
                     if (record.Amount == Convert.ToDecimal(0.0))
                     {
                         record.Amount = null;
                     }
-                    
+
                     data.Add(record);
                 }
                 //Close the datareader
@@ -166,7 +166,7 @@ namespace Cascade.Data.Repositories
             }
             return data.AsEnumerable<PortfolioSummary>();
         }
-        
+
         public IEnumerable<PortfolioPieRpt> GetPortfolioWorkStationDescription()
         {
             DBFactory db;
@@ -240,7 +240,7 @@ namespace Cascade.Data.Repositories
             }
             return data.AsQueryable<SearchResult>();
         }
-        
+
         public IQueryable<SearchResult> GetSearchResults(string account, string originator, string seller, string investor)
         {
             DBFactory db;
@@ -428,7 +428,7 @@ namespace Cascade.Data.Repositories
                     {
                         record.FaceValueofAcct = null;
                     }
-                    if (record.DateAcctClosed.ToString()  == "1/1/1900 12:00:00 AM")
+                    if (record.DateAcctClosed.ToString() == "1/1/1900 12:00:00 AM")
                     {
                         record.DateAcctClosed = null;
                     }
@@ -478,7 +478,7 @@ namespace Cascade.Data.Repositories
             }
             return data.AsEnumerable<PeopleViewEditResult>();
         }
-        
+
         public IEnumerable<MoneyViewEditResult> GetMoneyViewEditRecords(Decimal? Amount, int Source)
         {
             DBFactory db;
@@ -597,7 +597,7 @@ namespace Cascade.Data.Repositories
                         salesTransaction.ID = int.Parse(dr["ID"].ToString());
                         salesTransaction.Portfolio_ = dr["Portfolio#"].ToString();
                         salesTransaction.Buyer = dr["Buyer"].ToString();
-                        if(dr["SalesBasis"] != DBNull.Value)
+                        if (dr["SalesBasis"] != DBNull.Value)
                             salesTransaction.SalesBasis = Convert.ToDouble(dr["SalesBasis"].ToString());
                         if (dr["FaceValue"] != DBNull.Value)
                             salesTransaction.FaceValue = Convert.ToDecimal(dr["FaceValue"].ToString());
@@ -681,6 +681,51 @@ namespace Cascade.Data.Repositories
             return data.AsQueryable<LookUp>();
         }
 
+        public IEnumerable<MSI_Debtor> GetDebtors(string accountNumber)
+        {
+            MSI_Debtor debtor = null;
+            DBFactory db;
+            List<MSI_Debtor> debtors = null;
+            System.Data.DataSet ds;
+            try
+            {
+                db = new DBFactory();
+                ds = db.ExecuteDataset("MSI_spGetDebtors", "Debtors", new SqlParameter("@pimsAccountNumber", accountNumber));
+
+                if (ds.Tables["Debtors"].Rows.Count > 0)
+                {
+                    debtors = new List<MSI_Debtor>();
+                    foreach (System.Data.DataRow dr in ds.Tables["Debtors"].Rows)
+                    {
+                        debtor = new MSI_Debtor();
+                        debtor.Account = dr["ACCOUNT"].ToString();
+                        debtor.FirstName = dr["FirstName"].ToString();
+                        debtor.LastName = dr["LastName"].ToString();
+                        debtor.Address1 = dr["ADDRESS1"].ToString();
+                        debtor.Address2 = dr["ADDRESS2"].ToString();
+                        debtor.City = dr["CITY"].ToString();
+                        debtor.State = dr["STATE"].ToString();
+                        debtor.Zip = dr["ZIP_CODE"].ToString();
+                        debtor.LastFourSSN = dr["SSN"].ToString();
+                        debtor.MobilePhone = dr["PHONE_CELL"].ToString();
+                        debtor.HomePhone = dr["PHONE_HOME"].ToString();
+                        debtor.WorkPhone = dr["PHONE_WORK"].ToString();
+                        debtor.DOB = dr["DOB"].ToString();
+                        debtor.DebtCurrentBalance = dr["DebtCurrentBalance"].ToString();
+                        debtor.DebtPurchaseBalance = dr["DebtorPurchaseBalance"].ToString();
+                        debtor.CreditorName = dr["CreditorName"].ToString();
+
+                        debtors.Add(debtor);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+            return debtors.AsEnumerable<MSI_Debtor>();
+        }
+
         #region Export to Excel Methods
         public IEnumerable<DPSViewEditResult> GetDPSViewEditRecordsExport(DateTime? StartDate, DateTime? EndDate, string PortfolioOwner, string Responsibility, string Account, string GUID)
         {
@@ -716,7 +761,7 @@ namespace Cascade.Data.Repositories
                     record.Amount = rdr["Amount"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["Amount"]);
                     record.NetPayment = rdr["NetPayment"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["NetPayment"]);
                     #endregion
-                   
+
                     #region Data Modification
                     if (record.Amount == Convert.ToDecimal(0.0))
                     {

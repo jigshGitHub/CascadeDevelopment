@@ -16,6 +16,7 @@ namespace Cascade.Data.Models
     {
         public RSTATU()
         {
+            this.PortfolioStatusCrossRefs = new HashSet<PortfolioStatusCrossRef>();
             this.RACCOUNTs = new HashSet<RACCOUNT>();
         }
     
@@ -38,6 +39,7 @@ namespace Cascade.Data.Models
         public string CBR_Special_Status { get; set; }
         public string CBR_Dispute_Status { get; set; }
     
+        public virtual ICollection<PortfolioStatusCrossRef> PortfolioStatusCrossRefs { get; set; }
         public virtual ICollection<RACCOUNT> RACCOUNTs { get; set; }
     }
 }

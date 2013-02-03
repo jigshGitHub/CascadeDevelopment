@@ -33,9 +33,6 @@
     <Reference Include="Cascade.Data">
       <HintPath>..\Cascade.Data\bin\Debug\Cascade.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Cascade.Helpers">
-      <HintPath>..\Cascade.Helpers\bin\Debug\Cascade.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -48,6 +45,12 @@
   <ItemGroup>
     <Compile Include="Structure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cascade.Helpers\Cascade.Helpers.csproj">
+      <Project>{2e52e329-3b7f-4538-be56-d15b56db8d4b}</Project>
+      <Name>Cascade.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,14 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MSI_vwSales
+    public partial class MSI_ComplaintIssues
     {
-        public string Responsibility { get; set; }
-        public string ACCOUNT { get; set; }
-        public string PRODUCT_CODE { get; set; }
-        public Nullable<System.DateTime> SoldDate { get; set; }
-        public Nullable<decimal> SalesBasis { get; set; }
-        public Nullable<decimal> FaceValue { get; set; }
-        public Nullable<decimal> SalesPrice { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

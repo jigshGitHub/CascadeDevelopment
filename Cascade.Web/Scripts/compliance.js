@@ -4,6 +4,7 @@
     self.agenct = ko.observable('');
     self.lastName = ko.observable('');
     self.firstName = ko.observable('');
+    self.dob = ko.observable('');
     self.address = ko.observable('');
     self.city = ko.observable('');
     self.state = ko.observable('');
@@ -22,11 +23,13 @@
     self.disputeDebt = ko.observable('');
     self.disputeDebtAmount = ko.observable('');
     self.disputeDebtDueDate = ko.observable('');
+    //Complaint section
     self.complaintID = ko.observable('');
-    self.complaiintDate = ko.observable('');
+    self.complaintDate = ko.observable('');
     self.complaintReceivedByMethodId = ko.observable('');
     self.complaintIssueId = ko.observable('');
     self.complaintNotes = ko.observable('');
+    self.complaintUploadDocument = ko.observable('');
     self.complaintSubmitedToAgency = ko.observable('');
     self.complaintSubmitedToAgencyDate = ko.observable('');
     self.moreInfoReqdFromDebtor = ko.observable('');
@@ -35,9 +38,11 @@
     self.moreInfoReceivedFromDebtor = ko.observable('');
     self.moreInfoReceivedDate = ko.observable('');
     self.moreInfoReceived = ko.observable('');
+    //Debt Owner Process
     self.complaintSubmittedToOwner = ko.observable('');
     self.complaintSubmittedDate = ko.observable('');
     self.timeToSubmitDays = ko.observable('');
+    self.debtOwnerUploadDocument = ko.observable('');
     self.moreInfoFromAgency = ko.observable('');
     self.moreInfoFromAgencyRequestedDate = ko.observable('');
     self.moreInfoFromAgencyRequested = ko.observable('');
@@ -53,10 +58,22 @@
     self.finalActionStepId = ko.observable('');
 }
 
-function pimsDebtor(account, firstName, lastName, dob) {
+function pimsDebtor(account, firstName, lastName, dob, address1, address2, city, state, zip, ssn, phoneCell, phoneHome, phoneWork, debtCurrentBalance, debtorPurchaseBalance, creditorName) {
     var self = this;
     self.account = ko.observable(account);
     self.firstName = ko.observable(firstName);
     self.lastName = ko.observable(lastName);
     self.dob = ko.observable(dob);
+    self.address1 = ko.observable(address1);
+    self.address2 = ko.observable(address2);
+    self.city = ko.observable(city);
+    self.state = ko.observable(state);
+    self.zip = ko.observable(zip);
+    self.ssn = ko.observable(ssn);
+    self.phoneCell = ko.observable(phoneCell);
+    self.phoneHome = ko.observable(phoneHome);
+    self.phoneWork = ko.observable(phoneWork);
+    self.debtCurrentBalance = ko.observable(debtCurrentBalance);
+    self.debtorPurchaseBalance = ko.observable(debtorPurchaseBalance);
+    self.creditorName = ko.observable(creditorName);
 }

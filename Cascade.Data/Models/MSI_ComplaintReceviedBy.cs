@@ -12,16 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AccountStatute
+    public partial class MSI_ComplaintReceviedBy
     {
-        public string Division_ID { get; set; }
-        public string Account { get; set; }
-        public string State { get; set; }
-        public int Statute { get; set; }
-        public int StatuteTypeID { get; set; }
-        public System.DateTime StatuteDate { get; set; }
-        public int DaysRemaining { get; set; }
-    
-        public virtual RACCOUNT RACCOUNT { get; set; }
+        public int Id { get; set; }
+        public string Media { get; set; }
     }
 }

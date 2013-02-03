@@ -12,9 +12,9 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Surname
+    public partial class MSI_DebtorProducts
     {
-        public string SurName1 { get; set; }
-        public string Nationality { get; set; }
+        public int Id { get; set; }
+        public string Product { get; set; }
     }
 }

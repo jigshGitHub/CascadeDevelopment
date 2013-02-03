@@ -1,15 +1,1018 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CascadeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CascadeDBModelStoreContainer">
+    <EntitySet Name="MSI_ComplaintIssues" EntityType="CascadeDBModel.Store.MSI_ComplaintIssues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_ComplaintMain" EntityType="CascadeDBModel.Store.MSI_ComplaintMain" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_ComplaintReceviedBy" EntityType="CascadeDBModel.Store.MSI_ComplaintReceviedBy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_DebtorContactMethods" EntityType="CascadeDBModel.Store.MSI_DebtorContactMethods" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_DebtorContactTime" EntityType="CascadeDBModel.Store.MSI_DebtorContactTime" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_DebtorProducts" EntityType="CascadeDBModel.Store.MSI_DebtorProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_DPSForm" EntityType="CascadeDBModel.Store.MSI_DPSForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_FinalActionsteps" EntityType="CascadeDBModel.Store.MSI_FinalActionsteps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_MediaForm" EntityType="CascadeDBModel.Store.MSI_MediaForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_OwnerResponses" EntityType="CascadeDBModel.Store.MSI_OwnerResponses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_Port_Acq_Edited" EntityType="CascadeDBModel.Store.MSI_Port_Acq_Edited" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_Port_Acq_Original" EntityType="CascadeDBModel.Store.MSI_Port_Acq_Original" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_Port_SalesTrans_Edited" EntityType="CascadeDBModel.Store.MSI_Port_SalesTrans_Edited" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_Port_SalesTrans_Original" EntityType="CascadeDBModel.Store.MSI_Port_SalesTrans_Original" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_RecallForm" EntityType="CascadeDBModel.Store.MSI_RecallForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_ResaleRestriction" EntityType="CascadeDBModel.Store.MSI_ResaleRestriction" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Store.Port_Acq" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Store.Port_DPS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Store.Port_Media" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Recall" EntityType="CascadeDBModel.Store.Port_Recall" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Port_Trans" EntityType="CascadeDBModel.Store.Port_Trans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Portfolios" EntityType="CascadeDBModel.Store.Portfolios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioStatus" EntityType="CascadeDBModel.Store.PortfolioStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioStatusCrossRef" EntityType="CascadeDBModel.Store.PortfolioStatusCrossRef" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioType" EntityType="CascadeDBModel.Store.PortfolioType" store:Type="Tables" store:Schema="dbo" store:Name="PortfolioType">
+      <DefiningQuery>SELECT 
+      [PortfolioType].[PortfolioType] AS [PortfolioType], 
+      [PortfolioType].[Descr] AS [Descr]
+      FROM [dbo].[PortfolioType] AS [PortfolioType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PortfolioTypes" EntityType="CascadeDBModel.Store.PortfolioTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCBKRP" EntityType="CascadeDBModel.Store.RACCBKRP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCOUNT" EntityType="CascadeDBModel.Store.RACCOUNT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCTLGL" EntityType="CascadeDBModel.Store.RACCTLGL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACCTREL" EntityType="CascadeDBModel.Store.RACCTREL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RACTPLAC" EntityType="CascadeDBModel.Store.RACTPLAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ResponsibilityTypes" EntityType="CascadeDBModel.Store.ResponsibilityTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RFINTRAN" EntityType="CascadeDBModel.Store.RFINTRAN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RINTRATE" EntityType="CascadeDBModel.Store.RINTRATE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RPRODCDE" EntityType="CascadeDBModel.Store.RPRODCDE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RSTATUS" EntityType="CascadeDBModel.Store.RSTATUS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RTRANCDE" EntityType="CascadeDBModel.Store.RTRANCDE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatusTypes" EntityType="CascadeDBModel.Store.StatusTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatuteTypes" EntityType="CascadeDBModel.Store.StatuteTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sup_BrockettCompanies" EntityType="CascadeDBModel.Store.Sup_BrockettCompanies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_Company" EntityType="CascadeDBModel.Store.Sup_Company" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Sup_PmtType" EntityType="CascadeDBModel.Store.Sup_PmtType" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_TransCode" EntityType="CascadeDBModel.Store.Sup_TransCode" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sup_TransSource" EntityType="CascadeDBModel.Store.Sup_TransSource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Categories" EntityType="CascadeDBModel.Store.Tbl_Categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_CHART" EntityType="CascadeDBModel.Store.TBL_CHART" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_COMPANIES" EntityType="CascadeDBModel.Store.TBL_COMPANIES" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_vwMediaData" EntityType="CascadeDBModel.Store.MSI_vwMediaData" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwMediaData">
+      <DefiningQuery>SELECT 
+      [MSI_vwMediaData].[ID] AS [ID], 
+      [MSI_vwMediaData].[OrderDate] AS [OrderDate], 
+      [MSI_vwMediaData].[CompanyRequesting] AS [CompanyRequesting], 
+      [MSI_vwMediaData].[Portfolio#] AS [Portfolio#], 
+      [MSI_vwMediaData].[OriginalLender/Product] AS [OriginalLender/Product], 
+      [MSI_vwMediaData].[OrigAcct#] AS [OrigAcct#], 
+      [MSI_vwMediaData].[SSN] AS [SSN], 
+      [MSI_vwMediaData].[AcctName] AS [AcctName], 
+      [MSI_vwMediaData].[Application] AS [Application], 
+      [MSI_vwMediaData].[Affidavit(Issuer)] AS [Affidavit(Issuer)], 
+      [MSI_vwMediaData].[Affidavit(Seller)] AS [Affidavit(Seller)], 
+      [MSI_vwMediaData].[StmtsFrom] AS [StmtsFrom], 
+      [MSI_vwMediaData].[StmtsTo] AS [StmtsTo], 
+      [MSI_vwMediaData].[OpenDate] AS [OpenDate], 
+      [MSI_vwMediaData].[C/ODate] AS [C/ODate], 
+      [MSI_vwMediaData].[Explanation] AS [Explanation], 
+      [MSI_vwMediaData].[GMC Manager Approval  Y or N] AS [GMC Manager Approval  Y or N], 
+      [MSI_vwMediaData].[CompanySubmittedTo] AS [CompanySubmittedTo], 
+      [MSI_vwMediaData].[DateSubmitted] AS [DateSubmitted], 
+      [MSI_vwMediaData].[DateConfirmed] AS [DateConfirmed], 
+      [MSI_vwMediaData].[SellerFee] AS [SellerFee], 
+      [MSI_vwMediaData].[DateSellerPaid] AS [DateSellerPaid], 
+      [MSI_vwMediaData].[OurFee] AS [OurFee], 
+      [MSI_vwMediaData].[DateReceived] AS [DateReceived], 
+      [MSI_vwMediaData].[DateForwarded] AS [DateForwarded], 
+      [MSI_vwMediaData].[TypeReceived] AS [TypeReceived], 
+      [MSI_vwMediaData].[OurInvtoBuyer] AS [OurInvtoBuyer], 
+      [MSI_vwMediaData].[OtherNotes:] AS [OtherNotes:], 
+      [MSI_vwMediaData].[Unavailable] AS [Unavailable], 
+      [MSI_vwMediaData].[Closed] AS [Closed], 
+      [MSI_vwMediaData].[UnavailableDate] AS [UnavailableDate], 
+      [MSI_vwMediaData].[SellerInv#] AS [SellerInv#], 
+      [MSI_vwMediaData].[DatePayRec] AS [DatePayRec], 
+      [MSI_vwMediaData].[BuyerCheck#] AS [BuyerCheck#], 
+      [MSI_vwMediaData].[Seller] AS [Seller], 
+      [MSI_vwMediaData].[OurCheck#] AS [OurCheck#]
+      FROM [dbo].[MSI_vwMediaData] AS [MSI_vwMediaData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSI_vwRecallData" EntityType="CascadeDBModel.Store.MSI_vwRecallData" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwRecallData">
+      <DefiningQuery>SELECT 
+      [MSI_vwRecallData].[ID] AS [ID], 
+      [MSI_vwRecallData].[Date] AS [Date], 
+      [MSI_vwRecallData].[OrigAcct#] AS [OrigAcct#], 
+      [MSI_vwRecallData].[AcctName] AS [AcctName], 
+      [MSI_vwRecallData].[Portfolio#] AS [Portfolio#], 
+      [MSI_vwRecallData].[CurrentResp] AS [CurrentResp], 
+      [MSI_vwRecallData].[RecallReason] AS [RecallReason], 
+      [MSI_vwRecallData].[DateNoteSent] AS [DateNoteSent], 
+      [MSI_vwRecallData].[DateAcctClosed] AS [DateAcctClosed], 
+      [MSI_vwRecallData].[PIMSAcct#] AS [PIMSAcct#], 
+      [MSI_vwRecallData].[NewStatus] AS [NewStatus], 
+      [MSI_vwRecallData].[NewResp] AS [NewResp], 
+      [MSI_vwRecallData].[Uploaded (y/n)] AS [Uploaded (y/n)], 
+      [MSI_vwRecallData].[Check#] AS [Check#], 
+      [MSI_vwRecallData].[Inv#] AS [Inv#], 
+      [MSI_vwRecallData].[Explanation] AS [Explanation], 
+      [MSI_vwRecallData].[FaceValueofAcct] AS [FaceValueofAcct], 
+      [MSI_vwRecallData].[CostBasis] AS [CostBasis], 
+      [MSI_vwRecallData].[SalesBasis] AS [SalesBasis], 
+      [MSI_vwRecallData].[RequestedBy] AS [RequestedBy], 
+      [MSI_vwRecallData].[SellerCheck#] AS [SellerCheck#], 
+      [MSI_vwRecallData].[Putback] AS [Putback], 
+      [MSI_vwRecallData].[Seller] AS [Seller], 
+      [MSI_vwRecallData].[Expr1] AS [Expr1], 
+      [MSI_vwRecallData].[Expr2] AS [Expr2]
+      FROM [dbo].[MSI_vwRecallData] AS [MSI_vwRecallData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_AddDPSCheck" EntityType="CascadeDBModel.Store.vw_AddDPSCheck" store:Type="Views" store:Schema="dbo" store:Name="vw_AddDPSCheck">
+      <DefiningQuery>SELECT 
+      [vw_AddDPSCheck].[ID] AS [ID], 
+      [vw_AddDPSCheck].[Portfolio#] AS [Portfolio#], 
+      [vw_AddDPSCheck].[PIMSAcct#] AS [PIMSAcct#], 
+      [vw_AddDPSCheck].[Amount] AS [Amount], 
+      [vw_AddDPSCheck].[DateRec] AS [DateRec], 
+      [vw_AddDPSCheck].[CurrentResp] AS [CurrentResp], 
+      [vw_AddDPSCheck].[OurCheckNumber] AS [OurCheckNumber], 
+      [vw_AddDPSCheck].[CheckNumber] AS [CheckNumber], 
+      [vw_AddDPSCheck].[Company] AS [Company]
+      FROM [dbo].[vw_AddDPSCheck] AS [vw_AddDPSCheck]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_CollectionsRecon" EntityType="CascadeDBModel.Store.vw_CollectionsRecon" store:Type="Views" store:Schema="dbo" store:Name="vw_CollectionsRecon">
+      <DefiningQuery>SELECT 
+      [vw_CollectionsRecon].[TransType] AS [TransType], 
+      [vw_CollectionsRecon].[Portfolio#] AS [Portfolio#], 
+      [vw_CollectionsRecon].[ClosingDate] AS [ClosingDate], 
+      [vw_CollectionsRecon].[Company] AS [Company], 
+      [vw_CollectionsRecon].[Inv_AgencyName] AS [Inv_AgencyName], 
+      [vw_CollectionsRecon].[FaceValue] AS [FaceValue], 
+      [vw_CollectionsRecon].[SalesPrice] AS [SalesPrice], 
+      [vw_CollectionsRecon].[Agency] AS [Agency]
+      FROM [dbo].[vw_CollectionsRecon] AS [vw_CollectionsRecon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PortfolioCashFlow" EntityType="CascadeDBModel.Store.vw_PortfolioCashFlow" store:Type="Views" store:Schema="dbo" store:Name="vw_PortfolioCashFlow">
+      <DefiningQuery>SELECT 
+      [vw_PortfolioCashFlow].[Portfolio#] AS [Portfolio#], 
+      [vw_PortfolioCashFlow].[ClosingDate] AS [ClosingDate], 
+      [vw_PortfolioCashFlow].[TransType] AS [TransType], 
+      [vw_PortfolioCashFlow].[SalesPrice] AS [SalesPrice], 
+      [vw_PortfolioCashFlow].[Company] AS [Company]
+      FROM [dbo].[vw_PortfolioCashFlow] AS [vw_PortfolioCashFlow]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PortfolioCashPosition" EntityType="CascadeDBModel.Store.vw_PortfolioCashPosition" store:Type="Views" store:Schema="dbo" store:Name="vw_PortfolioCashPosition">
+      <DefiningQuery>SELECT 
+      [vw_PortfolioCashPosition].[Portfolio#] AS [Portfolio#], 
+      [vw_PortfolioCashPosition].[ClosingDate] AS [ClosingDate], 
+      [vw_PortfolioCashPosition].[PurchasePrice] AS [PurchasePrice], 
+      [vw_PortfolioCashPosition].[SumOfSalesPrice] AS [SumOfSalesPrice], 
+      [vw_PortfolioCashPosition].[CashPos] AS [CashPos], 
+      [vw_PortfolioCashPosition].[Company] AS [Company], 
+      [vw_PortfolioCashPosition].[Return on Capital] AS [Return on Capital]
+      FROM [dbo].[vw_PortfolioCashPosition] AS [vw_PortfolioCashPosition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PortfolioSummary" EntityType="CascadeDBModel.Store.vw_PortfolioSummary" store:Type="Views" store:Schema="dbo" store:Name="vw_PortfolioSummary">
+      <DefiningQuery>SELECT 
+      [vw_PortfolioSummary].[Portfolio#] AS [Portfolio#], 
+      [vw_PortfolioSummary].[ClosingDate] AS [ClosingDate], 
+      [vw_PortfolioSummary].[Face] AS [Face], 
+      [vw_PortfolioSummary].[CostBasis] AS [CostBasis], 
+      [vw_PortfolioSummary].[Lender/FileDescription] AS [Lender/FileDescription], 
+      [vw_PortfolioSummary].[PurchasePrice] AS [PurchasePrice], 
+      [vw_PortfolioSummary].[SumOfSalesPrice] AS [SumOfSalesPrice], 
+      [vw_PortfolioSummary].[CashPos] AS [CashPos], 
+      [vw_PortfolioSummary].[Company] AS [Company], 
+      [vw_PortfolioSummary].[Return on Capital] AS [Return on Capital], 
+      [vw_PortfolioSummary].[irrIRR] AS [irrIRR]
+      FROM [dbo].[vw_PortfolioSummary] AS [vw_PortfolioSummary]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwAccounts" EntityType="CascadeDBModel.Store.vwAccounts" store:Type="Views" store:Schema="dbo" store:Name="vwAccounts">
+      <DefiningQuery>SELECT 
+      [vwAccounts].[ACCOUNT] AS [ACCOUNT], 
+      [vwAccounts].[Balance] AS [Balance], 
+      [vwAccounts].[AccruedInterest] AS [AccruedInterest], 
+      [vwAccounts].[TotalInterest] AS [TotalInterest], 
+      [vwAccounts].[NAME] AS [NAME], 
+      [vwAccounts].[FirstName] AS [FirstName], 
+      [vwAccounts].[LastName] AS [LastName], 
+      [vwAccounts].[ADDRESS1] AS [ADDRESS1], 
+      [vwAccounts].[ADDRESS2] AS [ADDRESS2], 
+      [vwAccounts].[CITY] AS [CITY], 
+      [vwAccounts].[STATE] AS [STATE], 
+      [vwAccounts].[ZIP_CODE] AS [ZIP_CODE], 
+      [vwAccounts].[Zip] AS [Zip], 
+      [vwAccounts].[SSN] AS [SSN], 
+      [vwAccounts].[SS_NO] AS [SS_NO], 
+      [vwAccounts].[PHONE_HOME] AS [PHONE_HOME], 
+      [vwAccounts].[PHONE_WORK] AS [PHONE_WORK], 
+      [vwAccounts].[PHONE_OTHER] AS [PHONE_OTHER], 
+      [vwAccounts].[PHONE_CELL] AS [PHONE_CELL], 
+      [vwAccounts].[TIME_ZONE] AS [TIME_ZONE], 
+      [vwAccounts].[DL] AS [DL], 
+      [vwAccounts].[DOB] AS [DOB], 
+      [vwAccounts].[DOD] AS [DOD], 
+      [vwAccounts].[FuneralHome] AS [FuneralHome], 
+      [vwAccounts].[CityOD] AS [CityOD], 
+      [vwAccounts].[CountyOD] AS [CountyOD], 
+      [vwAccounts].[StateOD] AS [StateOD], 
+      [vwAccounts].[AddressUpdateDate] AS [AddressUpdateDate], 
+      [vwAccounts].[AddressUpdateDateYYYYMMDD] AS [AddressUpdateDateYYYYMMDD], 
+      [vwAccounts].[ContactName] AS [ContactName], 
+      [vwAccounts].[ContactTelephone] AS [ContactTelephone], 
+      [vwAccounts].[COUNTRY] AS [COUNTRY], 
+      [vwAccounts].[ECOA] AS [ECOA], 
+      [vwAccounts].[Email] AS [Email], 
+      [vwAccounts].[CoName] AS [CoName], 
+      [vwAccounts].[CoFirstName] AS [CoFirstName], 
+      [vwAccounts].[CoLastName] AS [CoLastName], 
+      [vwAccounts].[CoAddress1] AS [CoAddress1], 
+      [vwAccounts].[CoAddress2] AS [CoAddress2], 
+      [vwAccounts].[CoCity] AS [CoCity], 
+      [vwAccounts].[CoState] AS [CoState], 
+      [vwAccounts].[CoZip] AS [CoZip], 
+      [vwAccounts].[CoSSN] AS [CoSSN], 
+      [vwAccounts].[CoHomePhone] AS [CoHomePhone], 
+      [vwAccounts].[CoWorkPhone] AS [CoWorkPhone], 
+      [vwAccounts].[CoOtherPhone] AS [CoOtherPhone], 
+      [vwAccounts].[CoTimeZone] AS [CoTimeZone], 
+      [vwAccounts].[CoDL] AS [CoDL], 
+      [vwAccounts].[CoDOB] AS [CoDOB], 
+      [vwAccounts].[CoDOD] AS [CoDOD], 
+      [vwAccounts].[CoAddressUpdateDate] AS [CoAddressUpdateDate], 
+      [vwAccounts].[ECOA_COS] AS [ECOA_COS], 
+      [vwAccounts].[Statute] AS [Statute], 
+      [vwAccounts].[DaysRemainingInStat] AS [DaysRemainingInStat], 
+      [vwAccounts].[StatuteDate] AS [StatuteDate], 
+      [vwAccounts].[StatuteTypeID] AS [StatuteTypeID], 
+      [vwAccounts].[StatuteType] AS [StatuteType], 
+      [vwAccounts].[OwnHome] AS [OwnHome], 
+      [vwAccounts].[Score] AS [Score], 
+      [vwAccounts].[MortgageBalance] AS [MortgageBalance], 
+      [vwAccounts].[RevolvingBalance] AS [RevolvingBalance], 
+      [vwAccounts].[AvailableBankCard] AS [AvailableBankCard], 
+      [vwAccounts].[UserScore] AS [UserScore], 
+      [vwAccounts].[CREDIT_LIMIT] AS [CREDIT_LIMIT], 
+      [vwAccounts].[SCORE_STRATEGY] AS [SCORE_STRATEGY], 
+      [vwAccounts].[PLACEMENT_CODE] AS [PLACEMENT_CODE], 
+      [vwAccounts].[REPORT_TO_BUREAU] AS [REPORT_TO_BUREAU], 
+      [vwAccounts].[BUR_UPDATE_DATE] AS [BUR_UPDATE_DATE], 
+      [vwAccounts].[BUR_STATUS] AS [BUR_STATUS], 
+      [vwAccounts].[BUR_DISPUTE_STATUS] AS [BUR_DISPUTE_STATUS], 
+      [vwAccounts].[BUR_BKT_STATUS] AS [BUR_BKT_STATUS], 
+      [vwAccounts].[BUR_SPECIAL_STATUS] AS [BUR_SPECIAL_STATUS], 
+      [vwAccounts].[BUR_STATUS_DATE] AS [BUR_STATUS_DATE], 
+      [vwAccounts].[CBRAccountStatusDesc] AS [CBRAccountStatusDesc], 
+      [vwAccounts].[CBRBankruptStatusDesc] AS [CBRBankruptStatusDesc], 
+      [vwAccounts].[CBRDisputeStatusDesc] AS [CBRDisputeStatusDesc], 
+      [vwAccounts].[CBRSpecialStatusDesc] AS [CBRSpecialStatusDesc], 
+      [vwAccounts].[DaysSinceLastBureauStatus] AS [DaysSinceLastBureauStatus], 
+      [vwAccounts].[ScriptID] AS [ScriptID], 
+      [vwAccounts].[PortfolioID] AS [PortfolioID], 
+      [vwAccounts].[Portfolio] AS [Portfolio], 
+      [vwAccounts].[PRODUCT_CODE] AS [PRODUCT_CODE], 
+      [vwAccounts].[Branch] AS [Branch], 
+      [vwAccounts].[BRANCH_NUMBER] AS [BRANCH_NUMBER], 
+      [vwAccounts].[RESPONSIBILITY] AS [RESPONSIBILITY], 
+      [vwAccounts].[Transfer_By] AS [Transfer_By], 
+      [vwAccounts].[Previous_Responsibility] AS [Previous_Responsibility], 
+      [vwAccounts].[Previous_Date_Placed] AS [Previous_Date_Placed], 
+      [vwAccounts].[STATUS] AS [STATUS], 
+      [vwAccounts].[StatusDate] AS [StatusDate], 
+      [vwAccounts].[Previous_Status] AS [Previous_Status], 
+      [vwAccounts].[Previous_Status_Date] AS [Previous_Status_Date], 
+      [vwAccounts].[StatusType] AS [StatusType], 
+      [vwAccounts].[WorkStatusID] AS [WorkStatusID], 
+      [vwAccounts].[UPDATE_DATE] AS [UPDATE_DATE], 
+      [vwAccounts].[UPDATE_TYPE] AS [UPDATE_TYPE], 
+      [vwAccounts].[UPDATE_ID] AS [UPDATE_ID], 
+      [vwAccounts].[InhouseScore] AS [InhouseScore], 
+      [vwAccounts].[CREDIT_SCORE] AS [CREDIT_SCORE], 
+      [vwAccounts].[BAD_ADDR_FLAG] AS [BAD_ADDR_FLAG], 
+      [vwAccounts].[BAD_PHONE_FLAG] AS [BAD_PHONE_FLAG], 
+      [vwAccounts].[BadAddress] AS [BadAddress], 
+      [vwAccounts].[BadPhone] AS [BadPhone], 
+      [vwAccounts].[HomeOwner] AS [HomeOwner], 
+      [vwAccounts].[HOME_OWN_FLAG] AS [HOME_OWN_FLAG], 
+      [vwAccounts].[Legal] AS [Legal], 
+      [vwAccounts].[LegalReject] AS [LegalReject], 
+      [vwAccounts].[YearsSinceLastActivity] AS [YearsSinceLastActivity], 
+      [vwAccounts].[PutbackDeadline] AS [PutbackDeadline], 
+      [vwAccounts].[PutbackDate] AS [PutbackDate], 
+      [vwAccounts].[BuybackDate] AS [BuybackDate], 
+      [vwAccounts].[SoldDate] AS [SoldDate], 
+      [vwAccounts].[SETTLE_ALLOW] AS [SETTLE_ALLOW], 
+      [vwAccounts].[Stage] AS [Stage], 
+      [vwAccounts].[DateWorked] AS [DateWorked], 
+      [vwAccounts].[PeriodWorked] AS [PeriodWorked], 
+      [vwAccounts].[PreviousAcct] AS [PreviousAcct], 
+      [vwAccounts].[PreviousOwner] AS [PreviousOwner], 
+      [vwAccounts].[PlaceDate] AS [PlaceDate], 
+      [vwAccounts].[FLAGS] AS [FLAGS], 
+      [vwAccounts].[HEADER_NOTE] AS [HEADER_NOTE], 
+      [vwAccounts].[Closed] AS [Closed], 
+      [vwAccounts].[Archive] AS [Archive], 
+      [vwAccounts].[Purge] AS [Purge], 
+      [vwAccounts].[AnnualRateCodeID] AS [AnnualRateCodeID], 
+      [vwAccounts].[DIVISION_ID] AS [DIVISION_ID], 
+      [vwAccounts].[WorkStatusDescription] AS [WorkStatusDescription], 
+      [vwAccounts].[WorkGroup] AS [WorkGroup], 
+      [vwAccounts].[PlacementFileID] AS [PlacementFileID], 
+      [vwAccounts].[Status_Change_Date] AS [Status_Change_Date], 
+      [vwAccounts].[DEBT_TYPE] AS [DEBT_TYPE], 
+      [vwAccounts].[DebtType] AS [DebtType], 
+      [vwAccounts].[PurchaseDate] AS [PurchaseDate], 
+      [vwAccounts].[FmtPurchaseDate] AS [FmtPurchaseDate], 
+      [vwAccounts].[Note] AS [Note], 
+      [vwAccounts].[DATE_SENT_AGENCY] AS [DATE_SENT_AGENCY], 
+      [vwAccounts].[Claim_Date] AS [Claim_Date], 
+      [vwAccounts].[WIP] AS [WIP], 
+      [vwAccounts].[WIPDate] AS [WIPDate], 
+      [vwAccounts].[CreateDate] AS [CreateDate], 
+      [vwAccounts].[CreateDateyyyymmdd] AS [CreateDateyyyymmdd], 
+      [vwAccounts].[PrimaryAccount] AS [PrimaryAccount], 
+      [vwAccounts].[DaysSinceLastPay] AS [DaysSinceLastPay], 
+      [vwAccounts].[DaysSinceLastWorked] AS [DaysSinceLastWorked], 
+      [vwAccounts].[DaysSinceLastUpdate] AS [DaysSinceLastUpdate], 
+      [vwAccounts].[DaysSinceLastStatus] AS [DaysSinceLastStatus], 
+      [vwAccounts].[DaysSinceLastPlaced] AS [DaysSinceLastPlaced], 
+      [vwAccounts].[DaysSinceLastCall] AS [DaysSinceLastCall], 
+      [vwAccounts].[DaysSinceLoadDate] AS [DaysSinceLoadDate], 
+      [vwAccounts].[DaysSinceLastLetterPrinted] AS [DaysSinceLastLetterPrinted], 
+      [vwAccounts].[DaysSinceLastLetterCreated] AS [DaysSinceLastLetterCreated], 
+      [vwAccounts].[DaysSinceLastLetterDate] AS [DaysSinceLastLetterDate], 
+      [vwAccounts].[DaysSinceInterestStartDate] AS [DaysSinceInterestStartDate], 
+      [vwAccounts].[DaysSinceLastNSF] AS [DaysSinceLastNSF], 
+      [vwAccounts].[MonthsSinceLastPauDate] AS [MonthsSinceLastPauDate], 
+      [vwAccounts].[MonthsSinceOpenDate] AS [MonthsSinceOpenDate], 
+      [vwAccounts].[MonthsSinceChargeOffDate] AS [MonthsSinceChargeOffDate], 
+      [vwAccounts].[DaysSinceDelinquentDate] AS [DaysSinceDelinquentDate], 
+      [vwAccounts].[CalculateCommission] AS [CalculateCommission], 
+      [vwAccounts].[PortfolioOwner] AS [PortfolioOwner], 
+      [vwAccounts].[PortfolioDesc] AS [PortfolioDesc], 
+      [vwAccounts].[PortfolioName] AS [PortfolioName], 
+      [vwAccounts].[PortfolioAddress1] AS [PortfolioAddress1], 
+      [vwAccounts].[PortfolioAddress2] AS [PortfolioAddress2], 
+      [vwAccounts].[PortfolioCity] AS [PortfolioCity], 
+      [vwAccounts].[PortfolioState] AS [PortfolioState], 
+      [vwAccounts].[PortfolioZip] AS [PortfolioZip], 
+      [vwAccounts].[PortfolioPhone] AS [PortfolioPhone], 
+      [vwAccounts].[SIFPercent] AS [SIFPercent], 
+      [vwAccounts].[ProductTypeID] AS [ProductTypeID], 
+      [vwAccounts].[SaveCCInfo] AS [SaveCCInfo], 
+      [vwAccounts].[SaveBankInfo] AS [SaveBankInfo], 
+      [vwAccounts].[Manager] AS [Manager], 
+      [vwAccounts].[ManagerAddress1] AS [ManagerAddress1], 
+      [vwAccounts].[ManagerAddress2] AS [ManagerAddress2], 
+      [vwAccounts].[ManagerCity] AS [ManagerCity], 
+      [vwAccounts].[ManagerState] AS [ManagerState], 
+      [vwAccounts].[ManagerZip] AS [ManagerZip], 
+      [vwAccounts].[ManagerPhone] AS [ManagerPhone], 
+      [vwAccounts].[TERRITORIES] AS [TERRITORIES], 
+      [vwAccounts].[Budget] AS [Budget], 
+      [vwAccounts].[ResponsibilityTypeID] AS [ResponsibilityTypeID], 
+      [vwAccounts].[ACTIVE_YN] AS [ACTIVE_YN], 
+      [vwAccounts].[OpenDesk] AS [OpenDesk], 
+      [vwAccounts].[ResponsibilityType] AS [ResponsibilityType], 
+      [vwAccounts].[Allocation_Code] AS [Allocation_Code], 
+      [vwAccounts].[PreLegalReject] AS [PreLegalReject], 
+      [vwAccounts].[User1] AS [User1], 
+      [vwAccounts].[User2] AS [User2], 
+      [vwAccounts].[User3] AS [User3], 
+      [vwAccounts].[User4] AS [User4], 
+      [vwAccounts].[User5] AS [User5], 
+      [vwAccounts].[User6] AS [User6], 
+      [vwAccounts].[User7] AS [User7], 
+      [vwAccounts].[User8] AS [User8], 
+      [vwAccounts].[User9] AS [User9], 
+      [vwAccounts].[User10] AS [User10], 
+      [vwAccounts].[User11] AS [User11], 
+      [vwAccounts].[User12] AS [User12], 
+      [vwAccounts].[User13] AS [User13], 
+      [vwAccounts].[User14] AS [User14], 
+      [vwAccounts].[User15] AS [User15], 
+      [vwAccounts].[User16] AS [User16], 
+      [vwAccounts].[User17] AS [User17], 
+      [vwAccounts].[User18] AS [User18], 
+      [vwAccounts].[User19] AS [User19], 
+      [vwAccounts].[User20] AS [User20], 
+      [vwAccounts].[OtherData] AS [OtherData], 
+      [vwAccounts].[LAST_CALL_NUM] AS [LAST_CALL_NUM], 
+      [vwAccounts].[LAST_CALL_DATE] AS [LAST_CALL_DATE], 
+      [vwAccounts].[LAST_CALL_TIME] AS [LAST_CALL_TIME], 
+      [vwAccounts].[LAST_CALL_RESULT] AS [LAST_CALL_RESULT], 
+      [vwAccounts].[LAST_LETTER_GENERATED] AS [LAST_LETTER_GENERATED], 
+      [vwAccounts].[LAST_LETTER_PRINTED] AS [LAST_LETTER_PRINTED], 
+      [vwAccounts].[fmtLastPayDate] AS [fmtLastPayDate], 
+      [vwAccounts].[LAST_PAY_DATE] AS [LAST_PAY_DATE], 
+      [vwAccounts].[fmtLastRecallDate] AS [fmtLastRecallDate], 
+      [vwAccounts].[DATE_LAST_RECALL] AS [DATE_LAST_RECALL], 
+      [vwAccounts].[LAST_PMT_AMT] AS [LAST_PMT_AMT], 
+      [vwAccounts].[LAST_PAY_AMT] AS [LAST_PAY_AMT], 
+      [vwAccounts].[LastChargeDate] AS [LastChargeDate], 
+      [vwAccounts].[LastChargeAmt] AS [LastChargeAmt], 
+      [vwAccounts].[LAST_NOTE_DATE] AS [LAST_NOTE_DATE], 
+      [vwAccounts].[LAST_NOTE_CODE] AS [LAST_NOTE_CODE], 
+      [vwAccounts].[LAST_CONT_DATE] AS [LAST_CONT_DATE], 
+      [vwAccounts].[DATE_LAST_NSF] AS [DATE_LAST_NSF], 
+      [vwAccounts].[LAST_NSF_AMT] AS [LAST_NSF_AMT], 
+      [vwAccounts].[LAST_LETTER_CODE] AS [LAST_LETTER_CODE], 
+      [vwAccounts].[LAST_LETTER_DATE] AS [LAST_LETTER_DATE], 
+      [vwAccounts].[TOT_NUM_PMTS] AS [TOT_NUM_PMTS], 
+      [vwAccounts].[TOT_PRIN_DUE] AS [TOT_PRIN_DUE], 
+      [vwAccounts].[PrincipalBalance] AS [PrincipalBalance], 
+      [vwAccounts].[Principal] AS [Principal], 
+      [vwAccounts].[TOT_INT_DUE] AS [TOT_INT_DUE], 
+      [vwAccounts].[Interest] AS [Interest], 
+      [vwAccounts].[TOT_COSTS_DUE] AS [TOT_COSTS_DUE], 
+      [vwAccounts].[Cost] AS [Cost], 
+      [vwAccounts].[TOT_OTHER_DUE] AS [TOT_OTHER_DUE], 
+      [vwAccounts].[Other] AS [Other], 
+      [vwAccounts].[InterestStartDate] AS [InterestStartDate], 
+      [vwAccounts].[INT_START_DATE] AS [INT_START_DATE], 
+      [vwAccounts].[NUM_NSF_PMNTS] AS [NUM_NSF_PMNTS], 
+      [vwAccounts].[TOT_NSF_AMT] AS [TOT_NSF_AMT], 
+      [vwAccounts].[TOT_DUE_AMT] AS [TOT_DUE_AMT], 
+      [vwAccounts].[TOT_PTD] AS [TOT_PTD], 
+      [vwAccounts].[TOT_PRIN_PTD] AS [TOT_PRIN_PTD], 
+      [vwAccounts].[TOT_INT_PTD] AS [TOT_INT_PTD], 
+      [vwAccounts].[CheckFeeType] AS [CheckFeeType], 
+      [vwAccounts].[CheckFee] AS [CheckFee], 
+      [vwAccounts].[CreditCardFeeType] AS [CreditCardFeeType], 
+      [vwAccounts].[CreditCardFee] AS [CreditCardFee], 
+      [vwAccounts].[CreditorName] AS [CreditorName], 
+      [vwAccounts].[Originator] AS [Originator], 
+      [vwAccounts].[OriginalAccount] AS [OriginalAccount], 
+      [vwAccounts].[EOriginalAccount] AS [EOriginalAccount], 
+      [vwAccounts].[fmtOpenDate] AS [fmtOpenDate], 
+      [vwAccounts].[fmtChargeOffDate] AS [fmtChargeOffDate], 
+      [vwAccounts].[DateOfOccur] AS [DateOfOccur], 
+      [vwAccounts].[DelinquentDate] AS [DelinquentDate], 
+      [vwAccounts].[fmtDateOfOccur] AS [fmtDateOfOccur], 
+      [vwAccounts].[InterestRate] AS [InterestRate], 
+      [vwAccounts].[COAmount] AS [COAmount], 
+      [vwAccounts].[oLastPayDate] AS [oLastPayDate], 
+      [vwAccounts].[oLastPayAmt] AS [oLastPayAmt], 
+      [vwAccounts].[OriginalBalance] AS [OriginalBalance], 
+      [vwAccounts].[OriginalPrincipal] AS [OriginalPrincipal], 
+      [vwAccounts].[OriginalInterest] AS [OriginalInterest], 
+      [vwAccounts].[CHGOFF_DATE] AS [CHGOFF_DATE], 
+      [vwAccounts].[CONTRACT_DATE] AS [CONTRACT_DATE], 
+      [vwAccounts].[INT_RATE_CODE] AS [INT_RATE_CODE], 
+      [vwAccounts].[LastPDCDate] AS [LastPDCDate], 
+      [vwAccounts].[LastPDCAmount] AS [LastPDCAmount], 
+      [vwAccounts].[NextPDCDate] AS [NextPDCDate], 
+      [vwAccounts].[NextPDCAmount] AS [NextPDCAmount], 
+      [vwAccounts].[DaysSinceNextPDC] AS [DaysSinceNextPDC], 
+      [vwAccounts].[DaysBeforePDCDate] AS [DaysBeforePDCDate], 
+      [vwAccounts].[DaysUntilNextPayment] AS [DaysUntilNextPayment], 
+      [vwAccounts].[LastCCDDate] AS [LastCCDDate], 
+      [vwAccounts].[LastCCDAmount] AS [LastCCDAmount], 
+      [vwAccounts].[NextCCDDate] AS [NextCCDDate], 
+      [vwAccounts].[NextCCDAmount] AS [NextCCDAmount], 
+      [vwAccounts].[DaysSinceNextCCD] AS [DaysSinceNextCCD], 
+      [vwAccounts].[DaysBeforeCCDDate] AS [DaysBeforeCCDDate], 
+      [vwAccounts].[DaysUntilNextCCDPayment] AS [DaysUntilNextCCDPayment], 
+      [vwAccounts].[LastPRMDate] AS [LastPRMDate], 
+      [vwAccounts].[LastPRMAmount] AS [LastPRMAmount], 
+      [vwAccounts].[NextPRMDate] AS [NextPRMDate], 
+      [vwAccounts].[NextPRMAmount] AS [NextPRMAmount], 
+      [vwAccounts].[PromiseDate] AS [PromiseDate], 
+      [vwAccounts].[PromiseAmount] AS [PromiseAmount], 
+      [vwAccounts].[DaysSinceNextPRM] AS [DaysSinceNextPRM], 
+      [vwAccounts].[DaysBeforePRMDate] AS [DaysBeforePRMDate], 
+      [vwAccounts].[DaysUntilNextPRMPayment] AS [DaysUntilNextPRMPayment], 
+      [vwAccounts].[FirstPaymentDate] AS [FirstPaymentDate], 
+      [vwAccounts].[fmtFirstPaymentDate] AS [fmtFirstPaymentDate], 
+      [vwAccounts].[FirstPaymentAmount] AS [FirstPaymentAmount], 
+      [vwAccounts].[Terms] AS [Terms], 
+      [vwAccounts].[LastPaymentDate] AS [LastPaymentDate], 
+      [vwAccounts].[fmtLastPaymentDate] AS [fmtLastPaymentDate], 
+      [vwAccounts].[LastPaymentAmount] AS [LastPaymentAmount], 
+      [vwAccounts].[CycleDay] AS [CycleDay], 
+      [vwAccounts].[PaymentPlanDate] AS [PaymentPlanDate], 
+      [vwAccounts].[fmtPaymentPlanDate] AS [fmtPaymentPlanDate], 
+      [vwAccounts].[PaymentPlanAmount] AS [PaymentPlanAmount], 
+      [vwAccounts].[RemainingPayments] AS [RemainingPayments], 
+      [vwAccounts].[RemainigBalance] AS [RemainigBalance], 
+      [vwAccounts].[DaysSincePaymentPlan] AS [DaysSincePaymentPlan], 
+      [vwAccounts].[Seller] AS [Seller], 
+      [vwAccounts].[SellerAccount] AS [SellerAccount], 
+      [vwAccounts].[sLastPayDate] AS [sLastPayDate], 
+      [vwAccounts].[sLastPayAmt] AS [sLastPayAmt], 
+      [vwAccounts].[Client] AS [Client], 
+      [vwAccounts].[ClientAccount] AS [ClientAccount], 
+      [vwAccounts].[cLastPayDate] AS [cLastPayDate], 
+      [vwAccounts].[cLastPayAmt] AS [cLastPayAmt], 
+      [vwAccounts].[Commission] AS [Commission], 
+      [vwAccounts].[CollectorCommission] AS [CollectorCommission], 
+      [vwAccounts].[VerifiedBy] AS [VerifiedBy], 
+      [vwAccounts].[POEUpdateDate] AS [POEUpdateDate], 
+      [vwAccounts].[Employer] AS [Employer], 
+      [vwAccounts].[EmployerAddress1] AS [EmployerAddress1], 
+      [vwAccounts].[EmployerAddress2] AS [EmployerAddress2], 
+      [vwAccounts].[EmployerCity] AS [EmployerCity], 
+      [vwAccounts].[EmployerState] AS [EmployerState], 
+      [vwAccounts].[EmployerZip] AS [EmployerZip], 
+      [vwAccounts].[EmployerPhone] AS [EmployerPhone], 
+      [vwAccounts].[Total_Calls] AS [Total_Calls], 
+      [vwAccounts].[WeekDay_Calls] AS [WeekDay_Calls], 
+      [vwAccounts].[Weekend_Calls] AS [Weekend_Calls], 
+      [vwAccounts].[Total_Call_Cost] AS [Total_Call_Cost], 
+      [vwAccounts].[Last_Call_Result_Home] AS [Last_Call_Result_Home], 
+      [vwAccounts].[Last_Call_Result_Work] AS [Last_Call_Result_Work], 
+      [vwAccounts].[Last_Call_Result_Cell] AS [Last_Call_Result_Cell], 
+      [vwAccounts].[Last_Call_Result_Other] AS [Last_Call_Result_Other], 
+      [vwAccounts].[Last_Call_Date_Home] AS [Last_Call_Date_Home], 
+      [vwAccounts].[Last_Call_Date_Work] AS [Last_Call_Date_Work], 
+      [vwAccounts].[Last_Call_Date_Cell] AS [Last_Call_Date_Cell], 
+      [vwAccounts].[Last_Call_Date_Other] AS [Last_Call_Date_Other], 
+      [vwAccounts].[DaysSinceLastCallHome] AS [DaysSinceLastCallHome], 
+      [vwAccounts].[DaysSinceLastCallWork] AS [DaysSinceLastCallWork], 
+      [vwAccounts].[DaysSinceLastCallCell] AS [DaysSinceLastCallCell], 
+      [vwAccounts].[DaysSinceLastCallOther] AS [DaysSinceLastCallOther], 
+      [vwAccounts].[Last_Call_Time_Home] AS [Last_Call_Time_Home], 
+      [vwAccounts].[Last_Call_Time_Work] AS [Last_Call_Time_Work], 
+      [vwAccounts].[Last_Call_Time_Cell] AS [Last_Call_Time_Cell], 
+      [vwAccounts].[Last_Call_Time_Other] AS [Last_Call_Time_Other], 
+      [vwAccounts].[PMT_TYPE] AS [PMT_TYPE], 
+      [vwAccounts].[DatePromiseEntered] AS [DatePromiseEntered], 
+      [vwAccounts].[PromiseBy] AS [PromiseBy], 
+      [vwAccounts].[DatePromiseBroke] AS [DatePromiseBroke], 
+      [vwAccounts].[PromiseStatus] AS [PromiseStatus], 
+      [vwAccounts].[TimeSpent] AS [TimeSpent], 
+      [vwAccounts].[SecondsSpent] AS [SecondsSpent], 
+      [vwAccounts].[BKFileDate] AS [BKFileDate], 
+      [vwAccounts].[BKCaseNumber] AS [BKCaseNumber], 
+      [vwAccounts].[BKStatus] AS [BKStatus], 
+      [vwAccounts].[BKChapter] AS [BKChapter], 
+      [vwAccounts].[BKStatusDate] AS [BKStatusDate], 
+      [vwAccounts].[BKBusiness] AS [BKBusiness], 
+      [vwAccounts].[BKAddress1Filed] AS [BKAddress1Filed], 
+      [vwAccounts].[BKAddress2Filed] AS [BKAddress2Filed], 
+      [vwAccounts].[BKCityFiled] AS [BKCityFiled], 
+      [vwAccounts].[BKStateFiled] AS [BKStateFiled], 
+      [vwAccounts].[BKZipFiled] AS [BKZipFiled], 
+      [vwAccounts].[BKZip4Filed] AS [BKZip4Filed], 
+      [vwAccounts].[BKCountyFiled] AS [BKCountyFiled], 
+      [vwAccounts].[BKCountryFiled] AS [BKCountryFiled], 
+      [vwAccounts].[BKBusiness1] AS [BKBusiness1], 
+      [vwAccounts].[BKBusiness2] AS [BKBusiness2], 
+      [vwAccounts].[BKBusiness3] AS [BKBusiness3], 
+      [vwAccounts].[BKDebtorsAddress1] AS [BKDebtorsAddress1], 
+      [vwAccounts].[BKDebtorsAddress2] AS [BKDebtorsAddress2], 
+      [vwAccounts].[BKDebtorsCity] AS [BKDebtorsCity], 
+      [vwAccounts].[BKDebtorState] AS [BKDebtorState], 
+      [vwAccounts].[BKDebtorsZip] AS [BKDebtorsZip], 
+      [vwAccounts].[BKDebtorsZip4] AS [BKDebtorsZip4], 
+      [vwAccounts].[BKDeborsCounty] AS [BKDeborsCounty], 
+      [vwAccounts].[BKDebtorsCountry] AS [BKDebtorsCountry], 
+      [vwAccounts].[BKECOA] AS [BKECOA], 
+      [vwAccounts].[BKLawFirm] AS [BKLawFirm], 
+      [vwAccounts].[BKAttorneyName] AS [BKAttorneyName], 
+      [vwAccounts].[BKAttorneyFirstName] AS [BKAttorneyFirstName], 
+      [vwAccounts].[BKAttorneyMiddleInitial] AS [BKAttorneyMiddleInitial], 
+      [vwAccounts].[BKAttorneyLastName] AS [BKAttorneyLastName], 
+      [vwAccounts].[BKAttorneyAddress1] AS [BKAttorneyAddress1], 
+      [vwAccounts].[BKAttorneyAddress2] AS [BKAttorneyAddress2], 
+      [vwAccounts].[BKAttorneyCity] AS [BKAttorneyCity], 
+      [vwAccounts].[BKAttorneyState] AS [BKAttorneyState], 
+      [vwAccounts].[BKAttorneyZip] AS [BKAttorneyZip], 
+      [vwAccounts].[BKAttorneyPhone] AS [BKAttorneyPhone], 
+      [vwAccounts].[BKAttorneyFax] AS [BKAttorneyFax], 
+      [vwAccounts].[BKDate341] AS [BKDate341], 
+      [vwAccounts].[BKTime341] AS [BKTime341], 
+      [vwAccounts].[BKLocation341] AS [BKLocation341], 
+      [vwAccounts].[BKTrustee] AS [BKTrustee], 
+      [vwAccounts].[BKDistrict] AS [BKDistrict], 
+      [vwAccounts].[BKCourt] AS [BKCourt], 
+      [vwAccounts].[BKCourtAddress1] AS [BKCourtAddress1], 
+      [vwAccounts].[BKCourtAddress2] AS [BKCourtAddress2], 
+      [vwAccounts].[BKCourtCity] AS [BKCourtCity], 
+      [vwAccounts].[BKCourtState] AS [BKCourtState], 
+      [vwAccounts].[BKCourtZip] AS [BKCourtZip], 
+      [vwAccounts].[BKCourtPhone] AS [BKCourtPhone], 
+      [vwAccounts].[TrusteeAddress1] AS [TrusteeAddress1], 
+      [vwAccounts].[TrusteeAddress2] AS [TrusteeAddress2], 
+      [vwAccounts].[TrusteeCity] AS [TrusteeCity], 
+      [vwAccounts].[TrusteeState] AS [TrusteeState], 
+      [vwAccounts].[TrusteeZip] AS [TrusteeZip], 
+      [vwAccounts].[TrusteePhone] AS [TrusteePhone], 
+      [vwAccounts].[TrusteeFax] AS [TrusteeFax], 
+      [vwAccounts].[Judges_Intials] AS [Judges_Intials], 
+      [vwAccounts].[Funds] AS [Funds], 
+      [vwAccounts].[BarDate] AS [BarDate], 
+      [vwAccounts].[BKPOCDate] AS [BKPOCDate], 
+      [vwAccounts].[BKECF] AS [BKECF], 
+      [vwAccounts].[ClaimNumber] AS [ClaimNumber], 
+      [vwAccounts].[POCConfirmDate] AS [POCConfirmDate], 
+      [vwAccounts].[SystemDate] AS [SystemDate], 
+      [vwAccounts].[SystemDateyyyymmdd] AS [SystemDateyyyymmdd], 
+      [vwAccounts].[TimeZoneID] AS [TimeZoneID], 
+      [vwAccounts].[CompanyName] AS [CompanyName], 
+      [vwAccounts].[BatchID] AS [BatchID], 
+      [vwAccounts].[BatchCode] AS [BatchCode], 
+      [vwAccounts].[BatchDesc] AS [BatchDesc], 
+      [vwAccounts].[IndustryCode] AS [IndustryCode], 
+      [vwAccounts].[PaperTypeCode] AS [PaperTypeCode], 
+      [vwAccounts].[MEDIA_FLAG] AS [MEDIA_FLAG], 
+      [vwAccounts].[LastMediaAttachDate] AS [LastMediaAttachDate], 
+      [vwAccounts].[RestrictedAccount] AS [RestrictedAccount], 
+      [vwAccounts].[RetailVendor] AS [RetailVendor], 
+      [vwAccounts].[LastTranCode] AS [LastTranCode], 
+      [vwAccounts].[Offer] AS [Offer], 
+      [vwAccounts].[OfferPercent] AS [OfferPercent], 
+      [vwAccounts].[OfferExpireDate] AS [OfferExpireDate], 
+      [vwAccounts].[SettlementPaid] AS [SettlementPaid], 
+      [vwAccounts].[SettlementStatus] AS [SettlementStatus], 
+      [vwAccounts].[SettlementRequestID] AS [SettlementRequestID], 
+      [vwAccounts].[SettlementRemaining] AS [SettlementRemaining], 
+      [vwAccounts].[LastTranSource] AS [LastTranSource], 
+      [vwAccounts].[CitationCount] AS [CitationCount], 
+      [vwAccounts].[Liquidation] AS [Liquidation], 
+      [vwAccounts].[Segment] AS [Segment], 
+      [vwAccounts].[PurchasePrice] AS [PurchasePrice], 
+      [vwAccounts].[SalesPrice] AS [SalesPrice], 
+      [vwAccounts].[DateClosed] AS [DateClosed], 
+      [vwAccounts].[Today] AS [Today], 
+      [vwAccounts].[ClosedDate] AS [ClosedDate], 
+      [vwAccounts].[NoFMTChargeOffDate] AS [NoFMTChargeOffDate], 
+      [vwAccounts].[VehicleYear] AS [VehicleYear], 
+      [vwAccounts].[VehicleMake] AS [VehicleMake], 
+      [vwAccounts].[VehicleModel] AS [VehicleModel], 
+      [vwAccounts].[VehicleYearMakeModel] AS [VehicleYearMakeModel], 
+      [vwAccounts].[VehicleMiles] AS [VehicleMiles], 
+      [vwAccounts].[VehicleVIN] AS [VehicleVIN], 
+      [vwAccounts].[VehicleBookValue] AS [VehicleBookValue], 
+      [vwAccounts].[VehicleCondition] AS [VehicleCondition], 
+      [vwAccounts].[VehicleTag] AS [VehicleTag], 
+      [vwAccounts].[VehicleColor] AS [VehicleColor], 
+      [vwAccounts].[DamageAmount] AS [DamageAmount], 
+      [vwAccounts].[NameOnTitle] AS [NameOnTitle], 
+      [vwAccounts].[AutoPaymentAmount] AS [AutoPaymentAmount], 
+      [vwAccounts].[AutoDownPaymentAmount] AS [AutoDownPaymentAmount], 
+      [vwAccounts].[AutoPurchaseDate] AS [AutoPurchaseDate], 
+      [vwAccounts].[AutoLoanTerms] AS [AutoLoanTerms], 
+      [vwAccounts].[AutoSaleDate] AS [AutoSaleDate], 
+      [vwAccounts].[AutoSaleAmount] AS [AutoSaleAmount], 
+      [vwAccounts].[RepoStatus] AS [RepoStatus], 
+      [vwAccounts].[RepoAgent] AS [RepoAgent], 
+      [vwAccounts].[RepoAgentAddress1] AS [RepoAgentAddress1], 
+      [vwAccounts].[RepoAgentAddress2] AS [RepoAgentAddress2], 
+      [vwAccounts].[RepoAgentCity] AS [RepoAgentCity], 
+      [vwAccounts].[RepoAgentState] AS [RepoAgentState], 
+      [vwAccounts].[RepoAgentZip] AS [RepoAgentZip], 
+      [vwAccounts].[RepoAgentPhone] AS [RepoAgentPhone], 
+      [vwAccounts].[RepoAgentFax] AS [RepoAgentFax], 
+      [vwAccounts].[RepoAgentEmail] AS [RepoAgentEmail], 
+      [vwAccounts].[RepoDate] AS [RepoDate], 
+      [vwAccounts].[RepoFee] AS [RepoFee], 
+      [vwAccounts].[AuctionName] AS [AuctionName], 
+      [vwAccounts].[AuctionDate] AS [AuctionDate], 
+      [vwAccounts].[AuctionAmount] AS [AuctionAmount], 
+      [vwAccounts].[AuctionFee] AS [AuctionFee], 
+      [vwAccounts].[ReconditioningFee] AS [ReconditioningFee], 
+      [vwAccounts].[TransportationFee] AS [TransportationFee], 
+      [vwAccounts].[RedemptionExpirationDate] AS [RedemptionExpirationDate], 
+      [vwAccounts].[BankoProductCode] AS [BankoProductCode], 
+      [vwAccounts].[BankoClient] AS [BankoClient], 
+      [vwAccounts].[SALUTATION] AS [SALUTATION], 
+      [vwAccounts].[PREFIX] AS [PREFIX], 
+      [vwAccounts].[SUFFIX] AS [SUFFIX], 
+      [vwAccounts].[GENDER] AS [GENDER], 
+      [vwAccounts].[BankoAgreementDate] AS [BankoAgreementDate], 
+      [vwAccounts].[MIDDLENAME] AS [MIDDLENAME], 
+      [vwAccounts].[OpenDate] AS [OpenDate], 
+      [vwAccounts].[ChargeOffDate] AS [ChargeOffDate], 
+      [vwAccounts].[SoldTo] AS [SoldTo], 
+      [vwAccounts].[Sold] AS [Sold]
+      FROM [dbo].[vwAccounts] AS [vwAccounts]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_PortfolioStatusCrossRef_RPRODCDE" Association="CascadeDBModel.Store.FK_PortfolioStatusCrossRef_RPRODCDE">
+      <End Role="RPRODCDE" EntitySet="RPRODCDE" />
+      <End Role="PortfolioStatusCrossRef" EntitySet="PortfolioStatusCrossRef" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PortfolioStatusCrossRef_RSTATUS" Association="CascadeDBModel.Store.FK_PortfolioStatusCrossRef_RSTATUS">
+      <End Role="RSTATUS" EntitySet="RSTATUS" />
+      <End Role="PortfolioStatusCrossRef" EntitySet="PortfolioStatusCrossRef" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCBKRP_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCBKRP_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCBKRP" EntitySet="RACCBKRP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_Portfolios" Association="CascadeDBModel.Store.FK_RACCOUNT_Portfolios">
+      <End Role="Portfolios" EntitySet="Portfolios" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_RPRODCDE" Association="CascadeDBModel.Store.FK_RACCOUNT_RPRODCDE">
+      <End Role="RPRODCDE" EntitySet="RPRODCDE" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_RSTATUS" Association="CascadeDBModel.Store.FK_RACCOUNT_RSTATUS">
+      <End Role="RSTATUS" EntitySet="RSTATUS" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCOUNT_StatuteTypes" Association="CascadeDBModel.Store.FK_RACCOUNT_StatuteTypes">
+      <End Role="StatuteTypes" EntitySet="StatuteTypes" />
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCTLGL_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCTLGL_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCTLGL" EntitySet="RACCTLGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACCTREL_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCTREL_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACCTREL" EntitySet="RACCTREL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RACTPLAC_RACCOUNT" Association="CascadeDBModel.Store.FK_RACTPLAC_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RACTPLAC" EntitySet="RACTPLAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RFINTRAN_RACCOUNT" Association="CascadeDBModel.Store.FK_RFINTRAN_RACCOUNT">
+      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
+      <End Role="RFINTRAN" EntitySet="RFINTRAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RFINTRAN_RTRANCDE" Association="CascadeDBModel.Store.FK_RFINTRAN_RTRANCDE">
+      <End Role="RTRANCDE" EntitySet="RTRANCDE" />
+      <End Role="RFINTRAN" EntitySet="RFINTRAN" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="MSI_ComplaintIssues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_ComplaintMain">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="AgencyId" Type="varchar" MaxLength="20" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Zip" Type="varchar" MaxLength="10" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="LastFourSSN" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="DebtorIdentityVerified" Type="bit" />
+    <Property Name="ContactMethodId" Type="int" />
+    <Property Name="ContactTimeId" Type="int" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="500" />
+    <Property Name="DebtProductId" Type="int" />
+    <Property Name="DebtPurchaseBalance" Type="varchar" MaxLength="50" />
+    <Property Name="DebtCurrentBalance" Type="varchar" MaxLength="50" />
+    <Property Name="DisputeDebt" Type="bit" />
+    <Property Name="DisputeDebtAmount" Type="bit" />
+    <Property Name="DisputeDebtDueDate" Type="bit" />
+    <Property Name="ComplaintID" Type="varchar" MaxLength="50" />
+    <Property Name="ComplaiintDate" Type="datetime" Nullable="false" />
+    <Property Name="ComplaintReceivedByMethodId" Type="int" />
+    <Property Name="ComplaintIssueId" Type="int" Nullable="false" />
+    <Property Name="ComplaintNotes" Type="varchar" MaxLength="1000" />
+    <Property Name="ComplaintSubmitedToAgency" Type="bit" />
+    <Property Name="ComplaintSubmitedToAgencyDate" Type="datetime" />
+    <Property Name="MoreInfoReqdFromDebtor" Type="bit" />
+    <Property Name="MoreInfoRequestedDate" Type="datetime" />
+    <Property Name="MoreInfoRequested" Type="varchar" MaxLength="1000" />
+    <Property Name="MoreInfoReceivedFromDebtor" Type="bit" />
+    <Property Name="MoreInfoReceivedDate" Type="datetime" />
+    <Property Name="MoreInfoReceived" Type="varchar" MaxLength="1000" />
+    <Property Name="ComplaintSubmittedToOwner" Type="bit" />
+    <Property Name="ComplaintSubmittedDate" Type="datetime" />
+    <Property Name="TimeToSubmitDays" Type="int" />
+    <Property Name="MoreInfoFromAgency" Type="bit" />
+    <Property Name="MoreInfoFromAgencyRequestedDate" Type="datetime" />
+    <Property Name="MoreInfoFromAgencyRequested" Type="varchar" MaxLength="1000" />
+    <Property Name="MoreInfoFromAgencyReceived" Type="varchar" MaxLength="1000" />
+    <Property Name="MoreInfoFromAgencyReceivedDate" Type="datetime" />
+    <Property Name="OwnerResponseId" Type="int" />
+    <Property Name="OwnerResponseDate" Type="datetime" />
+    <Property Name="OwnerResponseDays" Type="int" />
+    <Property Name="AgencyResponseToDebtorDate" Type="datetime" />
+    <Property Name="TotalResponseTimeDays" Type="int" />
+    <Property Name="DebotrAgree" Type="bit" />
+    <Property Name="NeedFurtherAction" Type="bit" />
+    <Property Name="FinalActionStepId" Type="int" />
+  </EntityType>
+  <EntityType Name="MSI_ComplaintReceviedBy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Media" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_DebtorContactMethods">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Method" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_DebtorContactTime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Time" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_DebtorProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Product" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_DPSForm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="NetPayment" Type="money" />
+    <Property Name="TransCode" Type="varchar" MaxLength="50" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PmtType" Type="int" />
+    <Property Name="TransSource" Type="int" />
+    <Property Name="Portfolio" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AcctName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateRec" Type="datetime" />
+    <Property Name="CurrentResp" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OriginalAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OurCheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Uploaded" Type="bit" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MSI_FinalActionsteps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Step" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_MediaForm">
+    <Key>
+      <PropertyRef Name="Portfolio" />
+      <PropertyRef Name="OrderNumber" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CompanyRequesting" Type="varchar" MaxLength="255" />
+    <Property Name="Portfolio" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OriginalLender" Type="varchar" MaxLength="255" />
+    <Property Name="OrigAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="AcctName" Type="varchar" MaxLength="255" />
+    <Property Name="IsApplication" Type="bit" />
+    <Property Name="IsAffidavitIssuer" Type="bit" />
+    <Property Name="IsAffidavitSeller" Type="bit" />
+    <Property Name="StmtsFrom" Type="datetime" />
+    <Property Name="StmtsTo" Type="datetime" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="CODate" Type="datetime" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="SellerFee" Type="money" />
+    <Property Name="DateSellerPaid" Type="datetime" />
+    <Property Name="OurFee" Type="money" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="DateForwarded" Type="datetime" />
+    <Property Name="MediaTypeReceived" Type="varchar" MaxLength="255" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="IsUnavailable" Type="bit" />
+    <Property Name="IsClosed" Type="bit" />
+    <Property Name="UnavailableDate" Type="datetime" />
+    <Property Name="SellerInvoice" Type="varchar" MaxLength="50" />
+    <Property Name="DatePayRec" Type="datetime" />
+    <Property Name="BuyerCheck" Type="varchar" MaxLength="150" />
+    <Property Name="OurCheck" Type="varchar" MaxLength="150" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="OurInvoice" Type="varchar" MaxLength="50" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MSI_OwnerResponses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Response" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSI_Port_Acq_Edited">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender/FileDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="255" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="Face" Type="money" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm (days)" Type="int" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="ResaleRestrictionId" Type="int" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MSI_Port_Acq_Original">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender/FileDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="255" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="Face" Type="money" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm (days)" Type="int" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="ResaleRestrictionId" Type="int" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MSI_Port_SalesTrans_Edited">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="FaceValue" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm(days)" Type="float" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MSI_Port_SalesTrans_Original">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="FaceValue" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm(days)" Type="float" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MSI_RecallForm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OrigAcct" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AcctName" Type="varchar" MaxLength="255" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentResp" Type="varchar" MaxLength="150" />
+    <Property Name="RecallReason" Type="varchar" MaxLength="255" />
+    <Property Name="DateNoteSent" Type="datetime" />
+    <Property Name="PIMSAcct" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="NewStatus" Type="varchar" MaxLength="150" />
+    <Property Name="NewResp" Type="varchar" MaxLength="150" />
+    <Property Name="UploadedDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Invoice" Type="varchar" MaxLength="50" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="FaceValueofAcct" Type="money" />
+    <Property Name="CostBasis" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesBasis" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SellerCheck" Type="varchar" MaxLength="50" />
+    <Property Name="Putback" Type="bit" />
+    <Property Name="DateAcctClosed" Type="datetime" />
+    <Property Name="AmtReceivable" Type="money" />
+    <Property Name="AmtPayable" Type="money" />
+    <Property Name="Seller" Type="varchar" MaxLength="150" />
+    <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MSI_ResaleRestriction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Restriction" Type="varchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="Port_Acq">
     <Key>
       <PropertyRef Name="Portfolio#" />
@@ -28,6 +1031,926 @@
     <Property Name="Notes" Type="nvarchar(max)" />
     <Property Name="Company" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="Port_DPS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="Net Payment" Type="money" />
+    <Property Name="TransCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="CheckNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PmtType" Type="int" />
+    <Property Name="TransSource" Type="int" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateRec" Type="datetime" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="OurCheckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Port_Media">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CompanyRequesting" Type="nvarchar" MaxLength="255" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="OriginalLender/Product" Type="nvarchar" MaxLength="255" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="255" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Application" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Issuer)" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Seller)" Type="bit" Nullable="false" />
+    <Property Name="StmtsFrom" Type="datetime" />
+    <Property Name="StmtsTo" Type="datetime" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="C/ODate" Type="datetime" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="GMC Manager Approval  Y or N" Type="bit" Nullable="false" />
+    <Property Name="CompanySubmittedTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="SellerFee" Type="money" />
+    <Property Name="DateSellerPaid" Type="datetime" />
+    <Property Name="OurFee" Type="money" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="DateForwarded" Type="datetime" />
+    <Property Name="TypeReceived" Type="nvarchar" MaxLength="255" />
+    <Property Name="OurInvtoBuyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="OtherNotes:" Type="nvarchar(max)" />
+    <Property Name="Unavailable" Type="bit" Nullable="false" />
+    <Property Name="Closed" Type="bit" Nullable="false" />
+    <Property Name="UnavailableDate" Type="datetime" />
+    <Property Name="SellerInv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="DatePayRec" Type="datetime" />
+    <Property Name="BuyerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="OurCheck#" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Port_Recall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecallReason" Type="nvarchar" MaxLength="250" />
+    <Property Name="DateNoteSent" Type="datetime" />
+    <Property Name="DateAcctClosed" Type="datetime" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+    <Property Name="Check#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="FaceValueofAcct" Type="money" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="RequestedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Putback" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Port_Trans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cut-OffDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Lender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="FaceValue" Type="money" />
+    <Property Name="#ofAccts" Type="float" />
+    <Property Name="PutbackTerm(days)" Type="float" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Inv_AgencyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Check#" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransType" Type="nvarchar" MaxLength="50" />
+    <Property Name="$Interest" Type="money" />
+    <Property Name="InterestRate" Type="float" />
+    <Property Name="ProfitShare_before" Type="float" />
+    <Property Name="ProfitShare_after" Type="float" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Portfolios">
+    <Key>
+      <PropertyRef Name="lngPortfolioID" />
+    </Key>
+    <Property Name="lngPortfolioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="2000" />
+    <Property Name="PortfolioTypeID" Type="int" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="PortfolioStatusID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Accounts" Type="int" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="PaperAgeID" Type="int" />
+    <Property Name="PaperTypeID" Type="int" />
+    <Property Name="IndustryID" Type="int" />
+    <Property Name="SubIndustryID" Type="int" />
+    <Property Name="Notes" Type="varchar" MaxLength="2000" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="BidFile" Type="varchar" MaxLength="255" />
+    <Property Name="PurchaseFile" Type="varchar" MaxLength="255" />
+    <Property Name="ScoreFileName" Type="varchar" MaxLength="255" />
+    <Property Name="TableSourceName" Type="varchar" MaxLength="50" />
+    <Property Name="DataType" Type="varchar" MaxLength="10" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="Branch" Type="varchar" MaxLength="6" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Status" Type="varchar" MaxLength="6" />
+    <Property Name="Office" Type="varchar" MaxLength="6" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="SalePrice" Type="money" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="50" />
+    <Property Name="SoldToName" Type="varchar" MaxLength="50" />
+    <Property Name="SoldToPhone" Type="varchar" MaxLength="50" />
+    <Property Name="SaleFileName" Type="varchar" MaxLength="50" />
+    <Property Name="PreSaleFileName" Type="varchar" MaxLength="50" />
+    <Property Name="PutbackDeadLine" Type="datetime" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="User1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User3" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User4" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User5" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User6" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User7" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User8" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User9" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User10" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User11" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User12" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User13" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User14" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User15" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User16" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User17" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User18" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User19" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="User20" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PortfolioStatus">
+    <Key>
+      <PropertyRef Name="PortfolioStatusID" />
+    </Key>
+    <Property Name="PortfolioStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="PortfoliotypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="PortfolioStatusCrossRef">
+    <Key>
+      <PropertyRef Name="CrossRefID" />
+    </Key>
+    <Property Name="CrossRefID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductTypeID" Type="int" />
+    <Property Name="Product_Code" Type="varchar" MaxLength="6" />
+    <Property Name="Status" Type="varchar" MaxLength="6" />
+    <Property Name="ReturnStatus" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.PortfolioType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PortfolioType">
+    <Key>
+      <PropertyRef Name="PortfolioType" />
+    </Key>
+    <Property Name="PortfolioType" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PortfolioTypes">
+    <Key>
+      <PropertyRef Name="PortfolioTypeID" />
+    </Key>
+    <Property Name="PortfolioTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="RACCBKRP">
+    <Key>
+      <PropertyRef Name="BankruptRecordID" />
+    </Key>
+    <Property Name="BankruptRecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentBKT" Type="bit" />
+    <Property Name="Division_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Screen" Type="nvarchar" MaxLength="1" />
+    <Property Name="CaseNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="Chapter" Type="nvarchar" MaxLength="2" />
+    <Property Name="FileDate" Type="datetime" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="DispositionCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="Business" Type="nvarchar" MaxLength="255" />
+    <Property Name="PreFix" Type="varchar" MaxLength="10" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="35" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="15" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="35" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Address1Filed" Type="nvarchar" MaxLength="32" />
+    <Property Name="Address2Filed" Type="varchar" MaxLength="50" />
+    <Property Name="CityFiled" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateFiled" Type="nvarchar" MaxLength="2" />
+    <Property Name="ZipCodeFiled" Type="nvarchar" MaxLength="10" />
+    <Property Name="Zip4Filed" Type="varchar" MaxLength="4" />
+    <Property Name="CountyFiled" Type="nvarchar" MaxLength="25" />
+    <Property Name="CountryFiled" Type="varchar" MaxLength="50" />
+    <Property Name="Business1" Type="nvarchar" MaxLength="45" />
+    <Property Name="Business2" Type="nvarchar" MaxLength="45" />
+    <Property Name="Business3" Type="nvarchar" MaxLength="45" />
+    <Property Name="DebtorsAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="DebtorsState" Type="nvarchar" MaxLength="2" />
+    <Property Name="DebtorsZip" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsZip4" Type="varchar" MaxLength="4" />
+    <Property Name="DebtorsCounty" Type="varchar" MaxLength="50" />
+    <Property Name="DebtorsCountry" Type="varchar" MaxLength="50" />
+    <Property Name="ECOA" Type="nvarchar" MaxLength="1" />
+    <Property Name="LawFirm" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyAddress1" Type="nvarchar" MaxLength="35" />
+    <Property Name="AttorneyAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="AttorneyCity" Type="nvarchar" MaxLength="35" />
+    <Property Name="AttorneyState" Type="nvarchar" MaxLength="2" />
+    <Property Name="AttorneyZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="AttorneyPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="AttorneyFax" Type="varchar" MaxLength="20" />
+    <Property Name="Date341" Type="nvarchar" MaxLength="10" />
+    <Property Name="Time341" Type="nvarchar" MaxLength="10" />
+    <Property Name="Location341" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trustee" Type="nvarchar" MaxLength="40" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="Court" Type="varchar" MaxLength="255" />
+    <Property Name="TrusteeAddress1" Type="nvarchar" MaxLength="40" />
+    <Property Name="TrusteeAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="TrusteeCity" Type="nvarchar" MaxLength="32" />
+    <Property Name="TrusteeState" Type="nvarchar" MaxLength="2" />
+    <Property Name="TrusteeZip" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrusteePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrusteeFax" Type="varchar" MaxLength="20" />
+    <Property Name="Judges_Intials" Type="nvarchar" MaxLength="16" />
+    <Property Name="Funds" Type="nvarchar" MaxLength="1" />
+    <Property Name="BarDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="DebtorsPhone" Type="varchar" MaxLength="50" />
+    <Property Name="AttorneyLastNameSuffix" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttorneyMiddleInit" Type="nvarchar" MaxLength="1" />
+    <Property Name="AttorneyFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CourtAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="CourtAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="CourtCity" Type="varchar" MaxLength="50" />
+    <Property Name="CourtState" Type="varchar" MaxLength="2" />
+    <Property Name="CourtZip" Type="varchar" MaxLength="50" />
+    <Property Name="CourtPhone" Type="varchar" MaxLength="50" />
+    <Property Name="ECF" Type="bit" />
+    <Property Name="POCDate" Type="datetime" />
+    <Property Name="POCDeadline" Type="datetime" />
+    <Property Name="ClaimNumber" Type="varchar" MaxLength="50" />
+    <Property Name="POCConfirmDate" Type="datetime" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="BKRTDateGranted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RACCOUNT">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PrimaryAccount" Type="varchar" MaxLength="20" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="ToolSetID" Type="int" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="DateWorked" Type="smalldatetime" />
+    <Property Name="DEBT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="BRANCH_NUMBER" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_LIMIT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CONTRACT_DATE" Type="datetime" />
+    <Property Name="INT_RATE_CODE" Type="varchar" MaxLength="8" />
+    <Property Name="INT_START_DATE" Type="datetime" />
+    <Property Name="CYCLE_CODE" Type="decimal" Precision="2" />
+    <Property Name="LAST_POST_DATE" Type="datetime" />
+    <Property Name="CHGOFF_DATE" Type="datetime" />
+    <Property Name="CHGOFF_RSN_CODE" Type="varchar" MaxLength="3" />
+    <Property Name="CHGOFF_PRINCPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_OTH_AMTS" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REASON_INTO_COL" Type="varchar" MaxLength="3" />
+    <Property Name="FIRST_PAY_DEFAULT" Type="char" MaxLength="1" />
+    <Property Name="CYCLES_DELQ" Type="decimal" Precision="3" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="LAST_CONT_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="Transfer_By" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Date_Placed" Type="datetime" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="RESP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="Status_Change_Date" Type="datetime" />
+    <Property Name="Previous_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Status_Date" Type="datetime" />
+    <Property Name="ALLOC_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="TOT_CHARGES" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRINCIPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_NUM_PMTS" Type="decimal" Precision="8" />
+    <Property Name="TOT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTH_INC_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DELQ_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DUE_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SETTLE_ALLOW" Type="float" />
+    <Property Name="TOT_NSF_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NUM_NSF_PMNTS" Type="decimal" Precision="4" />
+    <Property Name="DATE_LAST_NSF" Type="datetime" />
+    <Property Name="LAST_NSF_AMT" Type="money" />
+    <Property Name="FRST_PMT_DATE" Type="datetime" />
+    <Property Name="FIRST_PMT_AMOUNT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NEXT_CYCLE" Type="varchar" MaxLength="6" />
+    <Property Name="CALL_ATMPS_CONT" Type="decimal" Precision="6" />
+    <Property Name="WKDY_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKNT_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKND_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="DATE_SENT_AGENCY" Type="datetime" />
+    <Property Name="DATE_LAST_RECALL" Type="datetime" />
+    <Property Name="BAD_PHONE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="BAD_ADDR_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOME_OWN_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOLD_FLAG" Type="char" MaxLength="1" />
+    <Property Name="FIRST_CONT_FLAG" Type="char" MaxLength="1" />
+    <Property Name="LAST_CALL_NUM" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_CALL_DATE" Type="datetime" />
+    <Property Name="LAST_CALL_TIME" Type="varchar" MaxLength="15" />
+    <Property Name="LAST_CALL_RESULT" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_CALL_STATUS" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_LETTER_GENERATED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_GENERATED_DATE" Type="datetime" />
+    <Property Name="LAST_LETTER_PRINTED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_PRINTED_DATE" Type="datetime" />
+    <Property Name="HEADER_NOTE" Type="varchar" MaxLength="3000" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="FLAGS" Type="varchar" MaxLength="26" />
+    <Property Name="LAST_PMT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REPORT_TO_BUREAU" Type="bit" />
+    <Property Name="BUR_UPDATE_DATE" Type="datetime" />
+    <Property Name="BUR_UPDATE_TIME" Type="decimal" Precision="6" />
+    <Property Name="BUR_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_DISPUTE_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_BKT_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_SPECIAL_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_STATUS_DATE" Type="datetime" />
+    <Property Name="SCORE_STRATEGY" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_SCORE" Type="varchar" MaxLength="10" />
+    <Property Name="BEHAVIOR_SCORE" Type="decimal" Precision="5" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Putback" Type="bit" />
+    <Property Name="PutbackDate" Type="datetime" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="60" />
+    <Property Name="Sold" Type="bit" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="Buyback" Type="bit" />
+    <Property Name="BuybackDate" Type="datetime" />
+    <Property Name="PreviousOwner" Type="varchar" MaxLength="35" />
+    <Property Name="PreviousAcct" Type="varchar" MaxLength="35" />
+    <Property Name="OriginalBalance" Type="money" />
+    <Property Name="OriginalPrincipal" Type="money" />
+    <Property Name="OriginalInterest" Type="money" />
+    <Property Name="Originator" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalAccount" Type="varchar" MaxLength="50" />
+    <Property Name="oLastPayDate" Type="datetime" />
+    <Property Name="oLastPayAmt" Type="money" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="ClientAccount" Type="varchar" MaxLength="50" />
+    <Property Name="cLastPayDate" Type="datetime" />
+    <Property Name="cLastPayAmt" Type="money" />
+    <Property Name="Commission" Type="varchar" MaxLength="4" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="SellerAccount" Type="varchar" MaxLength="50" />
+    <Property Name="sLastPayDate" Type="datetime" />
+    <Property Name="sLastPayAmt" Type="money" />
+    <Property Name="Bankrupt" Type="bit" />
+    <Property Name="POE" Type="char" MaxLength="1" />
+    <Property Name="Stage" Type="varchar" MaxLength="255" />
+    <Property Name="Legal" Type="bit" />
+    <Property Name="LegalReject" Type="bit" />
+    <Property Name="PreLegalReject" Type="bit" />
+    <Property Name="Note" Type="varchar" MaxLength="2000" />
+    <Property Name="RetailVendor" Type="varchar" MaxLength="50" />
+    <Property Name="WIP" Type="bit" />
+    <Property Name="WIPDate" Type="datetime" />
+    <Property Name="PortfolioID" Type="int" />
+    <Property Name="User1" Type="varchar" MaxLength="50" />
+    <Property Name="User2" Type="varchar" MaxLength="50" />
+    <Property Name="User3" Type="varchar" MaxLength="50" />
+    <Property Name="User4" Type="varchar" MaxLength="50" />
+    <Property Name="User5" Type="varchar" MaxLength="50" />
+    <Property Name="User6" Type="varchar" MaxLength="50" />
+    <Property Name="User7" Type="varchar" MaxLength="50" />
+    <Property Name="User8" Type="varchar" MaxLength="50" />
+    <Property Name="User9" Type="varchar" MaxLength="50" />
+    <Property Name="User10" Type="varchar" MaxLength="50" />
+    <Property Name="LastChargeDate" Type="datetime" />
+    <Property Name="LastChargeAmt" Type="money" />
+    <Property Name="DateOfOccur" Type="datetime" />
+    <Property Name="YearsSinceLastActivity" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="LastCashAdvance" Type="datetime" />
+    <Property Name="LastCashAdvanceAmt" Type="money" />
+    <Property Name="LastPDCDate" Type="datetime" />
+    <Property Name="LastPDCAmount" Type="money" />
+    <Property Name="insight_score" Type="varchar" MaxLength="50" />
+    <Property Name="FieldParse" Type="text" />
+    <Property Name="Archive" Type="bit" />
+    <Property Name="Purge" Type="bit" />
+    <Property Name="MonthlyPayment" Type="money" />
+    <Property Name="Terms" Type="int" />
+    <Property Name="MatureDate" Type="datetime" />
+    <Property Name="ScriptID" Type="int" Nullable="false" />
+    <Property Name="StartingPayments" Type="int" Nullable="false" />
+    <Property Name="StartingPaymentAmount" Type="money" Nullable="false" />
+    <Property Name="PaymentPlanDate" Type="datetime" />
+    <Property Name="LAST_LETTER_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LAST_LETTER_DATE" Type="datetime" />
+    <Property Name="MEDIA_FLAG" Type="char" MaxLength="1" />
+    <Property Name="OriginalInterestDate" Type="datetime" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="CollectorCommission" Type="varchar" MaxLength="4" />
+    <Property Name="User11" Type="varchar" MaxLength="50" />
+    <Property Name="User12" Type="varchar" MaxLength="50" />
+    <Property Name="User13" Type="varchar" MaxLength="50" />
+    <Property Name="User14" Type="varchar" MaxLength="50" />
+    <Property Name="User15" Type="varchar" MaxLength="50" />
+    <Property Name="User16" Type="varchar" MaxLength="50" />
+    <Property Name="User17" Type="varchar" MaxLength="50" />
+    <Property Name="User18" Type="varchar" MaxLength="50" />
+    <Property Name="User19" Type="varchar" MaxLength="50" />
+    <Property Name="User20" Type="varchar" MaxLength="50" />
+    <Property Name="LastCCDDate" Type="datetime" />
+    <Property Name="LastCCDAmount" Type="money" />
+    <Property Name="LastPRMDate" Type="datetime" />
+    <Property Name="LastPRMAmount" Type="money" />
+    <Property Name="DateLastPRMEntered" Type="datetime" />
+    <Property Name="FileNo" Type="varchar" MaxLength="10" />
+    <Property Name="Forw_File" Type="varchar" MaxLength="20" />
+    <Property Name="Masco_File" Type="varchar" MaxLength="15" />
+    <Property Name="Forw_ID" Type="varchar" MaxLength="10" />
+    <Property Name="Firm_ID" Type="varchar" MaxLength="10" />
+    <Property Name="AssignDate" Type="datetime" />
+    <Property Name="CheckFeeType" Type="int" />
+    <Property Name="CreditCardFeeType" Type="int" />
+    <Property Name="CheckFee" Type="money" />
+    <Property Name="CreditCardFee" Type="money" />
+    <Property Name="Claim_Date" Type="datetime" />
+    <Property Name="Law_List" Type="varchar" MaxLength="4" />
+    <Property Name="sFee" Type="varchar" MaxLength="4" />
+    <Property Name="Rate_Pre" Type="varchar" MaxLength="16" />
+    <Property Name="Rates_Post" Type="varchar" MaxLength="16" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorName2" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorStreet" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorCS" Type="varchar" MaxLength="15" />
+    <Property Name="CreditorZip" Type="varchar" MaxLength="9" />
+    <Property Name="Debt_Bal" Type="varchar" MaxLength="16" />
+    <Property Name="Debtor_No" Type="varchar" MaxLength="20" />
+    <Property Name="Batch_No" Type="varchar" MaxLength="2" />
+    <Property Name="SOL_Date" Type="varchar" MaxLength="8" />
+    <Property Name="TU_Score" Type="varchar" MaxLength="4" />
+    <Property Name="PimsLoadDate" Type="datetime" />
+    <Property Name="Closed" Type="bit" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="LastTranCode" Type="varchar" MaxLength="10" />
+    <Property Name="LastTranSource" Type="varchar" MaxLength="1" />
+    <Property Name="LastReturnCode" Type="varchar" MaxLength="3" />
+    <Property Name="AnnualRateCodeID" Type="int" />
+    <Property Name="LastMediaAttachDate" Type="datetime" />
+    <Property Name="StatuteTypeID" Type="int" />
+    <Property Name="RestrictedAccount" Type="bit" />
+    <Property Name="Previous_WorkStatusID" Type="int" />
+    <Property Name="WorkStatusID_ChangeDate" Type="datetime" />
+    <Property Name="WorkStatusID_UpdateID" Type="varchar" MaxLength="6" />
+    <Property Name="CitationCount" Type="int" />
+    <Property Name="DONOTACH" Type="bit" Nullable="false" />
+    <Property Name="Liquidation" Type="money" />
+    <Property Name="AgencyAccount" Type="varchar" MaxLength="20" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesPrice" Type="decimal" Precision="8" Scale="6" />
+  </EntityType>
+  <EntityType Name="RACCTLGL">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="JUDG_BAL_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDG_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="WHO_SUED" Type="int" />
+    <Property Name="SUIT_STATE" Type="varchar" MaxLength="2" />
+    <Property Name="SUIT_COUNTY" Type="varchar" MaxLength="40" />
+    <Property Name="SUIT_COURT" Type="varchar" MaxLength="40" />
+    <Property Name="SUIT_ATTY" Type="varchar" MaxLength="40" />
+    <Property Name="COMPLAINT_DATE" Type="datetime" />
+    <Property Name="COMPLAINT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CASE_NO" Type="varchar" MaxLength="20" />
+    <Property Name="DATE_SERVED1" Type="datetime" />
+    <Property Name="SERVICER1" Type="varchar" MaxLength="50" />
+    <Property Name="LOCATION_SERV1" Type="varchar" MaxLength="255" />
+    <Property Name="P_A_SERV1" Type="char" MaxLength="1" />
+    <Property Name="DATE_SERVED2" Type="datetime" />
+    <Property Name="SERVICER2" Type="varchar" MaxLength="50" />
+    <Property Name="LOCATION_SERV2" Type="varchar" MaxLength="255" />
+    <Property Name="P_A_SERV2" Type="char" MaxLength="1" />
+    <Property Name="HEARING_DATE" Type="datetime" />
+    <Property Name="TRIAL_DATE" Type="datetime" />
+    <Property Name="STIP_DATE" Type="datetime" />
+    <Property Name="STIP_AMOUNT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_PRINCIPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_COSTS" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="STIP_INT_RATE" Type="varchar" MaxLength="8" />
+    <Property Name="JUDGEMENT_DATE" Type="datetime" />
+    <Property Name="JUDGEMENT_EXP" Type="datetime" />
+    <Property Name="JUDGEMENT_RENEW" Type="int" />
+    <Property Name="JUDGEMENT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_PRIN" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_INT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_PJ_CR" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="JUDGEMENT_INTRT" Type="varchar" MaxLength="8" />
+    <Property Name="GARN_DATE" Type="datetime" />
+    <Property Name="GARN_EXP_DATE" Type="datetime" />
+    <Property Name="GARN_WHO" Type="varchar" MaxLength="50" />
+    <Property Name="GARN_ADDRESS" Type="varchar" MaxLength="255" />
+    <Property Name="GARN_P_A_ADDR" Type="char" MaxLength="1" />
+    <Property Name="ABST_DATE" Type="datetime" />
+    <Property Name="ABST_LOCATION" Type="varchar" MaxLength="2" />
+    <Property Name="ABST_P_A_LOC" Type="char" MaxLength="1" />
+    <Property Name="ABST_RECORDER" Type="varchar" MaxLength="6" />
+    <Property Name="ABST_REFERENCE" Type="varchar" MaxLength="20" />
+    <Property Name="WRIT_DATE" Type="datetime" />
+    <Property Name="WRIT_EXP" Type="datetime" />
+    <Property Name="OTHER_DATE" Type="datetime" />
+    <Property Name="OTHER_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="UPDATE_TIME" Type="decimal" Precision="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ACCUM_DATE" Type="datetime" />
+    <Property Name="ACCUM_INT_PRIN" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_INT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ACCUM_INT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SERVICER1_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="SERVICER2_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="COURT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="HEARING_TIME" Type="decimal" Precision="6" />
+    <Property Name="TRIAL_TIME" Type="decimal" Precision="6" />
+    <Property Name="OTHER_DESC2" Type="varchar" MaxLength="30" />
+    <Property Name="WRIT_COURT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="WRIT_STATE" Type="varchar" MaxLength="2" />
+    <Property Name="STIP_DESC" Type="varchar" MaxLength="2000" />
+    <Property Name="JUDGEMENT_INT_START_DATE" Type="datetime" />
+    <Property Name="WRIT_COURT" Type="varchar" MaxLength="255" />
+    <Property Name="WRIT_REQUEST_DATE" Type="datetime" />
+    <Property Name="WRIT_SENT_DATE" Type="datetime" />
+    <Property Name="DocketNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Docket_Date" Type="datetime" />
+    <Property Name="Stay_Date" Type="datetime" />
+    <Property Name="COURT_DISTRICT" Type="varchar" MaxLength="255" />
+    <Property Name="COURT_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="COURT_ADDRESS1" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_ADDRESS2" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_CITY" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_STATE" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_ZIP" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_COUNTY" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_PHONE" Type="varchar" MaxLength="50" />
+    <Property Name="COURT_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="LetterDate1" Type="datetime" />
+    <Property Name="Exemption" Type="varchar" MaxLength="50" />
+    <Property Name="ExemptionType" Type="varchar" MaxLength="50" />
+    <Property Name="ExemptionDate" Type="datetime" />
+    <Property Name="ExemptionExpirationDate" Type="datetime" />
+    <Property Name="FilingFees" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="GarnBank1" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBankAccount1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnRouting1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Address1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Address2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1State" Type="varchar" MaxLength="2" />
+    <Property Name="GarnBank1City" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Zip" Type="varchar" MaxLength="15" />
+    <Property Name="GarnBank1County" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank1Phone" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank1Fax" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBankAccount2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnRouting2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Address1" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Address2" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2City" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank2State" Type="varchar" MaxLength="2" />
+    <Property Name="GarnBank2Zip" Type="varchar" MaxLength="12" />
+    <Property Name="GarnBank2County" Type="varchar" MaxLength="255" />
+    <Property Name="GarnBank2Phone" Type="varchar" MaxLength="50" />
+    <Property Name="GarnBank2Fax" Type="varchar" MaxLength="50" />
+    <Property Name="ABST_ISSUANCE_DATE" Type="datetime" />
+    <Property Name="ABST_RECORDING_DATE" Type="datetime" />
+    <Property Name="ABST_DOCUMENT_NUMBER" Type="varchar" MaxLength="20" />
+    <Property Name="ABST_FEE" Type="money" />
+    <Property Name="ABST_RECORDING_FEE" Type="money" />
+    <Property Name="TaskID" Type="int" />
+  </EntityType>
+  <EntityType Name="RACCTREL">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
+      <PropertyRef Name="REL_POS" />
+      <PropertyRef Name="P_A_ADDR_FLAG" />
+    </Key>
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="REL_TYPE" Type="varchar" MaxLength="10" />
+    <Property Name="REL_POS" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="P_A_ADDR_FLAG" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="SALUTATION" Type="varchar" MaxLength="35" />
+    <Property Name="PREFIX" Type="varchar" MaxLength="35" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="35" />
+    <Property Name="MIDDLENAME" Type="varchar" MaxLength="35" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="35" />
+    <Property Name="SUFFIX" Type="varchar" MaxLength="35" />
+    <Property Name="GENDER" Type="char" MaxLength="1" />
+    <Property Name="ADDRESS1" Type="varchar" MaxLength="35" />
+    <Property Name="ADDRESS2" Type="varchar" MaxLength="35" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="STATE" Type="varchar" MaxLength="50" />
+    <Property Name="ZIP_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="ZIP4" Type="char" MaxLength="4" />
+    <Property Name="COUNTY" Type="varchar" MaxLength="50" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="15" />
+    <Property Name="SS_NO" Type="varchar" MaxLength="256" />
+    <Property Name="PHONE_HOME" Type="varchar" MaxLength="15" />
+    <Property Name="PHONE_WORK" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_OTHER" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_CELL" Type="varchar" MaxLength="20" />
+    <Property Name="WorkExt" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="DRIV_LIC_NO" Type="varchar" MaxLength="27" />
+    <Property Name="TIME_ZONE" Type="varchar" MaxLength="50" />
+    <Property Name="COMMNT" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DOD" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="DLState" Type="varchar" MaxLength="10" />
+    <Property Name="DeathCertificate" Type="varchar" MaxLength="20" />
+    <Property Name="FuneralHome" Type="varchar" MaxLength="40" />
+    <Property Name="CityOD" Type="varchar" MaxLength="50" />
+    <Property Name="CountyOD" Type="varchar" MaxLength="50" />
+    <Property Name="StateOD" Type="varchar" MaxLength="20" />
+    <Property Name="ContactName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactTelephone" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_Home_StatusID" Type="int" />
+    <Property Name="Phone_Work_StatusID" Type="int" Nullable="false" />
+    <Property Name="Phone_Other_StatusID" Type="int" />
+    <Property Name="Phone_Cell_StatusID" Type="int" />
+    <Property Name="bad_addr_flag" Type="char" MaxLength="1" />
+    <Property Name="Last_Call_Result_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Desc_Home" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Work" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Cell" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Desc_Other" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Number_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Number_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Date_Home" Type="datetime" />
+    <Property Name="Last_Call_Date_Work" Type="datetime" />
+    <Property Name="Last_Call_Date_Cell" Type="datetime" />
+    <Property Name="Last_Call_Date_Other" Type="datetime" />
+    <Property Name="Last_Call_Time_Home" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Work" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Cell" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Call_Time_Other" Type="varchar" MaxLength="15" />
+    <Property Name="Bur_Update_ID" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Update_Date" Type="datetime" />
+    <Property Name="Bur_Status_Date" Type="datetime" />
+    <Property Name="Bur_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Dispute_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_BKT_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Bur_Special_Status" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RACTPLAC">
+    <Key>
+      <PropertyRef Name="PLACEMENTID" />
+    </Key>
+    <Property Name="PLACEMENTID" Type="decimal" Nullable="false" Precision="10" StoreGeneratedPattern="Identity" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PLACEMENT_DATE" Type="datetime" Nullable="false" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="PLACED_BY_ID" Type="varchar" MaxLength="6" />
+    <Property Name="AMT_PLACED" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="RETURN_DATE" Type="datetime" />
+    <Property Name="AMT_RETURNED" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REASON_RETURNED" Type="text" />
+    <Property Name="Stage" Type="varchar" MaxLength="10" />
+    <Property Name="COLLECTED" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResponsibilityTypes">
+    <Key>
+      <PropertyRef Name="ResponsibilityTypeID" />
+    </Key>
+    <Property Name="ResponsibilityTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ResponsibilityType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RFINTRAN">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DIVISION_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" MaxLength="20" />
+    <Property Name="TRAN_DATE" Type="datetime" />
+    <Property Name="TRAN_SEQ" Type="numeric" Precision="4" />
+    <Property Name="TRAN_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="TRAN_SOURCE" Type="char" MaxLength="1" />
+    <Property Name="RREFERENCE" Type="varchar" MaxLength="50" />
+    <Property Name="AMOUNT" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="PRINCIPAL" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="INTEREST" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="COSTS" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="OTHER" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="COMMISSION" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="DUE_AGENCY" Type="char" MaxLength="1" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="RESP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="ORIG_TRAN_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="ALLOCATION_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="ENTRY_ID" Type="varchar" MaxLength="6" />
+    <Property Name="ENTRY_TYPE" Type="char" MaxLength="1" />
+    <Property Name="CheckNumber" Type="varchar" MaxLength="10" />
+    <Property Name="PaymentTypeID" Type="int" />
+    <Property Name="PrintStatement" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Comment" Type="varchar" MaxLength="2000" />
+    <Property Name="Balance" Type="money" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="10" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="CollectorCommission" Type="money" />
+    <Property Name="Fee" Type="money" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="PaymentID" Type="varchar" MaxLength="10" />
+    <Property Name="ExportDirectPayment" Type="bit" />
+    <Property Name="ExportDirectPaymentDate" Type="datetime" />
+    <Property Name="Memo" Type="varchar" MaxLength="50" />
+    <Property Name="Recon" Type="money" />
+    <Property Name="DepositDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RINTRATE">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="TYPE" Type="char" MaxLength="1" />
+    <Property Name="DATE_STARTED" Type="datetime" />
+    <Property Name="DATE_ENDED" Type="datetime" />
+    <Property Name="RATE" Type="numeric" Precision="8" Scale="4" />
+    <Property Name="COMPOUND_PERIOD" Type="varchar" MaxLength="4" />
+    <Property Name="GEN_TRAN_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="INT_DAYS_PER_YR" Type="numeric" Precision="6" Scale="2" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_USER" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RPRODCDE">
+    <Key>
+      <PropertyRef Name="PRODUCT_CODE" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_CODE" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="DESCRIPTION" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="ACTIVE_YN" Type="bit" Nullable="false" />
+    <Property Name="Collateral" Type="bit" />
+    <Property Name="UPDATE_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="3" />
+    <Property Name="Zip" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioName" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioOwner" Type="varchar" MaxLength="50" />
+    <Property Name="AgencyCode" Type="varchar" MaxLength="10" />
+    <Property Name="SIFPercent" Type="float" />
+    <Property Name="GrossNet" Type="bit" />
+    <Property Name="ProductTypeID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="SaveBankInfo" Type="bit" Nullable="false" />
+    <Property Name="SaveCCInfo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RSTATUS">
+    <Key>
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="STATUS" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="DESCR" Type="varchar" MaxLength="255" />
+    <Property Name="StatusTypeID" Type="int" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="LETTER_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="ACTIVE_YN" Type="bit" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="PCode" Type="varchar" MaxLength="10" />
+    <Property Name="ChangeDays" Type="int" />
+    <Property Name="PcodeOnly" Type="int" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="Billable" Type="bit" />
+    <Property Name="CBR_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_BKT_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_Special_Status" Type="varchar" MaxLength="6" />
+    <Property Name="CBR_Dispute_Status" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="RTRANCDE">
+    <Key>
+      <PropertyRef Name="TRAN_CODE" />
+    </Key>
+    <Property Name="TRAN_CODE" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="IS_PAYMENT" Type="char" MaxLength="1" />
+    <Property Name="CREDIT_DEBIT" Type="char" MaxLength="1" />
+    <Property Name="DESCR" Type="varchar" MaxLength="30" />
+    <Property Name="IS_NSF" Type="char" MaxLength="1" />
+    <Property Name="IS_ADJUSTMENT" Type="char" MaxLength="1" />
+    <Property Name="IS_COST" Type="char" MaxLength="1" />
+    <Property Name="BATCHTYPEID" Type="int" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="TranCodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="StatusTypes">
+    <Key>
+      <PropertyRef Name="StatusTypeID" />
+    </Key>
+    <Property Name="StatusTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StatuteTypes">
+    <Key>
+      <PropertyRef Name="StatuteTypeID" />
+    </Key>
+    <Property Name="StatuteTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatuteType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sup_BrockettCompanies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="Sup_Company">
     <Key>
       <PropertyRef Name="Agency" />
@@ -36,13 +1959,6 @@
     <Property Name="Active" Type="nvarchar" MaxLength="50" />
     <Property Name="Name" Type="nvarchar" MaxLength="255" />
     <Property Name="Type" Type="nvarchar" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="Sup_PmtType">
-    <Key>
-      <PropertyRef Name="Payment Type ID code" />
-    </Key>
-    <Property Name="Payment Type ID code" Type="int" Nullable="false" />
-    <Property Name="Payment Type ID" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Sup_TransCode">
     <Key>
@@ -57,6 +1973,13 @@
     </Key>
     <Property Name="TransSource" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TBL_CHART">
     <Key>
@@ -132,63 +2055,855 @@
     <Property Name="Notes" Type="varchar" MaxLength="300" />
     <Property Name="IsSameBillingAddress" Type="bit" />
     <Property Name="Country" Type="varchar" MaxLength="80" />
-  </EntityType>
-  <EntityType Name="TBL_Portfolio">
-    <Key>
-      <PropertyRef Name="ACCOUNT" />
-    </Key>
-    <Property Name="ACCOUNT" Type="float" Nullable="false" />
-    <Property Name="NAME" Type="nvarchar" MaxLength="255" />
-    <Property Name="LAST_PAY_DATE" Type="datetime" />
-    <Property Name="LAST_PAY_AMT" Type="float" />
-    <Property Name="DaysSinceLastPay" Type="float" />
-    <Property Name="Balance" Type="float" />
-    <Property Name="PortfolioID" Type="float" />
-    <Property Name="Portfolio" Type="nvarchar" MaxLength="255" />
-    <Property Name="AccruedInterest" Type="float" />
-    <Property Name="TotalInterest" Type="float" />
-    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
-    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
-    <Property Name="CITY" Type="nvarchar" MaxLength="255" />
-    <Property Name="STATE" Type="nvarchar" MaxLength="255" />
-    <Property Name="ZIP_CODE" Type="float" />
-    <Property Name="Statute" Type="float" />
-    <Property Name="DaysRemainingInStat" Type="float" />
-    <Property Name="StatuteDate" Type="datetime" />
-    <Property Name="SoldDate" Type="datetime" />
-    <Property Name="Closed" Type="float" />
-    <Property Name="WorkStatusDescription" Type="nvarchar" MaxLength="255" />
-    <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
-    <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
-    <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="FranchiseeId" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6013: The table/view 'CascadeDB.dbo.Portfolio' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Portfolio">
-        <Property Name="ACCOUNT" Type="float" />
-        <Property Name="NAME" Type="nvarchar" MaxLength="255" />
-        <Property Name="LAST_PAY_DATE" Type="datetime" />
-        <Property Name="LAST_PAY_AMT" Type="float" />
-        <Property Name="DaysSinceLastPay" Type="float" />
-        <Property Name="Balance" Type="float" />
-        <Property Name="PortfolioID" Type="float" />
-        <Property Name="Portfolio" Type="nvarchar" MaxLength="255" />
-        <Property Name="AccruedInterest" Type="float" />
-        <Property Name="TotalInterest" Type="float" />
-        <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
-        <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
-        <Property Name="CITY" Type="nvarchar" MaxLength="255" />
-        <Property Name="STATE" Type="nvarchar" MaxLength="255" />
-        <Property Name="ZIP_CODE" Type="float" />
-        <Property Name="Statute" Type="float" />
-        <Property Name="DaysRemainingInStat" Type="float" />
-        <Property Name="StatuteDate" Type="datetime" />
-        <Property Name="SoldDate" Type="datetime" />
-        <Property Name="Closed" Type="float" />
-        <Property Name="WorkStatusDescription" Type="nvarchar" MaxLength="255" />
-        <Property Name="WorkGroup" Type="nvarchar" MaxLength="255" />
-        <Property Name="PortfolioOwner" Type="nvarchar" MaxLength="255" />
-        <Property Name="PortfolioName" Type="nvarchar" MaxLength="255" />
-      </EntityType>-->
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwMediaData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwMediaData">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Application" />
+      <PropertyRef Name="Affidavit(Issuer)" />
+      <PropertyRef Name="Affidavit(Seller)" />
+      <PropertyRef Name="GMC Manager Approval  Y or N" />
+      <PropertyRef Name="Unavailable" />
+      <PropertyRef Name="Closed" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CompanyRequesting" Type="nvarchar" MaxLength="255" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="OriginalLender/Product" Type="nvarchar" MaxLength="255" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="255" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Application" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Issuer)" Type="bit" Nullable="false" />
+    <Property Name="Affidavit(Seller)" Type="bit" Nullable="false" />
+    <Property Name="StmtsFrom" Type="datetime" />
+    <Property Name="StmtsTo" Type="datetime" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="C/ODate" Type="datetime" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="GMC Manager Approval  Y or N" Type="bit" Nullable="false" />
+    <Property Name="CompanySubmittedTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="SellerFee" Type="money" />
+    <Property Name="DateSellerPaid" Type="datetime" />
+    <Property Name="OurFee" Type="money" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="DateForwarded" Type="datetime" />
+    <Property Name="TypeReceived" Type="nvarchar" MaxLength="255" />
+    <Property Name="OurInvtoBuyer" Type="nvarchar" MaxLength="255" />
+    <Property Name="OtherNotes:" Type="nvarchar(max)" />
+    <Property Name="Unavailable" Type="bit" Nullable="false" />
+    <Property Name="Closed" Type="bit" Nullable="false" />
+    <Property Name="UnavailableDate" Type="datetime" />
+    <Property Name="SellerInv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="DatePayRec" Type="datetime" />
+    <Property Name="BuyerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="255" />
+    <Property Name="OurCheck#" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwRecallData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwRecallData">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Putback" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OrigAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcctName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecallReason" Type="nvarchar" MaxLength="250" />
+    <Property Name="DateNoteSent" Type="datetime" />
+    <Property Name="DateAcctClosed" Type="datetime" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uploaded (y/n)" Type="datetime" />
+    <Property Name="Check#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inv#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="FaceValueofAcct" Type="money" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="SalesBasis" Type="float" />
+    <Property Name="RequestedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerCheck#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Putback" Type="bit" Nullable="false" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="255" />
+    <Property Name="Expr1" Type="float" />
+    <Property Name="Expr2" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_AddDPSCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_AddDPSCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Portfolio#" />
+      <PropertyRef Name="CheckNumber" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PIMSAcct#" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="DateRec" Type="datetime" />
+    <Property Name="CurrentResp" Type="nvarchar" MaxLength="50" />
+    <Property Name="OurCheckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckNumber" Type="varchar" Nullable="false" MaxLength="7" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_CollectionsRecon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_CollectionsRecon">
+    <Key>
+      <PropertyRef Name="Agency" />
+    </Key>
+    <Property Name="TransType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Portfolio#" Type="nvarchar" MaxLength="255" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+    <Property Name="Inv_AgencyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FaceValue" Type="money" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="Agency" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_PortfolioCashFlow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_PortfolioCashFlow">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="TransType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesPrice" Type="money" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_PortfolioCashPosition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_PortfolioCashPosition">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="SumOfSalesPrice" Type="money" />
+    <Property Name="CashPos" Type="money" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+    <Property Name="Return on Capital" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vw_PortfolioSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_PortfolioSummary">
+    <Key>
+      <PropertyRef Name="Portfolio#" />
+    </Key>
+    <Property Name="Portfolio#" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="Face" Type="money" />
+    <Property Name="CostBasis" Type="float" />
+    <Property Name="Lender/FileDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="SumOfSalesPrice" Type="money" />
+    <Property Name="CashPos" Type="money" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+    <Property Name="Return on Capital" Type="money" />
+    <Property Name="irrIRR" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.vwAccounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vwAccounts">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+      <PropertyRef Name="ECOA_COS" />
+      <PropertyRef Name="ScriptID" />
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="PlacementFileID" />
+      <PropertyRef Name="CalculateCommission" />
+      <PropertyRef Name="PMT_TYPE" />
+      <PropertyRef Name="PromiseBy" />
+      <PropertyRef Name="DatePromiseBroke" />
+      <PropertyRef Name="PromiseStatus" />
+      <PropertyRef Name="SystemDate" />
+      <PropertyRef Name="Offer" />
+      <PropertyRef Name="OfferPercent" />
+      <PropertyRef Name="SettlementPaid" />
+      <PropertyRef Name="BankoProductCode" />
+      <PropertyRef Name="BankoClient" />
+    </Key>
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="AccruedInterest" Type="money" />
+    <Property Name="TotalInterest" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" />
+    <Property Name="ADDRESS1" Type="varchar" MaxLength="35" />
+    <Property Name="ADDRESS2" Type="varchar" MaxLength="35" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="STATE" Type="varchar" MaxLength="50" />
+    <Property Name="ZIP_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="Zip" Type="varchar" MaxLength="10" />
+    <Property Name="SSN" Type="varchar" MaxLength="256" />
+    <Property Name="SS_NO" Type="varchar" MaxLength="256" />
+    <Property Name="PHONE_HOME" Type="varchar" MaxLength="15" />
+    <Property Name="PHONE_WORK" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_OTHER" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_CELL" Type="varchar" MaxLength="20" />
+    <Property Name="TIME_ZONE" Type="varchar" MaxLength="50" />
+    <Property Name="DL" Type="varchar" MaxLength="27" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DOD" Type="datetime" />
+    <Property Name="FuneralHome" Type="varchar" MaxLength="40" />
+    <Property Name="CityOD" Type="varchar" MaxLength="50" />
+    <Property Name="CountyOD" Type="varchar" MaxLength="50" />
+    <Property Name="StateOD" Type="varchar" MaxLength="20" />
+    <Property Name="AddressUpdateDate" Type="datetime" />
+    <Property Name="AddressUpdateDateYYYYMMDD" Type="varchar" MaxLength="10" />
+    <Property Name="ContactName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactTelephone" Type="varchar" MaxLength="20" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="15" />
+    <Property Name="ECOA" Type="varchar" MaxLength="2" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="CoName" Type="varchar" MaxLength="255" />
+    <Property Name="CoFirstName" Type="varchar" MaxLength="255" />
+    <Property Name="CoLastName" Type="varchar" MaxLength="255" />
+    <Property Name="CoAddress1" Type="varchar" MaxLength="35" />
+    <Property Name="CoAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="CoCity" Type="varchar" MaxLength="50" />
+    <Property Name="CoState" Type="varchar" MaxLength="50" />
+    <Property Name="CoZip" Type="varchar" MaxLength="10" />
+    <Property Name="CoSSN" Type="varchar" MaxLength="256" />
+    <Property Name="CoHomePhone" Type="varchar" MaxLength="15" />
+    <Property Name="CoWorkPhone" Type="varchar" MaxLength="20" />
+    <Property Name="CoOtherPhone" Type="varchar" MaxLength="20" />
+    <Property Name="CoTimeZone" Type="varchar" MaxLength="50" />
+    <Property Name="CoDL" Type="varchar" MaxLength="27" />
+    <Property Name="CoDOB" Type="datetime" />
+    <Property Name="CoDOD" Type="datetime" />
+    <Property Name="CoAddressUpdateDate" Type="datetime" />
+    <Property Name="ECOA_COS" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="Statute" Type="int" />
+    <Property Name="DaysRemainingInStat" Type="int" />
+    <Property Name="StatuteDate" Type="datetime" />
+    <Property Name="StatuteTypeID" Type="int" />
+    <Property Name="StatuteType" Type="varchar" MaxLength="50" />
+    <Property Name="OwnHome" Type="varchar" MaxLength="1" />
+    <Property Name="Score" Type="varchar" MaxLength="4" />
+    <Property Name="MortgageBalance" Type="money" />
+    <Property Name="RevolvingBalance" Type="money" />
+    <Property Name="AvailableBankCard" Type="money" />
+    <Property Name="UserScore" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CREDIT_LIMIT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SCORE_STRATEGY" Type="varchar" MaxLength="6" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="REPORT_TO_BUREAU" Type="bit" />
+    <Property Name="BUR_UPDATE_DATE" Type="datetime" />
+    <Property Name="BUR_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_DISPUTE_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_BKT_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_SPECIAL_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_STATUS_DATE" Type="datetime" />
+    <Property Name="CBRAccountStatusDesc" Type="varchar" MaxLength="255" />
+    <Property Name="CBRBankruptStatusDesc" Type="varchar" MaxLength="255" />
+    <Property Name="CBRDisputeStatusDesc" Type="varchar" MaxLength="255" />
+    <Property Name="CBRSpecialStatusDesc" Type="varchar" MaxLength="255" />
+    <Property Name="DaysSinceLastBureauStatus" Type="int" />
+    <Property Name="ScriptID" Type="int" Nullable="false" />
+    <Property Name="PortfolioID" Type="int" />
+    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="Branch" Type="varchar" MaxLength="6" />
+    <Property Name="BRANCH_NUMBER" Type="varchar" MaxLength="6" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="Transfer_By" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Date_Placed" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="Previous_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Status_Date" Type="datetime" />
+    <Property Name="StatusType" Type="varchar" MaxLength="50" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="InhouseScore" Type="int" />
+    <Property Name="CREDIT_SCORE" Type="varchar" MaxLength="10" />
+    <Property Name="BAD_ADDR_FLAG" Type="char" MaxLength="1" />
+    <Property Name="BAD_PHONE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="BadAddress" Type="char" MaxLength="1" />
+    <Property Name="BadPhone" Type="char" MaxLength="1" />
+    <Property Name="HomeOwner" Type="char" MaxLength="1" />
+    <Property Name="HOME_OWN_FLAG" Type="char" MaxLength="1" />
+    <Property Name="Legal" Type="bit" />
+    <Property Name="LegalReject" Type="bit" />
+    <Property Name="YearsSinceLastActivity" Type="int" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="PutbackDate" Type="datetime" />
+    <Property Name="BuybackDate" Type="datetime" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="SETTLE_ALLOW" Type="float" />
+    <Property Name="Stage" Type="varchar" MaxLength="255" />
+    <Property Name="DateWorked" Type="smalldatetime" />
+    <Property Name="PeriodWorked" Type="varchar" MaxLength="6" />
+    <Property Name="PreviousAcct" Type="varchar" MaxLength="35" />
+    <Property Name="PreviousOwner" Type="varchar" MaxLength="35" />
+    <Property Name="PlaceDate" Type="datetime" />
+    <Property Name="FLAGS" Type="varchar" MaxLength="26" />
+    <Property Name="HEADER_NOTE" Type="varchar" MaxLength="3000" />
+    <Property Name="Closed" Type="bit" />
+    <Property Name="Archive" Type="bit" />
+    <Property Name="Purge" Type="bit" />
+    <Property Name="AnnualRateCodeID" Type="int" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="WorkStatusDescription" Type="varchar" MaxLength="50" />
+    <Property Name="WorkGroup" Type="varchar" MaxLength="50" />
+    <Property Name="PlacementFileID" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="Status_Change_Date" Type="datetime" />
+    <Property Name="DEBT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="DebtType" Type="varchar" MaxLength="50" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="FmtPurchaseDate" Type="varchar" MaxLength="64" />
+    <Property Name="Note" Type="varchar" MaxLength="2000" />
+    <Property Name="DATE_SENT_AGENCY" Type="datetime" />
+    <Property Name="Claim_Date" Type="datetime" />
+    <Property Name="WIP" Type="bit" />
+    <Property Name="WIPDate" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateDateyyyymmdd" Type="varchar" MaxLength="10" />
+    <Property Name="PrimaryAccount" Type="varchar" MaxLength="20" />
+    <Property Name="DaysSinceLastPay" Type="int" />
+    <Property Name="DaysSinceLastWorked" Type="int" />
+    <Property Name="DaysSinceLastUpdate" Type="int" />
+    <Property Name="DaysSinceLastStatus" Type="int" />
+    <Property Name="DaysSinceLastPlaced" Type="int" />
+    <Property Name="DaysSinceLastCall" Type="int" />
+    <Property Name="DaysSinceLoadDate" Type="int" />
+    <Property Name="DaysSinceLastLetterPrinted" Type="int" />
+    <Property Name="DaysSinceLastLetterCreated" Type="int" />
+    <Property Name="DaysSinceLastLetterDate" Type="int" />
+    <Property Name="DaysSinceInterestStartDate" Type="int" />
+    <Property Name="DaysSinceLastNSF" Type="int" />
+    <Property Name="MonthsSinceLastPauDate" Type="int" />
+    <Property Name="MonthsSinceOpenDate" Type="int" />
+    <Property Name="MonthsSinceChargeOffDate" Type="int" />
+    <Property Name="DaysSinceDelinquentDate" Type="int" />
+    <Property Name="CalculateCommission" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="PortfolioOwner" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioDesc" Type="varchar" MaxLength="40" />
+    <Property Name="PortfolioName" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioCity" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioState" Type="varchar" MaxLength="3" />
+    <Property Name="PortfolioZip" Type="varchar" MaxLength="50" />
+    <Property Name="PortfolioPhone" Type="varchar" MaxLength="50" />
+    <Property Name="SIFPercent" Type="float" />
+    <Property Name="ProductTypeID" Type="int" />
+    <Property Name="SaveCCInfo" Type="bit" />
+    <Property Name="SaveBankInfo" Type="bit" />
+    <Property Name="Manager" Type="varchar" MaxLength="255" />
+    <Property Name="ManagerAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="ManagerCity" Type="varchar" MaxLength="35" />
+    <Property Name="ManagerState" Type="varchar" MaxLength="3" />
+    <Property Name="ManagerZip" Type="varchar" MaxLength="10" />
+    <Property Name="ManagerPhone" Type="varchar" MaxLength="50" />
+    <Property Name="TERRITORIES" Type="varchar" MaxLength="192" />
+    <Property Name="Budget" Type="money" />
+    <Property Name="ResponsibilityTypeID" Type="int" />
+    <Property Name="ACTIVE_YN" Type="bit" />
+    <Property Name="OpenDesk" Type="bit" />
+    <Property Name="ResponsibilityType" Type="varchar" MaxLength="50" />
+    <Property Name="Allocation_Code" Type="varchar" MaxLength="6" />
+    <Property Name="PreLegalReject" Type="bit" />
+    <Property Name="User1" Type="varchar" MaxLength="50" />
+    <Property Name="User2" Type="varchar" MaxLength="50" />
+    <Property Name="User3" Type="varchar" MaxLength="50" />
+    <Property Name="User4" Type="varchar" MaxLength="50" />
+    <Property Name="User5" Type="varchar" MaxLength="50" />
+    <Property Name="User6" Type="varchar" MaxLength="50" />
+    <Property Name="User7" Type="varchar" MaxLength="50" />
+    <Property Name="User8" Type="varchar" MaxLength="50" />
+    <Property Name="User9" Type="varchar" MaxLength="50" />
+    <Property Name="User10" Type="varchar" MaxLength="50" />
+    <Property Name="User11" Type="varchar" MaxLength="50" />
+    <Property Name="User12" Type="varchar" MaxLength="50" />
+    <Property Name="User13" Type="varchar" MaxLength="50" />
+    <Property Name="User14" Type="varchar" MaxLength="50" />
+    <Property Name="User15" Type="varchar" MaxLength="50" />
+    <Property Name="User16" Type="varchar" MaxLength="50" />
+    <Property Name="User17" Type="varchar" MaxLength="50" />
+    <Property Name="User18" Type="varchar" MaxLength="50" />
+    <Property Name="User19" Type="varchar" MaxLength="50" />
+    <Property Name="User20" Type="varchar" MaxLength="50" />
+    <Property Name="OtherData" Type="text" />
+    <Property Name="LAST_CALL_NUM" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_CALL_DATE" Type="datetime" />
+    <Property Name="LAST_CALL_TIME" Type="varchar" MaxLength="15" />
+    <Property Name="LAST_CALL_RESULT" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_LETTER_GENERATED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_PRINTED" Type="varchar" MaxLength="255" />
+    <Property Name="fmtLastPayDate" Type="varchar" MaxLength="64" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="fmtLastRecallDate" Type="varchar" MaxLength="64" />
+    <Property Name="DATE_LAST_RECALL" Type="datetime" />
+    <Property Name="LAST_PMT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="LAST_PAY_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="LastChargeDate" Type="datetime" />
+    <Property Name="LastChargeAmt" Type="money" />
+    <Property Name="LAST_NOTE_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="LAST_CONT_DATE" Type="datetime" />
+    <Property Name="DATE_LAST_NSF" Type="datetime" />
+    <Property Name="LAST_NSF_AMT" Type="money" />
+    <Property Name="LAST_LETTER_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LAST_LETTER_DATE" Type="datetime" />
+    <Property Name="TOT_NUM_PMTS" Type="decimal" Precision="8" />
+    <Property Name="TOT_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="PrincipalBalance" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="Principal" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="Interest" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="Cost" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="Other" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="InterestStartDate" Type="datetime" />
+    <Property Name="INT_START_DATE" Type="datetime" />
+    <Property Name="NUM_NSF_PMNTS" Type="decimal" Precision="4" />
+    <Property Name="TOT_NSF_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DUE_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CheckFeeType" Type="int" />
+    <Property Name="CheckFee" Type="money" />
+    <Property Name="CreditCardFeeType" Type="int" />
+    <Property Name="CreditCardFee" Type="money" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="50" />
+    <Property Name="Originator" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalAccount" Type="varchar" MaxLength="50" />
+    <Property Name="EOriginalAccount" Type="varchar" MaxLength="51" />
+    <Property Name="fmtOpenDate" Type="varchar" MaxLength="64" />
+    <Property Name="fmtChargeOffDate" Type="varchar" MaxLength="64" />
+    <Property Name="DateOfOccur" Type="datetime" />
+    <Property Name="DelinquentDate" Type="datetime" />
+    <Property Name="fmtDateOfOccur" Type="varchar" MaxLength="64" />
+    <Property Name="InterestRate" Type="varchar" MaxLength="8" />
+    <Property Name="COAmount" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="oLastPayDate" Type="datetime" />
+    <Property Name="oLastPayAmt" Type="money" />
+    <Property Name="OriginalBalance" Type="money" />
+    <Property Name="OriginalPrincipal" Type="money" />
+    <Property Name="OriginalInterest" Type="money" />
+    <Property Name="CHGOFF_DATE" Type="datetime" />
+    <Property Name="CONTRACT_DATE" Type="datetime" />
+    <Property Name="INT_RATE_CODE" Type="varchar" MaxLength="8" />
+    <Property Name="LastPDCDate" Type="datetime" />
+    <Property Name="LastPDCAmount" Type="money" />
+    <Property Name="NextPDCDate" Type="datetime" />
+    <Property Name="NextPDCAmount" Type="money" />
+    <Property Name="DaysSinceNextPDC" Type="int" />
+    <Property Name="DaysBeforePDCDate" Type="int" />
+    <Property Name="DaysUntilNextPayment" Type="int" />
+    <Property Name="LastCCDDate" Type="datetime" />
+    <Property Name="LastCCDAmount" Type="money" />
+    <Property Name="NextCCDDate" Type="datetime" />
+    <Property Name="NextCCDAmount" Type="money" />
+    <Property Name="DaysSinceNextCCD" Type="int" />
+    <Property Name="DaysBeforeCCDDate" Type="int" />
+    <Property Name="DaysUntilNextCCDPayment" Type="int" />
+    <Property Name="LastPRMDate" Type="datetime" />
+    <Property Name="LastPRMAmount" Type="money" />
+    <Property Name="NextPRMDate" Type="datetime" />
+    <Property Name="NextPRMAmount" Type="money" />
+    <Property Name="PromiseDate" Type="datetime" />
+    <Property Name="PromiseAmount" Type="money" />
+    <Property Name="DaysSinceNextPRM" Type="int" />
+    <Property Name="DaysBeforePRMDate" Type="int" />
+    <Property Name="DaysUntilNextPRMPayment" Type="int" />
+    <Property Name="FirstPaymentDate" Type="datetime" />
+    <Property Name="fmtFirstPaymentDate" Type="varchar" MaxLength="64" />
+    <Property Name="FirstPaymentAmount" Type="money" />
+    <Property Name="Terms" Type="int" />
+    <Property Name="LastPaymentDate" Type="datetime" />
+    <Property Name="fmtLastPaymentDate" Type="varchar" MaxLength="64" />
+    <Property Name="LastPaymentAmount" Type="money" />
+    <Property Name="CycleDay" Type="int" />
+    <Property Name="PaymentPlanDate" Type="datetime" />
+    <Property Name="fmtPaymentPlanDate" Type="varchar" MaxLength="64" />
+    <Property Name="PaymentPlanAmount" Type="money" />
+    <Property Name="RemainingPayments" Type="decimal" Precision="12" />
+    <Property Name="RemainigBalance" Type="decimal" Precision="37" Scale="4" />
+    <Property Name="DaysSincePaymentPlan" Type="int" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="SellerAccount" Type="varchar" MaxLength="50" />
+    <Property Name="sLastPayDate" Type="datetime" />
+    <Property Name="sLastPayAmt" Type="money" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="ClientAccount" Type="varchar" MaxLength="50" />
+    <Property Name="cLastPayDate" Type="datetime" />
+    <Property Name="cLastPayAmt" Type="money" />
+    <Property Name="Commission" Type="varchar" MaxLength="4" />
+    <Property Name="CollectorCommission" Type="varchar" MaxLength="4" />
+    <Property Name="VerifiedBy" Type="varchar" MaxLength="6" />
+    <Property Name="POEUpdateDate" Type="datetime" />
+    <Property Name="Employer" Type="varchar" MaxLength="50" />
+    <Property Name="EmployerAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="EmployerAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="EmployerCity" Type="varchar" MaxLength="35" />
+    <Property Name="EmployerState" Type="varchar" MaxLength="3" />
+    <Property Name="EmployerZip" Type="varchar" MaxLength="10" />
+    <Property Name="EmployerPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Total_Calls" Type="int" />
+    <Property Name="WeekDay_Calls" Type="int" />
+    <Property Name="Weekend_Calls" Type="int" />
+    <Property Name="Total_Call_Cost" Type="money" />
+    <Property Name="Last_Call_Result_Home" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Work" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Cell" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Result_Other" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Call_Date_Home" Type="datetime" />
+    <Property Name="Last_Call_Date_Work" Type="datetime" />
+    <Property Name="Last_Call_Date_Cell" Type="datetime" />
+    <Property Name="Last_Call_Date_Other" Type="datetime" />
+    <Property Name="DaysSinceLastCallHome" Type="int" />
+    <Property Name="DaysSinceLastCallWork" Type="int" />
+    <Property Name="DaysSinceLastCallCell" Type="int" />
+    <Property Name="DaysSinceLastCallOther" Type="int" />
+    <Property Name="Last_Call_Time_Home" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Work" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Cell" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Call_Time_Other" Type="varchar" MaxLength="20" />
+    <Property Name="PMT_TYPE" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="DatePromiseEntered" Type="datetime" />
+    <Property Name="PromiseBy" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="DatePromiseBroke" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="PromiseStatus" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="TimeSpent" Type="varchar" MaxLength="25" />
+    <Property Name="SecondsSpent" Type="bigint" />
+    <Property Name="BKFileDate" Type="datetime" />
+    <Property Name="BKCaseNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="BKStatus" Type="nvarchar" MaxLength="2" />
+    <Property Name="BKChapter" Type="nvarchar" MaxLength="2" />
+    <Property Name="BKStatusDate" Type="datetime" />
+    <Property Name="BKBusiness" Type="nvarchar" MaxLength="255" />
+    <Property Name="BKAddress1Filed" Type="nvarchar" MaxLength="32" />
+    <Property Name="BKAddress2Filed" Type="varchar" MaxLength="50" />
+    <Property Name="BKCityFiled" Type="nvarchar" MaxLength="20" />
+    <Property Name="BKStateFiled" Type="nvarchar" MaxLength="2" />
+    <Property Name="BKZipFiled" Type="nvarchar" MaxLength="10" />
+    <Property Name="BKZip4Filed" Type="varchar" MaxLength="4" />
+    <Property Name="BKCountyFiled" Type="nvarchar" MaxLength="25" />
+    <Property Name="BKCountryFiled" Type="varchar" MaxLength="50" />
+    <Property Name="BKBusiness1" Type="nvarchar" MaxLength="45" />
+    <Property Name="BKBusiness2" Type="nvarchar" MaxLength="45" />
+    <Property Name="BKBusiness3" Type="nvarchar" MaxLength="45" />
+    <Property Name="BKDebtorsAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="BKDebtorsAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="BKDebtorsCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="BKDebtorState" Type="nvarchar" MaxLength="2" />
+    <Property Name="BKDebtorsZip" Type="varchar" MaxLength="50" />
+    <Property Name="BKDebtorsZip4" Type="varchar" MaxLength="4" />
+    <Property Name="BKDeborsCounty" Type="varchar" MaxLength="50" />
+    <Property Name="BKDebtorsCountry" Type="varchar" MaxLength="50" />
+    <Property Name="BKECOA" Type="nvarchar" MaxLength="1" />
+    <Property Name="BKLawFirm" Type="nvarchar" MaxLength="50" />
+    <Property Name="BKAttorneyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BKAttorneyFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BKAttorneyMiddleInitial" Type="nvarchar" MaxLength="1" />
+    <Property Name="BKAttorneyLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BKAttorneyAddress1" Type="nvarchar" MaxLength="35" />
+    <Property Name="BKAttorneyAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="BKAttorneyCity" Type="nvarchar" MaxLength="35" />
+    <Property Name="BKAttorneyState" Type="nvarchar" MaxLength="2" />
+    <Property Name="BKAttorneyZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="BKAttorneyPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="BKAttorneyFax" Type="varchar" MaxLength="20" />
+    <Property Name="BKDate341" Type="nvarchar" MaxLength="10" />
+    <Property Name="BKTime341" Type="nvarchar" MaxLength="10" />
+    <Property Name="BKLocation341" Type="nvarchar" MaxLength="50" />
+    <Property Name="BKTrustee" Type="nvarchar" MaxLength="40" />
+    <Property Name="BKDistrict" Type="varchar" MaxLength="50" />
+    <Property Name="BKCourt" Type="varchar" MaxLength="255" />
+    <Property Name="BKCourtAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="BKCourtAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="BKCourtCity" Type="varchar" MaxLength="50" />
+    <Property Name="BKCourtState" Type="varchar" MaxLength="2" />
+    <Property Name="BKCourtZip" Type="varchar" MaxLength="50" />
+    <Property Name="BKCourtPhone" Type="varchar" MaxLength="50" />
+    <Property Name="TrusteeAddress1" Type="nvarchar" MaxLength="40" />
+    <Property Name="TrusteeAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="TrusteeCity" Type="nvarchar" MaxLength="32" />
+    <Property Name="TrusteeState" Type="nvarchar" MaxLength="2" />
+    <Property Name="TrusteeZip" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrusteePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrusteeFax" Type="varchar" MaxLength="20" />
+    <Property Name="Judges_Intials" Type="nvarchar" MaxLength="16" />
+    <Property Name="Funds" Type="nvarchar" MaxLength="1" />
+    <Property Name="BarDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="BKPOCDate" Type="datetime" />
+    <Property Name="BKECF" Type="bit" />
+    <Property Name="ClaimNumber" Type="varchar" MaxLength="50" />
+    <Property Name="POCConfirmDate" Type="datetime" />
+    <Property Name="SystemDate" Type="datetime" Nullable="false" />
+    <Property Name="SystemDateyyyymmdd" Type="varchar" MaxLength="10" />
+    <Property Name="TimeZoneID" Type="int" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+    <Property Name="BatchID" Type="int" />
+    <Property Name="BatchCode" Type="varchar" MaxLength="255" />
+    <Property Name="BatchDesc" Type="varchar" MaxLength="2000" />
+    <Property Name="IndustryCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="PaperTypeCode" Type="varchar" MaxLength="10" />
+    <Property Name="MEDIA_FLAG" Type="char" MaxLength="1" />
+    <Property Name="LastMediaAttachDate" Type="datetime" />
+    <Property Name="RestrictedAccount" Type="bit" />
+    <Property Name="RetailVendor" Type="varchar" MaxLength="50" />
+    <Property Name="LastTranCode" Type="varchar" MaxLength="10" />
+    <Property Name="Offer" Type="money" Nullable="false" />
+    <Property Name="OfferPercent" Type="float" Nullable="false" />
+    <Property Name="OfferExpireDate" Type="smalldatetime" />
+    <Property Name="SettlementPaid" Type="money" Nullable="false" />
+    <Property Name="SettlementStatus" Type="int" />
+    <Property Name="SettlementRequestID" Type="int" />
+    <Property Name="SettlementRemaining" Type="money" />
+    <Property Name="LastTranSource" Type="varchar" MaxLength="1" />
+    <Property Name="CitationCount" Type="int" />
+    <Property Name="Liquidation" Type="money" />
+    <Property Name="Segment" Type="varchar" MaxLength="50" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesPrice" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="DateClosed" Type="varchar" MaxLength="64" />
+    <Property Name="Today" Type="varchar" MaxLength="64" />
+    <Property Name="ClosedDate" Type="datetime" />
+    <Property Name="NoFMTChargeOffDate" Type="datetime" />
+    <Property Name="VehicleYear" Type="varchar" MaxLength="4" />
+    <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleYearMakeModel" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleMiles" Type="varchar" MaxLength="12" />
+    <Property Name="VehicleVIN" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleBookValue" Type="varchar" MaxLength="10" />
+    <Property Name="VehicleCondition" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleTag" Type="varchar" MaxLength="20" />
+    <Property Name="VehicleColor" Type="varchar" MaxLength="25" />
+    <Property Name="DamageAmount" Type="varchar" MaxLength="10" />
+    <Property Name="NameOnTitle" Type="varchar" MaxLength="50" />
+    <Property Name="AutoPaymentAmount" Type="varchar" MaxLength="10" />
+    <Property Name="AutoDownPaymentAmount" Type="varchar" MaxLength="10" />
+    <Property Name="AutoPurchaseDate" Type="datetime" />
+    <Property Name="AutoLoanTerms" Type="int" />
+    <Property Name="AutoSaleDate" Type="datetime" />
+    <Property Name="AutoSaleAmount" Type="varchar" MaxLength="10" />
+    <Property Name="RepoStatus" Type="varchar" MaxLength="10" />
+    <Property Name="RepoAgent" Type="varchar" MaxLength="50" />
+    <Property Name="RepoAgentAddress1" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentAddress2" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentCity" Type="varchar" MaxLength="35" />
+    <Property Name="RepoAgentState" Type="varchar" MaxLength="2" />
+    <Property Name="RepoAgentZip" Type="varchar" MaxLength="10" />
+    <Property Name="RepoAgentPhone" Type="varchar" MaxLength="20" />
+    <Property Name="RepoAgentFax" Type="varchar" MaxLength="20" />
+    <Property Name="RepoAgentEmail" Type="varchar" MaxLength="255" />
+    <Property Name="RepoDate" Type="datetime" />
+    <Property Name="RepoFee" Type="varchar" MaxLength="10" />
+    <Property Name="AuctionName" Type="varchar" MaxLength="50" />
+    <Property Name="AuctionDate" Type="datetime" />
+    <Property Name="AuctionAmount" Type="varchar" MaxLength="10" />
+    <Property Name="AuctionFee" Type="varchar" MaxLength="10" />
+    <Property Name="ReconditioningFee" Type="varchar" MaxLength="10" />
+    <Property Name="TransportationFee" Type="varchar" MaxLength="10" />
+    <Property Name="RedemptionExpirationDate" Type="datetime" />
+    <Property Name="BankoProductCode" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="BankoClient" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="SALUTATION" Type="varchar" MaxLength="35" />
+    <Property Name="PREFIX" Type="varchar" MaxLength="35" />
+    <Property Name="SUFFIX" Type="varchar" MaxLength="35" />
+    <Property Name="GENDER" Type="char" MaxLength="1" />
+    <Property Name="BankoAgreementDate" Type="varchar" MaxLength="64" />
+    <Property Name="MIDDLENAME" Type="varchar" MaxLength="35" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="ChargeOffDate" Type="datetime" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="60" />
+    <Property Name="Sold" Type="bit" />
+  </EntityType>
+  <Association Name="FK_PortfolioStatusCrossRef_RPRODCDE">
+    <End Role="RPRODCDE" Type="CascadeDBModel.Store.RPRODCDE" Multiplicity="0..1" />
+    <End Role="PortfolioStatusCrossRef" Type="CascadeDBModel.Store.PortfolioStatusCrossRef" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RPRODCDE">
+        <PropertyRef Name="PRODUCT_CODE" />
+      </Principal>
+      <Dependent Role="PortfolioStatusCrossRef">
+        <PropertyRef Name="Product_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PortfolioStatusCrossRef_RSTATUS">
+    <End Role="RSTATUS" Type="CascadeDBModel.Store.RSTATUS" Multiplicity="0..1" />
+    <End Role="PortfolioStatusCrossRef" Type="CascadeDBModel.Store.PortfolioStatusCrossRef" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RSTATUS">
+        <PropertyRef Name="STATUS" />
+      </Principal>
+      <Dependent Role="PortfolioStatusCrossRef">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCBKRP_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RACCBKRP" Type="CascadeDBModel.Store.RACCBKRP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACCBKRP">
+        <PropertyRef Name="Division_ID" />
+        <PropertyRef Name="Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_Portfolios">
+    <End Role="Portfolios" Type="CascadeDBModel.Store.Portfolios" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolios">
+        <PropertyRef Name="lngPortfolioID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="PortfolioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_RPRODCDE">
+    <End Role="RPRODCDE" Type="CascadeDBModel.Store.RPRODCDE" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RPRODCDE">
+        <PropertyRef Name="PRODUCT_CODE" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="PRODUCT_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_RSTATUS">
+    <End Role="RSTATUS" Type="CascadeDBModel.Store.RSTATUS" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RSTATUS">
+        <PropertyRef Name="STATUS" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCOUNT_StatuteTypes">
+    <End Role="StatuteTypes" Type="CascadeDBModel.Store.StatuteTypes" Multiplicity="0..1" />
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatuteTypes">
+        <PropertyRef Name="StatuteTypeID" />
+      </Principal>
+      <Dependent Role="RACCOUNT">
+        <PropertyRef Name="StatuteTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCTLGL_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RACCTLGL" Type="CascadeDBModel.Store.RACCTLGL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACCTLGL">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACCTREL_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1" />
+    <End Role="RACCTREL" Type="CascadeDBModel.Store.RACCTREL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACCTREL">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RACTPLAC_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1" />
+    <End Role="RACTPLAC" Type="CascadeDBModel.Store.RACTPLAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RACTPLAC">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RFINTRAN_RACCOUNT">
+    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RFINTRAN" Type="CascadeDBModel.Store.RFINTRAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RACCOUNT">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Principal>
+      <Dependent Role="RFINTRAN">
+        <PropertyRef Name="DIVISION_ID" />
+        <PropertyRef Name="ACCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RFINTRAN_RTRANCDE">
+    <End Role="RTRANCDE" Type="CascadeDBModel.Store.RTRANCDE" Multiplicity="0..1" />
+    <End Role="RFINTRAN" Type="CascadeDBModel.Store.RFINTRAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RTRANCDE">
+        <PropertyRef Name="TRAN_CODE" />
+      </Principal>
+      <Dependent Role="RFINTRAN">
+        <PropertyRef Name="TRAN_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
