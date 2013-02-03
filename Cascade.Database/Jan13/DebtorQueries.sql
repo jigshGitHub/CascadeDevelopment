@@ -19,4 +19,4 @@ vwAcc.FirstName
 From vwAccounts vwAcc INNER JOIN RACCOUNT rAcc ON vwAcc.ACCOUNT = rAcc.ACCOUNT
 Where vwAcc.ACCOUNT like '50000218%'
 
-exec [MSI_spGetDebtors] '50000218'
+exec [MSI_spGetDebtors] '500002184'

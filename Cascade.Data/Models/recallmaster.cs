@@ -12,9 +12,13 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PortfolioType1
+    public partial class recallmaster
     {
-        public int PortfolioTypeID { get; set; }
-        public string Type { get; set; }
+        public string Agency { get; set; }
+        public string ACCOUNT { get; set; }
+        public string OriginalAccount { get; set; }
+        public Nullable<System.DateTime> Recall { get; set; }
+        public string Portfolio { get; set; }
+        public Nullable<decimal> Principal { get; set; }
     }
 }

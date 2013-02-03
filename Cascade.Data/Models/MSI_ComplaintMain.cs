@@ -65,5 +65,7 @@ namespace Cascade.Data.Models
         public Nullable<bool> DebotrAgree { get; set; }
         public Nullable<bool> NeedFurtherAction { get; set; }
         public Nullable<int> FinalActionStepId { get; set; }
+        public Nullable<bool> IsViewedByOwner { get; set; }
+        public Nullable<System.Guid> CreatedBy { get; set; }
     }
 }

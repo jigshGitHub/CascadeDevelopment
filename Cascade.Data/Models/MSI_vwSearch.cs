@@ -12,16 +12,14 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RACCOUNT
+    public partial class MSI_vwSearch
     {
-        public RACCOUNT()
-        {
-            this.RACCBKRPs = new HashSet<RACCBKRP>();
-            this.RACCTRELs = new HashSet<RACCTREL>();
-            this.RACTPLACs = new HashSet<RACTPLAC>();
-            this.RFINTRANs = new HashSet<RFINTRAN>();
-        }
-    
+        public string Name { get; set; }
+        public string SSN { get; set; }
+        public string ProductDescription { get; set; }
+        public string WorkStatusDescription { get; set; }
+        public string RespAgency { get; set; }
+        public string StatusDescription { get; set; }
         public string DIVISION_ID { get; set; }
         public string ACCOUNT { get; set; }
         public string PrimaryAccount { get; set; }
@@ -257,15 +255,5 @@ namespace Cascade.Data.Models
         public string AgencyAccount { get; set; }
         public Nullable<decimal> PurchasePrice { get; set; }
         public Nullable<decimal> SalesPrice { get; set; }
-    
-        public virtual ICollection<RACCBKRP> RACCBKRPs { get; set; }
-        public virtual RAGENCY RAGENCY { get; set; }
-        public virtual RPRODCDE RPRODCDE { get; set; }
-        public virtual RSTATU RSTATU { get; set; }
-        public virtual StatuteType StatuteType { get; set; }
-        public virtual RACCTLGL RACCTLGL { get; set; }
-        public virtual ICollection<RACCTREL> RACCTRELs { get; set; }
-        public virtual ICollection<RACTPLAC> RACTPLACs { get; set; }
-        public virtual ICollection<RFINTRAN> RFINTRANs { get; set; }
     }
 }

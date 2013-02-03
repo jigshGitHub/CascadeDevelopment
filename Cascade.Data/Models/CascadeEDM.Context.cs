@@ -41,23 +41,20 @@ namespace Cascade.Data.Models
         public DbSet<MSI_Port_SalesTrans_Original> MSI_Port_SalesTrans_Original { get; set; }
         public DbSet<MSI_RecallForm> MSI_RecallForm { get; set; }
         public DbSet<MSI_ResaleRestriction> MSI_ResaleRestriction { get; set; }
+        public DbSet<MSI_USStates> MSI_USStates { get; set; }
         public DbSet<PaperType> PaperTypes { get; set; }
         public DbSet<Port_Acq> Port_Acq { get; set; }
         public DbSet<Port_DPS> Port_DPS { get; set; }
         public DbSet<Port_Media> Port_Media { get; set; }
         public DbSet<Port_Recall> Port_Recall { get; set; }
         public DbSet<Port_Trans> Port_Trans { get; set; }
-        public DbSet<Portfolio> Portfolios { get; set; }
-        public DbSet<PortfolioStatu> PortfolioStatus { get; set; }
-        public DbSet<PortfolioStatusCrossRef> PortfolioStatusCrossRefs { get; set; }
-        public DbSet<PortfolioType> PortfolioTypes { get; set; }
-        public DbSet<PortfolioType1> PortfolioTypes1 { get; set; }
         public DbSet<RACCBKRP> RACCBKRPs { get; set; }
         public DbSet<RACCOUNT> RACCOUNTs { get; set; }
         public DbSet<RACCTLGL> RACCTLGLs { get; set; }
         public DbSet<RACCTREL> RACCTRELs { get; set; }
         public DbSet<RACTPLAC> RACTPLACs { get; set; }
         public DbSet<RAGENCY> RAGENCies { get; set; }
+        public DbSet<recallmaster> recallmasters { get; set; }
         public DbSet<ResponsibilityType> ResponsibilityTypes { get; set; }
         public DbSet<RFINTRAN> RFINTRANs { get; set; }
         public DbSet<RINTRATE> RINTRATEs { get; set; }
@@ -88,9 +85,12 @@ namespace Cascade.Data.Models
         public DbSet<Tbl_People> Tbl_People { get; set; }
         public DbSet<TBL_Portfolio> TBL_Portfolio { get; set; }
         public DbSet<Tbl_Source> Tbl_Source { get; set; }
-        public DbSet<TBL_State> TBL_State { get; set; }
+        public DbSet<MSI_vwDebtors> MSI_vwDebtors { get; set; }
         public DbSet<MSI_vwMediaData> MSI_vwMediaData { get; set; }
+        public DbSet<MSI_vwPurchases> MSI_vwPurchases { get; set; }
         public DbSet<MSI_vwRecallData> MSI_vwRecallData { get; set; }
+        public DbSet<MSI_vwSales> MSI_vwSales { get; set; }
+        public DbSet<MSI_vwSearch> MSI_vwSearch { get; set; }
         public DbSet<vw_AddDPSCheck> vw_AddDPSCheck { get; set; }
         public DbSet<vw_CollectionsRecon> vw_CollectionsRecon { get; set; }
         public DbSet<vw_PortfolioCashFlow> vw_PortfolioCashFlow { get; set; }

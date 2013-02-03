@@ -14,15 +14,8 @@ namespace Cascade.Data.Models
     
     public partial class PaperType
     {
-        public PaperType()
-        {
-            this.Portfolios = new HashSet<Portfolio>();
-        }
-    
         public int PaperTypeID { get; set; }
         public string ShortDescription { get; set; }
         public string Code { get; set; }
-    
-        public virtual ICollection<Portfolio> Portfolios { get; set; }
     }
 }

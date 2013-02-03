@@ -14,6 +14,7 @@
         <tr>
             <td>
                 <div id="debtorResults" style="">
+                    Click the Account to populate debtor information from the below list:
                     <table>
                         <tr>
                             <th>Account</th>
@@ -34,6 +35,16 @@
                 </div>
             </td>
         </tr>
+
+        <tr>
+            <td style="text-align: center">
+                <div data-bind="fadeVisible:showMessage" style="background-color: #1f497d; color: #fff"><span data-bind="text:message"></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right">
+                <img src="~/Content/images/savebutton.png" data-bind="click:saveComplaint,visible:saveVisible" /></td>
+        </tr>
         <tr>
             <td style="width: 100%; background-color: #1f497d"><a href="#" style="text-decoration: none; font-weight: bold; color: white" data-bind="click:showHideDebtInformation">Debtor & Debt Information</a></td>
         </tr>
@@ -42,10 +53,17 @@
                 <div id="debtInformation" data-bind="with:complianceModel,visible:showDebtInformation">
                     <table class="debtorInfo">
                         <tr>
+                            <td style="text-align: right; width: 20%">Agency Name</td>
+                            <td style="text-align: center; width: 1%">:</td>
+                            <td style="text-align: left;" colspan="4">
+                                <select data-bind="options:$parent.agencies,optionsValue:'Value', optionsCaption:' ',optionsText: 'Text', value: agency"></select>
+                            </td>
+                        </tr>
+                        <tr>
                             <td style="text-align: right; width: 20%">Consumer Account #</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <input type="text" data-bind="value:account" />
+                                <input type="text" data-bind="value:account" /></td>
                             <td style="text-align: right; width: 20%">Last 4 of SSN</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
@@ -56,11 +74,11 @@
                             <td style="text-align: right; width: 20%">Last Name</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <input type="text" data-bind="value:lastName" />
+                                <input type="text" data-bind="value:lastName" /></td>
                             <td style="text-align: right; width: 20%">Verified Debtor Identity?</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.debtorIdentities,optionsValue:'Value', optionsText: 'Text', value: $parent.debtorIdentityVerified"></select>
+                                <select data-bind="options:$parent.debtorIdentities,optionsValue:'Value', optionsText: 'Text', value: debtorIdentityVerified"></select>
                             </td>
                         </tr>
 
@@ -72,7 +90,7 @@
                             <td style="text-align: right; width: 20%">Best Contact Method</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.contactMethods,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select Best Contact Method', value: contactMethodId"></select>
+                                <select data-bind="options:$parent.contactMethods,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: contactMethodId"></select>
                             </td>
                         </tr>
                         <tr>
@@ -83,7 +101,7 @@
                             <td style="text-align: right; width: 20%">Best Contact Time</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.contactTimeOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select Best Contact Time', value: contactTimeId"></select>
+                                <select data-bind="options:$parent.contactTimeOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: contactTimeId"></select>
                             </td>
                         </tr>
                         <tr>
@@ -101,11 +119,11 @@
                             <td style="text-align: right; width: 20%">State</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.stateOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select State', value: state"></select>
+                                <select data-bind="options:$parent.stateOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: state"></select>
                             <td style="text-align: right; width: 20%">Debt Product</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.debtProductOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select Debt Product', value: debtProductId"></select>
+                                <select data-bind="options:$parent.debtProductOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: debtProductId"></select>
                             </td>
                         </tr>
                         <tr>
@@ -190,11 +208,11 @@
                             <td style="text-align: right; width: 20%">Complaint Received By</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.complaintRecvdByOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select Method', value: complaintReceivedByMethodId"></select>
+                                <select data-bind="options:$parent.complaintRecvdByOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: complaintReceivedByMethodId"></select>
                             <td style="text-align: right; width: 20%">Complaint Issue</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.complaintIssueOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: 'Select Issue', value: complaintIssueId"></select>
+                                <select data-bind="options:$parent.complaintIssueOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption: ' ', value: complaintIssueId"></select>
                             </td>
                         </tr>
                         <tr>
@@ -292,7 +310,7 @@
                             <td style="text-align: right; width: 20%">More Agency Info Received?</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.moreInfoFromAgencyReceivedOptions,optionsValue:'Value', optionsText: 'Text', value:moreInfoFromAgencyReceived"></select>
+                                <select data-bind="options:$parent.moreInfoFromAgencyReceivedOptions,optionsValue:'Value', optionsText: 'Text', value:moreInfoFromAgency"></select>
                             </td>
                         </tr>
                         <tr>
@@ -310,7 +328,7 @@
                             <td style="text-align: right; width: 20%">Owner Response</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.ownerResponseOptions,optionsValue:'Value', optionsText: 'Text', value:ownerResponseId"></select>
+                                <select data-bind="options:$parent.ownerResponseOptions,optionsValue:'Value', optionsText: 'Text', optionsCaption:' ',value:ownerResponseId"></select>
                             <td style="text-align: right; width: 20%">&nbsp;</td>
                             <td style="text-align: center; width: 1%"></td>
                             <td style="text-align: left; width: 20%">&nbsp;
@@ -364,7 +382,7 @@
                             <td style="text-align: right; width: 20%">Final Action Steps</td>
                             <td style="text-align: center; width: 1%">:</td>
                             <td style="text-align: left; width: 20%">
-                                <select data-bind="options:$parent.finalActionStepOptions,optionsValue:'Value', optionsText: 'Text', value:finalActionStepId"></select>
+                                <select data-bind="options:$parent.finalActionStepOptions,optionsValue:'Value',optionsCaption: ' ', optionsText: 'Text', value:finalActionStepId"></select>
                             <td style="text-align: right; width: 20%">&nbsp;</td>
                             <td style="text-align: center; width: 1%"></td>
                             <td style="text-align: left; width: 20%">&nbsp;
@@ -383,7 +401,7 @@
     <script src="~/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
     <script src="~/Scripts/compliance.js" type="text/javascript"></script>
     <script type="text/javascript">
-
+        var yesNoOptions = [{ Text: 'No', Value: 'false' }, { Text: 'Yes', Value: 'true' }];
         function pageViewModel() {
             var self = this;
 
@@ -411,48 +429,250 @@
             self.selectedDebtor = function (debtor) {
                 //log(debtor.account());
                 self.pimsAccountNumber(debtor.account());
-                self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName(),debtor.dob(),debtor.address1(),debtor.address2(),debtor.city(),debtor.state(),debtor.zip(),debtor.ssn(),debtor.phoneCell(),debtor.phoneHome(),debtor.phoneWork(),debtor.debtCurrentBalance(),debtor.debtorPurchaseBalance(),debtor.creditorName());
+                self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName(), debtor.dob(), debtor.address1(), debtor.address2(), debtor.city(), debtor.state(), debtor.zip(), debtor.ssn(), debtor.phoneCell(), debtor.phoneHome(), debtor.phoneWork(), debtor.debtCurrentBalance(), debtor.debtorPurchaseBalance(), debtor.creditorName());
                 $("#debtorResults").dialog('close');
+                self.saveVisible(true);
             };
+            self.agencies = ko.computed(function () {
+                var localAgencies = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'Agencies' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localAgencies.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localAgencies;
+            }, self);
             //For Div debtInformation
-            self.debtorIdentities = ko.observableArray([]);
-            self.contactMethods = ko.observableArray([]);
-            self.contactTimeOptions = ko.observableArray([]);
-            self.stateOptions = ko.observableArray([]);
-            self.debtProductOptions = ko.observableArray([]);
-            self.disputeDebtOptions = ko.observableArray([]);
-            self.disputeDebtAmtOptions = ko.observableArray([]);
-            self.disputeDebtDueDateOptions = ko.observableArray([]);
+            self.debtorIdentities = ko.observableArray(yesNoOptions);
+            self.debtorIdentities = ko.observableArray(yesNoOptions);
+            self.contactMethods = ko.computed(function () {
+                var localContactMethods = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'DebtorContactMethods' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localContactMethods.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localContactMethods;
+            }, self);
+            self.contactTimeOptions = ko.computed(function () {
+                var localTimeOptions = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'DebtorContactTime' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localTimeOptions.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localTimeOptions;
+            }, self);
+            self.stateOptions = ko.computed(function () {
+                var localStates = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'USStates' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localStates.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localStates;
+            }, self);
+            self.debtProductOptions = ko.computed(function () {
+                var localProducts = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'DetorProducts' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localProducts.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localProducts;
+            }, self);
+            self.disputeDebtOptions = ko.observableArray(yesNoOptions);
+            self.disputeDebtAmtOptions = ko.observableArray(yesNoOptions);
+            self.disputeDebtDueDateOptions = ko.observableArray(yesNoOptions);
 
             //For complaintInformation
-            self.complaintRecvdByOptions = ko.observableArray([]);
-            self.complaintIssueOptions = ko.observableArray([]);
-            self.needMoreInfoDebtorOptions = ko.observableArray([]);
-            self.moreInfoRecvdDebtorOptions = ko.observableArray([]);
+            self.complaintRecvdByOptions = ko.computed(function () {
+                var localComplaintReceivedBy = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'ComplaintReceivedBy' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localComplaintReceivedBy.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localComplaintReceivedBy;
+            }, self);
+            self.complaintIssueOptions = ko.computed(function () {
+                var localComplaintIssues = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'ComplaintIssues' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localComplaintIssues.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localComplaintIssues;
+            }, self);
+            self.needMoreInfoDebtorOptions = ko.observableArray(yesNoOptions);
+            self.moreInfoRecvdDebtorOptions = ko.observableArray(yesNoOptions);
 
             //Debt Owner
-            self.complaintSubmittedToOwnerOptions = ko.observableArray([]);
-            self.moreInfoFromAgencyOptions = ko.observableArray([]);
-            self.moreInfoFromAgencyReceivedOptions = ko.observableArray([]);
-            self.ownerResponseOptions = ko.observableArray([]);
+            self.complaintSubmittedToOwnerOptions = ko.observableArray(yesNoOptions);
+            self.moreInfoFromAgencyOptions = ko.observableArray(yesNoOptions);
+            self.moreInfoFromAgencyReceivedOptions = ko.observableArray(yesNoOptions);
+            self.ownerResponseOptions = ko.computed(function () {
+                var localOwnerResponse = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'OwnerResponse' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localOwnerResponse.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localOwnerResponse;
+            }, self);
 
             //Complaint closure
-            self.debotrAgreeOptions = ko.observableArray([]);
-            self.needFurtherActionOptions = ko.observableArray([]);
-            self.finalActionStepOptions = ko.observableArray([]);
+            self.debotrAgreeOptions = ko.observableArray(yesNoOptions);
+            self.needFurtherActionOptions = ko.observableArray(yesNoOptions);
+            self.finalActionStepOptions = ko.computed(function () {
+                var localFinalActionSteps = [];
+                $.ajax({
+                    url: baseUrl + '/api/Lookup/',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: { id: 'FinalActionSteps' },
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        //log(data.length);
+                        if (data.length > 0) {
+                            $.each(data, function (i, item) {
+                                //log(item.Text);
+                                localFinalActionSteps.push(item);
+                            });
+                        }
+                    },
+                    error: function (xhr, status, somthing) {
+                        log(status);
+                    }
+                });
+                return localFinalActionSteps;
+            }, self);
 
             self.findDebtors = function () {
                 if (self.pimsAccountNumber() != '') {
                     log(self.pimsAccountNumber());
-                    /*
-                    self.debtors.push(new pimsDebtor('12345', 'John', 'Smith', '1/1/1990'));
-                    self.debtors.push(new pimsDebtor('12346', 'Steve', 'Smith', '5/1/1981'));
-                    self.debtors.push(new pimsDebtor('12347', 'Mack', 'Donald', '1/1/1975'));
-                    self.debtors.push(new pimsDebtor('12348', 'George', 'Taylor', '6/1/1988'));
-                    self.debtors.push(new pimsDebtor('12349', 'Michale', 'Donald', '1/1/1990'));
-                    */
                     $.ajax({
-                        //                url: baseUrl + '/api/Portfolio/',
                         url: baseUrl + '/api/Compliance/Debtors/',
                         type: 'GET',
                         contentType: 'application/json',
@@ -462,41 +682,68 @@
                         success: function (data) {
                             $("#loading").html("&nbsp;");
                             $("#loading").dialog('close');
-                            log(data.length);
                             if (data.length > 0) {
                                 if (data.length > 1) {
                                     $.each(data, function (i, item) {
-                                        //log(item);
-                                        //salesRecords.push(new salesRecord(item.ID, self.portfolioNumber(), item.Lender, item.Buyer, ((item.Cut_OffDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', cutOffDate)), ((item.ClosingDate == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.ClosingDate))), item.PutbackTerm_days_, ((item.PutbackDeadline == undefined) ? '' : $.datepicker.formatDate('mm/dd/yy', new Date(item.PutbackDeadline))), item.SalesBasis, ((item.SalesPrice == undefined) ? '' : formatCurrency(item.SalesPrice)), ((item.FaceValue == undefined) ? '' : formatCurrency(item.FaceValue)), item.C_ofAccts, salesBatch, item.Notes));
-                                        self.debtors.push(new pimsDebtor(item.Account, item.FirstName, item.LastName, item.DOB, item.Address1, item.Address2, item.City, item.State, item.Zip, item.LastFourSSN, item.MobilePhone, item.HomePhone, item.WorkPhone, item.DebtCurrentBalance, item.DebtPurchaseBalance, item.CreditorName));
+                                        self.debtors.push(new pimsDebtor(item.Account, item.FirstName, item.LastName, item.DOB, item.Address1, item.Address2, item.City, item.State, item.Zip, item.LastFourSSN, item.MobilePhone, item.HomePhone, item.WorkPhone, ((item.DebtCurrentBalance == undefined) ? '' : formatCurrency(item.DebtCurrentBalance)), ((item.DebtPurchaseBalance == undefined) ? '' : formatCurrency(item.DebtPurchaseBalance)), item.CreditorName));
                                         $("#debtorResults").dialog('open');
                                     });
                                     log(self.debtors()[0].account());
                                 }
                                 else {
-                                    log(data[0]);
-                                    self.populateComplainceFromDebtor(data[0].Account, data[0].FirstName, data[0].LastName, data[0].DOB, data[0].Address1, data[0].Address2, data[0].City, data[0].State, data[0].Zip, data[0].LastFourSSN, data[0].MobilePhone, data[0].HomePhone, data[0].WorkPhone, data[0].DebtCurrentBalance, data[0].DebtPurchaseBalance, data[0].CreditorName);
+                                    self.populateComplainceFromDebtor(data[0].Account, data[0].FirstName, data[0].LastName, data[0].DOB, data[0].Address1, data[0].Address2, data[0].City, data[0].State, data[0].Zip, data[0].LastFourSSN, data[0].MobilePhone, data[0].HomePhone, data[0].WorkPhone, ((data[0].DebtCurrentBalance == undefined) ? '' : formatCurrency(data[0].DebtCurrentBalance)), ((data[0].DebtPurchaseBalance == undefined) ? '' : formatCurrency(data[0].DebtPurchaseBalance)), data[0].CreditorName);
+                                    self.saveVisible(true);
                                 }
-                            }
-                            else {
-                                log(data);
-                                //var debtor = self.debtors()[0];
-                                //self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName());
                             }
                         },
                         error: function (xhr, status, somthing) {
                             log(status);
                         }
                     });
-                    //if (self.debtors().length > 1)
-                    //    $("#debtorResults").dialog('open');
-                    //else {
-                    //    var debtor = self.debtors()[0];
-                    //    self.populateComplainceFromDebtor(debtor.account(), debtor.firstName(), debtor.lastName());
-                    //}
-                    //$("#debtorResults").html('<table><tr><th>Thead1</th><th>Thead2</th></tr><tr><td>Data1</td><td>Data2</td></tr></table>');
                 }
             }
+            self.saveComplaint = function () {
+                var json = JSON.stringify({
+                    Company: self.company(),
+                    PutbackDeadline: self.putbackDeadline(),
+                    PutbackTerm__days_: self.putbackTerm(),
+                    C_ofAccts: self.accounts(),
+                    Face: Number(self.face().replace(/[^0-9\.]+/g, "")),
+                    PurchasePrice: Number(self.purchasePrice().replace(/[^0-9\.]+/g, "")),
+                    Seller: self.seller(),
+                    Lender_FileDescription: self.lender(),
+                    ClosingDate: self.closingDt(),
+                    Cut_OffDate: self.cutOffDt(),
+                    CostBasis: self.costBasis(),
+                    Portfolio_: self.portfolioNumber(),
+                    ResaleRestrictionId: self.resaleRestriction(),
+                    Notes: self.notes()
+                });
+                //log(json);
+                $.ajax({
+                    //url: baseUrl + '/api/Portfolio/',
+                    url: baseUrl + '/api/MSIPortfolioEdited/',
+                    type: "POST",
+                    data: json,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        //log(response);
+                        self.getUpdated();
+                        self.saveVisible(false);
+                        self.editVisible(true);
+                    },
+                    error: function (response, errorText) {
+                    }
+                });
+                self.showMessage(true);
+                self.message('Data saved successfully!');
+            }
+            self.showMessage = ko.observable(false);
+            self.message = ko.observable('');
+            self.saveVisible = ko.observable(false);
+
+            /* Show/Hide Options */
             self.showDebtInformation = ko.observable(true);
             self.showComplaintInformation = ko.observable(true);
             self.showDebtOwnerProcess = ko.observable(true);
@@ -546,6 +793,18 @@
         });
 
 
+        ko.bindingHandlers.fadeVisible = {
+            init: function (element, valueAccessor) {
+                var value = valueAccessor();
+            },
+            update: function (element, valueAccessor) {
+                var value = valueAccessor();
+                ko.utils.unwrapObservable(value) ? $(element).fadeIn(3000, function () {
+                    $(element).fadeOut(5000);
+                    value(false)
+                }) : $(element).fadeOut();
+            }
+        };
 
     </script>
 }

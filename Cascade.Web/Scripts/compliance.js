@@ -1,7 +1,7 @@
 ﻿function complianceVM() {
     var self = this;
     self.account = ko.observable('');
-    self.agenct = ko.observable('');
+    self.agency = ko.observable('');
     self.lastName = ko.observable('');
     self.firstName = ko.observable('');
     self.dob = ko.observable('');

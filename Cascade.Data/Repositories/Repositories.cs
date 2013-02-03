@@ -490,6 +490,7 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+
     public class MSI_Port_SalesTrans_EditedRepository : RepositoryBase<MSI_Port_SalesTrans_Edited>
     {
         public MSI_Port_SalesTrans_EditedRepository(IDatabaseFactory dbFactory)
@@ -501,4 +502,101 @@ namespace Cascade.Data.Repositories
         {
         }
     }
+
+    public class MSI_ComplaintIssuesRepository : RepositoryBase<MSI_ComplaintIssues>
+    {
+        public MSI_ComplaintIssuesRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_ComplaintIssuesRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_ComplaintReceviedByRepository : RepositoryBase<MSI_ComplaintReceviedBy>
+    {
+        public MSI_ComplaintReceviedByRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_ComplaintReceviedByRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_DebtorContactMethodsRepository : RepositoryBase<MSI_DebtorContactMethods>
+    {
+        public MSI_DebtorContactMethodsRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_DebtorContactMethodsRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_DebtorContactTimeRepository : RepositoryBase<MSI_DebtorContactTime>
+    {
+        public MSI_DebtorContactTimeRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_DebtorContactTimeRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_DebtorProductsRepository : RepositoryBase<MSI_DebtorProducts>
+    {
+        public MSI_DebtorProductsRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_DebtorProductsRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_OwnerResponsesRepository : RepositoryBase<MSI_OwnerResponses>
+    {
+        public MSI_OwnerResponsesRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_OwnerResponsesRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_FinalActionstepsRepository : RepositoryBase<MSI_FinalActionsteps>
+    {
+        public MSI_FinalActionstepsRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_FinalActionstepsRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
+    public class MSI_USStatesRepository : RepositoryBase<MSI_USStates>
+    {
+        public MSI_USStatesRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_USStatesRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
 }

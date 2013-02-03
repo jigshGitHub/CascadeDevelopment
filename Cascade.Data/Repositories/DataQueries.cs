@@ -706,7 +706,8 @@ namespace Cascade.Data.Repositories
                         debtor.City = dr["CITY"].ToString();
                         debtor.State = dr["STATE"].ToString();
                         debtor.Zip = dr["ZIP_CODE"].ToString();
-                        debtor.LastFourSSN = dr["SSN"].ToString();
+                        string ssn = dr["SSN"].ToString().Trim();
+                        debtor.LastFourSSN = ssn.Substring(7, 4);
                         debtor.MobilePhone = dr["PHONE_CELL"].ToString();
                         debtor.HomePhone = dr["PHONE_HOME"].ToString();
                         debtor.WorkPhone = dr["PHONE_WORK"].ToString();

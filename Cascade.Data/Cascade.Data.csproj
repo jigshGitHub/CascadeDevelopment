@@ -49,15 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Models\Cascade.Context.cs">
+    <Compile Include="Models\CascadeEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cascade.Context.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cascade.cs">
+    <Compile Include="Models\CascadeEDM.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CascadeEDM.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,226 +66,226 @@
     </Compile>
     <Compile Include="Models\LookUp.cs" />
     <Compile Include="Models\MSI_ComplaintIssues.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_ComplaintMain.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_ComplaintReceviedBy.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Debtor.cs" />
     <Compile Include="Models\MSI_DebtorContactMethods.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_DebtorContactTime.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_DebtorProducts.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_DPSForm.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_FinalActionsteps.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_MediaForm.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_OwnerResponses.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Port_Acq_Edited.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Port_Acq_Original.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Port_SalesTrans_Edited.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_Port_SalesTrans_Original.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_RecallForm.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_ResaleRestriction.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_USStates.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_vwDebtors.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_vwMediaData.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_vwPurchases.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MSI_vwRecallData.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_vwSales.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSI_vwSearch.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PaperType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Portfolio.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PortfolioPieRptVM.cs" />
-    <Compile Include="Models\PortfolioStatu.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PortfolioStatusCrossRef.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PortfolioType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PortfolioType1.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Port_Acq.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Port_DPS.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Port_Media.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Port_Recall.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Port_Trans.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RACCBKRP.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RACCOUNT.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RACCTLGL.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RACCTREL.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RACTPLAC.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RAGENCY.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\recallmaster.cs">
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResponsibilityType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RFINTRAN.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RINTRATE.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RPRODCDE.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RSTATU.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RTRANCDE.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Segment.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SegmentType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SettlementRequest.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StatusType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StatuteType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_BrockettCompanies.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_Company.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_PmtType.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_Reason.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_Status.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_TransCode.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_TransSource.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_UploadDPS.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sup_UploadRecalls.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Categories.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_CHART.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_COMPANIES.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Expense.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_ExpenseDetails.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_ExpenseDetailsUpdated.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Money.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_People.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_Portfolio.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Source.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TBL_State.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vwAccount.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_AddDPSCheck.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_CollectionsRecon.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_PortfolioCashFlow.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_PortfolioCashPosition.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_PortfolioSummary.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_PortfolioTransactions.cs">
-      <DependentUpon>Cascade.tt</DependentUpon>
+      <DependentUpon>CascadeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\DataFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -299,18 +299,18 @@
       <LastGenOutput>CascadeEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="Models\Cascade.Context.tt">
+    <None Include="Models\CascadeEDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CascadeEDM.edmx</DependentUpon>
-      <LastGenOutput>Cascade.Context.cs</LastGenOutput>
+      <LastGenOutput>CascadeEDM.Context.cs</LastGenOutput>
     </None>
     <None Include="Models\CascadeEDM.edmx.diagram">
       <DependentUpon>CascadeEDM.edmx</DependentUpon>
     </None>
-    <None Include="Models\Cascade.tt">
+    <None Include="Models\CascadeEDM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CascadeEDM.edmx</DependentUpon>
-      <LastGenOutput>Cascade.cs</LastGenOutput>
+      <LastGenOutput>CascadeEDM.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

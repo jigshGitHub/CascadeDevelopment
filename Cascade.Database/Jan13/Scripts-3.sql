@@ -15,7 +15,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[MSI_ComplaintMain](
-	[AgencyId] [int] NULL,
+	[AgencyId] [varchar](20) NULL,
 	[Account] [varchar](20) NOT NULL,
 	[LastName] [varchar](50) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
@@ -66,6 +66,8 @@ CREATE TABLE [dbo].[MSI_ComplaintMain](
 	[DebotrAgree] [bit] NULL,
 	[NeedFurtherAction] [bit] NULL,
 	[FinalActionStepId] [int] NULL,
+	[IsViewedByOwner] [bit] NULL,
+	[CreatedBy] [uniqueidentifier] NULL,
  CONSTRAINT [PK_MSI_ComplaintMain] PRIMARY KEY CLUSTERED 
 (
 	[Account] ASC
@@ -381,3 +383,83 @@ Create Procedure [dbo].[MSI_spGetDebtors]
 	Where Account Like @pimsAccountNumber + '%';
 GO
 
+
+/****** Object:  Table [dbo].[MSI_USStates]    Script Date: 02/03/2013 10:17:06 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_USStates]') AND type in (N'U'))
+DROP TABLE [dbo].[MSI_USStates]
+GO
+/****** Object:  Table [dbo].[MSI_USStates]    Script Date: 02/03/2013 10:17:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_USStates]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[MSI_USStates](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Value] [varchar](2) NULL,
+ CONSTRAINT [PK_MSI_USStates] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[MSI_USStates] ON
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (1, N'Virginia', N'VA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (2, N'Texas', N'TX')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (3, N'Ohio', N'OH')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (4, N'Maryland', N'MD')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (5, N'West Virginia', N'WV')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (6, N'New York', N'NY')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (7, N'Nevada', N'NV')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (8, N'California', N'CA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (9, N'Alabama', N'AL')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (10, N'Alaska', N'AK')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (11, N'Arizona', N'AZ')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (12, N'Arkansas', N'AS')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (13, N'Colorado', N'CO')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (14, N'Connecticut', N'CT')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (15, N'Delaware', N'DE')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (16, N'Florida', N'FL')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (17, N'Georgia', N'GA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (18, N'Hawaii', N'HW')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (19, N'Idaho', N'ID')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (20, N'Illinois', N'IL')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (21, N'Indiana', N'IN')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (22, N'Iowa', N'IA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (23, N'Kansas', N'KS')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (24, N'Kentuky', N'KY')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (25, N'Louisiana', N'LN')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (26, N'Maine', N'MN')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (27, N'Massachusetts', N'MA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (28, N'Michigan', N'MI')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (29, N'Minnesota', N'MN')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (30, N'Mississippi', N'MS')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (31, N'Missouri', N'MI')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (32, N'Montana', N'MO')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (33, N'Nebraska', N'NA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (34, N'New Hampshire', N'NH')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (35, N'New Jersey', N'NJ')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (36, N'New Mexico', N'NM')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (37, N'North Carolina', N'NC')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (38, N'North Dakota', N'ND')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (39, N'Oklahoma', N'OK')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (40, N'Oregon', N'OR')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (41, N'Pennsylvania', N'PA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (42, N'Rhode Island', N'RI')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (43, N'South Carolina', N'SC')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (44, N'South Dakota', N'SD')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (45, N'Tennessee', N'TN')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (46, N'Utah', N'UT')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (47, N'Vermont', N'VT')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (48, N'Washington', N'WA')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (49, N'Wisconsin', N'WI')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (50, N'Wyoming', N'WY')
+INSERT [dbo].[MSI_USStates] ([Id], [Name], [Value]) VALUES (51, N'District Of Columbia', N'DC')
+SET IDENTITY_INSERT [dbo].[MSI_USStates] OFF

@@ -117,10 +117,108 @@ namespace Cascade.Web.Controllers
                 case "People":
                     PeopleDataRepository peopleRepo = new PeopleDataRepository();
                     lookupData = from people in peopleRepo.GetAll().OrderBy(x => x.FName)
-                                 select new LookUp(people.FName + " " +  people.LName, people.PID.ToString());
+                                 select new LookUp(people.FName + " " + people.LName, people.PID.ToString());
                     break;
                 //People
 
+                case "Agencies":
+                    RAgencyRepository agencyRepository = new RAgencyRepository();
+                    lookupData = from agency in agencyRepository.GetAll()
+                                 select new LookUp(agency.AGENCY_ID, agency.AGENCY_ID);
+                    break;
+                case "ComplaintIssues":
+                    MSI_ComplaintIssuesRepository issuesRepository = new MSI_ComplaintIssuesRepository();
+                    lookupData = from issue in issuesRepository.GetAll()
+                                 select new LookUp(issue.Name, issue.Id.ToString());
+                    break;
+                case "ComplaintReceivedBy":
+                    MSI_ComplaintReceviedByRepository receivedByRepository = new MSI_ComplaintReceviedByRepository();
+                    lookupData = from receiver in receivedByRepository.GetAll()
+                                 select new LookUp(receiver.Media, receiver.Id.ToString());
+                    break;
+                case "DebtorContactMethods":
+                    MSI_DebtorContactMethodsRepository debtorContactMethodsRepository = new MSI_DebtorContactMethodsRepository();
+                    lookupData = from method in debtorContactMethodsRepository.GetAll()
+                                 select new LookUp(method.Method, method.Id.ToString());
+                    break;
+                case "DebtorContactTime":
+                    MSI_DebtorContactTimeRepository debtorContactTimeRepository = new MSI_DebtorContactTimeRepository();
+                    lookupData = from time in debtorContactTimeRepository.GetAll()
+                                 select new LookUp(time.Time, time.Id.ToString());
+                    break;
+                case "DetorProducts":
+                    MSI_DebtorProductsRepository debtorProductsRepository = new MSI_DebtorProductsRepository();
+                    lookupData = from product in debtorProductsRepository.GetAll()
+                                 select new LookUp(product.Product, product.Id.ToString());
+                    break;
+                case "OwnerResponse":
+                    MSI_OwnerResponsesRepository ownerResponseRepository = new MSI_OwnerResponsesRepository();
+                    lookupData = from response in ownerResponseRepository.GetAll()
+                                 select new LookUp(response.Response, response.Id.ToString());
+                    break;
+                case "FinalActionSteps":
+                    MSI_FinalActionstepsRepository actionStepsRepository = new MSI_FinalActionstepsRepository();
+                    lookupData = from step in actionStepsRepository.GetAll()
+                                 select new LookUp(step.Step, step.Id.ToString());
+                    break;
+                case "USStates":
+                    MSI_USStatesRepository statesRepository = new MSI_USStatesRepository();
+                    lookupData = from state in statesRepository.GetAll()
+                                 select new LookUp(state.Name, state.Value);
+                    //data.Add(new LookUp("Virginia", "VA"));
+                    //data.Add(new LookUp("Texas", "TX"));
+                    //data.Add(new LookUp("Ohio", "OH"));
+                    //data.Add(new LookUp("Maryland", "MD"));
+                    //data.Add(new LookUp("West Virginia", "WV"));
+                    //data.Add(new LookUp("New York", "NY"));
+                    //data.Add(new LookUp("Nevada", "NV"));
+                    //data.Add(new LookUp("California", "CA"));
+                    //data.Add(new LookUp("Alabama", "AL"));
+                    //data.Add(new LookUp("Alaska", "AK"));
+                    //data.Add(new LookUp("Arizona", "AZ"));
+                    //data.Add(new LookUp("Arkansas", "AS"));
+                    //data.Add(new LookUp("Colorado", "CO"));
+                    //data.Add(new LookUp("Connecticut", "CT"));
+                    //data.Add(new LookUp("Delaware", "DE"));
+                    //data.Add(new LookUp("Florida", "FL"));
+                    //data.Add(new LookUp("Georgia", "GA"));
+                    //data.Add(new LookUp("Hawaii", "HW"));
+                    //data.Add(new LookUp("Idaho", "ID"));
+                    //data.Add(new LookUp("Illinois", "IL"));
+                    //data.Add(new LookUp("Indiana", "IN"));
+                    //data.Add(new LookUp("Iowa", "IA"));
+                    //data.Add(new LookUp("Kansas", "KS"));
+                    //data.Add(new LookUp("Kentuky", "KY"));
+                    //data.Add(new LookUp("Louisiana", "LN"));
+                    //data.Add(new LookUp("Maine", "MN"));
+                    //data.Add(new LookUp("Massachusetts", "MA"));
+                    //data.Add(new LookUp("Michigan", "MI"));
+                    //data.Add(new LookUp("Minnesota", "MN"));
+                    //data.Add(new LookUp("Mississippi", "MS"));
+                    //data.Add(new LookUp("Missouri", "MI"));
+                    //data.Add(new LookUp("Montana", "MO"));
+                    //data.Add(new LookUp("Nebraska", "NA"));
+                    //data.Add(new LookUp("New Hampshire", "NH"));
+                    //data.Add(new LookUp("New Jersey", "NJ"));
+                    //data.Add(new LookUp("New Mexico", "NM"));
+                    //data.Add(new LookUp("North Carolina", "NC"));
+                    //data.Add(new LookUp("North Dakota", "ND"));
+                    //data.Add(new LookUp("Oklahoma", "OK"));
+                    //data.Add(new LookUp("Oregon", "OR"));
+                    //data.Add(new LookUp("Pennsylvania", "PA"));
+                    //data.Add(new LookUp("Rhode Island", "RI"));
+                    //data.Add(new LookUp("South Carolina", "SC"));
+                    //data.Add(new LookUp("South Dakota", "SD"));
+                    //data.Add(new LookUp("Tennessee", "TN"));
+                    //data.Add(new LookUp("Utah", "UT"));
+                    //data.Add(new LookUp("Vermont", "VT"));
+                    //data.Add(new LookUp("Washington", "WA"));
+                    //data.Add(new LookUp("Wisconsin", "WI"));
+                    //data.Add(new LookUp("Wyoming", "WY"));
+                    //data.Add(new LookUp("District Of Columbia", "DC"));
+
+                    //lookupData = data.AsEnumerable<LookUp>();
+                    break;
 
                 default:
                     break;

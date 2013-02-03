@@ -17,28 +17,20 @@
     <EntitySet Name="MSI_Port_SalesTrans_Original" EntityType="CascadeDBModel.Store.MSI_Port_SalesTrans_Original" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSI_RecallForm" EntityType="CascadeDBModel.Store.MSI_RecallForm" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSI_ResaleRestriction" EntityType="CascadeDBModel.Store.MSI_ResaleRestriction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_USStates" EntityType="CascadeDBModel.Store.MSI_USStates" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PaperTypes" EntityType="CascadeDBModel.Store.PaperTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Acq" EntityType="CascadeDBModel.Store.Port_Acq" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_DPS" EntityType="CascadeDBModel.Store.Port_DPS" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Media" EntityType="CascadeDBModel.Store.Port_Media" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Recall" EntityType="CascadeDBModel.Store.Port_Recall" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Port_Trans" EntityType="CascadeDBModel.Store.Port_Trans" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Portfolios" EntityType="CascadeDBModel.Store.Portfolios" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PortfolioStatus" EntityType="CascadeDBModel.Store.PortfolioStatus" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PortfolioStatusCrossRef" EntityType="CascadeDBModel.Store.PortfolioStatusCrossRef" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PortfolioType" EntityType="CascadeDBModel.Store.PortfolioType" store:Type="Tables" store:Schema="dbo" store:Name="PortfolioType">
-      <DefiningQuery>SELECT 
-      [PortfolioType].[PortfolioType] AS [PortfolioType], 
-      [PortfolioType].[Descr] AS [Descr]
-      FROM [dbo].[PortfolioType] AS [PortfolioType]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="PortfolioTypes" EntityType="CascadeDBModel.Store.PortfolioTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RACCBKRP" EntityType="CascadeDBModel.Store.RACCBKRP" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RACCOUNT" EntityType="CascadeDBModel.Store.RACCOUNT" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RACCTLGL" EntityType="CascadeDBModel.Store.RACCTLGL" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RACCTREL" EntityType="CascadeDBModel.Store.RACCTREL" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RACTPLAC" EntityType="CascadeDBModel.Store.RACTPLAC" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RAGENCY" EntityType="CascadeDBModel.Store.RAGENCY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="recallmaster" EntityType="CascadeDBModel.Store.recallmaster" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ResponsibilityTypes" EntityType="CascadeDBModel.Store.ResponsibilityTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RFINTRAN" EntityType="CascadeDBModel.Store.RFINTRAN" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RINTRATE" EntityType="CascadeDBModel.Store.RINTRATE" store:Type="Tables" Schema="dbo" />
@@ -69,7 +61,28 @@
     <EntitySet Name="Tbl_People" EntityType="CascadeDBModel.Store.Tbl_People" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TBL_Portfolio" EntityType="CascadeDBModel.Store.TBL_Portfolio" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tbl_Source" EntityType="CascadeDBModel.Store.Tbl_Source" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TBL_State" EntityType="CascadeDBModel.Store.TBL_State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSI_vwDebtors" EntityType="CascadeDBModel.Store.MSI_vwDebtors" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwDebtors">
+      <DefiningQuery>SELECT 
+      [MSI_vwDebtors].[ACCOUNT] AS [ACCOUNT], 
+      [MSI_vwDebtors].[FirstName] AS [FirstName], 
+      [MSI_vwDebtors].[LastName] AS [LastName], 
+      [MSI_vwDebtors].[ADDRESS1] AS [ADDRESS1], 
+      [MSI_vwDebtors].[ADDRESS2] AS [ADDRESS2], 
+      [MSI_vwDebtors].[CITY] AS [CITY], 
+      [MSI_vwDebtors].[STATE] AS [STATE], 
+      [MSI_vwDebtors].[ZIP_CODE] AS [ZIP_CODE], 
+      [MSI_vwDebtors].[ZIP] AS [ZIP], 
+      [MSI_vwDebtors].[SSN] AS [SSN], 
+      [MSI_vwDebtors].[SS_NO] AS [SS_NO], 
+      [MSI_vwDebtors].[PHONE_CELL] AS [PHONE_CELL], 
+      [MSI_vwDebtors].[PHONE_HOME] AS [PHONE_HOME], 
+      [MSI_vwDebtors].[PHONE_WORK] AS [PHONE_WORK], 
+      [MSI_vwDebtors].[DOB] AS [DOB], 
+      [MSI_vwDebtors].[DebtCurrentBalance] AS [DebtCurrentBalance], 
+      [MSI_vwDebtors].[DebtorPurchaseBalance] AS [DebtorPurchaseBalance], 
+      [MSI_vwDebtors].[CreditorName] AS [CreditorName]
+      FROM [dbo].[MSI_vwDebtors] AS [MSI_vwDebtors]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="MSI_vwMediaData" EntityType="CascadeDBModel.Store.MSI_vwMediaData" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwMediaData">
       <DefiningQuery>SELECT 
       [MSI_vwMediaData].[ID] AS [ID], 
@@ -110,6 +123,16 @@
       [MSI_vwMediaData].[OurCheck#] AS [OurCheck#]
       FROM [dbo].[MSI_vwMediaData] AS [MSI_vwMediaData]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="MSI_vwPurchases" EntityType="CascadeDBModel.Store.MSI_vwPurchases" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwPurchases">
+      <DefiningQuery>SELECT 
+      [MSI_vwPurchases].[ACCOUNT] AS [ACCOUNT], 
+      [MSI_vwPurchases].[PRODUCT_CODE] AS [PRODUCT_CODE], 
+      [MSI_vwPurchases].[PurchaseDate] AS [PurchaseDate], 
+      [MSI_vwPurchases].[OriginalBalance] AS [OriginalBalance], 
+      [MSI_vwPurchases].[purchaseprice] AS [purchaseprice], 
+      [MSI_vwPurchases].[Seller] AS [Seller]
+      FROM [dbo].[MSI_vwPurchases] AS [MSI_vwPurchases]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="MSI_vwRecallData" EntityType="CascadeDBModel.Store.MSI_vwRecallData" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwRecallData">
       <DefiningQuery>SELECT 
       [MSI_vwRecallData].[ID] AS [ID], 
@@ -138,6 +161,262 @@
       [MSI_vwRecallData].[Expr1] AS [Expr1], 
       [MSI_vwRecallData].[Expr2] AS [Expr2]
       FROM [dbo].[MSI_vwRecallData] AS [MSI_vwRecallData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSI_vwSales" EntityType="CascadeDBModel.Store.MSI_vwSales" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwSales">
+      <DefiningQuery>SELECT 
+      [MSI_vwSales].[Responsibility] AS [Responsibility], 
+      [MSI_vwSales].[ACCOUNT] AS [ACCOUNT], 
+      [MSI_vwSales].[PRODUCT_CODE] AS [PRODUCT_CODE], 
+      [MSI_vwSales].[SoldDate] AS [SoldDate], 
+      [MSI_vwSales].[SalesBasis] AS [SalesBasis], 
+      [MSI_vwSales].[FaceValue] AS [FaceValue], 
+      [MSI_vwSales].[SalesPrice] AS [SalesPrice]
+      FROM [dbo].[MSI_vwSales] AS [MSI_vwSales]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSI_vwSearch" EntityType="CascadeDBModel.Store.MSI_vwSearch" store:Type="Views" store:Schema="dbo" store:Name="MSI_vwSearch">
+      <DefiningQuery>SELECT 
+      [MSI_vwSearch].[Name] AS [Name], 
+      [MSI_vwSearch].[SSN] AS [SSN], 
+      [MSI_vwSearch].[ProductDescription] AS [ProductDescription], 
+      [MSI_vwSearch].[WorkStatusDescription] AS [WorkStatusDescription], 
+      [MSI_vwSearch].[RespAgency] AS [RespAgency], 
+      [MSI_vwSearch].[StatusDescription] AS [StatusDescription], 
+      [MSI_vwSearch].[DIVISION_ID] AS [DIVISION_ID], 
+      [MSI_vwSearch].[ACCOUNT] AS [ACCOUNT], 
+      [MSI_vwSearch].[PrimaryAccount] AS [PrimaryAccount], 
+      [MSI_vwSearch].[InvoiceID] AS [InvoiceID], 
+      [MSI_vwSearch].[ToolSetID] AS [ToolSetID], 
+      [MSI_vwSearch].[WorkStatusID] AS [WorkStatusID], 
+      [MSI_vwSearch].[DateWorked] AS [DateWorked], 
+      [MSI_vwSearch].[DEBT_TYPE] AS [DEBT_TYPE], 
+      [MSI_vwSearch].[PRODUCT_CODE] AS [PRODUCT_CODE], 
+      [MSI_vwSearch].[BRANCH_NUMBER] AS [BRANCH_NUMBER], 
+      [MSI_vwSearch].[CREDIT_LIMIT] AS [CREDIT_LIMIT], 
+      [MSI_vwSearch].[CONTRACT_DATE] AS [CONTRACT_DATE], 
+      [MSI_vwSearch].[INT_RATE_CODE] AS [INT_RATE_CODE], 
+      [MSI_vwSearch].[INT_START_DATE] AS [INT_START_DATE], 
+      [MSI_vwSearch].[CYCLE_CODE] AS [CYCLE_CODE], 
+      [MSI_vwSearch].[LAST_POST_DATE] AS [LAST_POST_DATE], 
+      [MSI_vwSearch].[CHGOFF_DATE] AS [CHGOFF_DATE], 
+      [MSI_vwSearch].[CHGOFF_RSN_CODE] AS [CHGOFF_RSN_CODE], 
+      [MSI_vwSearch].[CHGOFF_PRINCPAL] AS [CHGOFF_PRINCPAL], 
+      [MSI_vwSearch].[CHGOFF_INTEREST] AS [CHGOFF_INTEREST], 
+      [MSI_vwSearch].[CHGOFF_OTH_AMTS] AS [CHGOFF_OTH_AMTS], 
+      [MSI_vwSearch].[REASON_INTO_COL] AS [REASON_INTO_COL], 
+      [MSI_vwSearch].[FIRST_PAY_DEFAULT] AS [FIRST_PAY_DEFAULT], 
+      [MSI_vwSearch].[CYCLES_DELQ] AS [CYCLES_DELQ], 
+      [MSI_vwSearch].[LAST_PAY_DATE] AS [LAST_PAY_DATE], 
+      [MSI_vwSearch].[LAST_CONT_DATE] AS [LAST_CONT_DATE], 
+      [MSI_vwSearch].[LAST_NOTE_DATE] AS [LAST_NOTE_DATE], 
+      [MSI_vwSearch].[LAST_NOTE_CODE] AS [LAST_NOTE_CODE], 
+      [MSI_vwSearch].[Transfer_By] AS [Transfer_By], 
+      [MSI_vwSearch].[Previous_Responsibility] AS [Previous_Responsibility], 
+      [MSI_vwSearch].[Previous_Date_Placed] AS [Previous_Date_Placed], 
+      [MSI_vwSearch].[RESPONSIBILITY] AS [RESPONSIBILITY], 
+      [MSI_vwSearch].[RESP_TYPE] AS [RESP_TYPE], 
+      [MSI_vwSearch].[STATUS] AS [STATUS], 
+      [MSI_vwSearch].[Status_Change_Date] AS [Status_Change_Date], 
+      [MSI_vwSearch].[Previous_Status] AS [Previous_Status], 
+      [MSI_vwSearch].[Previous_Status_Date] AS [Previous_Status_Date], 
+      [MSI_vwSearch].[ALLOC_CODE] AS [ALLOC_CODE], 
+      [MSI_vwSearch].[TOT_CHARGES] AS [TOT_CHARGES], 
+      [MSI_vwSearch].[TOT_PRINCIPAL] AS [TOT_PRINCIPAL], 
+      [MSI_vwSearch].[TOT_INTEREST] AS [TOT_INTEREST], 
+      [MSI_vwSearch].[TOT_COST] AS [TOT_COST], 
+      [MSI_vwSearch].[TOT_OTHER] AS [TOT_OTHER], 
+      [MSI_vwSearch].[TOT_NUM_PMTS] AS [TOT_NUM_PMTS], 
+      [MSI_vwSearch].[TOT_PTD] AS [TOT_PTD], 
+      [MSI_vwSearch].[TOT_PRIN_PTD] AS [TOT_PRIN_PTD], 
+      [MSI_vwSearch].[TOT_INT_PTD] AS [TOT_INT_PTD], 
+      [MSI_vwSearch].[TOT_COST_PTD] AS [TOT_COST_PTD], 
+      [MSI_vwSearch].[TOT_OTH_INC_PTD] AS [TOT_OTH_INC_PTD], 
+      [MSI_vwSearch].[TOT_DELQ_AMT] AS [TOT_DELQ_AMT], 
+      [MSI_vwSearch].[TOT_DUE_AMT] AS [TOT_DUE_AMT], 
+      [MSI_vwSearch].[TOT_PRIN_DUE] AS [TOT_PRIN_DUE], 
+      [MSI_vwSearch].[TOT_INT_DUE] AS [TOT_INT_DUE], 
+      [MSI_vwSearch].[TOT_COSTS_DUE] AS [TOT_COSTS_DUE], 
+      [MSI_vwSearch].[TOT_OTHER_DUE] AS [TOT_OTHER_DUE], 
+      [MSI_vwSearch].[SETTLE_ALLOW] AS [SETTLE_ALLOW], 
+      [MSI_vwSearch].[TOT_NSF_AMT] AS [TOT_NSF_AMT], 
+      [MSI_vwSearch].[NUM_NSF_PMNTS] AS [NUM_NSF_PMNTS], 
+      [MSI_vwSearch].[DATE_LAST_NSF] AS [DATE_LAST_NSF], 
+      [MSI_vwSearch].[LAST_NSF_AMT] AS [LAST_NSF_AMT], 
+      [MSI_vwSearch].[FRST_PMT_DATE] AS [FRST_PMT_DATE], 
+      [MSI_vwSearch].[FIRST_PMT_AMOUNT] AS [FIRST_PMT_AMOUNT], 
+      [MSI_vwSearch].[NEXT_CYCLE] AS [NEXT_CYCLE], 
+      [MSI_vwSearch].[CALL_ATMPS_CONT] AS [CALL_ATMPS_CONT], 
+      [MSI_vwSearch].[WKDY_CALL_ATMPS] AS [WKDY_CALL_ATMPS], 
+      [MSI_vwSearch].[WKNT_CALL_ATMPS] AS [WKNT_CALL_ATMPS], 
+      [MSI_vwSearch].[WKND_CALL_ATMPS] AS [WKND_CALL_ATMPS], 
+      [MSI_vwSearch].[PLACEMENT_CODE] AS [PLACEMENT_CODE], 
+      [MSI_vwSearch].[DATE_SENT_AGENCY] AS [DATE_SENT_AGENCY], 
+      [MSI_vwSearch].[DATE_LAST_RECALL] AS [DATE_LAST_RECALL], 
+      [MSI_vwSearch].[BAD_PHONE_FLAG] AS [BAD_PHONE_FLAG], 
+      [MSI_vwSearch].[BAD_ADDR_FLAG] AS [BAD_ADDR_FLAG], 
+      [MSI_vwSearch].[HOME_OWN_FLAG] AS [HOME_OWN_FLAG], 
+      [MSI_vwSearch].[HOLD_FLAG] AS [HOLD_FLAG], 
+      [MSI_vwSearch].[FIRST_CONT_FLAG] AS [FIRST_CONT_FLAG], 
+      [MSI_vwSearch].[LAST_CALL_NUM] AS [LAST_CALL_NUM], 
+      [MSI_vwSearch].[LAST_CALL_DATE] AS [LAST_CALL_DATE], 
+      [MSI_vwSearch].[LAST_CALL_TIME] AS [LAST_CALL_TIME], 
+      [MSI_vwSearch].[LAST_CALL_RESULT] AS [LAST_CALL_RESULT], 
+      [MSI_vwSearch].[LAST_CALL_STATUS] AS [LAST_CALL_STATUS], 
+      [MSI_vwSearch].[LAST_LETTER_GENERATED] AS [LAST_LETTER_GENERATED], 
+      [MSI_vwSearch].[LAST_LETTER_GENERATED_DATE] AS [LAST_LETTER_GENERATED_DATE], 
+      [MSI_vwSearch].[LAST_LETTER_PRINTED] AS [LAST_LETTER_PRINTED], 
+      [MSI_vwSearch].[LAST_LETTER_PRINTED_DATE] AS [LAST_LETTER_PRINTED_DATE], 
+      [MSI_vwSearch].[HEADER_NOTE] AS [HEADER_NOTE], 
+      [MSI_vwSearch].[UPDATE_DATE] AS [UPDATE_DATE], 
+      [MSI_vwSearch].[UPDATE_TYPE] AS [UPDATE_TYPE], 
+      [MSI_vwSearch].[UPDATE_ID] AS [UPDATE_ID], 
+      [MSI_vwSearch].[FLAGS] AS [FLAGS], 
+      [MSI_vwSearch].[LAST_PMT_AMT] AS [LAST_PMT_AMT], 
+      [MSI_vwSearch].[REPORT_TO_BUREAU] AS [REPORT_TO_BUREAU], 
+      [MSI_vwSearch].[BUR_UPDATE_DATE] AS [BUR_UPDATE_DATE], 
+      [MSI_vwSearch].[BUR_UPDATE_TIME] AS [BUR_UPDATE_TIME], 
+      [MSI_vwSearch].[BUR_STATUS] AS [BUR_STATUS], 
+      [MSI_vwSearch].[BUR_DISPUTE_STATUS] AS [BUR_DISPUTE_STATUS], 
+      [MSI_vwSearch].[BUR_BKT_STATUS] AS [BUR_BKT_STATUS], 
+      [MSI_vwSearch].[BUR_SPECIAL_STATUS] AS [BUR_SPECIAL_STATUS], 
+      [MSI_vwSearch].[BUR_STATUS_DATE] AS [BUR_STATUS_DATE], 
+      [MSI_vwSearch].[SCORE_STRATEGY] AS [SCORE_STRATEGY], 
+      [MSI_vwSearch].[CREDIT_SCORE] AS [CREDIT_SCORE], 
+      [MSI_vwSearch].[BEHAVIOR_SCORE] AS [BEHAVIOR_SCORE], 
+      [MSI_vwSearch].[PurchaseDate] AS [PurchaseDate], 
+      [MSI_vwSearch].[PutbackDeadline] AS [PutbackDeadline], 
+      [MSI_vwSearch].[Putback] AS [Putback], 
+      [MSI_vwSearch].[PutbackDate] AS [PutbackDate], 
+      [MSI_vwSearch].[SoldTo] AS [SoldTo], 
+      [MSI_vwSearch].[Sold] AS [Sold], 
+      [MSI_vwSearch].[SoldDate] AS [SoldDate], 
+      [MSI_vwSearch].[Buyback] AS [Buyback], 
+      [MSI_vwSearch].[BuybackDate] AS [BuybackDate], 
+      [MSI_vwSearch].[PreviousOwner] AS [PreviousOwner], 
+      [MSI_vwSearch].[PreviousAcct] AS [PreviousAcct], 
+      [MSI_vwSearch].[OriginalBalance] AS [OriginalBalance], 
+      [MSI_vwSearch].[OriginalPrincipal] AS [OriginalPrincipal], 
+      [MSI_vwSearch].[OriginalInterest] AS [OriginalInterest], 
+      [MSI_vwSearch].[Originator] AS [Originator], 
+      [MSI_vwSearch].[OriginalAccount] AS [OriginalAccount], 
+      [MSI_vwSearch].[oLastPayDate] AS [oLastPayDate], 
+      [MSI_vwSearch].[oLastPayAmt] AS [oLastPayAmt], 
+      [MSI_vwSearch].[Client] AS [Client], 
+      [MSI_vwSearch].[ClientAccount] AS [ClientAccount], 
+      [MSI_vwSearch].[cLastPayDate] AS [cLastPayDate], 
+      [MSI_vwSearch].[cLastPayAmt] AS [cLastPayAmt], 
+      [MSI_vwSearch].[Commission] AS [Commission], 
+      [MSI_vwSearch].[Seller] AS [Seller], 
+      [MSI_vwSearch].[SellerAccount] AS [SellerAccount], 
+      [MSI_vwSearch].[sLastPayDate] AS [sLastPayDate], 
+      [MSI_vwSearch].[sLastPayAmt] AS [sLastPayAmt], 
+      [MSI_vwSearch].[Bankrupt] AS [Bankrupt], 
+      [MSI_vwSearch].[POE] AS [POE], 
+      [MSI_vwSearch].[Stage] AS [Stage], 
+      [MSI_vwSearch].[Legal] AS [Legal], 
+      [MSI_vwSearch].[LegalReject] AS [LegalReject], 
+      [MSI_vwSearch].[PreLegalReject] AS [PreLegalReject], 
+      [MSI_vwSearch].[Note] AS [Note], 
+      [MSI_vwSearch].[RetailVendor] AS [RetailVendor], 
+      [MSI_vwSearch].[WIP] AS [WIP], 
+      [MSI_vwSearch].[WIPDate] AS [WIPDate], 
+      [MSI_vwSearch].[PortfolioID] AS [PortfolioID], 
+      [MSI_vwSearch].[User1] AS [User1], 
+      [MSI_vwSearch].[User2] AS [User2], 
+      [MSI_vwSearch].[User3] AS [User3], 
+      [MSI_vwSearch].[User4] AS [User4], 
+      [MSI_vwSearch].[User5] AS [User5], 
+      [MSI_vwSearch].[User6] AS [User6], 
+      [MSI_vwSearch].[User7] AS [User7], 
+      [MSI_vwSearch].[User8] AS [User8], 
+      [MSI_vwSearch].[User9] AS [User9], 
+      [MSI_vwSearch].[User10] AS [User10], 
+      [MSI_vwSearch].[LastChargeDate] AS [LastChargeDate], 
+      [MSI_vwSearch].[LastChargeAmt] AS [LastChargeAmt], 
+      [MSI_vwSearch].[DateOfOccur] AS [DateOfOccur], 
+      [MSI_vwSearch].[YearsSinceLastActivity] AS [YearsSinceLastActivity], 
+      [MSI_vwSearch].[CreateDate] AS [CreateDate], 
+      [MSI_vwSearch].[FileID] AS [FileID], 
+      [MSI_vwSearch].[LastCashAdvance] AS [LastCashAdvance], 
+      [MSI_vwSearch].[LastCashAdvanceAmt] AS [LastCashAdvanceAmt], 
+      [MSI_vwSearch].[LastPDCDate] AS [LastPDCDate], 
+      [MSI_vwSearch].[LastPDCAmount] AS [LastPDCAmount], 
+      [MSI_vwSearch].[insight_score] AS [insight_score], 
+      [MSI_vwSearch].[FieldParse] AS [FieldParse], 
+      [MSI_vwSearch].[Archive] AS [Archive], 
+      [MSI_vwSearch].[Purge] AS [Purge], 
+      [MSI_vwSearch].[MonthlyPayment] AS [MonthlyPayment], 
+      [MSI_vwSearch].[Terms] AS [Terms], 
+      [MSI_vwSearch].[MatureDate] AS [MatureDate], 
+      [MSI_vwSearch].[ScriptID] AS [ScriptID], 
+      [MSI_vwSearch].[StartingPayments] AS [StartingPayments], 
+      [MSI_vwSearch].[StartingPaymentAmount] AS [StartingPaymentAmount], 
+      [MSI_vwSearch].[PaymentPlanDate] AS [PaymentPlanDate], 
+      [MSI_vwSearch].[LAST_LETTER_CODE] AS [LAST_LETTER_CODE], 
+      [MSI_vwSearch].[LAST_LETTER_DATE] AS [LAST_LETTER_DATE], 
+      [MSI_vwSearch].[MEDIA_FLAG] AS [MEDIA_FLAG], 
+      [MSI_vwSearch].[OriginalInterestDate] AS [OriginalInterestDate], 
+      [MSI_vwSearch].[ClientID] AS [ClientID], 
+      [MSI_vwSearch].[CollectorCommission] AS [CollectorCommission], 
+      [MSI_vwSearch].[User11] AS [User11], 
+      [MSI_vwSearch].[User12] AS [User12], 
+      [MSI_vwSearch].[User13] AS [User13], 
+      [MSI_vwSearch].[User14] AS [User14], 
+      [MSI_vwSearch].[User15] AS [User15], 
+      [MSI_vwSearch].[User16] AS [User16], 
+      [MSI_vwSearch].[User17] AS [User17], 
+      [MSI_vwSearch].[User18] AS [User18], 
+      [MSI_vwSearch].[User19] AS [User19], 
+      [MSI_vwSearch].[User20] AS [User20], 
+      [MSI_vwSearch].[LastCCDDate] AS [LastCCDDate], 
+      [MSI_vwSearch].[LastCCDAmount] AS [LastCCDAmount], 
+      [MSI_vwSearch].[LastPRMDate] AS [LastPRMDate], 
+      [MSI_vwSearch].[LastPRMAmount] AS [LastPRMAmount], 
+      [MSI_vwSearch].[DateLastPRMEntered] AS [DateLastPRMEntered], 
+      [MSI_vwSearch].[FileNo] AS [FileNo], 
+      [MSI_vwSearch].[Forw_File] AS [Forw_File], 
+      [MSI_vwSearch].[Masco_File] AS [Masco_File], 
+      [MSI_vwSearch].[Forw_ID] AS [Forw_ID], 
+      [MSI_vwSearch].[Firm_ID] AS [Firm_ID], 
+      [MSI_vwSearch].[AssignDate] AS [AssignDate], 
+      [MSI_vwSearch].[CheckFeeType] AS [CheckFeeType], 
+      [MSI_vwSearch].[CreditCardFeeType] AS [CreditCardFeeType], 
+      [MSI_vwSearch].[CheckFee] AS [CheckFee], 
+      [MSI_vwSearch].[CreditCardFee] AS [CreditCardFee], 
+      [MSI_vwSearch].[Claim_Date] AS [Claim_Date], 
+      [MSI_vwSearch].[Law_List] AS [Law_List], 
+      [MSI_vwSearch].[sFee] AS [sFee], 
+      [MSI_vwSearch].[Rate_Pre] AS [Rate_Pre], 
+      [MSI_vwSearch].[Rates_Post] AS [Rates_Post], 
+      [MSI_vwSearch].[CreditorName] AS [CreditorName], 
+      [MSI_vwSearch].[CreditorName2] AS [CreditorName2], 
+      [MSI_vwSearch].[CreditorStreet] AS [CreditorStreet], 
+      [MSI_vwSearch].[CreditorCS] AS [CreditorCS], 
+      [MSI_vwSearch].[CreditorZip] AS [CreditorZip], 
+      [MSI_vwSearch].[Debt_Bal] AS [Debt_Bal], 
+      [MSI_vwSearch].[Debtor_No] AS [Debtor_No], 
+      [MSI_vwSearch].[Batch_No] AS [Batch_No], 
+      [MSI_vwSearch].[SOL_Date] AS [SOL_Date], 
+      [MSI_vwSearch].[TU_Score] AS [TU_Score], 
+      [MSI_vwSearch].[PimsLoadDate] AS [PimsLoadDate], 
+      [MSI_vwSearch].[Closed] AS [Closed], 
+      [MSI_vwSearch].[DateClosed] AS [DateClosed], 
+      [MSI_vwSearch].[LastTranCode] AS [LastTranCode], 
+      [MSI_vwSearch].[LastTranSource] AS [LastTranSource], 
+      [MSI_vwSearch].[LastReturnCode] AS [LastReturnCode], 
+      [MSI_vwSearch].[AnnualRateCodeID] AS [AnnualRateCodeID], 
+      [MSI_vwSearch].[LastMediaAttachDate] AS [LastMediaAttachDate], 
+      [MSI_vwSearch].[StatuteTypeID] AS [StatuteTypeID], 
+      [MSI_vwSearch].[RestrictedAccount] AS [RestrictedAccount], 
+      [MSI_vwSearch].[Previous_WorkStatusID] AS [Previous_WorkStatusID], 
+      [MSI_vwSearch].[WorkStatusID_ChangeDate] AS [WorkStatusID_ChangeDate], 
+      [MSI_vwSearch].[WorkStatusID_UpdateID] AS [WorkStatusID_UpdateID], 
+      [MSI_vwSearch].[CitationCount] AS [CitationCount], 
+      [MSI_vwSearch].[DONOTACH] AS [DONOTACH], 
+      [MSI_vwSearch].[Liquidation] AS [Liquidation], 
+      [MSI_vwSearch].[AgencyAccount] AS [AgencyAccount], 
+      [MSI_vwSearch].[PurchasePrice] AS [PurchasePrice], 
+      [MSI_vwSearch].[SalesPrice] AS [SalesPrice]
+      FROM [dbo].[MSI_vwSearch] AS [MSI_vwSearch]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_AddDPSCheck" EntityType="CascadeDBModel.Store.vw_AddDPSCheck" store:Type="Views" store:Schema="dbo" store:Name="vw_AddDPSCheck">
       <DefiningQuery>SELECT 
@@ -713,25 +992,9 @@
       [vwAccounts].[Sold] AS [Sold]
       FROM [dbo].[vwAccounts] AS [vwAccounts]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_Portfolios_PaperTypes" Association="CascadeDBModel.Store.FK_Portfolios_PaperTypes">
-      <End Role="PaperTypes" EntitySet="PaperTypes" />
-      <End Role="Portfolios" EntitySet="Portfolios" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PortfolioStatusCrossRef_RPRODCDE" Association="CascadeDBModel.Store.FK_PortfolioStatusCrossRef_RPRODCDE">
-      <End Role="RPRODCDE" EntitySet="RPRODCDE" />
-      <End Role="PortfolioStatusCrossRef" EntitySet="PortfolioStatusCrossRef" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PortfolioStatusCrossRef_RSTATUS" Association="CascadeDBModel.Store.FK_PortfolioStatusCrossRef_RSTATUS">
-      <End Role="RSTATUS" EntitySet="RSTATUS" />
-      <End Role="PortfolioStatusCrossRef" EntitySet="PortfolioStatusCrossRef" />
-    </AssociationSet>
     <AssociationSet Name="FK_RACCBKRP_RACCOUNT" Association="CascadeDBModel.Store.FK_RACCBKRP_RACCOUNT">
       <End Role="RACCOUNT" EntitySet="RACCOUNT" />
       <End Role="RACCBKRP" EntitySet="RACCBKRP" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RACCOUNT_Portfolios" Association="CascadeDBModel.Store.FK_RACCOUNT_Portfolios">
-      <End Role="Portfolios" EntitySet="Portfolios" />
-      <End Role="RACCOUNT" EntitySet="RACCOUNT" />
     </AssociationSet>
     <AssociationSet Name="FK_RACCOUNT_RAGENCY" Association="CascadeDBModel.Store.FK_RACCOUNT_RAGENCY">
       <End Role="RAGENCY" EntitySet="RAGENCY" />
@@ -836,6 +1099,8 @@
     <Property Name="DebotrAgree" Type="bit" />
     <Property Name="NeedFurtherAction" Type="bit" />
     <Property Name="FinalActionStepId" Type="int" />
+    <Property Name="IsViewedByOwner" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
   </EntityType>
   <EntityType Name="MSI_ComplaintReceviedBy">
     <Key>
@@ -1056,6 +1321,14 @@
     <Property Name="Value" Type="int" />
     <Property Name="Restriction" Type="varchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="MSI_USStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="varchar" MaxLength="2" />
+  </EntityType>
   <EntityType Name="PaperTypes">
     <Key>
       <PropertyRef Name="PaperTypeID" />
@@ -1194,102 +1467,6 @@
     <Property Name="ProfitShare_before" Type="float" />
     <Property Name="ProfitShare_after" Type="float" />
     <Property Name="Notes" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="Portfolios">
-    <Key>
-      <PropertyRef Name="lngPortfolioID" />
-    </Key>
-    <Property Name="lngPortfolioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="varchar" MaxLength="2000" />
-    <Property Name="PortfolioTypeID" Type="int" />
-    <Property Name="PurchaseDate" Type="datetime" />
-    <Property Name="PortfolioStatusID" Type="int" />
-    <Property Name="CreateDate" Type="datetime" />
-    <Property Name="UpdateDate" Type="datetime" />
-    <Property Name="Accounts" Type="int" />
-    <Property Name="Balance" Type="money" />
-    <Property Name="PaperAgeID" Type="int" />
-    <Property Name="PaperTypeID" Type="int" />
-    <Property Name="IndustryID" Type="int" />
-    <Property Name="SubIndustryID" Type="int" />
-    <Property Name="Notes" Type="varchar" MaxLength="2000" />
-    <Property Name="Seller" Type="varchar" MaxLength="255" />
-    <Property Name="Client" Type="varchar" MaxLength="255" />
-    <Property Name="BidFile" Type="varchar" MaxLength="255" />
-    <Property Name="PurchaseFile" Type="varchar" MaxLength="255" />
-    <Property Name="ScoreFileName" Type="varchar" MaxLength="255" />
-    <Property Name="TableSourceName" Type="varchar" MaxLength="50" />
-    <Property Name="DataType" Type="varchar" MaxLength="10" />
-    <Property Name="ClientID" Type="int" />
-    <Property Name="Branch" Type="varchar" MaxLength="6" />
-    <Property Name="Portfolio" Type="varchar" MaxLength="6" />
-    <Property Name="Responsibility" Type="varchar" MaxLength="6" />
-    <Property Name="Status" Type="varchar" MaxLength="6" />
-    <Property Name="Office" Type="varchar" MaxLength="6" />
-    <Property Name="SaleDate" Type="datetime" />
-    <Property Name="SalePrice" Type="money" />
-    <Property Name="SoldTo" Type="varchar" MaxLength="50" />
-    <Property Name="SoldToName" Type="varchar" MaxLength="50" />
-    <Property Name="SoldToPhone" Type="varchar" MaxLength="50" />
-    <Property Name="SaleFileName" Type="varchar" MaxLength="50" />
-    <Property Name="PreSaleFileName" Type="varchar" MaxLength="50" />
-    <Property Name="PutbackDeadLine" Type="datetime" />
-    <Property Name="PurchasePrice" Type="money" />
-    <Property Name="User1" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User2" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User3" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User4" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User5" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User6" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User7" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User8" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User9" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User10" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User11" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User12" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User13" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User14" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User15" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User16" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User17" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User18" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User19" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="User20" Type="varchar" Nullable="false" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="PortfolioStatus">
-    <Key>
-      <PropertyRef Name="PortfolioStatusID" />
-    </Key>
-    <Property Name="PortfolioStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Status" Type="varchar" MaxLength="50" />
-    <Property Name="PortfoliotypeID" Type="int" />
-  </EntityType>
-  <EntityType Name="PortfolioStatusCrossRef">
-    <Key>
-      <PropertyRef Name="CrossRefID" />
-    </Key>
-    <Property Name="CrossRefID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ProductTypeID" Type="int" />
-    <Property Name="Product_Code" Type="varchar" MaxLength="6" />
-    <Property Name="Status" Type="varchar" MaxLength="6" />
-    <Property Name="ReturnStatus" Type="varchar" MaxLength="25" />
-  </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'CascadeDB.dbo.PortfolioType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-  <EntityType Name="PortfolioType">
-    <Key>
-      <PropertyRef Name="PortfolioType" />
-    </Key>
-    <Property Name="PortfolioType" Type="char" Nullable="false" MaxLength="1" />
-    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="PortfolioTypes">
-    <Key>
-      <PropertyRef Name="PortfolioTypeID" />
-    </Key>
-    <Property Name="PortfolioTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Type" Type="varchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="RACCBKRP">
     <Key>
@@ -1886,6 +2063,17 @@
     <Property Name="CreateDate" Type="datetime" />
     <Property Name="Restricted" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="recallmaster">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="Agency" Type="nvarchar" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="OriginalAccount" Type="nvarchar" MaxLength="20" />
+    <Property Name="Recall" Type="smalldatetime" />
+    <Property Name="Portfolio" Type="nvarchar" MaxLength="6" />
+    <Property Name="Principal" Type="money" />
+  </EntityType>
   <EntityType Name="ResponsibilityTypes">
     <Key>
       <PropertyRef Name="ResponsibilityTypeID" />
@@ -2341,13 +2529,31 @@
     <Property Name="SText" Type="varchar" MaxLength="50" />
     <Property Name="CreatedAt" Type="datetime" />
   </EntityType>
-  <EntityType Name="TBL_State">
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwDebtors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwDebtors">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="ACCOUNT" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
-    <Property Name="IsActive" Type="bit" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" />
+    <Property Name="ADDRESS1" Type="varchar" MaxLength="35" />
+    <Property Name="ADDRESS2" Type="varchar" MaxLength="35" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="STATE" Type="varchar" MaxLength="50" />
+    <Property Name="ZIP_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="ZIP" Type="varchar" MaxLength="10" />
+    <Property Name="SSN" Type="varchar" MaxLength="256" />
+    <Property Name="SS_NO" Type="varchar" MaxLength="256" />
+    <Property Name="PHONE_CELL" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE_HOME" Type="varchar" MaxLength="15" />
+    <Property Name="PHONE_WORK" Type="varchar" MaxLength="20" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DebtCurrentBalance" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="DebtorPurchaseBalance" Type="money" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'CascadeDB.dbo.MSI_vwMediaData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -2400,6 +2606,20 @@
     <Property Name="OurCheck#" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwPurchases' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwPurchases">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="OriginalBalance" Type="money" />
+    <Property Name="purchaseprice" Type="decimal" Precision="28" Scale="10" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
       warning 6002: The table/view 'CascadeDB.dbo.MSI_vwRecallData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="MSI_vwRecallData">
@@ -2432,6 +2652,275 @@
     <Property Name="Seller" Type="nvarchar" MaxLength="255" />
     <Property Name="Expr1" Type="float" />
     <Property Name="Expr2" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwSales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwSales">
+    <Key>
+      <PropertyRef Name="ACCOUNT" />
+    </Key>
+    <Property Name="Responsibility" Type="varchar" MaxLength="255" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="SalesBasis" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="FaceValue" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SalesPrice" Type="decimal" Precision="23" Scale="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CascadeDB.dbo.MSI_vwSearch' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MSI_vwSearch">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+      <PropertyRef Name="ACCOUNT" />
+      <PropertyRef Name="ScriptID" />
+      <PropertyRef Name="StartingPayments" />
+      <PropertyRef Name="StartingPaymentAmount" />
+      <PropertyRef Name="DONOTACH" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="SSN" Type="varchar" MaxLength="256" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="40" />
+    <Property Name="WorkStatusDescription" Type="varchar" MaxLength="50" />
+    <Property Name="RespAgency" Type="varchar" MaxLength="255" />
+    <Property Name="StatusDescription" Type="varchar" MaxLength="255" />
+    <Property Name="DIVISION_ID" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="ACCOUNT" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PrimaryAccount" Type="varchar" MaxLength="20" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="ToolSetID" Type="int" />
+    <Property Name="WorkStatusID" Type="int" />
+    <Property Name="DateWorked" Type="smalldatetime" />
+    <Property Name="DEBT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="BRANCH_NUMBER" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_LIMIT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CONTRACT_DATE" Type="datetime" />
+    <Property Name="INT_RATE_CODE" Type="varchar" MaxLength="8" />
+    <Property Name="INT_START_DATE" Type="datetime" />
+    <Property Name="CYCLE_CODE" Type="decimal" Precision="2" />
+    <Property Name="LAST_POST_DATE" Type="datetime" />
+    <Property Name="CHGOFF_DATE" Type="datetime" />
+    <Property Name="CHGOFF_RSN_CODE" Type="varchar" MaxLength="3" />
+    <Property Name="CHGOFF_PRINCPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="CHGOFF_OTH_AMTS" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REASON_INTO_COL" Type="varchar" MaxLength="3" />
+    <Property Name="FIRST_PAY_DEFAULT" Type="char" MaxLength="1" />
+    <Property Name="CYCLES_DELQ" Type="decimal" Precision="3" />
+    <Property Name="LAST_PAY_DATE" Type="datetime" />
+    <Property Name="LAST_CONT_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_DATE" Type="datetime" />
+    <Property Name="LAST_NOTE_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="Transfer_By" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Responsibility" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Date_Placed" Type="datetime" />
+    <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+    <Property Name="RESP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="Status_Change_Date" Type="datetime" />
+    <Property Name="Previous_Status" Type="varchar" MaxLength="6" />
+    <Property Name="Previous_Status_Date" Type="datetime" />
+    <Property Name="ALLOC_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="TOT_CHARGES" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRINCIPAL" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INTEREST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_NUM_PMTS" Type="decimal" Precision="8" />
+    <Property Name="TOT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COST_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTH_INC_PTD" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DELQ_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_DUE_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_PRIN_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_INT_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_COSTS_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="TOT_OTHER_DUE" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="SETTLE_ALLOW" Type="float" />
+    <Property Name="TOT_NSF_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NUM_NSF_PMNTS" Type="decimal" Precision="4" />
+    <Property Name="DATE_LAST_NSF" Type="datetime" />
+    <Property Name="LAST_NSF_AMT" Type="money" />
+    <Property Name="FRST_PMT_DATE" Type="datetime" />
+    <Property Name="FIRST_PMT_AMOUNT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="NEXT_CYCLE" Type="varchar" MaxLength="6" />
+    <Property Name="CALL_ATMPS_CONT" Type="decimal" Precision="6" />
+    <Property Name="WKDY_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKNT_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="WKND_CALL_ATMPS" Type="decimal" Precision="6" />
+    <Property Name="PLACEMENT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="DATE_SENT_AGENCY" Type="datetime" />
+    <Property Name="DATE_LAST_RECALL" Type="datetime" />
+    <Property Name="BAD_PHONE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="BAD_ADDR_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOME_OWN_FLAG" Type="char" MaxLength="1" />
+    <Property Name="HOLD_FLAG" Type="char" MaxLength="1" />
+    <Property Name="FIRST_CONT_FLAG" Type="char" MaxLength="1" />
+    <Property Name="LAST_CALL_NUM" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_CALL_DATE" Type="datetime" />
+    <Property Name="LAST_CALL_TIME" Type="varchar" MaxLength="15" />
+    <Property Name="LAST_CALL_RESULT" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_CALL_STATUS" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_LETTER_GENERATED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_GENERATED_DATE" Type="datetime" />
+    <Property Name="LAST_LETTER_PRINTED" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_LETTER_PRINTED_DATE" Type="datetime" />
+    <Property Name="HEADER_NOTE" Type="varchar" MaxLength="3000" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_TYPE" Type="char" MaxLength="1" />
+    <Property Name="UPDATE_ID" Type="varchar" MaxLength="6" />
+    <Property Name="FLAGS" Type="varchar" MaxLength="26" />
+    <Property Name="LAST_PMT_AMT" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="REPORT_TO_BUREAU" Type="bit" />
+    <Property Name="BUR_UPDATE_DATE" Type="datetime" />
+    <Property Name="BUR_UPDATE_TIME" Type="decimal" Precision="6" />
+    <Property Name="BUR_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_DISPUTE_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_BKT_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_SPECIAL_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="BUR_STATUS_DATE" Type="datetime" />
+    <Property Name="SCORE_STRATEGY" Type="varchar" MaxLength="6" />
+    <Property Name="CREDIT_SCORE" Type="varchar" MaxLength="10" />
+    <Property Name="BEHAVIOR_SCORE" Type="decimal" Precision="5" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="PutbackDeadline" Type="datetime" />
+    <Property Name="Putback" Type="bit" />
+    <Property Name="PutbackDate" Type="datetime" />
+    <Property Name="SoldTo" Type="varchar" MaxLength="60" />
+    <Property Name="Sold" Type="bit" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="Buyback" Type="bit" />
+    <Property Name="BuybackDate" Type="datetime" />
+    <Property Name="PreviousOwner" Type="varchar" MaxLength="35" />
+    <Property Name="PreviousAcct" Type="varchar" MaxLength="35" />
+    <Property Name="OriginalBalance" Type="money" />
+    <Property Name="OriginalPrincipal" Type="money" />
+    <Property Name="OriginalInterest" Type="money" />
+    <Property Name="Originator" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalAccount" Type="varchar" MaxLength="50" />
+    <Property Name="oLastPayDate" Type="datetime" />
+    <Property Name="oLastPayAmt" Type="money" />
+    <Property Name="Client" Type="varchar" MaxLength="255" />
+    <Property Name="ClientAccount" Type="varchar" MaxLength="50" />
+    <Property Name="cLastPayDate" Type="datetime" />
+    <Property Name="cLastPayAmt" Type="money" />
+    <Property Name="Commission" Type="varchar" MaxLength="4" />
+    <Property Name="Seller" Type="varchar" MaxLength="255" />
+    <Property Name="SellerAccount" Type="varchar" MaxLength="50" />
+    <Property Name="sLastPayDate" Type="datetime" />
+    <Property Name="sLastPayAmt" Type="money" />
+    <Property Name="Bankrupt" Type="bit" />
+    <Property Name="POE" Type="char" MaxLength="1" />
+    <Property Name="Stage" Type="varchar" MaxLength="255" />
+    <Property Name="Legal" Type="bit" />
+    <Property Name="LegalReject" Type="bit" />
+    <Property Name="PreLegalReject" Type="bit" />
+    <Property Name="Note" Type="varchar" MaxLength="2000" />
+    <Property Name="RetailVendor" Type="varchar" MaxLength="50" />
+    <Property Name="WIP" Type="bit" />
+    <Property Name="WIPDate" Type="datetime" />
+    <Property Name="PortfolioID" Type="int" />
+    <Property Name="User1" Type="varchar" MaxLength="50" />
+    <Property Name="User2" Type="varchar" MaxLength="50" />
+    <Property Name="User3" Type="varchar" MaxLength="50" />
+    <Property Name="User4" Type="varchar" MaxLength="50" />
+    <Property Name="User5" Type="varchar" MaxLength="50" />
+    <Property Name="User6" Type="varchar" MaxLength="50" />
+    <Property Name="User7" Type="varchar" MaxLength="50" />
+    <Property Name="User8" Type="varchar" MaxLength="50" />
+    <Property Name="User9" Type="varchar" MaxLength="50" />
+    <Property Name="User10" Type="varchar" MaxLength="50" />
+    <Property Name="LastChargeDate" Type="datetime" />
+    <Property Name="LastChargeAmt" Type="money" />
+    <Property Name="DateOfOccur" Type="datetime" />
+    <Property Name="YearsSinceLastActivity" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="LastCashAdvance" Type="datetime" />
+    <Property Name="LastCashAdvanceAmt" Type="money" />
+    <Property Name="LastPDCDate" Type="datetime" />
+    <Property Name="LastPDCAmount" Type="money" />
+    <Property Name="insight_score" Type="varchar" MaxLength="50" />
+    <Property Name="FieldParse" Type="text" />
+    <Property Name="Archive" Type="bit" />
+    <Property Name="Purge" Type="bit" />
+    <Property Name="MonthlyPayment" Type="money" />
+    <Property Name="Terms" Type="int" />
+    <Property Name="MatureDate" Type="datetime" />
+    <Property Name="ScriptID" Type="int" Nullable="false" />
+    <Property Name="StartingPayments" Type="int" Nullable="false" />
+    <Property Name="StartingPaymentAmount" Type="money" Nullable="false" />
+    <Property Name="PaymentPlanDate" Type="datetime" />
+    <Property Name="LAST_LETTER_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LAST_LETTER_DATE" Type="datetime" />
+    <Property Name="MEDIA_FLAG" Type="char" MaxLength="1" />
+    <Property Name="OriginalInterestDate" Type="datetime" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="CollectorCommission" Type="varchar" MaxLength="4" />
+    <Property Name="User11" Type="varchar" MaxLength="50" />
+    <Property Name="User12" Type="varchar" MaxLength="50" />
+    <Property Name="User13" Type="varchar" MaxLength="50" />
+    <Property Name="User14" Type="varchar" MaxLength="50" />
+    <Property Name="User15" Type="varchar" MaxLength="50" />
+    <Property Name="User16" Type="varchar" MaxLength="50" />
+    <Property Name="User17" Type="varchar" MaxLength="50" />
+    <Property Name="User18" Type="varchar" MaxLength="50" />
+    <Property Name="User19" Type="varchar" MaxLength="50" />
+    <Property Name="User20" Type="varchar" MaxLength="50" />
+    <Property Name="LastCCDDate" Type="datetime" />
+    <Property Name="LastCCDAmount" Type="money" />
+    <Property Name="LastPRMDate" Type="datetime" />
+    <Property Name="LastPRMAmount" Type="money" />
+    <Property Name="DateLastPRMEntered" Type="datetime" />
+    <Property Name="FileNo" Type="varchar" MaxLength="10" />
+    <Property Name="Forw_File" Type="varchar" MaxLength="20" />
+    <Property Name="Masco_File" Type="varchar" MaxLength="15" />
+    <Property Name="Forw_ID" Type="varchar" MaxLength="10" />
+    <Property Name="Firm_ID" Type="varchar" MaxLength="10" />
+    <Property Name="AssignDate" Type="datetime" />
+    <Property Name="CheckFeeType" Type="int" />
+    <Property Name="CreditCardFeeType" Type="int" />
+    <Property Name="CheckFee" Type="money" />
+    <Property Name="CreditCardFee" Type="money" />
+    <Property Name="Claim_Date" Type="datetime" />
+    <Property Name="Law_List" Type="varchar" MaxLength="4" />
+    <Property Name="sFee" Type="varchar" MaxLength="4" />
+    <Property Name="Rate_Pre" Type="varchar" MaxLength="16" />
+    <Property Name="Rates_Post" Type="varchar" MaxLength="16" />
+    <Property Name="CreditorName" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorName2" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorStreet" Type="varchar" MaxLength="25" />
+    <Property Name="CreditorCS" Type="varchar" MaxLength="15" />
+    <Property Name="CreditorZip" Type="varchar" MaxLength="9" />
+    <Property Name="Debt_Bal" Type="varchar" MaxLength="16" />
+    <Property Name="Debtor_No" Type="varchar" MaxLength="20" />
+    <Property Name="Batch_No" Type="varchar" MaxLength="2" />
+    <Property Name="SOL_Date" Type="varchar" MaxLength="8" />
+    <Property Name="TU_Score" Type="varchar" MaxLength="4" />
+    <Property Name="PimsLoadDate" Type="datetime" />
+    <Property Name="Closed" Type="bit" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="LastTranCode" Type="varchar" MaxLength="10" />
+    <Property Name="LastTranSource" Type="varchar" MaxLength="1" />
+    <Property Name="LastReturnCode" Type="varchar" MaxLength="3" />
+    <Property Name="AnnualRateCodeID" Type="int" />
+    <Property Name="LastMediaAttachDate" Type="datetime" />
+    <Property Name="StatuteTypeID" Type="int" />
+    <Property Name="RestrictedAccount" Type="bit" />
+    <Property Name="Previous_WorkStatusID" Type="int" />
+    <Property Name="WorkStatusID_ChangeDate" Type="datetime" />
+    <Property Name="WorkStatusID_UpdateID" Type="varchar" MaxLength="6" />
+    <Property Name="CitationCount" Type="int" />
+    <Property Name="DONOTACH" Type="bit" Nullable="false" />
+    <Property Name="Liquidation" Type="money" />
+    <Property Name="AgencyAccount" Type="varchar" MaxLength="20" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesPrice" Type="decimal" Precision="8" Scale="6" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'CascadeDB.dbo.vw_AddDPSCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -3052,42 +3541,6 @@
     <Property Name="SoldTo" Type="varchar" MaxLength="60" />
     <Property Name="Sold" Type="bit" />
   </EntityType>
-  <Association Name="FK_Portfolios_PaperTypes">
-    <End Role="PaperTypes" Type="CascadeDBModel.Store.PaperTypes" Multiplicity="0..1" />
-    <End Role="Portfolios" Type="CascadeDBModel.Store.Portfolios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PaperTypes">
-        <PropertyRef Name="PaperTypeID" />
-      </Principal>
-      <Dependent Role="Portfolios">
-        <PropertyRef Name="PaperTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PortfolioStatusCrossRef_RPRODCDE">
-    <End Role="RPRODCDE" Type="CascadeDBModel.Store.RPRODCDE" Multiplicity="0..1" />
-    <End Role="PortfolioStatusCrossRef" Type="CascadeDBModel.Store.PortfolioStatusCrossRef" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RPRODCDE">
-        <PropertyRef Name="PRODUCT_CODE" />
-      </Principal>
-      <Dependent Role="PortfolioStatusCrossRef">
-        <PropertyRef Name="Product_Code" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PortfolioStatusCrossRef_RSTATUS">
-    <End Role="RSTATUS" Type="CascadeDBModel.Store.RSTATUS" Multiplicity="0..1" />
-    <End Role="PortfolioStatusCrossRef" Type="CascadeDBModel.Store.PortfolioStatusCrossRef" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RSTATUS">
-        <PropertyRef Name="STATUS" />
-      </Principal>
-      <Dependent Role="PortfolioStatusCrossRef">
-        <PropertyRef Name="Status" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_RACCBKRP_RACCOUNT">
     <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -3101,20 +3554,6 @@
       <Dependent Role="RACCBKRP">
         <PropertyRef Name="Division_ID" />
         <PropertyRef Name="Account" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RACCOUNT_Portfolios">
-    <End Role="Portfolios" Type="CascadeDBModel.Store.Portfolios" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="RACCOUNT" Type="CascadeDBModel.Store.RACCOUNT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Portfolios">
-        <PropertyRef Name="lngPortfolioID" />
-      </Principal>
-      <Dependent Role="RACCOUNT">
-        <PropertyRef Name="PortfolioID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3250,4 +3689,28 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'CascadeDB.dbo.MSI_vwPortfolioSummary' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MSI_vwPortfolioSummary">
+        <Property Name="Description" Type="varchar" MaxLength="2000" />
+        <Property Name="Type" Type="varchar" MaxLength="25" />
+        <Property Name="Accounts" Type="int" />
+        <Property Name="Balance" Type="money" />
+        <Property Name="ShortDescription" Type="nvarchar" MaxLength="30" />
+        <Property Name="Seller" Type="varchar" MaxLength="255" />
+        <Property Name="Status" Type="varchar" MaxLength="50" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'CascadeDB.dbo.MSI_vwPortfolioTransactions' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MSI_vwPortfolioTransactions">
+        <Property Name="ACCOUNT" Type="varchar" MaxLength="20" />
+        <Property Name="TRAN_CODE" Type="varchar" MaxLength="10" />
+        <Property Name="TRAN_DATE" Type="datetime" />
+        <Property Name="TRAN_SOURCE" Type="char" MaxLength="1" />
+        <Property Name="AMOUNT" Type="numeric" Precision="14" Scale="4" />
+        <Property Name="RESPONSIBILITY" Type="varchar" MaxLength="6" />
+        <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="6" />
+      </EntityType>-->
 </Schema>

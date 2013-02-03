@@ -12,9 +12,14 @@ namespace Cascade.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PortfolioType
+    public partial class MSI_vwSales
     {
-        public string PortfolioType1 { get; set; }
-        public string Descr { get; set; }
+        public string Responsibility { get; set; }
+        public string ACCOUNT { get; set; }
+        public string PRODUCT_CODE { get; set; }
+        public Nullable<System.DateTime> SoldDate { get; set; }
+        public Nullable<decimal> SalesBasis { get; set; }
+        public Nullable<decimal> FaceValue { get; set; }
+        public Nullable<decimal> SalesPrice { get; set; }
     }
 }
