@@ -1,4 +1,4 @@
-
+--Executed on 139/dbpcs on 2/3 @4:00PM
 /****** Object:  Table [dbo].[MSI_ComplaintMain]    Script Date: 01/30/2013 15:32:14 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_ComplaintMain]') AND type in (N'U'))
 DROP TABLE [dbo].[MSI_ComplaintMain]
@@ -172,8 +172,6 @@ INSERT [dbo].[MSI_DebtorContactMethods] ([Id], [Method]) VALUES (2, N'Work Phone
 INSERT [dbo].[MSI_DebtorContactMethods] ([Id], [Method]) VALUES (3, N'Cell Phone')
 SET IDENTITY_INSERT [dbo].[MSI_DebtorContactMethods] OFF
 
-USE [CascadeDB]
-GO
 /****** Object:  Table [dbo].[MSI_ComplaintIssues]    Script Date: 02/02/2013 23:05:12 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MSI_ComplaintIssues]') AND type in (N'U'))
 DROP TABLE [dbo].[MSI_ComplaintIssues]

@@ -129,12 +129,12 @@ namespace Cascade.UI.Controls
 
         public IEnumerable<CascadeMenu> GetChildMenuItems(int parentId)
         {
-            return MenuItems.Where(i => i.ParentId == parentId).OrderBy(i => i.SortOrder).ThenBy(i => i.Text);
+            return MenuItems.Where(i => i.ParentId == parentId).OrderBy(i => i.SortOrder);//.ThenBy(i => i.Text);
         }
 
         public IEnumerable<CascadeMenu> GetParentMenuItems(int parentId)
         {
-            return MenuItems.Where(i => i.ParentId == parentId).OrderBy(i => i.SortOrder).ThenBy(i => i.Text);
+            return MenuItems.Where(i => i.ParentId == parentId).OrderBy(i => i.SortOrder);//.ThenBy(i => i.Text);
         }
 
 
