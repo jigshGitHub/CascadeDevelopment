@@ -599,4 +599,16 @@ namespace Cascade.Data.Repositories
         }
     }
 
+    public class MSI_ComplaintMainRepository : RepositoryBase<MSI_ComplaintMain>
+    {
+        public MSI_ComplaintMainRepository(IDatabaseFactory dbFactory)
+            : base(dbFactory)
+        {
+        }
+        public MSI_ComplaintMainRepository()
+            : base(new DBFactory())
+        {
+        }
+    }
+
 }

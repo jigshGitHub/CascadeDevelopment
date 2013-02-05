@@ -1,7 +1,13 @@
-﻿function complianceVM() {
+﻿function complianceVM(userId, userAgency) {
     var self = this;
     self.account = ko.observable('');
-    self.agency = ko.observable('');
+    self.agency = ko.observable(userAgency);
+    self.makeAgencySelectionDisable = ko.computed(function () {
+        if (self.agency() == '')
+            return false;
+        else
+            return true;
+    }, self);
     self.lastName = ko.observable('');
     self.firstName = ko.observable('');
     self.dob = ko.observable('');
@@ -24,8 +30,17 @@
     self.disputeDebtAmount = ko.observable('');
     self.disputeDebtDueDate = ko.observable('');
     //Complaint section
-    self.complaintID = ko.observable('');
-    self.complaintDate = ko.observable('');
+    self.complaintID = ko.computed(function () {
+        if (self.account() != '') {
+            var randonNumber = Math.floor((Math.random() * 999) + 101);
+            log(randonNumber);
+            return self.agency() + '-' + self.account().substring(5, 10) + '-' + randonNumber;
+        }
+        return '';
+    }, self);
+    var todaysDate = new Date();
+    todaysDate.setDate(todaysDate.getDate());
+    self.complaintDate = ko.observable($.datepicker.formatDate('mm/dd/yy', todaysDate));
     self.complaintReceivedByMethodId = ko.observable('');
     self.complaintIssueId = ko.observable('');
     self.complaintNotes = ko.observable('');
@@ -53,9 +68,83 @@
     self.ownerResponseDays = ko.observable('');
     self.agencyResponseToDebtorDate = ko.observable('');
     self.totalResponseTimeDays = ko.observable('');
-    self.debotrAgree = ko.observable('');
+    self.debtorAgree = ko.observable('');
     self.needFurtherAction = ko.observable('');
     self.finalActionStepId = ko.observable('');
+    self.createdBy = ko.observable(userId);
+
+    self.save = function () {
+        log('saving')
+        var json = JSON.stringify({
+            AgencyId: self.agency(),
+            Account: self.account(),
+            LastName: self.lastName(),
+            FirstName: self.firstName(),
+            Address: self.address(),
+            City: self.city(),
+            State: self.state(),
+            Zip: self.zip(),
+            HomePhone: self.homePhone(),
+            WorkPhone: self.workPhone(),
+            MobilePhone: self.mobilePhone(),
+            LastFourSSN: self.lastFourSSN(),
+            DebtorIdentityVerified: self.debtorIdentityVerified(),
+            ContactMethodId: self.contactMethodId(),
+            ContactTimeId: self.contactTimeId(),
+            CreditorName: self.creditorName(),
+            DebtProductId: self.debtProductId(),
+            DebtPurchaseBalance: Number(self.debtPurchaseBalance().replace(/[^0-9\.]+/g, "")),
+            DebtCurrentBalance: Number(self.debtCurrentBalance().replace(/[^0-9\.]+/g, "")),
+            DisputeDebt: self.disputeDebt(),
+            DisputeDebtAmount: self.disputeDebtAmount(),
+            DisputeDebtDueDate: self.disputeDebtDueDate(),
+            ComplaintID: self.complaintID(),
+            ComplaintDate: self.complaintDate(),
+            ComplaintReceivedByMethodId: self.complaintReceivedByMethodId(),
+            ComplaintIssueId: self.complaintIssueId(),
+            ComplaintNotes: self.complaintNotes(),
+            ComplaintSubmitedToAgency: self.complaintSubmitedToAgency(),
+            ComplaintSubmitedToAgencyDate: self.complaintSubmitedToAgencyDate(),
+            MoreInfoReqdFromDebtor: self.moreInfoReqdFromDebtor(),
+            MoreInfoRequestedDate: self.moreInfoRequestedDate(),
+            MoreInfoRequested: self.moreInfoRequested(),
+            MoreInfoReceivedFromDebtor: self.moreInfoReceivedFromDebtor(),
+            MoreInfoReceivedDate: self.moreInfoReceivedDate(),
+            MoreInfoReceived: self.moreInfoReceived(),
+            ComplaintSubmittedToOwner: self.complaintSubmittedToOwner(),
+            ComplaintSubmittedDate: self.complaintSubmittedDate(),
+            TimeToSubmitDays: self.timeToSubmitDays(),
+            MoreInfoFromAgency: self.moreInfoFromAgency(),
+            MoreInfoFromAgencyRequestedDate: self.moreInfoFromAgencyRequestedDate(),
+            MoreInfoFromAgencyRequested: self.moreInfoFromAgencyRequested(),
+            MoreInfoFromAgencyReceived: self.moreInfoFromAgencyReceived(),
+            MoreInfoFromAgencyReceivedDate: self.moreInfoFromAgencyReceivedDate(),
+            OwnerResponseId: self.ownerResponseId(),
+            OwnerResponseDate: self.ownerResponseDate(),
+            OwnerResponseDays: self.ownerResponseDays(),
+            AgencyResponseToDebtorDate: self.agencyResponseToDebtorDate(),
+            TotalResponseTimeDays: self.totalResponseTimeDays(),
+            DebtorAgree: self.debtorAgree(),
+            NeedFurtherAction: self.needFurtherAction(),
+            FinalActionStepId: self.finalActionStepId(),
+            CreatedBy: self.createdBy()
+        });
+
+        $.ajax({
+            url: baseUrl + '/api/Compliance/',
+            type: "POST",
+            data: json,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            async:false,
+            success: function (response) {
+                return true;
+            },
+            error: function (response, errorText) {
+                return false;
+            }
+        });
+    }
 }
 
 function pimsDebtor(account, firstName, lastName, dob, address1, address2, city, state, zip, ssn, phoneCell, phoneHome, phoneWork, debtCurrentBalance, debtorPurchaseBalance, creditorName) {

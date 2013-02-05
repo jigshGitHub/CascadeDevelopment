@@ -65,6 +65,7 @@
           <ScalarProperty Name="FinalActionStepId" ColumnName="FinalActionStepId" />
           <ScalarProperty Name="IsViewedByOwner" ColumnName="IsViewedByOwner" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsViewedByAgency" ColumnName="IsViewedByAgency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1106,6 +1106,7 @@
           <Property Name="FinalActionStepId" Type="int" />
           <Property Name="IsViewedByOwner" Type="bit" />
           <Property Name="CreatedBy" Type="uniqueidentifier" />
+		  <Property Name="IsViewedByAgency" Type="bit" />
         </EntityType>
         <EntityType Name="MSI_ComplaintReceviedBy">
           <Key>
@@ -3907,6 +3908,7 @@
           <Property Name="FinalActionStepId" Type="Int32" />
           <Property Name="IsViewedByOwner" Type="Boolean" />
           <Property Name="CreatedBy" Type="Guid" />
+		  <Property Name="IsViewedByAgency" Type="Boolean" />
         </EntityType>
         <EntityType Name="MSI_ComplaintReceviedBy">
           <Key>
@@ -6549,6 +6551,7 @@
                 <ScalarProperty Name="FinalActionStepId" ColumnName="FinalActionStepId" />
                 <ScalarProperty Name="IsViewedByOwner" ColumnName="IsViewedByOwner" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+				<ScalarProperty Name="IsViewedByAgency" ColumnName="IsViewedByAgency" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

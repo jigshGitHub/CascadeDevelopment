@@ -1101,6 +1101,7 @@
     <Property Name="FinalActionStepId" Type="int" />
     <Property Name="IsViewedByOwner" Type="bit" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="IsViewedByAgency" Type="bit" />
   </EntityType>
   <EntityType Name="MSI_ComplaintReceviedBy">
     <Key>

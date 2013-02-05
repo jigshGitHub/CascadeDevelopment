@@ -67,5 +67,6 @@ namespace Cascade.Data.Models
         public Nullable<int> FinalActionStepId { get; set; }
         public Nullable<bool> IsViewedByOwner { get; set; }
         public Nullable<System.Guid> CreatedBy { get; set; }
+        public Nullable<bool> IsViewedByAgency { get; set; }
     }
 }

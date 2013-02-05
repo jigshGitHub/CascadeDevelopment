@@ -183,6 +183,7 @@
     <Property Name="FinalActionStepId" Type="Int32" />
     <Property Name="IsViewedByOwner" Type="Boolean" />
     <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="IsViewedByAgency" Type="Boolean" />
   </EntityType>
   <EntityType Name="MSI_ComplaintReceviedBy">
     <Key>

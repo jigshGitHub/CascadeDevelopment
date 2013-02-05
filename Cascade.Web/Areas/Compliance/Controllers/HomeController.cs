@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Cascade.Web.Controllers;
-using Cascade.Web.Controllers;
 using Cascade.Data.Models;
 using Cascade.Data.Repositories;
 using Cascade.Web.Areas.Recourse.Models;
@@ -19,6 +18,7 @@ namespace Cascade.Web.Areas.Compliance.Controllers
 
         public ActionResult Index()
         {
+            
             return View();
         }
         
@@ -99,6 +99,8 @@ namespace Cascade.Web.Areas.Compliance.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.UserID = UserId.ToString();
+            ViewBag.AgencyID = UserAgency;
             return View();
         }
 
