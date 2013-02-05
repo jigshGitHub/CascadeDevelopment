@@ -37,7 +37,7 @@ namespace Cascade.Data.Models
         public Nullable<bool> DisputeDebtAmount { get; set; }
         public Nullable<bool> DisputeDebtDueDate { get; set; }
         public string ComplaintID { get; set; }
-        public System.DateTime ComplaiintDate { get; set; }
+        public System.DateTime ComplaintDate { get; set; }
         public Nullable<int> ComplaintReceivedByMethodId { get; set; }
         public int ComplaintIssueId { get; set; }
         public string ComplaintNotes { get; set; }
@@ -62,7 +62,7 @@ namespace Cascade.Data.Models
         public Nullable<int> OwnerResponseDays { get; set; }
         public Nullable<System.DateTime> AgencyResponseToDebtorDate { get; set; }
         public Nullable<int> TotalResponseTimeDays { get; set; }
-        public Nullable<bool> DebotrAgree { get; set; }
+        public Nullable<bool> DebtorAgree { get; set; }
         public Nullable<bool> NeedFurtherAction { get; set; }
         public Nullable<int> FinalActionStepId { get; set; }
         public Nullable<bool> IsViewedByOwner { get; set; }

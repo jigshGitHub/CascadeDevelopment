@@ -1076,7 +1076,7 @@
           <Property Name="DisputeDebtAmount" Type="bit" />
           <Property Name="DisputeDebtDueDate" Type="bit" />
           <Property Name="ComplaintID" Type="varchar" MaxLength="50" />
-          <Property Name="ComplaiintDate" Type="datetime" Nullable="false" />
+          <Property Name="ComplaintDate" Type="datetime" Nullable="false" />
           <Property Name="ComplaintReceivedByMethodId" Type="int" />
           <Property Name="ComplaintIssueId" Type="int" Nullable="false" />
           <Property Name="ComplaintNotes" Type="varchar" MaxLength="1000" />
@@ -1101,7 +1101,7 @@
           <Property Name="OwnerResponseDays" Type="int" />
           <Property Name="AgencyResponseToDebtorDate" Type="datetime" />
           <Property Name="TotalResponseTimeDays" Type="int" />
-          <Property Name="DebotrAgree" Type="bit" />
+          <Property Name="DebtorAgree" Type="bit" />
           <Property Name="NeedFurtherAction" Type="bit" />
           <Property Name="FinalActionStepId" Type="int" />
           <Property Name="IsViewedByOwner" Type="bit" />
@@ -1206,6 +1206,7 @@
           <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="OurInvoice" Type="varchar" MaxLength="50" />
           <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
+		  <Property Name="FileName" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="MSI_OwnerResponses">
           <Key>
@@ -3876,7 +3877,7 @@
           <Property Name="DisputeDebtAmount" Type="Boolean" />
           <Property Name="DisputeDebtDueDate" Type="Boolean" />
           <Property Name="ComplaintID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="ComplaiintDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ComplaintDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ComplaintReceivedByMethodId" Type="Int32" />
           <Property Name="ComplaintIssueId" Type="Int32" Nullable="false" />
           <Property Name="ComplaintNotes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
@@ -3901,7 +3902,7 @@
           <Property Name="OwnerResponseDays" Type="Int32" />
           <Property Name="AgencyResponseToDebtorDate" Type="DateTime" Precision="3" />
           <Property Name="TotalResponseTimeDays" Type="Int32" />
-          <Property Name="DebotrAgree" Type="Boolean" />
+          <Property Name="DebtorAgree" Type="Boolean" />
           <Property Name="NeedFurtherAction" Type="Boolean" />
           <Property Name="FinalActionStepId" Type="Int32" />
           <Property Name="IsViewedByOwner" Type="Boolean" />
@@ -4006,6 +4007,7 @@
           <Property Name="OrderNumber" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="OurInvoice" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="GUID" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+		  <Property Name="FileName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="MSI_OwnerResponses">
           <Key>
@@ -6517,7 +6519,7 @@
                 <ScalarProperty Name="DisputeDebtAmount" ColumnName="DisputeDebtAmount" />
                 <ScalarProperty Name="DisputeDebtDueDate" ColumnName="DisputeDebtDueDate" />
                 <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
-                <ScalarProperty Name="ComplaiintDate" ColumnName="ComplaiintDate" />
+                <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
                 <ScalarProperty Name="ComplaintReceivedByMethodId" ColumnName="ComplaintReceivedByMethodId" />
                 <ScalarProperty Name="ComplaintIssueId" ColumnName="ComplaintIssueId" />
                 <ScalarProperty Name="ComplaintNotes" ColumnName="ComplaintNotes" />
@@ -6542,7 +6544,7 @@
                 <ScalarProperty Name="OwnerResponseDays" ColumnName="OwnerResponseDays" />
                 <ScalarProperty Name="AgencyResponseToDebtorDate" ColumnName="AgencyResponseToDebtorDate" />
                 <ScalarProperty Name="TotalResponseTimeDays" ColumnName="TotalResponseTimeDays" />
-                <ScalarProperty Name="DebotrAgree" ColumnName="DebotrAgree" />
+                <ScalarProperty Name="DebtorAgree" ColumnName="DebtorAgree" />
                 <ScalarProperty Name="NeedFurtherAction" ColumnName="NeedFurtherAction" />
                 <ScalarProperty Name="FinalActionStepId" ColumnName="FinalActionStepId" />
                 <ScalarProperty Name="IsViewedByOwner" ColumnName="IsViewedByOwner" />
@@ -6653,6 +6655,7 @@
                 <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
                 <ScalarProperty Name="OurInvoice" ColumnName="OurInvoice" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
+				<ScalarProperty Name="FileName" ColumnName="FileName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

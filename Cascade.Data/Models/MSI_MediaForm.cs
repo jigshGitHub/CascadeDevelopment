@@ -51,5 +51,6 @@ namespace Cascade.Data.Models
         public string OrderNumber { get; set; }
         public string OurInvoice { get; set; }
         public string GUID { get; set; }
+        public string FileName { get; set; }
     }
 }

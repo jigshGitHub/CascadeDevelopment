@@ -153,7 +153,7 @@
     <Property Name="DisputeDebtAmount" Type="Boolean" />
     <Property Name="DisputeDebtDueDate" Type="Boolean" />
     <Property Name="ComplaintID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="ComplaiintDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ComplaintDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ComplaintReceivedByMethodId" Type="Int32" />
     <Property Name="ComplaintIssueId" Type="Int32" Nullable="false" />
     <Property Name="ComplaintNotes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
@@ -178,7 +178,7 @@
     <Property Name="OwnerResponseDays" Type="Int32" />
     <Property Name="AgencyResponseToDebtorDate" Type="DateTime" Precision="3" />
     <Property Name="TotalResponseTimeDays" Type="Int32" />
-    <Property Name="DebotrAgree" Type="Boolean" />
+    <Property Name="DebtorAgree" Type="Boolean" />
     <Property Name="NeedFurtherAction" Type="Boolean" />
     <Property Name="FinalActionStepId" Type="Int32" />
     <Property Name="IsViewedByOwner" Type="Boolean" />
@@ -283,6 +283,7 @@
     <Property Name="OrderNumber" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="OurInvoice" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="GUID" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FileName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="MSI_OwnerResponses">
     <Key>

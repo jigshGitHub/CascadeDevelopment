@@ -1,3 +1,4 @@
+--Executed 139/dbPcs 02/04 6:30AM
 ALTER TABLE MSI_ComplaintMain ADD IsViewedByAgency [bit] NULL;
 GO
 

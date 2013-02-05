@@ -341,6 +341,69 @@ namespace Cascade.Data.Models
 
     }
 
+    public class ComplianceViewResult
+    {
+        public ComplianceViewResult()
+        {
+        }
+        public string AgencyId;
+        public string AgencyName;
+        public string Account;
+        public string LastName;
+        public string FirstName;
+        public string Address;
+        public string City;
+        public string State;
+        public string Zip;
+        public string HomePhone;
+        public string WorkPhone;
+        public string MobilePhone;
+        public string LastFourSSN;
+        public string DebtorIdentityVerified;
+        public string ContactMethod;
+        public string ContactTime;
+        public string CreditorName;
+        public string DebtProduct;
+        public Decimal? DebtPurchaseBalance;
+        public Decimal? DebtCurrentBalance;
+        public string DisputeDebt;
+        public Decimal? DisputeDebtAmount;
+        public DateTime? DisputeDebtDueDate;
+        public string ComplaintID;
+        public DateTime? ComplaintDate;
+        public string ComplaintReceivedByMethod;
+        public string ComplaintIssue;
+        public string ComplaintNotes;
+        public string ComplaintSubmitedToAgency;
+        public DateTime? ComplaintSubmitedToAgencyDate;
+        public string MoreInfoReqdFromDebtor;
+        public DateTime? MoreInfoRequestedDate;
+        public string MoreInfoRequested;
+        public string MoreInfoReceivedFromDebtor;
+        public DateTime? MoreInfoReceivedDate;
+        public string MoreInfoReceived;
+        public string ComplaintSubmittedToOwner;
+        public DateTime? ComplaintSubmittedDate;
+        public string TimeToSubmitDays;
+        public string MoreInfoFromAgency;
+        public DateTime? MoreInfoFromAgencyRequestedDate;
+        public string MoreInfoFromAgencyRequested;
+        public string MoreInfoFromAgencyReceived;
+        public DateTime? MoreInfoFromAgencyReceivedDate;
+        public string OwnerResponse;
+        public DateTime? OwnerResponseDate;
+        public string OwnerResponseDays;
+        public DateTime? AgencyResponseToDebtorDate;
+        public string TotalResponseTimeDays;
+        public string DebtorAgree;
+        public string NeedFurtherAction;
+        public string FinalActionStep;
+        public string IsViewedByOwner;
+        public string CreatedBy;
+        public string IsViewedByAgency;
+    }
+
+
     public class MediaViewEditResult
     {
         public string Portfolio;
@@ -380,6 +443,7 @@ namespace Cascade.Data.Models
         public DateTime? DateForwarded;
         public DateTime? UnavailableDate;
         public DateTime? DatePayRec;
+        public string FileName;
         public MediaViewEditResult()
         {
         }
