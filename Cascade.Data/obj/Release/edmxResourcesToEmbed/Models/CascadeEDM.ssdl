@@ -1071,7 +1071,7 @@
     <Property Name="DisputeDebtAmount" Type="bit" />
     <Property Name="DisputeDebtDueDate" Type="bit" />
     <Property Name="ComplaintID" Type="varchar" MaxLength="50" />
-    <Property Name="ComplaiintDate" Type="datetime" Nullable="false" />
+    <Property Name="ComplaintDate" Type="datetime" Nullable="false" />
     <Property Name="ComplaintReceivedByMethodId" Type="int" />
     <Property Name="ComplaintIssueId" Type="int" Nullable="false" />
     <Property Name="ComplaintNotes" Type="varchar" MaxLength="1000" />
@@ -1096,11 +1096,12 @@
     <Property Name="OwnerResponseDays" Type="int" />
     <Property Name="AgencyResponseToDebtorDate" Type="datetime" />
     <Property Name="TotalResponseTimeDays" Type="int" />
-    <Property Name="DebotrAgree" Type="bit" />
+    <Property Name="DebtorAgree" Type="bit" />
     <Property Name="NeedFurtherAction" Type="bit" />
     <Property Name="FinalActionStepId" Type="int" />
     <Property Name="IsViewedByOwner" Type="bit" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="IsViewedByAgency" Type="bit" />
   </EntityType>
   <EntityType Name="MSI_ComplaintReceviedBy">
     <Key>
@@ -1201,6 +1202,7 @@
     <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="255" />
     <Property Name="OurInvoice" Type="varchar" MaxLength="50" />
     <Property Name="GUID" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="FileName" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="MSI_OwnerResponses">
     <Key>

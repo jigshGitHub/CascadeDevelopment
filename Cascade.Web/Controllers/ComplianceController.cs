@@ -46,7 +46,7 @@ namespace Cascade.Web.Controllers
             complaint.CreditorName = debtor.CreditorName;
         }
 
-        public MSI_ComplaintMain Get(string accountNumber, string agencyId)
+        public MSI_ComplaintMain Get(string accountNumber, string agencyId, string userRole)
         {
             MSI_ComplaintMainRepository repository = null;
             MSI_ComplaintMain complaint = null; ;
@@ -60,15 +60,26 @@ namespace Cascade.Web.Controllers
                 if (data.Count() > 0)
                 {
                     complaint = data.First();
+                    if (!string.IsNullOrEmpty(userRole))
+                    {
+                        if (userRole == "user")
+                            complaint.IsViewedByOwner = true;
+                        if (userRole == "agency")
+                            complaint.IsViewedByAgency = true;
+                        repository.Update(complaint);
+                    }
                 }
                 else
                 {
                     complaint = new MSI_ComplaintMain();
+                    complaint.AgencyId = agencyId;
+                    complaint.ComplaintDate = DateTime.Now;
                     IEnumerable<MSI_Debtor> debtors = null;
                     DataQueries query = new DataQueries();
                     debtors = query.GetDebtors(accountNumber);
 
                     PopulateDebtInfo(debtors.First(), complaint);
+                    //PopulateComplaintID(complaint);
                 }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException validationException)
@@ -168,9 +179,15 @@ namespace Cascade.Web.Controllers
                 complaintToSave.IsViewedByAgency = complaint.IsViewedByAgency;
 
                 if (editingRequired)
+                {
                     repository.Update(complaintToSave);
+                }
                 else
+                {
+                    complaintToSave.ComplaintSubmitedToAgency = true;
+                    complaintToSave.ComplaintSubmitedToAgencyDate = DateTime.Now;
                     repository.Add(complaintToSave);
+                }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException validationException)
             {
@@ -186,6 +203,16 @@ namespace Cascade.Web.Controllers
             {
             }
             return complaintToSave;
+        }
+
+        private void PopulateComplaintID(MSI_ComplaintMain complaint)
+        {
+            if (string.IsNullOrEmpty(complaint.ComplaintID))
+            {
+                Random rnd = new Random();
+
+                complaint.ComplaintID = complaint.AgencyId + "-" + complaint.Account.Substring(5, 10) + "-" + rnd.Next(101, 999).ToString();
+            }
         }
     }
 }

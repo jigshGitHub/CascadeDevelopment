@@ -104,6 +104,15 @@ namespace Cascade.Web.Areas.Compliance.Controllers
             return View();
         }
 
+        public ActionResult ViewEdit(string id, string agency)
+        {
+            ViewBag.UserID = UserId.ToString();
+            ViewBag.Account = (string.IsNullOrEmpty(id)) ? "" : id; ;
+            ViewBag.AgencyID = (string.IsNullOrEmpty("agency")) ? UserAgency : agency;
+            ViewBag.UserRole = UserRoles.First().ToLower();
+            return View();
+        }
+
         //
         // POST: /Compliance/Home/Create
 

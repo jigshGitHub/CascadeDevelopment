@@ -281,7 +281,130 @@ $(document).ready(function () {
             });
     }
 
+    //ComplianceNCRA
+    if ($("#tblComplianceNCRA").length != 0) {
+        $('#tblComplianceNCRA').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
 
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+    //tblComplianceAAI
+    if ($("#tblComplianceAAI").length != 0) {
+        $('#tblComplianceAAI').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+   // tblComplianceNCP
+    if ($("#tblComplianceNCP").length != 0) {
+        $('#tblComplianceNCP').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null                    
+                ]
+            });
+    }
+    //tblComplianceORP
+    if ($("#tblComplianceORP").length != 0) {
+        $('#tblComplianceORP').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+    //tblComplianceRC
+    if ($("#tblComplianceRC").length != 0) {
+        $('#tblComplianceRC').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            });
+    }
+    //tblComplianceSOA
+    if ($("#tblComplianceSOA").length != 0) {
+        $('#tblComplianceSOA').dataTable(
+            {
+                "bFilter": false,
+                "aoColumns": [
+                    {
+                        "bSearchable": false,
+                        "bSortable": false
+
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null                    
+                ]
+            });
+    }
     //View Media Records
     if ($("#mediaRecords").length != 0) {
         $('#mediaRecords').dataTable(

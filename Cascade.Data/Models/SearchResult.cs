@@ -367,8 +367,8 @@ namespace Cascade.Data.Models
         public Decimal? DebtPurchaseBalance;
         public Decimal? DebtCurrentBalance;
         public string DisputeDebt;
-        public Decimal? DisputeDebtAmount;
-        public DateTime? DisputeDebtDueDate;
+        public string DisputeDebtAmount;
+        public string DisputeDebtDueDate;
         public string ComplaintID;
         public DateTime? ComplaintDate;
         public string ComplaintReceivedByMethod;

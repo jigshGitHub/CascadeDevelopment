@@ -35,7 +35,7 @@
           <ScalarProperty Name="DisputeDebtAmount" ColumnName="DisputeDebtAmount" />
           <ScalarProperty Name="DisputeDebtDueDate" ColumnName="DisputeDebtDueDate" />
           <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
-          <ScalarProperty Name="ComplaiintDate" ColumnName="ComplaiintDate" />
+          <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
           <ScalarProperty Name="ComplaintReceivedByMethodId" ColumnName="ComplaintReceivedByMethodId" />
           <ScalarProperty Name="ComplaintIssueId" ColumnName="ComplaintIssueId" />
           <ScalarProperty Name="ComplaintNotes" ColumnName="ComplaintNotes" />
@@ -60,11 +60,12 @@
           <ScalarProperty Name="OwnerResponseDays" ColumnName="OwnerResponseDays" />
           <ScalarProperty Name="AgencyResponseToDebtorDate" ColumnName="AgencyResponseToDebtorDate" />
           <ScalarProperty Name="TotalResponseTimeDays" ColumnName="TotalResponseTimeDays" />
-          <ScalarProperty Name="DebotrAgree" ColumnName="DebotrAgree" />
+          <ScalarProperty Name="DebtorAgree" ColumnName="DebtorAgree" />
           <ScalarProperty Name="NeedFurtherAction" ColumnName="NeedFurtherAction" />
           <ScalarProperty Name="FinalActionStepId" ColumnName="FinalActionStepId" />
           <ScalarProperty Name="IsViewedByOwner" ColumnName="IsViewedByOwner" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsViewedByAgency" ColumnName="IsViewedByAgency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -171,6 +172,7 @@
           <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
           <ScalarProperty Name="OurInvoice" ColumnName="OurInvoice" />
           <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

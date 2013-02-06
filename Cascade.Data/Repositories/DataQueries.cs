@@ -728,17 +728,17 @@ namespace Cascade.Data.Repositories
         }
         public IEnumerable<ComplianceViewResult> GetComplianceReportRecords(string AgencyId, string reportType)
         {
-            DBFactory db;   
+            DBFactory db;
             SqlDataReader rdr = null;
-             string reportName = "";
+            string reportName = "";
             List<ComplianceViewResult> data = null;
             try
             {
-                
+
                 db = new DBFactory();
                 switch (reportType)
                 {
-                    case "NCRA": reportName= "MSI_spGetComplianceNCRAReportData";
+                    case "NCRA": reportName = "MSI_spGetComplianceNCRAReportData";
                         break;
                     case "ORP": reportName = "MSI_spGetComplianceORPReportData";
                         break;
@@ -750,10 +750,10 @@ namespace Cascade.Data.Repositories
                         break;
                     case "NCP": reportName = "MSI_spGetComplianceNCPReportData";
                         break;
-                        
+
                 }
-                
-                
+
+
                 rdr = db.ExecuteReader(reportName, new SqlParameter("@AgencyId", AgencyId));
                 data = new List<ComplianceViewResult>();
                 ComplianceViewResult record;
@@ -766,7 +766,7 @@ namespace Cascade.Data.Repositories
                     record.LastName = rdr["LastName"].ToString();
                     record.FirstName = rdr["FirstName"].ToString();
                     record.LastFourSSN = rdr["LastFourSSN"].ToString();
-                    if(rdr["ComplaintDate"] != DBNull.Value)
+                    if (rdr["ComplaintDate"] != DBNull.Value)
                         record.ComplaintDate = Convert.ToDateTime(rdr["ComplaintDate"]);
                     if (rdr["MoreInfoRequestedDate"] != DBNull.Value)
                         record.MoreInfoRequestedDate = Convert.ToDateTime(rdr["MoreInfoRequestedDate"]);
@@ -793,7 +793,7 @@ namespace Cascade.Data.Repositories
                     {
                         record.AgencyResponseToDebtorDate = null;
                     }
-                    
+
 
                     data.Add(record);
                 }
@@ -857,15 +857,14 @@ namespace Cascade.Data.Repositories
                     record.ContactMethod = rdr["ContactMethod"].ToString();
                     record.ContactTime = rdr["ContactTime"].ToString();
                     record.DebtProduct = rdr["DebtProduct"].ToString();
-                    if(rdr["DebtPurchaseBalance"].ToString() != "")
+                    if (rdr["DebtPurchaseBalance"].ToString() != "")
                         record.DebtPurchaseBalance = rdr["DebtPurchaseBalance"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["DebtPurchaseBalance"]);
                     if (rdr["DebtCurrentBalance"].ToString() != "")
                         record.DebtCurrentBalance = rdr["DebtCurrentBalance"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["DebtCurrentBalance"]);
                     record.DisputeDebt = rdr["DisputeDebtText"].ToString();
-                    if (rdr["DisputeDebtAmount"].ToString() != "")
-                        record.DisputeDebtAmount = rdr["DisputeDebtAmount"] == DBNull.Value ? Convert.ToDecimal(0.0) : Convert.ToDecimal(rdr["DisputeDebtAmount"]);
-                    if (rdr["DisputeDebtDueDate"] != DBNull.Value)
-                        record.DisputeDebtDueDate = Convert.ToDateTime(rdr["DisputeDebtDueDate"]);
+                    record.DisputeDebtAmount = rdr["DisputeDebtAmountText"].ToString();
+                    record.DisputeDebtDueDate = rdr["DisputeDebtDueDateText"].ToString();
+
                     record.ComplaintID = rdr["ComplaintId"].ToString();
                     if (rdr["ComplaintDate"] != DBNull.Value)
                         record.ComplaintDate = Convert.ToDateTime(rdr["ComplaintDate"]);
@@ -916,14 +915,6 @@ namespace Cascade.Data.Repositories
                     {
                         record.DebtCurrentBalance = null;
                     }
-                    if (record.DisputeDebtAmount == Convert.ToDecimal(0.0))
-                    {
-                        record.DisputeDebtAmount = null;
-                    }
-                    if (record.DisputeDebtDueDate.ToString() == "1/1/1900 12:00:00 AM")
-                    {
-                        record.DisputeDebtDueDate = null;
-                    }
                     if (record.ComplaintDate.ToString() == "1/1/1900 12:00:00 AM")
                     {
                         record.ComplaintDate = null;
@@ -973,7 +964,7 @@ namespace Cascade.Data.Repositories
             return data.AsEnumerable<ComplianceViewResult>();
         }
 
-       
+
         #region Export to Excel Methods
         public IEnumerable<DPSViewEditResult> GetDPSViewEditRecordsExport(DateTime? StartDate, DateTime? EndDate, string PortfolioOwner, string Responsibility, string Account, string GUID)
         {

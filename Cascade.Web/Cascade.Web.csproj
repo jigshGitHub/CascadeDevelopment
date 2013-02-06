@@ -452,6 +452,7 @@
     <Content Include="Areas\Compliance\Views\Home\_complianceRC.cshtml" />
     <Content Include="Areas\Compliance\Views\Home\_complianceSOA.cshtml" />
     <Content Include="Areas\Portfolio\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Compliance\Views\Home\ViewEdit.cshtml" />
     <None Include="Properties\PublishProfiles\CascadeDeployment.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Images\calendar.gif" />

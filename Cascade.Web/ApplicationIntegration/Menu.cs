@@ -47,7 +47,7 @@ namespace Cascade.Web.ApplicationIntegration
                 items = new List<CascadeMenu>();
                 foreach (XmlNode menuNode in section.ChildNodes)
                 {
-                    menu = new CascadeMenu { Id = int.Parse(menuNode.Attributes["Id"].Value), Action = menuNode.Attributes["Action"].Value, Controller = menuNode.Attributes["Controller"].Value, IsActive = Convert.ToBoolean(menuNode.Attributes["IsActive"].Value), ParentId = int.Parse(menuNode.Attributes["ParentId"].Value), SortOrder = int.Parse(menuNode.Attributes["ParentId"].Value), Text = menuNode.Attributes["Text"].Value, IsVisible = Convert.ToBoolean(menuNode.Attributes["IsVisible"].Value), Roles = menuNode.Attributes["Roles"].Value.Split(new char[] { ',' }) };                    
+                    menu = new CascadeMenu { Id = int.Parse(menuNode.Attributes["Id"].Value), Action = menuNode.Attributes["Action"].Value, Controller = menuNode.Attributes["Controller"].Value, IsActive = Convert.ToBoolean(menuNode.Attributes["IsActive"].Value), ParentId = int.Parse(menuNode.Attributes["ParentId"].Value), SortOrder = int.Parse(menuNode.Attributes["SortOrder"].Value), Text = menuNode.Attributes["Text"].Value, IsVisible = Convert.ToBoolean(menuNode.Attributes["IsVisible"].Value), Roles = menuNode.Attributes["Roles"].Value.Split(new char[] { ',' }) };                    
                     if (menuNode.Attributes["Area"] != null)
                         menu.Area = menuNode.Attributes["Area"].Value;
 
