@@ -10,10 +10,10 @@ using Cascade.Web.Areas.Recourse.Models;
 
 namespace Cascade.Web.Areas.Reports.Controllers
 {
-    public class MediaController : BaseController
+    public class ReportMediaController : BaseController
     {
         //
-        // GET: /Reports/Media/
+        // GET: /Reports/ReportMedia/
         public ActionResult Index(string id)
         {
             //Save the Report Type in ViewBag. It will be stored in the Hidden field on the Page

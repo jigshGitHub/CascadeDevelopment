@@ -31,7 +31,7 @@
             @foreach (var mediaNotSubmitted in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink("View", "Details", "Media", new { area = "Recourse", id = mediaNotSubmitted.ID }, null)</td>
+                    <td>@Html.ActionLink("View", "Details", "ReportMedia", new { area = "Recourse", id = mediaNotSubmitted.ID }, null)</td>
                     <td>@mediaNotSubmitted.PIMSAcct</td>
                     <td>@mediaNotSubmitted.Portfolio</td>
                     <td>@mediaNotSubmitted.OriginalLender</td>

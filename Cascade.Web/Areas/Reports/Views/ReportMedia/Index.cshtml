@@ -21,7 +21,7 @@
             var href = window.location.href.split('/');
             var baseUrl = href[0] + '//' + href[2] + '/' + href[3];
             //Load the Report Grid Here
-            $("#divReportResults").load(baseUrl + '/Media/GetReportData?ReportType=' + $('#reportType').val());
+            $("#divReportResults").load(baseUrl + '/ReportMedia/GetReportData?ReportType=' + $('#reportType').val());
 
         });
         
